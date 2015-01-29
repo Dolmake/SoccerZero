@@ -1,0 +1,489 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		651B96581A79123700154A3C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 651B96571A79123700154A3C /* main.m */; };
+		651B965B1A79123700154A3C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 651B965A1A79123700154A3C /* AppDelegate.m */; };
+		651B965D1A79123700154A3C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 651B965C1A79123700154A3C /* Images.xcassets */; };
+		651B96601A79123700154A3C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 651B965E1A79123700154A3C /* LaunchScreen.xib */; };
+		651B966C1A79123800154A3C /* SoccerZeroTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 651B966B1A79123800154A3C /* SoccerZeroTests.m */; };
+		651B96781A7912A600154A3C /* DLMKMainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 651B96761A7912A600154A3C /* DLMKMainMenuViewController.m */; };
+		651B96791A7912A600154A3C /* DLMKMainMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 651B96771A7912A600154A3C /* DLMKMainMenuViewController.xib */; };
+		657BB1611A7A94FE00A528EB /* DLMKPlayerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 657BB15F1A7A94FE00A528EB /* DLMKPlayerTableViewCell.m */; };
+		657BB1621A7A94FE00A528EB /* DLMKPlayerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 657BB1601A7A94FE00A528EB /* DLMKPlayerTableViewCell.xib */; };
+		65917CBE1A7914A300DC9940 /* play_128x128.png in Resources */ = {isa = PBXBuildFile; fileRef = 65917CBD1A7914A300DC9940 /* play_128x128.png */; };
+		65917CC11A7914F000DC9940 /* gear_256x256.png in Resources */ = {isa = PBXBuildFile; fileRef = 65917CC01A7914F000DC9940 /* gear_256x256.png */; };
+		65917CC31A79152400DC9940 /* statistics_128x128.png in Resources */ = {isa = PBXBuildFile; fileRef = 65917CC21A79152400DC9940 /* statistics_128x128.png */; };
+		65917CC71A7A7F0F00DC9940 /* DLMKPlayerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 65917CC61A7A7F0F00DC9940 /* DLMKPlayerModel.m */; };
+		65917CCA1A7A7F2F00DC9940 /* DLMKTeamModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 65917CC91A7A7F2F00DC9940 /* DLMKTeamModel.m */; };
+		65917CCE1A7A86EB00DC9940 /* DLMKTeamTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65917CCC1A7A86EB00DC9940 /* DLMKTeamTableViewController.m */; };
+		65917CDB1A7A8E8D00DC9940 /* DLMKTeamTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65917CD91A7A8E8D00DC9940 /* DLMKTeamTableViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		651B96661A79123800154A3C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 651B964A1A79123700154A3C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 651B96511A79123700154A3C;
+			remoteInfo = SoccerZero;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		651B96521A79123700154A3C /* SoccerZero.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoccerZero.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		651B96561A79123700154A3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		651B96571A79123700154A3C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		651B96591A79123700154A3C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		651B965A1A79123700154A3C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		651B965C1A79123700154A3C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		651B965F1A79123700154A3C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		651B96651A79123800154A3C /* SoccerZeroTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SoccerZeroTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		651B966A1A79123800154A3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		651B966B1A79123800154A3C /* SoccerZeroTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SoccerZeroTests.m; sourceTree = "<group>"; };
+		651B96751A7912A600154A3C /* DLMKMainMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLMKMainMenuViewController.h; sourceTree = "<group>"; };
+		651B96761A7912A600154A3C /* DLMKMainMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLMKMainMenuViewController.m; sourceTree = "<group>"; };
+		651B96771A7912A600154A3C /* DLMKMainMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DLMKMainMenuViewController.xib; sourceTree = "<group>"; };
+		657BB15E1A7A94FE00A528EB /* DLMKPlayerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLMKPlayerTableViewCell.h; sourceTree = "<group>"; };
+		657BB15F1A7A94FE00A528EB /* DLMKPlayerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLMKPlayerTableViewCell.m; sourceTree = "<group>"; };
+		657BB1601A7A94FE00A528EB /* DLMKPlayerTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DLMKPlayerTableViewCell.xib; sourceTree = "<group>"; };
+		65917CBD1A7914A300DC9940 /* play_128x128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play_128x128.png; sourceTree = "<group>"; };
+		65917CC01A7914F000DC9940 /* gear_256x256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gear_256x256.png; sourceTree = "<group>"; };
+		65917CC21A79152400DC9940 /* statistics_128x128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = statistics_128x128.png; sourceTree = "<group>"; };
+		65917CC51A7A7F0F00DC9940 /* DLMKPlayerModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLMKPlayerModel.h; sourceTree = "<group>"; };
+		65917CC61A7A7F0F00DC9940 /* DLMKPlayerModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLMKPlayerModel.m; sourceTree = "<group>"; };
+		65917CC81A7A7F2F00DC9940 /* DLMKTeamModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLMKTeamModel.h; sourceTree = "<group>"; };
+		65917CC91A7A7F2F00DC9940 /* DLMKTeamModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLMKTeamModel.m; sourceTree = "<group>"; };
+		65917CCB1A7A86EB00DC9940 /* DLMKTeamTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLMKTeamTableViewController.h; sourceTree = "<group>"; };
+		65917CCC1A7A86EB00DC9940 /* DLMKTeamTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLMKTeamTableViewController.m; sourceTree = "<group>"; };
+		65917CD91A7A8E8D00DC9940 /* DLMKTeamTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DLMKTeamTableViewController.xib; path = ../DLMKTeamTableViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		651B964F1A79123700154A3C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		651B96621A79123800154A3C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		651B96491A79123700154A3C = {
+			isa = PBXGroup;
+			children = (
+				651B96541A79123700154A3C /* SoccerZero */,
+				651B96681A79123800154A3C /* SoccerZeroTests */,
+				651B96531A79123700154A3C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		651B96531A79123700154A3C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				651B96521A79123700154A3C /* SoccerZero.app */,
+				651B96651A79123800154A3C /* SoccerZeroTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		651B96541A79123700154A3C /* SoccerZero */ = {
+			isa = PBXGroup;
+			children = (
+				65917CC41A7A7EE300DC9940 /* Models */,
+				65917CBF1A7914AA00DC9940 /* Resources */,
+				651B96591A79123700154A3C /* AppDelegate.h */,
+				651B965A1A79123700154A3C /* AppDelegate.m */,
+				651B965C1A79123700154A3C /* Images.xcassets */,
+				651B965E1A79123700154A3C /* LaunchScreen.xib */,
+				651B96551A79123700154A3C /* Supporting Files */,
+				651B967A1A7912AC00154A3C /* Controllers */,
+			);
+			path = SoccerZero;
+			sourceTree = "<group>";
+		};
+		651B96551A79123700154A3C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				651B96561A79123700154A3C /* Info.plist */,
+				651B96571A79123700154A3C /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		651B96681A79123800154A3C /* SoccerZeroTests */ = {
+			isa = PBXGroup;
+			children = (
+				651B966B1A79123800154A3C /* SoccerZeroTests.m */,
+				651B96691A79123800154A3C /* Supporting Files */,
+			);
+			path = SoccerZeroTests;
+			sourceTree = "<group>";
+		};
+		651B96691A79123800154A3C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				651B966A1A79123800154A3C /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		651B967A1A7912AC00154A3C /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				65917CD91A7A8E8D00DC9940 /* DLMKTeamTableViewController.xib */,
+				65917CCB1A7A86EB00DC9940 /* DLMKTeamTableViewController.h */,
+				65917CCC1A7A86EB00DC9940 /* DLMKTeamTableViewController.m */,
+				651B96751A7912A600154A3C /* DLMKMainMenuViewController.h */,
+				651B96761A7912A600154A3C /* DLMKMainMenuViewController.m */,
+				651B96771A7912A600154A3C /* DLMKMainMenuViewController.xib */,
+				657BB15E1A7A94FE00A528EB /* DLMKPlayerTableViewCell.h */,
+				657BB15F1A7A94FE00A528EB /* DLMKPlayerTableViewCell.m */,
+				657BB1601A7A94FE00A528EB /* DLMKPlayerTableViewCell.xib */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		65917CBF1A7914AA00DC9940 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				65917CC21A79152400DC9940 /* statistics_128x128.png */,
+				65917CC01A7914F000DC9940 /* gear_256x256.png */,
+				65917CBD1A7914A300DC9940 /* play_128x128.png */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		65917CC41A7A7EE300DC9940 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				65917CC51A7A7F0F00DC9940 /* DLMKPlayerModel.h */,
+				65917CC61A7A7F0F00DC9940 /* DLMKPlayerModel.m */,
+				65917CC81A7A7F2F00DC9940 /* DLMKTeamModel.h */,
+				65917CC91A7A7F2F00DC9940 /* DLMKTeamModel.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		651B96511A79123700154A3C /* SoccerZero */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 651B966F1A79123800154A3C /* Build configuration list for PBXNativeTarget "SoccerZero" */;
+			buildPhases = (
+				651B964E1A79123700154A3C /* Sources */,
+				651B964F1A79123700154A3C /* Frameworks */,
+				651B96501A79123700154A3C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SoccerZero;
+			productName = SoccerZero;
+			productReference = 651B96521A79123700154A3C /* SoccerZero.app */;
+			productType = "com.apple.product-type.application";
+		};
+		651B96641A79123800154A3C /* SoccerZeroTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 651B96721A79123800154A3C /* Build configuration list for PBXNativeTarget "SoccerZeroTests" */;
+			buildPhases = (
+				651B96611A79123800154A3C /* Sources */,
+				651B96621A79123800154A3C /* Frameworks */,
+				651B96631A79123800154A3C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				651B96671A79123800154A3C /* PBXTargetDependency */,
+			);
+			name = SoccerZeroTests;
+			productName = SoccerZeroTests;
+			productReference = 651B96651A79123800154A3C /* SoccerZeroTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		651B964A1A79123700154A3C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = Dolmake;
+				TargetAttributes = {
+					651B96511A79123700154A3C = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					651B96641A79123800154A3C = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = 651B96511A79123700154A3C;
+					};
+				};
+			};
+			buildConfigurationList = 651B964D1A79123700154A3C /* Build configuration list for PBXProject "SoccerZero" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 651B96491A79123700154A3C;
+			productRefGroup = 651B96531A79123700154A3C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				651B96511A79123700154A3C /* SoccerZero */,
+				651B96641A79123800154A3C /* SoccerZeroTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		651B96501A79123700154A3C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65917CC11A7914F000DC9940 /* gear_256x256.png in Resources */,
+				651B96791A7912A600154A3C /* DLMKMainMenuViewController.xib in Resources */,
+				651B96601A79123700154A3C /* LaunchScreen.xib in Resources */,
+				65917CBE1A7914A300DC9940 /* play_128x128.png in Resources */,
+				657BB1621A7A94FE00A528EB /* DLMKPlayerTableViewCell.xib in Resources */,
+				651B965D1A79123700154A3C /* Images.xcassets in Resources */,
+				65917CC31A79152400DC9940 /* statistics_128x128.png in Resources */,
+				65917CDB1A7A8E8D00DC9940 /* DLMKTeamTableViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		651B96631A79123800154A3C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		651B964E1A79123700154A3C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65917CCA1A7A7F2F00DC9940 /* DLMKTeamModel.m in Sources */,
+				651B965B1A79123700154A3C /* AppDelegate.m in Sources */,
+				651B96781A7912A600154A3C /* DLMKMainMenuViewController.m in Sources */,
+				65917CC71A7A7F0F00DC9940 /* DLMKPlayerModel.m in Sources */,
+				65917CCE1A7A86EB00DC9940 /* DLMKTeamTableViewController.m in Sources */,
+				657BB1611A7A94FE00A528EB /* DLMKPlayerTableViewCell.m in Sources */,
+				651B96581A79123700154A3C /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		651B96611A79123800154A3C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				651B966C1A79123800154A3C /* SoccerZeroTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		651B96671A79123800154A3C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 651B96511A79123700154A3C /* SoccerZero */;
+			targetProxy = 651B96661A79123800154A3C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		651B965E1A79123700154A3C /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				651B965F1A79123700154A3C /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		651B966D1A79123800154A3C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		651B966E1A79123800154A3C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		651B96701A79123800154A3C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = SoccerZero/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		651B96711A79123800154A3C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = SoccerZero/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		651B96731A79123800154A3C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = SoccerZeroTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SoccerZero.app/SoccerZero";
+			};
+			name = Debug;
+		};
+		651B96741A79123800154A3C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = SoccerZeroTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SoccerZero.app/SoccerZero";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		651B964D1A79123700154A3C /* Build configuration list for PBXProject "SoccerZero" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				651B966D1A79123800154A3C /* Debug */,
+				651B966E1A79123800154A3C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		651B966F1A79123800154A3C /* Build configuration list for PBXNativeTarget "SoccerZero" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				651B96701A79123800154A3C /* Debug */,
+				651B96711A79123800154A3C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		651B96721A79123800154A3C /* Build configuration list for PBXNativeTarget "SoccerZeroTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				651B96731A79123800154A3C /* Debug */,
+				651B96741A79123800154A3C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 651B964A1A79123700154A3C /* Project object */;
+}
