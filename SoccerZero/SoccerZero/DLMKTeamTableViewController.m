@@ -38,7 +38,7 @@ static NSString* PLAYER_CELL = @"PLAYER_CELL";
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    [self.tableView registerClass:[DLMKPlayerTableViewCell class] forCellReuseIdentifier:PLAYER_CELL];
+    //[self.tableView registerClass:[DLMKPlayerTableViewCell class] forCellReuseIdentifier:PLAYER_CELL];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -66,36 +66,12 @@ static NSString* PLAYER_CELL = @"PLAYER_CELL";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    
-//    //Default Cell
-//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:PLAYER_CELL
-//                                                            forIndexPath:indexPath];
-//    
-//    if (!cell){
-//        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:PLAYER_CELL ];
-//    }
-//    
-//    DLMKPlayerModel* playerAtRow =[self.teamModel getPlayerByIndex:indexPath.row];
-//    if (playerAtRow)
-//        cell.textLabel.text = playerAtRow.name;
-    
-    
         //Custom Cell
-        DLMKPlayerTableViewCell *cell = (DLMKPlayerTableViewCell*)[tableView dequeueReusableCellWithIdentifier:PLAYER_CELL
-                                                                forIndexPath:indexPath];
+        DLMKPlayerTableViewCell *cell = (DLMKPlayerTableViewCell*)[tableView dequeueReusableCellWithIdentifier:PLAYER_CELL];
     
         if (!cell){
-            //cell = [[DLMKPlayerTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:PLAYER_CELL ];
-            
-            NSArray *t = [[NSBundle mainBundle] loadNibNamed:@"DLMKPlayerTableViewCell" owner:nil options:nil];
-            for (id currentObject in t)
-            {
-                if ([currentObject isKindOfClass:[DLMKPlayerTableViewCell class]])
-                {
-                    cell = (DLMKPlayerTableViewCell *)currentObject;
-                    break;
-                }
-            }
+            NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"DLMKPlayerTableViewCell" owner:self options:nil];
+            cell = [nib objectAtIndex:0];
         }
     
         DLMKPlayerModel* playerAtRow =[self.teamModel getPlayerByIndex:indexPath.row];
@@ -103,8 +79,6 @@ static NSString* PLAYER_CELL = @"PLAYER_CELL";
         {
             cell.playerModel = playerAtRow;
         }
-    
-    
     
     return cell;
 }

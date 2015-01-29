@@ -13,5 +13,6 @@
 
 @property (weak, nonatomic) DLMKPlayerModel* playerModel;
 @property (weak,nonatomic) IBOutlet UILabel* lbName;
+@property (weak,nonatomic) IBOutlet UILabel* lbGoal;
 
 @end

@@ -31,9 +31,11 @@
     // Configure the view for the selected state
     if (self.playerModel){
         self.lbName.text = self.playerModel.name;
+        self.lbGoal.text =  [NSString stringWithFormat:@"%ld",(long)self.playerModel.goals ];
     }
     else{
         self.lbName.text = @"No Player";
+        self.lbGoal.text = @"0";
     }
 }
 
