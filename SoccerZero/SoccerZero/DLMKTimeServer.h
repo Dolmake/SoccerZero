@@ -14,4 +14,6 @@
 
 +(instancetype) SINGLETON;
 
+@property (nonatomic) double deltaTime;
+
 @end
