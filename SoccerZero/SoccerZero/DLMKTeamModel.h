@@ -11,13 +11,19 @@
 
 @interface DLMKTeamModel : NSObject
 
+
 +(instancetype) SINGLETON;
+
+@property (copy, nonatomic) NSString* name;
+@property (nonatomic) NSUInteger frames;
 
 -(NSUInteger) count;
 -(NSArray*) players;
 -(DLMKPlayerModel*) getPlayerByIndex: (NSUInteger) index;
 -(DLMKPlayerModel*) getPlayerByName:(NSString*)name;
 -(DLMKPlayerModel*) getPlayerByNumber:(NSUInteger) number;
+
+-(DLMKTeamModel*) clone;
 
 
 @end

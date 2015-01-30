@@ -9,6 +9,8 @@
 #import "DLMKTeamModel.h"
 #import "DLMKPlayerModel.h"
 
+
+
 @implementation DLMKTeamModel
 
 static DLMKTeamModel* _instance = nil;
@@ -28,10 +30,16 @@ NSArray* playersArray;
     
     if (self = [super init]){
         
-        playersArray = [self createSamplePlayers];
+        //TODO: read players from file or SQL
+        _name = @"Edulcorados";
+        _frames = 0;
+        playersArray = [self createSamplePlayers];       
     }
     return self;
 }
+
+
+
 
 -(NSArray*) players{
     return playersArray;
@@ -69,6 +77,12 @@ NSArray* playersArray;
         }
     }
     return player;
+}
+
+-(DLMKTeamModel*) clone{
+    //TODO:Return a clean copy
+    DLMKTeamModel* cloned = [[DLMKTeamModel alloc] init];
+    return cloned;
 }
 
 #pragma mark - MISC
