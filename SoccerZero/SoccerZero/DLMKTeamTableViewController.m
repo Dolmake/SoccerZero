@@ -10,6 +10,7 @@
 #import "DLMKTeamModel.h"
 #import "DLMKPlayerModel.h"
 #import "DLMKPlayerTableViewCell.h"
+#import "DLMKTimeServer.h"
 
 @interface DLMKTeamTableViewController ()
 
@@ -39,6 +40,7 @@ static NSString* PLAYER_CELL = @"PLAYER_CELL";
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
     //[self.tableView registerClass:[DLMKPlayerTableViewCell class] forCellReuseIdentifier:PLAYER_CELL];
+    [[DLMKTimeServer SINGLETON]addObserver:self ];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -82,6 +84,16 @@ static NSString* PLAYER_CELL = @"PLAYER_CELL";
     
     return cell;
 }
+
+
+#pragma mark - Update:(id)sender
+
+-(void) update:(id)sender{
+    
+    double delta =[[DLMKTimeServer SINGLETON] deltaTime ];
+    self.title = [NSString stringWithFormat: @"frame %f",delta  ];
+}
+
 
 
 /*

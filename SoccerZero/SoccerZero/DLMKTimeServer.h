@@ -10,10 +10,14 @@
 
 @interface DLMKTimeServer : NSObject
 
+@property (nonatomic) NSArray* observers;
 @property (nonatomic) NSUInteger frames;
 
 +(instancetype) SINGLETON;
 
 @property (nonatomic) double deltaTime;
+
+-(void) addObserver:(NSObject*) observer;
+-(void) removeObserver:(NSObject*) observer;
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "DLMKMatchViewController.h"
+#import "DLMKTimeServer.h"
 
 @interface DLMKMatchViewController ()
 
@@ -17,6 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    [[DLMKTimeServer SINGLETON ] addObserver:self];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -37,6 +39,13 @@
 #pragma mark - On Start Timer
 -(IBAction)onStartTimer:(id)sender{
     
+}
+
+#pragma mark - Update:(id)sender
+
+-(void) update:(id)sender{
+    UILabel* label = self.lbResult;
+    label.text =  @"Frame"; //[[DLMKTimeServer SINGLETON] deltaTime ];
 }
 
 @end
