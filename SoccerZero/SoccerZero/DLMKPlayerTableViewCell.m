@@ -7,7 +7,7 @@
 //
 
 #import "DLMKPlayerTableViewCell.h"
-#import "DLMKPlayerModel.h"
+#import "DLMKPlayerModel_OLD.h"
 
 @implementation DLMKPlayerTableViewCell
 

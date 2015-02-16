@@ -7,11 +7,11 @@
 //
 
 @import UIKit;
-@class DLMKPlayerModel;
+@class DLMKPlayerModel_OLD;
 
 @interface DLMKPlayerTableViewCell : UITableViewCell
 
-@property (weak, nonatomic) DLMKPlayerModel* playerModel;
+@property (weak, nonatomic) DLMKPlayerModel_OLD* playerModel;
 @property (weak,nonatomic) IBOutlet UILabel* lbName;
 @property (weak,nonatomic) IBOutlet UILabel* lbGoal;
 

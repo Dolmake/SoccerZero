@@ -7,12 +7,12 @@
 //
 
 @import UIKit;
-@class DLMKTeamModel;
+@class DLMKTeamModel_OLD;
 
 @interface DLMKTeamTableViewController : UITableViewController
 
-@property (weak, nonatomic) DLMKTeamModel* teamModel;
+@property (weak, nonatomic) DLMKTeamModel_OLD* teamModel;
 
--(id) initWithTeamModel:(DLMKTeamModel*)model;
+-(id) initWithTeamModel:(DLMKTeamModel_OLD*)model;
 
 @end

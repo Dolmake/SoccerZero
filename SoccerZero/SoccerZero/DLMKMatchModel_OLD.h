@@ -7,7 +7,7 @@
 //
 
 @import Foundation;
-@class DLMKTeamModel;
+@class DLMKTeamModel_OLD ;
 
 typedef NS_ENUM(NSUInteger, MatchHalf) {
     FirstHalf,
@@ -15,9 +15,9 @@ typedef NS_ENUM(NSUInteger, MatchHalf) {
 };
 
 
-@interface DLMKMatchModel : NSObject
+@interface DLMKMatchModel_OLD : NSObject
 
-@property (strong, nonatomic) DLMKTeamModel* teamModel;
+@property (strong, nonatomic) DLMKTeamModel_OLD* teamModel;
 @property (nonatomic) NSUInteger playTime;
 @property (nonatomic) NSUInteger rivalGoals;
 @property (nonatomic) NSUInteger teamGoals;

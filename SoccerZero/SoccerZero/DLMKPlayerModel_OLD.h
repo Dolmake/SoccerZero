@@ -8,7 +8,7 @@
 
 @import Foundation;
 
-@interface DLMKPlayerModel : NSObject
+@interface DLMKPlayerModel_OLD : NSObject
 
 @property (copy) NSString* name;
 @property (nonatomic) NSUInteger number;

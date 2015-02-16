@@ -6,10 +6,10 @@
 //  Copyright (c) 2015 Dolmake. All rights reserved.
 //
 
-#import "DLMKMatchModel.h"
-#import "DLMKTeamModel.h"
+#import "DLMKMatchModel_OLD.h"
+#import "DLMKTeamModel_OLD.h"
 
-@implementation DLMKMatchModel
+@implementation DLMKMatchModel_OLD
 
 
 -(id) initWithRivalName:(NSString*)name
@@ -19,7 +19,7 @@
         _playTime = 0;
         _teamGoals = 0;
         _half = 0;
-        _teamModel = [[DLMKTeamModel SINGLETON] clone];
+        _teamModel = [[DLMKTeamModel_OLD SINGLETON] clone];
     }
     return self;
 }

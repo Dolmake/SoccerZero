@@ -7,9 +7,9 @@
 //
 
 @import Foundation;
-@class DLMKPlayerModel;
+@class DLMKPlayerModel_OLD;
 
-@interface DLMKTeamModel : NSObject
+@interface DLMKTeamModel_OLD  : NSObject
 
 
 +(instancetype) SINGLETON;
@@ -19,11 +19,11 @@
 
 -(NSUInteger) count;
 -(NSArray*) players;
--(DLMKPlayerModel*) getPlayerByIndex: (NSUInteger) index;
--(DLMKPlayerModel*) getPlayerByName:(NSString*)name;
--(DLMKPlayerModel*) getPlayerByNumber:(NSUInteger) number;
+-(DLMKPlayerModel_OLD*) getPlayerByIndex: (NSUInteger) index;
+-(DLMKPlayerModel_OLD*) getPlayerByName:(NSString*)name;
+-(DLMKPlayerModel_OLD*) getPlayerByNumber:(NSUInteger) number;
 
--(DLMKTeamModel*) clone;
+-(DLMKTeamModel_OLD*) clone;
 
 
 @end

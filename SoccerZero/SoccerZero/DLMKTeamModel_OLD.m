@@ -6,21 +6,21 @@
 //  Copyright (c) 2015 Dolmake. All rights reserved.
 //
 
-#import "DLMKTeamModel.h"
-#import "DLMKPlayerModel.h"
+#import "DLMKTeamModel_OLD.h"
+#import "DLMKPlayerModel_OLD.h"
 
 
 
-@implementation DLMKTeamModel
+@implementation DLMKTeamModel_OLD 
 
-static DLMKTeamModel* _instance = nil;
+static DLMKTeamModel_OLD * _instance = nil;
 
 NSArray* playersArray;
 
 #pragma mark - SINGLETON
 +(instancetype) SINGLETON{
     if (!_instance){
-        _instance = [[DLMKTeamModel alloc] init ];
+        _instance = [[DLMKTeamModel_OLD  alloc] init ];
     }
     return _instance;
 }
@@ -49,17 +49,17 @@ NSArray* playersArray;
     return [playersArray count];
 }
 
--(DLMKPlayerModel*) getPlayerByIndex: (NSUInteger) index{
+-(DLMKPlayerModel_OLD*) getPlayerByIndex: (NSUInteger) index{
     if (index < playersArray.count)
         return playersArray[index];
     else return nil;
 }
 
--(DLMKPlayerModel*) getPlayerByName:(NSString*)name{
-    DLMKPlayerModel* player = nil;
+-(DLMKPlayerModel_OLD*) getPlayerByName:(NSString*)name{
+    DLMKPlayerModel_OLD* player = nil;
     NSUInteger count = [self count];
     for(int i = 0; player == nil && i < count;++i){
-         DLMKPlayerModel* currentPlayer = playersArray[i];
+         DLMKPlayerModel_OLD* currentPlayer = playersArray[i];
         if ([name isEqualToString:currentPlayer.name]){
             player = playersArray[i];
         }
@@ -67,11 +67,11 @@ NSArray* playersArray;
     return player;
     
 }
--(DLMKPlayerModel*) getPlayerByNumber:(NSUInteger) number{
-    DLMKPlayerModel* player = nil;
+-(DLMKPlayerModel_OLD*) getPlayerByNumber:(NSUInteger) number{
+    DLMKPlayerModel_OLD* player = nil;
     NSUInteger count = [self count];
     for(int i = 0; player == nil && i < count;++i){
-        DLMKPlayerModel* currentPlayer = playersArray[i];
+        DLMKPlayerModel_OLD* currentPlayer = playersArray[i];
         if (number == currentPlayer.number ){
             player = playersArray[i];
         }
@@ -79,9 +79,9 @@ NSArray* playersArray;
     return player;
 }
 
--(DLMKTeamModel*) clone{
+-(DLMKTeamModel_OLD*) clone{
     //TODO:Return a clean copy
-    DLMKTeamModel* cloned = [[DLMKTeamModel alloc] init];
+    DLMKTeamModel_OLD* cloned = [[DLMKTeamModel_OLD alloc] init];
     return cloned;
 }
 
@@ -90,7 +90,7 @@ NSArray* playersArray;
      NSMutableArray* auxPlayers = [[NSMutableArray alloc] initWithCapacity:5];
     for(int i= 0; i < 10; ++i){
         
-        DLMKPlayerModel* player = [[DLMKPlayerModel alloc] initWithName: [NSString stringWithFormat:@"Player{%d}",i ] ];
+        DLMKPlayerModel_OLD* player = [[DLMKPlayerModel_OLD alloc] initWithName: [NSString stringWithFormat:@"Player{%d}",i ] ];
         [auxPlayers addObject:player ];
     }
     return auxPlayers;

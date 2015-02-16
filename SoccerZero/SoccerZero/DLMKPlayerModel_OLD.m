@@ -6,9 +6,9 @@
 //  Copyright (c) 2015 Dolmake. All rights reserved.
 //
 
-#import "DLMKPlayerModel.h"
+#import "DLMKPlayerModel_OLD.h"
 
-@implementation DLMKPlayerModel
+@implementation DLMKPlayerModel_OLD 
 
 static NSUInteger NUMBER = 0;
 

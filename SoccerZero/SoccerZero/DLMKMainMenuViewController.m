@@ -8,7 +8,7 @@
 
 #import "DLMKMainMenuViewController.h"
 #import "DLMKTeamTableViewController.h"
-#import "DLMKTeamModel.h"
+#import "DLMKTeamModel_OLD.h"
 
 @interface DLMKMainMenuViewController ()
 
@@ -41,7 +41,7 @@
     
     NSLog(@"Play pressed");
     //Create the Table Controller
-    DLMKTeamTableViewController* teamVC = [[DLMKTeamTableViewController alloc] initWithTeamModel:[DLMKTeamModel SINGLETON ] ];
+    DLMKTeamTableViewController* teamVC = [[DLMKTeamTableViewController alloc] initWithTeamModel:[DLMKTeamModel_OLD SINGLETON ] ];
     
     [self.navigationController pushViewController:teamVC
                                          animated:YES];

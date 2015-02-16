@@ -7,8 +7,8 @@
 //
 
 #import "DLMKTeamTableViewController.h"
-#import "DLMKTeamModel.h"
-#import "DLMKPlayerModel.h"
+#import "DLMKTeamModel_OLD.h"
+#import "DLMKPlayerModel_OLD.h"
 #import "DLMKPlayerTableViewCell.h"
 #import "DLMKTimeServer.h"
 
@@ -21,7 +21,7 @@
 static NSString* PLAYER_CELL = @"PLAYER_CELL";
 
 #pragma mark - InitWith
--(id) initWithTeamModel:(DLMKTeamModel*)model{
+-(id) initWithTeamModel:(DLMKTeamModel_OLD*)model{
     
     if (self = [super initWithNibName:nil bundle:nil]){
         _teamModel = model;
@@ -76,7 +76,7 @@ static NSString* PLAYER_CELL = @"PLAYER_CELL";
             cell = [nib objectAtIndex:0];
         }
     
-        DLMKPlayerModel* playerAtRow =[self.teamModel getPlayerByIndex:indexPath.row];
+        DLMKPlayerModel_OLD* playerAtRow =[self.teamModel getPlayerByIndex:indexPath.row];
         if (playerAtRow)
         {
             cell.playerModel = playerAtRow;
