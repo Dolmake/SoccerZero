@@ -9,6 +9,7 @@
 #import "DLMKMainMenuViewController.h"
 #import "DLMKTeamTableViewController.h"
 #import "DLMKTeamModel_OLD.h"
+#import "DLMKMatchViewController.h"
 
 @interface DLMKMainMenuViewController ()
 
@@ -40,11 +41,22 @@
 -(IBAction)onPressPlay:(id)sender{
     
     NSLog(@"Play pressed");
+    
+    /*
     //Create the Table Controller
     DLMKTeamTableViewController* teamVC = [[DLMKTeamTableViewController alloc] initWithTeamModel:[DLMKTeamModel_OLD SINGLETON ] ];
     
     [self.navigationController pushViewController:teamVC
                                          animated:YES];
+    
+     */
+     
+    //Create the Table Controller
+    DLMKMatchViewController* matchVC = [[DLMKMatchViewController alloc]initWithNibName:nil bundle:nil];
+    
+    [self.navigationController pushViewController:matchVC
+                                         animated:YES];
+
     
 }
 

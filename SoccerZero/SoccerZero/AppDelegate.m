@@ -9,8 +9,11 @@
 #import "AppDelegate.h"
 #import "DLMKMainMenuViewController.h"
 #import "DLMKTimeServer.h"
+#import "DLMKModelServer.h"
 
 @interface AppDelegate ()
+
+@property (nonatomic, strong) AGTCoreDataStack* stack;
 
 @end
 
@@ -19,9 +22,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    //Initializing Time Server
-    [DLMKTimeServer SINGLETON ];
-    
+    //Initializing Servers
+    [DLMKTimeServer SINGLETON];
+    [DLMKModelServer SINGLETON];
+
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
@@ -36,7 +40,6 @@
     [navVC pushViewController:mainVC animated:NO];
     
     self.window.rootViewController = navVC;
-    
     
     [self.window makeKeyAndVisible];
     return YES;

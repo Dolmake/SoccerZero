@@ -12,12 +12,22 @@
 
 @implementation DLMKTimeServer
 
+
 static DLMKTimeServer* s_instance;
 
 +(instancetype) SINGLETON{
     if (!s_instance)
         s_instance = [[DLMKTimeServer alloc] init];
     return s_instance;
+}
+
++(NSString*) formatTime:(NSUInteger)totalSeconds
+{
+    int seconds = totalSeconds % 60;
+    int minutes = (totalSeconds / 60) % 60;
+    int hours = totalSeconds / 3600;
+    
+    return [NSString stringWithFormat:@"%02d:%02d:%02d",hours, minutes, seconds];
 }
 
 CADisplayLink* displayLink;

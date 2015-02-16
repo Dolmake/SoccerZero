@@ -15,6 +15,8 @@
 
 +(instancetype) SINGLETON;
 
++(NSString*) formatTime: (NSUInteger) totalSeconds;
+
 @property (nonatomic) double deltaTime;
 
 -(void) addObserver:(NSObject*) observer;
