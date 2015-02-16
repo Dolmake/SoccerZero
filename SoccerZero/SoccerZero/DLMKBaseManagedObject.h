@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Dolmake. All rights reserved.
 //
 
-#import <CoreData/CoreData.h>
+@import CoreData;
 
 @interface DLMKBaseManagedObject : NSManagedObject
 
