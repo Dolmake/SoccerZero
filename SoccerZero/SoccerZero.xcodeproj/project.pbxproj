@@ -14,6 +14,7 @@
 		651B966C1A79123800154A3C /* SoccerZeroTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 651B966B1A79123800154A3C /* SoccerZeroTests.m */; };
 		651B96781A7912A600154A3C /* DLMKMainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 651B96761A7912A600154A3C /* DLMKMainMenuViewController.m */; };
 		651B96791A7912A600154A3C /* DLMKMainMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 651B96771A7912A600154A3C /* DLMKMainMenuViewController.xib */; };
+		653B864B1A92147500E9E90D /* DLMKBaseManagedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 653B864A1A92147500E9E90D /* DLMKBaseManagedObject.m */; };
 		657BB1611A7A94FE00A528EB /* DLMKPlayerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 657BB15F1A7A94FE00A528EB /* DLMKPlayerTableViewCell.m */; };
 		657BB1621A7A94FE00A528EB /* DLMKPlayerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 657BB1601A7A94FE00A528EB /* DLMKPlayerTableViewCell.xib */; };
 		657BB1641A7AA98500A528EB /* person_128x128.png in Resources */ = {isa = PBXBuildFile; fileRef = 657BB1631A7AA98500A528EB /* person_128x128.png */; };
@@ -56,6 +57,8 @@
 		651B96751A7912A600154A3C /* DLMKMainMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLMKMainMenuViewController.h; sourceTree = "<group>"; };
 		651B96761A7912A600154A3C /* DLMKMainMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLMKMainMenuViewController.m; sourceTree = "<group>"; };
 		651B96771A7912A600154A3C /* DLMKMainMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DLMKMainMenuViewController.xib; sourceTree = "<group>"; };
+		653B86491A92147500E9E90D /* DLMKBaseManagedObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLMKBaseManagedObject.h; sourceTree = "<group>"; };
+		653B864A1A92147500E9E90D /* DLMKBaseManagedObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLMKBaseManagedObject.m; sourceTree = "<group>"; };
 		657BB15E1A7A94FE00A528EB /* DLMKPlayerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLMKPlayerTableViewCell.h; sourceTree = "<group>"; };
 		657BB15F1A7A94FE00A528EB /* DLMKPlayerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLMKPlayerTableViewCell.m; sourceTree = "<group>"; };
 		657BB1601A7A94FE00A528EB /* DLMKPlayerTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DLMKPlayerTableViewCell.xib; sourceTree = "<group>"; };
@@ -203,6 +206,8 @@
 				65FA2AB91A7BDA2600E87793 /* DLMKMatchModel_OLD.h */,
 				65FA2ABA1A7BDA2600E87793 /* DLMKMatchModel_OLD.m */,
 				65B92B931A91F83A00A95378 /* Model.xcdatamodeld */,
+				653B86491A92147500E9E90D /* DLMKBaseManagedObject.h */,
+				653B864A1A92147500E9E90D /* DLMKBaseManagedObject.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -323,6 +328,7 @@
 				65917CC71A7A7F0F00DC9940 /* DLMKPlayerModel_OLD.m in Sources */,
 				65917CCE1A7A86EB00DC9940 /* DLMKTeamTableViewController.m in Sources */,
 				65FA2ABB1A7BDA2600E87793 /* DLMKMatchModel_OLD.m in Sources */,
+				653B864B1A92147500E9E90D /* DLMKBaseManagedObject.m in Sources */,
 				657BB1611A7A94FE00A528EB /* DLMKPlayerTableViewCell.m in Sources */,
 				651B96581A79123700154A3C /* main.m in Sources */,
 				65B92B951A91F83A00A95378 /* Model.xcdatamodeld in Sources */,
