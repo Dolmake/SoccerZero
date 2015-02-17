@@ -10,9 +10,11 @@ extern const struct DLMKPlayerDescriptorAttributes {
 } DLMKPlayerDescriptorAttributes;
 
 extern const struct DLMKPlayerDescriptorRelationships {
+	__unsafe_unretained NSString *playerStats;
 	__unsafe_unretained NSString *team;
 } DLMKPlayerDescriptorRelationships;
 
+@class DLMKPlayerStats;
 @class DLMKTeamDescriptor;
 
 @interface DLMKPlayerDescriptorID : NSManagedObjectID {}
@@ -36,9 +38,21 @@ extern const struct DLMKPlayerDescriptorRelationships {
 
 //- (BOOL)validateNumber:(id*)value_ error:(NSError**)error_;
 
+@property (nonatomic, strong) NSSet *playerStats;
+
+- (NSMutableSet*)playerStatsSet;
+
 @property (nonatomic, strong) DLMKTeamDescriptor *team;
 
 //- (BOOL)validateTeam:(id*)value_ error:(NSError**)error_;
+
+@end
+
+@interface _DLMKPlayerDescriptor (PlayerStatsCoreDataGeneratedAccessors)
+- (void)addPlayerStats:(NSSet*)value_;
+- (void)removePlayerStats:(NSSet*)value_;
+- (void)addPlayerStatsObject:(DLMKPlayerStats*)value_;
+- (void)removePlayerStatsObject:(DLMKPlayerStats*)value_;
 
 @end
 
@@ -52,6 +66,9 @@ extern const struct DLMKPlayerDescriptorRelationships {
 
 - (int16_t)primitiveNumberValue;
 - (void)setPrimitiveNumberValue:(int16_t)value_;
+
+- (NSMutableSet*)primitivePlayerStats;
+- (void)setPrimitivePlayerStats:(NSMutableSet*)value;
 
 - (DLMKTeamDescriptor*)primitiveTeam;
 - (void)setPrimitiveTeam:(DLMKTeamDescriptor*)value;

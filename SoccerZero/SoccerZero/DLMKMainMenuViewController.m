@@ -7,9 +7,10 @@
 //
 
 #import "DLMKMainMenuViewController.h"
-#import "DLMKTeamTableViewController.h"
-#import "DLMKTeamModel_OLD.h"
-#import "DLMKMatchViewController.h"
+#import "DLMKTeamDescriptorTableViewController.h"
+
+#import "DLMKMatchStats.h"
+#import "DLMKModelServer.h"
 
 @interface DLMKMainMenuViewController ()
 
@@ -42,22 +43,26 @@
     
     NSLog(@"Play pressed");
     
-    /*
+    
     //Create the Table Controller
-    DLMKTeamTableViewController* teamVC = [[DLMKTeamTableViewController alloc] initWithTeamModel:[DLMKTeamModel_OLD SINGLETON ] ];
+    DLMKTeamDescriptorTableViewController* teamVC = [[DLMKTeamDescriptorTableViewController alloc] initWithTeamModel:[[ DLMKModelServer SINGLETON ] firstTeam ] ];
     
     [self.navigationController pushViewController:teamVC
                                          animated:YES];
     
-     */
-     
+    
+    
+    /*
     //Create the Table Controller
     DLMKMatchViewController* matchVC = [[DLMKMatchViewController alloc]initWithNibName:nil bundle:nil];
+    
+    //TODO: create a match
+    matchVC.model = nil;
     
     [self.navigationController pushViewController:matchVC
                                          animated:YES];
 
-    
+    */
 }
 
 -(IBAction)onPressStatistics:(id)sender{

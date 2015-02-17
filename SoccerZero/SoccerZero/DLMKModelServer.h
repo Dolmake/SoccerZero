@@ -8,11 +8,15 @@
 
 @import Foundation;
 @class AGTCoreDataStack;
+@class DLMKTeamDescriptor;
 
 @interface DLMKModelServer : NSObject
 
 +(instancetype) SINGLETON;
 
 @property (nonatomic, strong) AGTCoreDataStack* stack;
+
+-(DLMKTeamDescriptor*) firstTeam;
+
 
 @end

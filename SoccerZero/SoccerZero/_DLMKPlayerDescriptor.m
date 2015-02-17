@@ -9,6 +9,7 @@ const struct DLMKPlayerDescriptorAttributes DLMKPlayerDescriptorAttributes = {
 };
 
 const struct DLMKPlayerDescriptorRelationships DLMKPlayerDescriptorRelationships = {
+	.playerStats = @"playerStats",
 	.team = @"team",
 };
 
@@ -67,6 +68,17 @@ const struct DLMKPlayerDescriptorRelationships DLMKPlayerDescriptorRelationships
 
 - (void)setPrimitiveNumberValue:(int16_t)value_ {
 	[self setPrimitiveNumber:@(value_)];
+}
+
+@dynamic playerStats;
+
+- (NSMutableSet*)playerStatsSet {
+	[self willAccessValueForKey:@"playerStats"];
+
+	NSMutableSet *result = (NSMutableSet*)[self mutableSetValueForKey:@"playerStats"];
+
+	[self didAccessValueForKey:@"playerStats"];
+	return result;
 }
 
 @dynamic team;

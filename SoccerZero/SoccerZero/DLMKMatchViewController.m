@@ -33,16 +33,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.bPause.center = self.bPlay.center;
+    [self setupControls];
+    
+    self.tbPlayers.delegate = self;
     
 }
 
 - (void) viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
     self.timeIsRunning = false;
     [[DLMKTimeServer SINGLETON] addObserver:self];
 }
 
 -(void) viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
     [[DLMKTimeServer SINGLETON] removeObserver:self];
 }
 
@@ -76,6 +80,11 @@
     if (self.timeIsRunning){
         self.timeInSeconds = self.timeInSeconds + [DLMKTimeServer SINGLETON].deltaTime;
     }
+}
+
+#pragma mark - MISC
+-(void) setupControls{
+     self.bPause.center = self.bPlay.center;
 }
 
 

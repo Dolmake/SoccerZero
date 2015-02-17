@@ -7,14 +7,17 @@
 //
 
 @import UIKit;
+@class DLMKMatchStats;
 
+@interface DLMKMatchViewController : UIViewController<UITableViewDelegate>
 
-@interface DLMKMatchViewController : UIViewController
+@property (weak, nonatomic) DLMKMatchStats* model;
 
 @property (weak, nonatomic) IBOutlet UILabel* lbTime;
 @property (weak, nonatomic) IBOutlet UILabel* lbResult;
 @property (weak, nonatomic) IBOutlet UIButton* bPlay;
 @property (weak, nonatomic) IBOutlet UIButton* bPause;
+@property (weak, nonatomic) IBOutlet UITableView* tbPlayers;
 
 @property (nonatomic) BOOL timeIsRunning;
 @property (nonatomic) CGFloat timeInSeconds;

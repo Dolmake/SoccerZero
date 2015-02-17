@@ -17,7 +17,8 @@ const struct DLMKPlayerStatsAttributes DLMKPlayerStatsAttributes = {
 };
 
 const struct DLMKPlayerStatsRelationships DLMKPlayerStatsRelationships = {
-	.teamMatch = @"teamMatch",
+	.playerDescriptor = @"playerDescriptor",
+	.teamStats = @"teamStats",
 };
 
 @implementation DLMKPlayerStatsID
@@ -254,7 +255,9 @@ const struct DLMKPlayerStatsRelationships DLMKPlayerStatsRelationships = {
 	[self setPrimitiveShots:@(value_)];
 }
 
-@dynamic teamMatch;
+@dynamic playerDescriptor;
+
+@dynamic teamStats;
 
 @end
 

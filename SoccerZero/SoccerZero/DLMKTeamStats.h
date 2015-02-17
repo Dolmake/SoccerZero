@@ -2,4 +2,10 @@
 
 @interface DLMKTeamStats : _DLMKTeamStats {}
 // Custom logic goes here.
+
++(instancetype) teamStatsWithName: (NSString*) aName context:(NSManagedObjectContext*) aContext;
++(instancetype) teamStatsWithTeamDescriptor: (DLMKTeamDescriptor*) aTeamDescriptor context:(NSManagedObjectContext*) aContext;
+
+
+-(NSUInteger) countPlayers;
 @end

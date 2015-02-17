@@ -4,12 +4,14 @@
 #import "_DLMKTeamStats.h"
 
 const struct DLMKTeamStatsAttributes DLMKTeamStatsAttributes = {
+	.isLocal = @"isLocal",
 	.name = @"name",
 };
 
 const struct DLMKTeamStatsRelationships DLMKTeamStatsRelationships = {
 	.matchStats = @"matchStats",
 	.playersStats = @"playersStats",
+	.teamDescriptor = @"teamDescriptor",
 };
 
 @implementation DLMKTeamStatsID
@@ -38,7 +40,33 @@ const struct DLMKTeamStatsRelationships DLMKTeamStatsRelationships = {
 + (NSSet*)keyPathsForValuesAffectingValueForKey:(NSString*)key {
 	NSSet *keyPaths = [super keyPathsForValuesAffectingValueForKey:key];
 
+	if ([key isEqualToString:@"isLocalValue"]) {
+		NSSet *affectingKey = [NSSet setWithObject:@"isLocal"];
+		keyPaths = [keyPaths setByAddingObjectsFromSet:affectingKey];
+		return keyPaths;
+	}
+
 	return keyPaths;
+}
+
+@dynamic isLocal;
+
+- (BOOL)isLocalValue {
+	NSNumber *result = [self isLocal];
+	return [result boolValue];
+}
+
+- (void)setIsLocalValue:(BOOL)value_ {
+	[self setIsLocal:@(value_)];
+}
+
+- (BOOL)primitiveIsLocalValue {
+	NSNumber *result = [self primitiveIsLocal];
+	return [result boolValue];
+}
+
+- (void)setPrimitiveIsLocalValue:(BOOL)value_ {
+	[self setPrimitiveIsLocal:@(value_)];
 }
 
 @dynamic name;
@@ -55,6 +83,8 @@ const struct DLMKTeamStatsRelationships DLMKTeamStatsRelationships = {
 	[self didAccessValueForKey:@"playersStats"];
 	return result;
 }
+
+@dynamic teamDescriptor;
 
 @end
 

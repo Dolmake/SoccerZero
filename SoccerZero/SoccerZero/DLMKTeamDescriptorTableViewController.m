@@ -6,25 +6,25 @@
 //  Copyright (c) 2015 Dolmake. All rights reserved.
 //
 
-#import "DLMKTeamTableViewController.h"
-#import "DLMKTeamModel_OLD.h"
-#import "DLMKPlayerModel_OLD.h"
+#import "DLMKTeamDescriptorTableViewController.h"
+#import "DLMKTeamDescriptor.h"
+#import "DLMKPlayerDescriptor.h"
 #import "DLMKPlayerTableViewCell.h"
 #import "DLMKTimeServer.h"
 
-@interface DLMKTeamTableViewController ()
+@interface DLMKTeamDescriptorTableViewController ()
 
 @end
 
-@implementation DLMKTeamTableViewController
+@implementation DLMKTeamDescriptorTableViewController
 
 static NSString* PLAYER_CELL = @"PLAYER_CELL";
 
 #pragma mark - InitWith
--(id) initWithTeamModel:(DLMKTeamModel_OLD*)model{
+-(id) initWithTeamModel:(DLMKTeamDescriptor*)model{
     
     if (self = [super initWithNibName:nil bundle:nil]){
-        _teamModel = model;
+        _model = model;
         [self syncModel];
     }
     return self;
@@ -40,7 +40,7 @@ static NSString* PLAYER_CELL = @"PLAYER_CELL";
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
     //[self.tableView registerClass:[DLMKPlayerTableViewCell class] forCellReuseIdentifier:PLAYER_CELL];
-    [[DLMKTimeServer SINGLETON]addObserver:self ];
+    self.title = self.model.name;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -62,12 +62,13 @@ static NSString* PLAYER_CELL = @"PLAYER_CELL";
 //#warning Incomplete method implementation.
     // Return the number of rows in the section.
     
-    return [self.teamModel count];
+    return [self.model countPlayers];
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
+    /*
         //Custom Cell
         DLMKPlayerTableViewCell *cell = (DLMKPlayerTableViewCell*)[tableView dequeueReusableCellWithIdentifier:PLAYER_CELL];
     
@@ -76,24 +77,42 @@ static NSString* PLAYER_CELL = @"PLAYER_CELL";
             cell = [nib objectAtIndex:0];
         }
     
-        DLMKPlayerModel_OLD* playerAtRow =[self.teamModel getPlayerByIndex:indexPath.row];
+        DLMKPlayerDescriptor* playerDescriptorAtRow =[self.teamModel getPlayerByIndex:indexPath.row];
         if (playerAtRow)
         {
             cell.playerModel = playerAtRow;
         }
+     */
+    
+    
+    //Standard Cell
+    
+    //TODO: get the proper player
+    DLMKPlayerDescriptor *playerDescriptor = nil;
+    
+    //Create the cell
+    static NSString* CELL_ID =  @"CELL_PLAYER_ID";
+    UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:CELL_ID];
+    
+    if (!cell){
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CELL_ID ];
+    }
+    
+    //Setup the cell
+    cell.textLabel.text = playerDescriptor.name;
+    //cell.imageView.image = note.photo.image;
+    
+    NSDateFormatter * fmt = [NSDateFormatter new];
+    fmt.dateStyle = NSDateFormatterShortStyle;
+    //cell.detailTextLabel.text = [ NSString stringWithFormat:@"%@",[fmt stringFromDate:note.modificationDate]];
+    
+    return cell;
+
+    
+    
     
     return cell;
 }
-
-
-#pragma mark - Update:(id)sender
-
--(void) update:(id)sender{
-    
-    double delta =[[DLMKTimeServer SINGLETON] deltaTime ];
-    self.title = [NSString stringWithFormat: @"frame %f",delta  ];
-}
-
 
 
 /*

@@ -14,7 +14,7 @@
 
 -(id) initWithRivalName:(NSString*)name
 {
-    if (self == [super init]){
+    if (self = [super init]){
         _rivalGoals = 0;
         _playTime = 0;
         _teamGoals = 0;
