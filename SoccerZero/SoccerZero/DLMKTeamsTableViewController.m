@@ -1,35 +1,32 @@
 //
-//  DLMKTeamTableViewController.m
+//  DLMKTeamsTableViewController.m
 //  SoccerZero
 //
-//  Created by Daniel on 29/01/15.
+//  Created by Daniel on 18/02/15.
 //  Copyright (c) 2015 Dolmake. All rights reserved.
 //
 
-#import "DLMKTeamDescriptorTableViewController.h"
+#import "DLMKTeamsTableViewController.h"
 #import "DLMKTeamDescriptor.h"
-#import "DLMKPlayerDescriptor.h"
-#import "DLMKPlayerTableViewCell.h"
-#import "DLMKTimeServer.h"
-#import "DLMKPlayerDescriptorTableViewController.h"
+#import "DLMKTeamDescriptorTableViewController.h"
 
-@interface DLMKTeamDescriptorTableViewController ()
+@interface DLMKTeamsTableViewController ()
 
 @end
 
-@implementation DLMKTeamDescriptorTableViewController
+@implementation DLMKTeamsTableViewController
 
-
-
-#pragma mark - InitWith
--(id) initWithTeamModel:(DLMKTeamDescriptor*)model{
+#pragma mark - Init
+-(id) initWithTeamsArray: (NSArray*) teams{
     
-    if (self = [super initWithNibName:nil bundle:nil]){
-        _model = model;
-        [self syncModel];
+    if (self = [super init]){
+        _teamsModels = teams;
+        self.title = @"Teams";
     }
     return self;
 }
+
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -39,23 +36,12 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
-    
-    //Add the "addButton"
-    UIBarButtonItem *addBtn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addPlayer:)];
-    
-    self.navigationItem.rightBarButtonItem = addBtn;
-    
-    //[self.tableView registerClass:[DLMKPlayerTableViewCell class] forCellReuseIdentifier:PLAYER_CELL];
-    self.title = self.model.name;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-
 
 #pragma mark - Table view data source
 
@@ -68,35 +54,18 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 //#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    
-    return [self.model countPlayers];
+    return [self.teamsModels count];
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    //Standard Cell
     
-    /*
-        //Custom Cell
-        DLMKPlayerTableViewCell *cell = (DLMKPlayerTableViewCell*)[tableView dequeueReusableCellWithIdentifier:PLAYER_CELL];
-    
-        if (!cell){
-            NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"DLMKPlayerTableViewCell" owner:self options:nil];
-            cell = [nib objectAtIndex:0];
-        }
-    
-        DLMKPlayerDescriptor* playerDescriptorAtRow =[self.teamModel getPlayerByIndex:indexPath.row];
-        if (playerAtRow)
-        {
-            cell.playerModel = playerAtRow;
-        }
-     */
-    
-    
-    
-    DLMKPlayerDescriptor *playerDescriptor = [self.model playerAtRow:indexPath.row];
+    //TODO: get the proper player
+    DLMKTeamDescriptor *teamDescriptor = [self.teamsModels objectAtIndex:indexPath.row ];
     
     //Create the cell
-    static NSString* CELL_ID =  @"CELL_PLAYER_ID";
+    static NSString* CELL_ID =  @"CELL_TEAM_ID";
     UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:CELL_ID];
     
     if (!cell){
@@ -104,11 +73,11 @@
     }
     
     //Setup the cell
-    cell.textLabel.text = playerDescriptor.name;
+    cell.textLabel.text = teamDescriptor.name;
     //cell.imageView.image = note.photo.image;
     
-    NSDateFormatter * fmt = [NSDateFormatter new];
-    fmt.dateStyle = NSDateFormatterShortStyle;
+    //NSDateFormatter * fmt = [NSDateFormatter new];
+    //fmt.dateStyle = NSDateFormatterShortStyle;
     //cell.detailTextLabel.text = [ NSString stringWithFormat:@"%@",[fmt stringFromDate:note.modificationDate]];
     
     return cell;
@@ -149,51 +118,30 @@
 }
 */
 
-#pragma mark - AddPlayer
--(void) addPlayer:(id)sender{
-    [self.model addPlayerWithName:@"Select a name: 0" number:0 ];
-    [self.tableView reloadData];
-}
-
 
 #pragma mark - Table view delegate
 
-// didSelectRowAtIndexPath
+// In a xib-based application, navigation from a table can be handled in -tableView:didSelectRowAtIndexPath:
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    // Navigation logic may go here, for example:
+    // Create the next view controller.
     
-    DLMKPlayerDescriptor *playerDescriptor = [self.model playerAtRow:indexPath.row];
-//    
-//    NSArray* players = [[self.model.players allObjects] sortedArrayUsingComparator:^NSComparisonResult(id a, id b) {
-//        
-//        NSInteger diff = ((DLMKPlayerDescriptor*)a).numberValue - ((DLMKPlayerDescriptor*)b).numberValue;
-//        return (NSComparisonResult)diff;
-//        
-//    } ];
-//    
-//    playerDescriptor = players[indexPath.row];
-    
-    
-    
-    DLMKPlayerDescriptorTableViewController *playerVC = [[DLMKPlayerDescriptorTableViewController alloc] initWithPlayerDescriptor:playerDescriptor];
+    DLMKTeamDescriptor* teamDescriptor = [self.teamsModels objectAtIndex:indexPath.row ];
+    DLMKTeamDescriptorTableViewController* teamVC = [[DLMKTeamDescriptorTableViewController alloc] initWithTeamModel:teamDescriptor ];
     
     // Push the view controller.
-    [self.navigationController pushViewController:playerVC animated:YES];
+    [self.navigationController pushViewController:teamVC animated:YES];
 }
 
 
-#pragma mark - Misc
--(void) syncModel{
-    
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
 }
+*/
 
 @end
-
-
-
-
-
-
-
-
-
-

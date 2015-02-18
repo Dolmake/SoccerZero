@@ -78,8 +78,76 @@ static DLMKModelServer* s_instance;
         result = [res firstObject];
     }
     
-    return result;    
+    return result;
+}
 
+-(NSArray*) fetchTeams{
+    
+    NSArray* result = nil;
+    
+    //Search for Teams
+    NSFetchRequest *req = [NSFetchRequest fetchRequestWithEntityName:[DLMKTeamDescriptor entityName]];
+    
+    req.fetchBatchSize = 1;
+    req.sortDescriptors = @[
+                            [NSSortDescriptor sortDescriptorWithKey:DLMKTeamDescriptorAttributes.name ascending:YES selector:@selector(caseInsensitiveCompare:)],
+                            //[NSSortDescriptor sortDescriptorWithKey:DLMKNoteAttributes.name ascending:YES],
+                            [NSSortDescriptor sortDescriptorWithKey:DLMKTeamDescriptorAttributes.name ascending:NO]
+                            ];
+    
+    //req.predicate = [NSPredicate predicateWithFormat:@"notebook == %@", allies ];
+    
+    NSError *err = nil;
+    NSArray *res = [self.stack.context executeFetchRequest:req
+                                                     error:&err];
+    
+    if (!res){
+        //Error
+        NSLog(@"Error on fetchRequest %@" , err);
+    }else{
+        result = res;
+    }
+    
+    return result;
+}
+
+-(NSArray*) fetchPlayersForTeam:(DLMKTeamDescriptor*) team{
+    NSArray* result = nil;
+    
+    //Search for Teams
+    NSFetchRequest *req = [NSFetchRequest fetchRequestWithEntityName:[DLMKPlayerDescriptor entityName]];
+    
+    req.fetchBatchSize = 20;
+    req.sortDescriptors = @[
+                            //[NSSortDescriptor sortDescriptorWithKey:DLMKTeamDescriptorAttributes.name ascending:YES selector:@selector(caseInsensitiveCompare:)],
+                            //[NSSortDescriptor sortDescriptorWithKey:DLMKNoteAttributes.name ascending:YES],
+                            //[NSSortDescriptor sortDescriptorWithKey:DLMKTeamDescriptorAttributes.name ascending:NO]
+                            ];
+    
+    req.predicate = [NSPredicate predicateWithFormat:@"team == %@", team ];
+    
+    NSError *err = nil;
+    NSArray *res = [self.stack.context executeFetchRequest:req
+                                                     error:&err];
+    
+    
+    if (!res){
+        //Error
+        NSLog(@"Error on fetchRequest %@" , err);
+    }else{
+        
+        NSArray* players = [res sortedArrayUsingComparator:^NSComparisonResult(id a, id b) {
+            
+            NSInteger diff = ((DLMKPlayerDescriptor*)a).numberValue - ((DLMKPlayerDescriptor*)b).numberValue;
+            return (NSComparisonResult)diff;
+            
+        } ];
+        result = players;
+    }
+    
+    return result;
+
+    
 }
 
 #ifdef DUMMY_DATA
@@ -88,10 +156,9 @@ static DLMKModelServer* s_instance;
     DLMKTeamDescriptor* teamDescriptor = [DLMKTeamDescriptor teamDescriptorWithName:@"NewTeam" context:[self.stack context]];
     
     for(int i =0 ; i < 10;++i){
-        [teamDescriptor addPlayerWithName:@"Unnamed" number:i];
+        NSString *name = [NSString stringWithFormat:@"Player:%lu", (unsigned long)i];
+        [teamDescriptor addPlayerWithName:name number:i];
     }
-    
-    
 }
 
 -(void) workWithData{
@@ -121,6 +188,10 @@ static DLMKModelServer* s_instance;
         NSLog(@"Teams: %@", res);
         
         NSLog(@"Class Type: %@", [res class]);
+        
+        DLMKTeamDescriptor* team = res[0];
+        NSLog(@"Players %lu",(unsigned long)team.countPlayers );
+        
     }
     
     /*

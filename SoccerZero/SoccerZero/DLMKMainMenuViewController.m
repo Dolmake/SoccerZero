@@ -7,8 +7,8 @@
 //
 
 #import "DLMKMainMenuViewController.h"
-#import "DLMKTeamDescriptorTableViewController.h"
-
+//#import "DLMKTeamDescriptorTableViewController.h"
+#import "DLMKTeamsTableViewController.h"
 #import "DLMKMatchStats.h"
 #import "DLMKModelServer.h"
 
@@ -43,11 +43,18 @@
     
     NSLog(@"Play pressed");
     
+//    
+//    //Create the Table Controller
+//    DLMKTeamDescriptorTableViewController* teamVC = [[DLMKTeamDescriptorTableViewController alloc] initWithTeamModel:[[ DLMKModelServer SINGLETON ] firstTeam ] ];
+//    
+//    [self.navigationController pushViewController:teamVC
+//                                         animated:YES];
+    
+    NSArray* teams = [[DLMKModelServer SINGLETON] fetchTeams ];
     
     //Create the Table Controller
-    DLMKTeamDescriptorTableViewController* teamVC = [[DLMKTeamDescriptorTableViewController alloc] initWithTeamModel:[[ DLMKModelServer SINGLETON ] firstTeam ] ];
-    
-    [self.navigationController pushViewController:teamVC
+    DLMKTeamsTableViewController* teamsVC = [[DLMKTeamsTableViewController alloc]  initWithTeamsArray:teams];
+    [self.navigationController pushViewController:teamsVC
                                          animated:YES];
     
     

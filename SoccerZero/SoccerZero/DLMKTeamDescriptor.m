@@ -1,5 +1,6 @@
 #import "DLMKTeamDescriptor.h"
 #import "DLMKPlayerDescriptor.h"
+#import "DLMKModelServer.h"
 
 @interface DLMKTeamDescriptor ()
 
@@ -14,20 +15,12 @@
 #pragma mark - Class methods
 
 +(instancetype) teamDescriptorWithName:(NSString*) aName context:(NSManagedObjectContext*) aContext{
-    return [self teamDescriptorWithName:aName players:nil context:aContext];
-}
-
-+(instancetype) teamDescriptorWithName:(NSString*) aName players:(NSArray*)players context:(NSManagedObjectContext*) aContext{
-    
     DLMKTeamDescriptor *teamDescriptor = [self insertInManagedObjectContext:aContext];
     teamDescriptor.name = aName;
-    teamDescriptor.players = nil;
-    if (players)
-        teamDescriptor.players = [NSSet setWithArray:players];
-    
-    
-    return nil;
+    teamDescriptor.players = [NSSet setWithArray:@[]];
+    return teamDescriptor;
 }
+
 
 #pragma mark - Instance methods
 
@@ -41,6 +34,23 @@
 -(NSUInteger) countPlayers{
     return [self.players count];
 }
+
+-(DLMKPlayerDescriptor*) playerAtRow:(NSInteger) row{
+
+    //  WTF!!!: Why is not working
+//    NSArray* players = [[self.players allObjects] sortedArrayUsingComparator:^NSComparisonResult(id a, id b) {
+//
+//        NSInteger diff = ((DLMKPlayerDescriptor*)a).numberValue - ((DLMKPlayerDescriptor*)b).numberValue;
+//        return (NSComparisonResult)diff;
+//        
+//    } ];
+//    return players[row];
+    
+    NSArray* allPlayers = [[DLMKModelServer SINGLETON] fetchPlayersForTeam:self ];
+    return allPlayers[row];
+}
+
+
 
 
 

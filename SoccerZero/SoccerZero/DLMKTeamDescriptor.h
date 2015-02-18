@@ -5,11 +5,12 @@
 
 
 +(instancetype) teamDescriptorWithName:(NSString*) aName context:(NSManagedObjectContext*) aContext;
-+(instancetype) teamDescriptorWithName:(NSString*) aName players:(NSArray*)players context:(NSManagedObjectContext*) aContext;
+
 
 
 -(void) addPlayerWithName:(NSString*)name number:(NSUInteger)aNumber;
 -(NSUInteger) countPlayers;
+-(DLMKPlayerDescriptor*) playerAtRow:(NSInteger) row;
 
 
 @end

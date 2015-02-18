@@ -17,6 +17,8 @@
 @property (nonatomic, strong) AGTCoreDataStack* stack;
 
 -(DLMKTeamDescriptor*) firstTeam;
+-(NSArray*) fetchTeams;
+-(NSArray*) fetchPlayersForTeam:(DLMKTeamDescriptor*) team;
 
 
 @end

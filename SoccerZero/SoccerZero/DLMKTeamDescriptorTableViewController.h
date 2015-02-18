@@ -14,5 +14,7 @@
 @property (weak, nonatomic) DLMKTeamDescriptor* model;
 
 -(id) initWithTeamModel:(DLMKTeamDescriptor*)model;
+-(void) addPlayer:(id)sender;
+
 
 @end

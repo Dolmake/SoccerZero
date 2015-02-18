@@ -27,6 +27,12 @@
 		653B86891A9223AB00E9E90D /* DLMKTeamStats.m in Sources */ = {isa = PBXBuildFile; fileRef = 653B86841A9223AB00E9E90D /* DLMKTeamStats.m */; };
 		653B868D1A92259900E9E90D /* DLMKModelServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 653B868C1A92259900E9E90D /* DLMKModelServer.m */; };
 		653B868F1A9228C600E9E90D /* pause_256x256.png in Resources */ = {isa = PBXBuildFile; fileRef = 653B868E1A9228C600E9E90D /* pause_256x256.png */; };
+		655F4AC81A949D36006DB768 /* DLMKTeamsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 655F4AC61A949D36006DB768 /* DLMKTeamsTableViewController.m */; };
+		655F4AC91A949D36006DB768 /* DLMKTeamsTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 655F4AC71A949D36006DB768 /* DLMKTeamsTableViewController.xib */; };
+		655F4ACD1A94A157006DB768 /* DLMKPlayerDescriptorTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 655F4ACB1A94A157006DB768 /* DLMKPlayerDescriptorTableViewController.m */; };
+		655F4ACE1A94A157006DB768 /* DLMKPlayerDescriptorTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 655F4ACC1A94A157006DB768 /* DLMKPlayerDescriptorTableViewController.xib */; };
+		655F4AD21A950DE0006DB768 /* DLMKPlayerNameTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 655F4AD01A950DE0006DB768 /* DLMKPlayerNameTableViewCell.m */; };
+		655F4AD31A950DE0006DB768 /* DLMKPlayerNameTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 655F4AD11A950DE0006DB768 /* DLMKPlayerNameTableViewCell.xib */; };
 		657BB1611A7A94FE00A528EB /* DLMKPlayerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 657BB15F1A7A94FE00A528EB /* DLMKPlayerTableViewCell.m */; };
 		657BB1621A7A94FE00A528EB /* DLMKPlayerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 657BB1601A7A94FE00A528EB /* DLMKPlayerTableViewCell.xib */; };
 		657BB1641A7AA98500A528EB /* person_128x128.png in Resources */ = {isa = PBXBuildFile; fileRef = 657BB1631A7AA98500A528EB /* person_128x128.png */; };
@@ -96,6 +102,15 @@
 		653B868E1A9228C600E9E90D /* pause_256x256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pause_256x256.png; sourceTree = "<group>"; };
 		653B86901A92430200E9E90D /* MACROS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MACROS.h; sourceTree = "<group>"; };
 		653B86911A9373D700E9E90D /* SETTINGS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SETTINGS.h; sourceTree = "<group>"; };
+		655F4AC51A949D36006DB768 /* DLMKTeamsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLMKTeamsTableViewController.h; sourceTree = "<group>"; };
+		655F4AC61A949D36006DB768 /* DLMKTeamsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLMKTeamsTableViewController.m; sourceTree = "<group>"; };
+		655F4AC71A949D36006DB768 /* DLMKTeamsTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DLMKTeamsTableViewController.xib; sourceTree = "<group>"; };
+		655F4ACA1A94A157006DB768 /* DLMKPlayerDescriptorTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLMKPlayerDescriptorTableViewController.h; sourceTree = "<group>"; };
+		655F4ACB1A94A157006DB768 /* DLMKPlayerDescriptorTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLMKPlayerDescriptorTableViewController.m; sourceTree = "<group>"; };
+		655F4ACC1A94A157006DB768 /* DLMKPlayerDescriptorTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DLMKPlayerDescriptorTableViewController.xib; sourceTree = "<group>"; };
+		655F4ACF1A950DE0006DB768 /* DLMKPlayerNameTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLMKPlayerNameTableViewCell.h; sourceTree = "<group>"; };
+		655F4AD01A950DE0006DB768 /* DLMKPlayerNameTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLMKPlayerNameTableViewCell.m; sourceTree = "<group>"; };
+		655F4AD11A950DE0006DB768 /* DLMKPlayerNameTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DLMKPlayerNameTableViewCell.xib; sourceTree = "<group>"; };
 		657BB15E1A7A94FE00A528EB /* DLMKPlayerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLMKPlayerTableViewCell.h; sourceTree = "<group>"; };
 		657BB15F1A7A94FE00A528EB /* DLMKPlayerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLMKPlayerTableViewCell.m; sourceTree = "<group>"; };
 		657BB1601A7A94FE00A528EB /* DLMKPlayerTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DLMKPlayerTableViewCell.xib; sourceTree = "<group>"; };
@@ -209,6 +224,9 @@
 		651B967A1A7912AC00154A3C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				655F4ACA1A94A157006DB768 /* DLMKPlayerDescriptorTableViewController.h */,
+				655F4ACB1A94A157006DB768 /* DLMKPlayerDescriptorTableViewController.m */,
+				655F4ACC1A94A157006DB768 /* DLMKPlayerDescriptorTableViewController.xib */,
 				65917CD91A7A8E8D00DC9940 /* DLMKTeamDescriptorTableViewController.xib */,
 				65917CCB1A7A86EB00DC9940 /* DLMKTeamDescriptorTableViewController.h */,
 				65917CCC1A7A86EB00DC9940 /* DLMKTeamDescriptorTableViewController.m */,
@@ -218,6 +236,9 @@
 				65FA2AB41A7BD7E300E87793 /* DLMKMatchViewController.h */,
 				65FA2AB51A7BD7E300E87793 /* DLMKMatchViewController.m */,
 				65FA2AB61A7BD7E300E87793 /* DLMKMatchViewController.xib */,
+				655F4AC51A949D36006DB768 /* DLMKTeamsTableViewController.h */,
+				655F4AC61A949D36006DB768 /* DLMKTeamsTableViewController.m */,
+				655F4AC71A949D36006DB768 /* DLMKTeamsTableViewController.xib */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -262,6 +283,9 @@
 				657BB15E1A7A94FE00A528EB /* DLMKPlayerTableViewCell.h */,
 				657BB15F1A7A94FE00A528EB /* DLMKPlayerTableViewCell.m */,
 				657BB1601A7A94FE00A528EB /* DLMKPlayerTableViewCell.xib */,
+				655F4ACF1A950DE0006DB768 /* DLMKPlayerNameTableViewCell.h */,
+				655F4AD01A950DE0006DB768 /* DLMKPlayerNameTableViewCell.m */,
+				655F4AD11A950DE0006DB768 /* DLMKPlayerNameTableViewCell.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -381,7 +405,10 @@
 				653B868F1A9228C600E9E90D /* pause_256x256.png in Resources */,
 				65917CC11A7914F000DC9940 /* gear_256x256.png in Resources */,
 				651B96791A7912A600154A3C /* DLMKMainMenuViewController.xib in Resources */,
+				655F4AD31A950DE0006DB768 /* DLMKPlayerNameTableViewCell.xib in Resources */,
 				651B96601A79123700154A3C /* LaunchScreen.xib in Resources */,
+				655F4ACE1A94A157006DB768 /* DLMKPlayerDescriptorTableViewController.xib in Resources */,
+				655F4AC91A949D36006DB768 /* DLMKTeamsTableViewController.xib in Resources */,
 				65917CBE1A7914A300DC9940 /* play_128x128.png in Resources */,
 				65FA2AB81A7BD7E300E87793 /* DLMKMatchViewController.xib in Resources */,
 				657BB1621A7A94FE00A528EB /* DLMKPlayerTableViewCell.xib in Resources */,
@@ -418,6 +445,7 @@
 				651B96781A7912A600154A3C /* DLMKMainMenuViewController.m in Sources */,
 				653B86771A92238B00E9E90D /* _DLMKPlayerDescriptor.m in Sources */,
 				65917CC71A7A7F0F00DC9940 /* DLMKPlayerModel_OLD.m in Sources */,
+				655F4AD21A950DE0006DB768 /* DLMKPlayerNameTableViewCell.m in Sources */,
 				653B86851A9223AB00E9E90D /* DLMKMatchStats.m in Sources */,
 				65917CCE1A7A86EB00DC9940 /* DLMKTeamDescriptorTableViewController.m in Sources */,
 				653B86881A9223AB00E9E90D /* DLMKTeamDescriptor.m in Sources */,
@@ -425,9 +453,11 @@
 				65FA2ABB1A7BDA2600E87793 /* DLMKMatchModel_OLD.m in Sources */,
 				653B864B1A92147500E9E90D /* DLMKBaseManagedObject.m in Sources */,
 				657BB1611A7A94FE00A528EB /* DLMKPlayerTableViewCell.m in Sources */,
+				655F4ACD1A94A157006DB768 /* DLMKPlayerDescriptorTableViewController.m in Sources */,
 				653B86791A92238B00E9E90D /* _DLMKTeamDescriptor.m in Sources */,
 				651B96581A79123700154A3C /* main.m in Sources */,
 				653B86861A9223AB00E9E90D /* DLMKPlayerDescriptor.m in Sources */,
+				655F4AC81A949D36006DB768 /* DLMKTeamsTableViewController.m in Sources */,
 				653B867A1A92238B00E9E90D /* _DLMKTeamStats.m in Sources */,
 				65B92B951A91F83A00A95378 /* Model.xcdatamodeld in Sources */,
 			);
