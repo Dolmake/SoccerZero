@@ -107,7 +107,7 @@ NSArray* _customCellCollection = nil;
                    [CustomCell customCellClassWith:[DLMKPlayerTableViewCell class]]
                    ];
     
-    for (id cell in _customCellCollections) {
+    for (id cell in _customCellCollection) {
         [self registerNib:[cell cellClass]];
     }
     
