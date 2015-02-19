@@ -10,49 +10,20 @@
 #import "DLMKPlayerDescriptor.h"
 #import "DLMKPlayerTableViewCell.h"
 #import "DLMKPlayerNameTableViewCell.h"
+#import "DLMKCustomCellType.h"
+#import "DLMKCustomCellTypeCollection.h"
 
 @interface DLMKPlayerDescriptorTableViewController ()
 
-
-
-@end
-
-
-
-//----We define a CustomCell for the differents types of cell------
-@interface CustomCell : NSObject
-
-@property (nonatomic, strong) id cellClass;
+@property (nonatomic,strong) DLMKCustomCellTypeCollection* customCells;
 
 @end
-@implementation CustomCell : NSObject
 
-+(instancetype) customCellClassWith: (id) cellClass{
-    CustomCell* cell = [[self alloc]init];
-    if (cell ){
-        [cell setCellClass:cellClass];
-    }
-    return cell;
-}
 
--(CGFloat) height{
-    return [self.cellClass height];
-}
--(NSString*) cellId{
-    return [self.cellClass cellId];
-}
-
--(NSString*) description{
-    return [NSString stringWithFormat:@"cellClass Type: %@", _cellClass];
-}
-
-@end
-//-----End CustomCell-----------
 
 @implementation DLMKPlayerDescriptorTableViewController
 
 
-NSArray* _customCellCollection = nil;
 
 
 #pragma mark - Init
@@ -68,8 +39,11 @@ NSArray* _customCellCollection = nil;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    //Register the proper cells
-    [self registerNibs];
+    self.customCells = [DLMKCustomCellTypeCollection
+                        customCellTypeCollectionWithArray:@[                                                                                         [DLMKCustomCellType customCellTypeWith:[DLMKPlayerNameTableViewCell class]],                                                                                                        [DLMKCustomCellType customCellTypeWith:[DLMKPlayerTableViewCell class]]
+                                                                                         ]];
+    
+    [self.customCells registerNibsForTableView:self.tableView ];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -80,7 +54,8 @@ NSArray* _customCellCollection = nil;
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return [_customCellCollection count];
+    //return [_customCellCollection count];
+    return [self.customCells.arrayOfClasses count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -88,50 +63,18 @@ NSArray* _customCellCollection = nil;
 }
 
 -(CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return [_customCellCollection[indexPath.row] height];
+    
+    return [ self.customCells heightForIndex:indexPath.section];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    NSInteger section = indexPath.section;
-    id cellType = _customCellCollection[section];
-    return [self buildCell:[cellType cellClass] tableView:tableView ];
+
+    UITableViewCell* cell = [self.customCells cellForTableView:tableView atIndex:indexPath.section];
+    [cell setValue:self.playerDescriptorModel forKey:@"playerDescriptorModel"];
+    return cell;
     
 }
 
-
-#pragma mark - Misc
--(void) registerNibs{
-       _customCellCollection = @[
-                   [CustomCell customCellClassWith:[DLMKPlayerNameTableViewCell class]],
-                   [CustomCell customCellClassWith:[DLMKPlayerTableViewCell class]]
-                   ];
-    
-    for (id cell in _customCellCollection) {
-        [self registerNib:[cell cellClass]];
-    }
-    
-}
-
--(void) registerNib: (id)type{
-    
-    NSString* typeName = NSStringFromClass(type);
-    //NSString* typeName =NSStringize(type);
-    UINib *nameNib = [ UINib nibWithNibName:typeName bundle:[NSBundle mainBundle] ];
-    
-    NSString* reusableId = [type performSelector:@selector(cellId)];
-    [self.tableView registerNib:nameNib forCellReuseIdentifier:reusableId];
-}
-
--(UITableViewCell*) buildCell:(id)cellClass tableView:( UITableView*) tableView {
-    
-    NSString* reusableId = [cellClass performSelector:@selector(cellId)];
-    UITableViewCell* result = [tableView dequeueReusableCellWithIdentifier:reusableId];
-    
-    [result setValue:self.playerDescriptorModel forKey:@"playerDescriptorModel"];
-    
-    return result;
-}
 
 
 
