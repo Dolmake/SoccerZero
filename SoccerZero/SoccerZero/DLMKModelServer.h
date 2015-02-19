@@ -7,14 +7,17 @@
 //
 
 @import Foundation;
+@import CoreData;
 @class AGTCoreDataStack;
 @class DLMKTeamDescriptor;
+
 
 @interface DLMKModelServer : NSObject
 
 +(instancetype) SINGLETON;
 
 @property (nonatomic, strong) AGTCoreDataStack* stack;
+@property (nonatomic, strong, readonly) NSManagedObjectContext* context;
 
 -(DLMKTeamDescriptor*) firstTeam;
 -(NSArray*) fetchTeams;

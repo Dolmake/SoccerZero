@@ -13,6 +13,8 @@
 
 @property (nonatomic, strong) NSArray* teamsModels;
 
--(id) initWithTeamsArray: (NSArray*) teams;
+//-(id) initWithTeamsArray: (NSArray*) teams;
+
+-(void) addTeam:(id)sender;
 
 @end

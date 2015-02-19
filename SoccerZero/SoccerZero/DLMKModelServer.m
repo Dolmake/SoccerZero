@@ -30,6 +30,11 @@ static DLMKModelServer* s_instance;
     return s_instance;
 }
 
+#pragma mark -Properties
+-(NSManagedObjectContext*) context{
+    return [[self stack] context ];
+}
+
 
 -(id) init{
     

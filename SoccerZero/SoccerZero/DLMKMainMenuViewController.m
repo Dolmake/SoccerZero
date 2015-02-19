@@ -50,10 +50,8 @@
 //    [self.navigationController pushViewController:teamVC
 //                                         animated:YES];
     
-    NSArray* teams = [[DLMKModelServer SINGLETON] fetchTeams ];
     
-    //Create the Table Controller
-    DLMKTeamsTableViewController* teamsVC = [[DLMKTeamsTableViewController alloc]  initWithTeamsArray:teams];
+    DLMKTeamsTableViewController* teamsVC = [[DLMKTeamsTableViewController alloc] init];
     [self.navigationController pushViewController:teamsVC
                                          animated:YES];
     

@@ -10,6 +10,7 @@
 #import "DLMKTeamDescriptor.h"
 #import "DLMKPlayerDescriptor.h"
 #import "DLMKPlayerTableViewCell.h"
+#import "DLMKTeamNameTableViewCell.h"
 #import "DLMKTimeServer.h"
 #import "DLMKPlayerDescriptorTableViewController.h"
 
@@ -33,18 +34,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
-    
-    //Add the "addButton"
+      //Add the "addButton"
     UIBarButtonItem *addBtn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addPlayer:)];
     
     self.navigationItem.rightBarButtonItem = addBtn;
     self.title = self.model.name;
+    
+    //Register the proper cells
+    [self registerNib:[DLMKTeamNameTableViewCell class]];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -60,34 +57,38 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [self.model countPlayers];
+    
+     if (section == 0)//Team name
+        return 1;
+     if (section > 0)//Players
+        return [self.model countPlayers];
+     else return 0;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-   
-    DLMKPlayerDescriptor *playerDescriptor = [self.model playerAtRow:indexPath.row];
     
-    //Create the cell
-    static NSString* CELL_ID =  @"CELL_PLAYER_ID";
-    UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:CELL_ID];
-    
-    if (!cell){
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CELL_ID ];
+    UITableViewCell* cell = nil;
+    if (indexPath.section == 0)//Team Name
+    {
+        //Create the Team cell
+        cell = [self buildCell:[DLMKTeamNameTableViewCell class] tableView:tableView];
     }
-    
-    //Setup the cell
-    cell.textLabel.text = playerDescriptor.name;
-    //cell.imageView.image = note.photo.image;
-    
-    NSDateFormatter * fmt = [NSDateFormatter new];
-    fmt.dateStyle = NSDateFormatterShortStyle;
-    //cell.detailTextLabel.text = [ NSString stringWithFormat:@"%@",[fmt stringFromDate:note.modificationDate]];
-    
+    else//Players
+    {
+        DLMKPlayerDescriptor *playerDescriptor = [self.model playerAtRow:indexPath.row];
+        //Create the cell
+        static NSString* CELL_ID =  @"CELL_PLAYER_ID";
+        cell = [tableView dequeueReusableCellWithIdentifier:CELL_ID];
+        if (!cell)
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CELL_ID ];
+        
+        cell.textLabel.text = playerDescriptor.name;
+    }
     return cell;
 }
 
@@ -104,12 +105,38 @@
 // didSelectRowAtIndexPath
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    DLMKPlayerDescriptor *playerDescriptor = [self.model playerAtRow:indexPath.row];
-    DLMKPlayerDescriptorTableViewController *playerVC = [[DLMKPlayerDescriptorTableViewController alloc] initWithPlayerDescriptor:playerDescriptor];
+    //If player is selected....
+    if (indexPath.section == 1)
+    {
+        DLMKPlayerDescriptor *playerDescriptor = [self.model playerAtRow:indexPath.row];
+        DLMKPlayerDescriptorTableViewController *playerVC = [[DLMKPlayerDescriptorTableViewController alloc] initWithPlayerDescriptor:playerDescriptor];
     
-    // Push the view controller.
-    [self.navigationController pushViewController:playerVC animated:YES];
+        // Push the view controller.
+        [self.navigationController pushViewController:playerVC animated:YES];
+    }
 }
+
+#pragma mark -Misc
+-(void) registerNib: (id)type{
+    
+    NSString* typeName = NSStringFromClass(type);
+    //NSString* typeName =NSStringize(type);
+    UINib *nameNib = [ UINib nibWithNibName:typeName bundle:[NSBundle mainBundle] ];
+    
+    NSString* reusableId = [type performSelector:@selector(cellId)];
+    [self.tableView registerNib:nameNib forCellReuseIdentifier:reusableId];
+}
+
+-(UITableViewCell*) buildCell:(id)cellClass tableView:( UITableView*) tableView {
+    
+    NSString* reusableId = [cellClass performSelector:@selector(cellId)];
+    UITableViewCell* result = [tableView dequeueReusableCellWithIdentifier:reusableId];
+    
+    [result setValue:self.model forKey:@"teamDescriptorModel"];
+    
+    return result;
+}
+
 
 
 @end

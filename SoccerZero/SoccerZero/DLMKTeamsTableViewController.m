@@ -9,6 +9,7 @@
 #import "DLMKTeamsTableViewController.h"
 #import "DLMKTeamDescriptor.h"
 #import "DLMKTeamDescriptorTableViewController.h"
+#import "DLMKModelServer.h"
 
 @interface DLMKTeamsTableViewController ()
 
@@ -16,26 +17,21 @@
 
 @implementation DLMKTeamsTableViewController
 
-#pragma mark - Init
--(id) initWithTeamsArray: (NSArray*) teams{
-    
-    if (self = [super init]){
-        _teamsModels = teams;
-        self.title = @"Teams";
-    }
-    return self;
-}
-
 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    //Add the "addButton"
+    UIBarButtonItem *addBtn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addTeam:)];
+    
+    self.navigationItem.rightBarButtonItem = addBtn;
+}
+
+-(void) viewWillAppear:(BOOL)animated{
+    [self syncModel];
+    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -46,22 +42,16 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-//#warning Potentially incomplete method implementation.
-    // Return the number of sections.
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-//#warning Incomplete method implementation.
-    // Return the number of rows in the section.
     return [self.teamsModels count];
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    //Standard Cell
     
-    //TODO: get the proper player
     DLMKTeamDescriptor *teamDescriptor = [self.teamsModels objectAtIndex:indexPath.row ];
     
     //Create the cell
@@ -74,12 +64,6 @@
     
     //Setup the cell
     cell.textLabel.text = teamDescriptor.name;
-    //cell.imageView.image = note.photo.image;
-    
-    //NSDateFormatter * fmt = [NSDateFormatter new];
-    //fmt.dateStyle = NSDateFormatterShortStyle;
-    //cell.detailTextLabel.text = [ NSString stringWithFormat:@"%@",[fmt stringFromDate:note.modificationDate]];
-    
     return cell;
 }
 
@@ -100,15 +84,37 @@
     [self.navigationController pushViewController:teamVC animated:YES];
 }
 
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+#pragma mark - Actions
+-(void) addTeam:(id)sender{
+    
+    [DLMKTeamDescriptor teamDescriptorWithName:@"Unnamed" context: [[DLMKModelServer SINGLETON]context]];
+    [self syncModel];
+    [self.tableView reloadData];
 }
-*/
+
+#pragma mark - Misc
+-(void) syncModel{
+    
+    self.teamsModels = [[DLMKModelServer SINGLETON] fetchTeams ];
+}
 
 @end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,16 +1,17 @@
 //
-//  DLMKPlayerNameTableViewCell.m
+//  DLMKTeamNameTableViewCell.m
 //  SoccerZero
 //
-//  Created by Daniel on 18/02/15.
+//  Created by Daniel on 19/02/15.
 //  Copyright (c) 2015 Dolmake. All rights reserved.
 //
 
-#import "DLMKPlayerNameTableViewCell.h"
-#import "DLMKPlayerDescriptor.h"
+#import "DLMKTeamNameTableViewCell.h"
+#import "DLMKTeamDescriptor.h"
 #import "MACROS.h"
 
-@implementation DLMKPlayerNameTableViewCell
+@implementation DLMKTeamNameTableViewCell
+
 
 #pragma mark - Class Methods
 +(CGFloat)height{
@@ -20,11 +21,16 @@
     return [self description];
 }
 
+#pragma mark - Properties
+-(void) setTeamDescriptorModel:(DLMKTeamDescriptor *)teamDescriptorModel{
+    _teamDescriptorModel = teamDescriptorModel;
+    self.txNameField.text = _teamDescriptorModel.name;
+}
+
 
 - (void)awakeFromNib {
     // Initialization code
     self.txNameField.delegate = self;
-    
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -34,12 +40,6 @@
 }
 
 
-#pragma mark - Properties
--(void) setPlayerDescriptorModel:(DLMKPlayerDescriptor *)playerDescriptorModel{
-    _playerDescriptorModel = playerDescriptorModel;
-    self.txNameField.text = _playerDescriptorModel.name;
-}
-
 #pragma mark - UITextFieldDelegate
 
 -(void) textFieldDidBeginEditing:(UITextField *)textField{
@@ -48,26 +48,9 @@
 -(void) textFieldDidEndEditing:(UITextField *)textField{
     if (!isEmpty(self.txNameField.text)){
         //Synchonize the note with the view
-        self.playerDescriptorModel.name = self.txNameField.text;
+        self.teamDescriptorModel.name = self.txNameField.text;
     }
-
+    
 }
 
 @end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
