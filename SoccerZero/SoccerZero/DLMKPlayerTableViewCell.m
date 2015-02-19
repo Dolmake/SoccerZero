@@ -21,33 +21,22 @@
     return [self description];
 }
 
+#pragma mark - Properties
+-(void) setPlayerDescriptorModel:(DLMKPlayerDescriptor *)playerDescriptorModel{
+    _playerDescriptorModel = playerDescriptorModel;
+    self.lbName.text = _playerDescriptorModel.name;
+}
+
 
 
 
 - (void)awakeFromNib {
     // Initialization code
-    
-    if (self.playerDescriptorModel){
-        self.lbName.text = self.playerDescriptorModel.name;
-        
-    }
-    else{
-        self.lbName.text = @"Unnamed player";
-    }
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 
-//    // Configure the view for the selected state
-//    if (self.playerModel){
-//        self.lbName.text = self.playerModel.name;
-//        self.lbGoal.text =  [NSString stringWithFormat:@"%ld",(long)self.playerModel.goals ];
-//    }
-//    else{
-//        self.lbName.text = @"No Player";
-//        self.lbGoal.text = @"0";
-//    }
 }
 
 

@@ -26,7 +26,6 @@
     
     if (self = [super initWithNibName:nil bundle:nil]){
         _model = model;
-        [self syncModel];
     }
     return self;
 }
@@ -45,14 +44,15 @@
     UIBarButtonItem *addBtn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addPlayer:)];
     
     self.navigationItem.rightBarButtonItem = addBtn;
-    
-    //[self.tableView registerClass:[DLMKPlayerTableViewCell class] forCellReuseIdentifier:PLAYER_CELL];
     self.title = self.model.name;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+}
+
+-(void) viewWillAppear:(BOOL)animated{
+    [self.tableView reloadData];
 }
 
 
@@ -60,39 +60,16 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-//#warning Potentially incomplete method implementation.
-    // Return the number of sections.
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-//#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    
     return [self.model countPlayers];
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    /*
-        //Custom Cell
-        DLMKPlayerTableViewCell *cell = (DLMKPlayerTableViewCell*)[tableView dequeueReusableCellWithIdentifier:PLAYER_CELL];
-    
-        if (!cell){
-            NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"DLMKPlayerTableViewCell" owner:self options:nil];
-            cell = [nib objectAtIndex:0];
-        }
-    
-        DLMKPlayerDescriptor* playerDescriptorAtRow =[self.teamModel getPlayerByIndex:indexPath.row];
-        if (playerAtRow)
-        {
-            cell.playerModel = playerAtRow;
-        }
-     */
-    
-    
-    
+   
     DLMKPlayerDescriptor *playerDescriptor = [self.model playerAtRow:indexPath.row];
     
     //Create the cell
@@ -115,40 +92,6 @@
 }
 
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
 #pragma mark - AddPlayer
 -(void) addPlayer:(id)sender{
     [self.model addPlayerWithName:@"Select a name: 0" number:0 ];
@@ -162,29 +105,12 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     DLMKPlayerDescriptor *playerDescriptor = [self.model playerAtRow:indexPath.row];
-//    
-//    NSArray* players = [[self.model.players allObjects] sortedArrayUsingComparator:^NSComparisonResult(id a, id b) {
-//        
-//        NSInteger diff = ((DLMKPlayerDescriptor*)a).numberValue - ((DLMKPlayerDescriptor*)b).numberValue;
-//        return (NSComparisonResult)diff;
-//        
-//    } ];
-//    
-//    playerDescriptor = players[indexPath.row];
-    
-    
-    
     DLMKPlayerDescriptorTableViewController *playerVC = [[DLMKPlayerDescriptorTableViewController alloc] initWithPlayerDescriptor:playerDescriptor];
     
     // Push the view controller.
     [self.navigationController pushViewController:playerVC animated:YES];
 }
 
-
-#pragma mark - Misc
--(void) syncModel{
-    
-}
 
 @end
 

@@ -21,6 +21,9 @@
                     </textField>
                 </subviews>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="txNameField" destination="dFG-XA-tfY" id="I45-9H-vDL"/>
+            </connections>
             <point key="canvasLocation" x="346" y="356"/>
         </tableViewCell>
     </objects>

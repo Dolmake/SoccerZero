@@ -26,6 +26,8 @@
 
 - (void)awakeFromNib {
     // Initialization code
+    self.txNameField.delegate = self;
+    
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -34,16 +36,6 @@
     // Configure the view for the selected state
 }
 
--(void) prepareForReuse{
-    
-    //Is invoked everty time the cell disappear
-    [super prepareForReuse];
-    
-    if (!isEmpty(self.txNameField.text)){
-        //Synchonize the note with the view
-        self.playerDescriptorModel.name = self.txNameField.text;
-    }
-}
 
 #pragma mark - Properties
 -(void) setPlayerDescriptorModel:(DLMKPlayerDescriptor *)playerDescriptorModel{
@@ -51,4 +43,34 @@
     self.txNameField.text = _playerDescriptorModel.name;
 }
 
+#pragma mark - UITextFieldDelegate
+
+-(void) textFieldDidBeginEditing:(UITextField *)textField{
+    
+}
+-(void) textFieldDidEndEditing:(UITextField *)textField{
+    if (!isEmpty(self.txNameField.text)){
+        //Synchonize the note with the view
+        self.playerDescriptorModel.name = self.txNameField.text;
+    }
+
+}
+
 @end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

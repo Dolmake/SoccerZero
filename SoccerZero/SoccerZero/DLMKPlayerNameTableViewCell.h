@@ -9,7 +9,7 @@
 @import UIKit;
 @class DLMKPlayerDescriptor;
 
-@interface DLMKPlayerNameTableViewCell : UITableViewCell
+@interface DLMKPlayerNameTableViewCell : UITableViewCell<UITextFieldDelegate>
 
 
 +(CGFloat)height;

@@ -38,16 +38,16 @@
 -(DLMKPlayerDescriptor*) playerAtRow:(NSInteger) row{
 
     //  WTF!!!: Why is not working
-//    NSArray* players = [[self.players allObjects] sortedArrayUsingComparator:^NSComparisonResult(id a, id b) {
-//
-//        NSInteger diff = ((DLMKPlayerDescriptor*)a).numberValue - ((DLMKPlayerDescriptor*)b).numberValue;
-//        return (NSComparisonResult)diff;
-//        
-//    } ];
-//    return players[row];
+    NSArray* players = [[self.players allObjects] sortedArrayUsingComparator:^NSComparisonResult(id a, id b) {
+
+        NSInteger diff = ((DLMKPlayerDescriptor*)a).numberValue - ((DLMKPlayerDescriptor*)b).numberValue;
+        return (NSComparisonResult)diff;
+        
+    } ];
+    return players[row];
     
-    NSArray* allPlayers = [[DLMKModelServer SINGLETON] fetchPlayersForTeam:self ];
-    return allPlayers[row];
+//    NSArray* allPlayers = [[DLMKModelServer SINGLETON] fetchPlayersForTeam:self ];
+//    return allPlayers[row];
 }
 
 
