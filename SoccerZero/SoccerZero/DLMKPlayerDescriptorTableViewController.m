@@ -19,10 +19,41 @@
 
 
 
+//----We define a CustomCell for the differents types of cell------
+@interface CustomCell : NSObject
+
+@property (nonatomic, strong) id cellClass;
+
+@end
+@implementation CustomCell : NSObject
+
++(instancetype) customCellClassWith: (id) cellClass{
+    CustomCell* cell = [[self alloc]init];
+    if (cell ){
+        [cell setCellClass:cellClass];
+    }
+    return cell;
+}
+
+-(CGFloat) height{
+    return [self.cellClass height];
+}
+-(NSString*) cellId{
+    return [self.cellClass cellId];
+}
+
+-(NSString*) description{
+    return [NSString stringWithFormat:@"cellClass Type: %@", _cellClass];
+}
+
+@end
+//-----End CustomCell-----------
+
 @implementation DLMKPlayerDescriptorTableViewController
 
 
-NSArray* _classPerSections = nil;
+NSArray* _customCellCollection = nil;
+
 
 #pragma mark - Init
 
@@ -49,32 +80,35 @@ NSArray* _classPerSections = nil;
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-//#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return [_classPerSections count];
+    return [_customCellCollection count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-//#warning Incomplete method implementation.
-    // Return the number of rows in the section.
     return 1;
 }
 
+-(CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return [_customCellCollection[indexPath.row] height];
+}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    id cell = [_classPerSections objectAtIndex:indexPath.section ];
-    return [self buildCell:cell tableView:tableView ];
+    NSInteger section = indexPath.section;
+    id cellType = _customCellCollection[section];
+    return [self buildCell:[cellType cellClass] tableView:tableView ];
     
 }
 
 
 #pragma mark - Misc
 -(void) registerNibs{
-    _classPerSections = @[[DLMKPlayerNameTableViewCell class],[DLMKPlayerTableViewCell class]];
+       _customCellCollection = @[
+                   [CustomCell customCellClassWith:[DLMKPlayerNameTableViewCell class]],
+                   [CustomCell customCellClassWith:[DLMKPlayerTableViewCell class]]
+                   ];
     
-    for (id class in _classPerSections) {
-        [self registerNib:class];
+    for (id cell in _customCellCollections) {
+        [self registerNib:[cell cellClass]];
     }
     
 }
@@ -85,12 +119,13 @@ NSArray* _classPerSections = nil;
     //NSString* typeName =NSStringize(type);
     UINib *nameNib = [ UINib nibWithNibName:typeName bundle:[NSBundle mainBundle] ];
     
-    [self.tableView registerNib:nameNib forCellReuseIdentifier:[type performSelector:@selector(cellId)]];
+    NSString* reusableId = [type performSelector:@selector(cellId)];
+    [self.tableView registerNib:nameNib forCellReuseIdentifier:reusableId];
 }
 
--(UITableViewCell*) buildCell:(id)type tableView:( UITableView*) tableView {
+-(UITableViewCell*) buildCell:(id)cellClass tableView:( UITableView*) tableView {
     
-    NSString* reusableId = [type performSelector:@selector(cellId)];
+    NSString* reusableId = [cellClass performSelector:@selector(cellId)];
     UITableViewCell* result = [tableView dequeueReusableCellWithIdentifier:reusableId];
     
     [result setValue:self.playerDescriptorModel forKey:@"playerDescriptorModel"];
