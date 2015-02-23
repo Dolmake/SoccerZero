@@ -9,9 +9,10 @@
 #import "DLMKMainMenuViewController.h"
 //#import "DLMKTeamDescriptorTableViewController.h"
 #import "DLMKTeamsTableViewController.h"
-#import "DLMKTeamStatsSelectorTableViewController.h"
+//#import "DLMKTeamStatsSelectorTableViewController.h"
 #import "DLMKMatchStats.h"
 #import "DLMKModelServer.h"
+#import "DLMKMatchStatsSelectorTableViewController.h"
 
 @interface DLMKMainMenuViewController ()
 
@@ -51,13 +52,17 @@
 //    [self.navigationController pushViewController:teamVC
 //                                         animated:YES];
     
+    DLMKMatchStatsSelectorTableViewController* matchVC = [[DLMKMatchStatsSelectorTableViewController alloc]init];
     
+    [self.navigationController pushViewController:matchVC
+                                         animated:YES];
     
+    /*
     DLMKTeamStatsSelectorTableViewController* teamVC = [[DLMKTeamStatsSelectorTableViewController alloc]init];
     
         [self.navigationController pushViewController:teamVC
                                              animated:YES];
-    
+    */
     /*
     //Create the Table Controller
     DLMKMatchViewController* matchVC = [[DLMKMatchViewController alloc]initWithNibName:nil bundle:nil];

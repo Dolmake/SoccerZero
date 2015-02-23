@@ -158,6 +158,35 @@ static DLMKModelServer* s_instance;
     return [DLMKMatchStats matchStatsWithDate:[[NSDate alloc] init] forTeam:team versus:@"Unnamed" context:self.context];
 }
 
+-(NSArray*) fetchMatches{
+    NSArray* result = nil;
+    
+    //Search for Teams
+    NSFetchRequest *req = [NSFetchRequest fetchRequestWithEntityName:[DLMKMatchStats entityName]];
+    
+    req.fetchBatchSize = 20;
+    req.sortDescriptors = @[
+                            [NSSortDescriptor sortDescriptorWithKey:DLMKMatchStatsAttributes.date ascending:YES selector:@selector(caseInsensitiveCompare:)]
+                            //[NSSortDescriptor sortDescriptorWithKey:DLMKNoteAttributes.name ascending:YES],
+                            //[NSSortDescriptor sortDescriptorWithKey:DLMKTeamDescriptorAttributes.name ascending:NO]
+                            ];
+    
+    //req.predicate = [NSPredicate predicateWithFormat:@"team == %@", team ];
+    
+    NSError *err = nil;
+    NSArray *res = [self.stack.context executeFetchRequest:req
+                                                     error:&err];
+    
+    
+    if (!res){
+        //Error
+        NSLog(@"Error on fetchRequest %@" , err);
+    }else{
+        result = res;
+    }
+    return result;
+}
+
 
 #ifdef DUMMY_DATA
 -(void) createDummyData{
@@ -168,6 +197,9 @@ static DLMKModelServer* s_instance;
         NSString *name = [NSString stringWithFormat:@"Player:%lu", (unsigned long)i];
         [teamDescriptor addPlayerWithName:name number:i];
     }
+    
+    [self newMatchForTeam:teamDescriptor];
+    
 }
 
 -(void) workWithData{

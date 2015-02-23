@@ -18,9 +18,7 @@
         <attribute name="faults_received" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="goals" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="is_playing" optional="YES" attributeType="Boolean" syncable="YES"/>
-        <attribute name="name" attributeType="String" syncable="YES"/>
         <attribute name="notes" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="number" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="seconds_played" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="shots" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <relationship name="playerDescriptor" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PlayerDescriptor" inverseName="playerStats" inverseEntity="PlayerDescriptor" syncable="YES"/>
@@ -41,7 +39,7 @@
     <elements>
         <element name="MatchStats" positionX="306" positionY="-54" width="128" height="88"/>
         <element name="PlayerDescriptor" positionX="873" positionY="-16" width="128" height="103"/>
-        <element name="PlayerStats" positionX="691" positionY="233" width="128" height="240"/>
+        <element name="PlayerStats" positionX="691" positionY="233" width="128" height="210"/>
         <element name="TeamDescriptor" positionX="612" positionY="-55" width="128" height="28"/>
         <element name="TeamStats" positionX="493" positionY="125" width="128" height="118"/>
     </elements>

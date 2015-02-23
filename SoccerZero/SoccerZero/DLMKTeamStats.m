@@ -26,20 +26,21 @@
     teamStats.teamDescriptor = aTeamDescriptor;
     if (teamStats.teamDescriptor){
         teamStats.name = aTeamDescriptor.name;
+        
+        //Create the playerStats
+        for (DLMKPlayerDescriptor* playerDescriptor in teamStats.teamDescriptor.players) {
+            DLMKPlayerStats* playerStats = [DLMKPlayerStats playerStatsWithTeamStats:teamStats playerDescriptor:playerDescriptor context:aContext];
+           [teamStats addPlayersStatsObject:playerStats ];
+        }
+
     }
     else{
         teamStats.name = @"Unnamed team";
+        DLMKPlayerStats* playerStats = [DLMKPlayerStats playerStatsWithTeamStats:teamStats playerDescriptor:nil context:aContext];
+          [teamStats addPlayersStatsObject:playerStats ];
+        
     }
     //TODO: ini playersStats with the TeamDescriptor
-    
-    
-    for (DLMKPlayerDescriptor* playerDescriptor in teamStats.teamDescriptor.players) {
-        //Create a playerStats
-        DLMKPlayerStats* playerStats = [DLMKPlayerStats playerStatsWithTeamStats:teamStats playerDescriptor:playerDescriptor context:aContext];
-        [teamStats addPlayersStatsObject:playerStats ];
-    }
-   
-    
     return teamStats;
 }
 
@@ -59,6 +60,12 @@
     return result;
 }
 
+#pragma mark - Properties
+-(NSString*) name{
+    if (self.teamDescriptor) return self.teamDescriptor.name;
+    else return @"Unnamed";
+}
+
 
 
 #pragma mark - Public interface
@@ -68,7 +75,7 @@
     
     NSArray* result = [[self.playersStats allObjects] sortedArrayUsingComparator:^NSComparisonResult(id a, id b) {
         
-        NSInteger diff = ((DLMKPlayerStats*)a).numberValue - ((DLMKPlayerStats*)b).numberValue;
+        NSInteger diff = ((DLMKPlayerStats*)a).number - ((DLMKPlayerStats*)b).number;
         return (NSComparisonResult)diff;
         
     } ];

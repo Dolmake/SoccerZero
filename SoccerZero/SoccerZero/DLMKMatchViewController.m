@@ -19,11 +19,13 @@
 @interface DLMKMatchViewController ()
 
 @property (nonatomic, strong) DLMKCustomCellTypeCollection* cellCollection;
+@property (nonatomic, strong, readonly) NSArray *playersStatsCache;
 
 @end
 
 @implementation DLMKMatchViewController
 
+//Private variables just for internal purposes
 CGFloat _accumTime = 0;
 
 #pragma mark - Properties
@@ -35,15 +37,17 @@ CGFloat _accumTime = 0;
 }
 -(void) setTimeInSeconds:(CGFloat)timeInSeconds{
     _timeInSeconds = timeInSeconds;
-//    self.lbTime.text = [DLMKTimeServer formatTime:_timeInSeconds];
 }
 
 
 #pragma mark - Init
 
 -(id) initWithTeamDescriptor:(DLMKTeamDescriptor*)team{
+    return [self initWithMatch:[[DLMKModelServer SINGLETON] newMatchForTeam:team ]];
+}
+-(id) initWithMatch:(DLMKMatchStats*)match{
     if (self = [super init]){
-        _model = [[DLMKModelServer SINGLETON] newMatchForTeam:team ];
+        _model = match;
         _cellCollection = [DLMKCustomCellTypeCollection customCellTypeCollectionWithArray:@[[DLMKPlayerStatsTableViewCell class]]];
         
     }
@@ -65,6 +69,10 @@ CGFloat _accumTime = 0;
 - (void) viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     self.timeIsRunning = false;
+    _accumTime = 0.0f;
+    _playersStatsCache = self.model.localTeamStats.players;
+    self.timeInSeconds = self.model.seconds_playedValue;
+    [self updateResult];
     [[DLMKTimeServer SINGLETON] addObserver:self];
 }
 
@@ -118,6 +126,13 @@ CGFloat _accumTime = 0;
     self.timeIsRunning = NO;
     }
 
+-(IBAction)onRivalGoal:(id)sender{
+    if (self.timeIsRunning){
+        ((DLMKPlayerStats*)self.model.visitantTeamStats.players[0]).goalsValue += 1;
+        [self updateResult];
+    }
+}
+
 #pragma mark - Update
 -(void) update:(id)sender{
     
@@ -149,19 +164,23 @@ CGFloat _accumTime = 0;
     
 }
 -(void) onBench:(DLMKPlayerStats*)sender{
-        NSLog(@"Player %@ bench" , sender.name);
+    NSLog(@"Player %@ bench" , sender.name);
     sender.is_playingValue = NO;
     
 }
 -(void) onGoal:(DLMKPlayerStats*)sender{
+    if (self.timeIsRunning){
         NSLog(@"Player %@ goal" , sender.name);
-    sender.goalsValue += 1;
+        sender.goalsValue += 1;
+        [self updateResult];
+    }
     
 }
 -(void) onMistake:(DLMKPlayerStats*)sender{
+    if (self.timeIsRunning){
         NSLog(@"Player %@ Mistake" , sender.name);
-    sender.errorsValue += 1;
-    
+        sender.errorsValue += 1;
+    }
 }
 
 #pragma mark - MISC
@@ -171,11 +190,26 @@ CGFloat _accumTime = 0;
 }
 
 -(void) updatePlayersStats{
-    NSArray* playersStats = self.model.localTeamStats.players;
-    for (DLMKPlayerStats *playerStats in playersStats) {
+        for (DLMKPlayerStats *playerStats in self.playersStatsCache) {
         if (playerStats.is_playingValue)
             playerStats.seconds_playedValue += 1;
     }
+}
+
+-(void) updateResult{
+    NSUInteger localGoals = 0;
+    for (DLMKPlayerStats *playerStats in self.playersStatsCache) {
+        localGoals += playerStats.goalsValue;
+    }
+    
+    NSUInteger rivalGoals = 0;
+    for (DLMKPlayerStats *playerStats in self.model.visitantTeamStats.players) {
+        rivalGoals += playerStats.goalsValue;
+    }
+    
+    self.lbResult.text = [NSString stringWithFormat:@" %lu : %lu" , localGoals, rivalGoals];
+
+
 }
 
 

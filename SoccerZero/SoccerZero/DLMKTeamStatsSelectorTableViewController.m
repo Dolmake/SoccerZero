@@ -23,13 +23,13 @@
 @implementation DLMKTeamStatsSelectorTableViewController
 
 
-NSString* CELL_ID = @"CELL_ID_TEAMS_FOR_MATCH";
+-(NSString*) CELL_ID{ return @"CELL_ID_TEAMS_FOR_MATCH";}
 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:CELL_ID];
+    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:[self CELL_ID]];
     
 }
 
@@ -62,10 +62,10 @@ NSString* CELL_ID = @"CELL_ID_TEAMS_FOR_MATCH";
     DLMKTeamDescriptor* teamDescriptor = [self.teamsModel objectAtIndex:indexPath.row];
     
     //Build the Cell
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CELL_ID forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[self CELL_ID] forIndexPath:indexPath];
     
     if (!cell){
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CELL_ID ];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:[self CELL_ID] ];
     }
     
     //Configure the Cell

@@ -93,7 +93,7 @@
 #pragma mark - Misc
 -(void) syncModel{
     self.tbName.text = self.playerStatsModel.name;
-    self.tbNumber.text = [self.playerStatsModel.number stringValue];
+    self.tbNumber.text = [NSString stringWithFormat:@"%lu" , self.playerStatsModel.number];
     self.swInOut.on = self.playerStatsModel.is_playingValue;
     self.timeInSeconds = self.playerStatsModel.seconds_playedValue;
 }

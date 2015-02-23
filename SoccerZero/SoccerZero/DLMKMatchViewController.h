@@ -26,9 +26,11 @@
 @property (nonatomic) CGFloat timeInSeconds;
 
 -(id) initWithTeamDescriptor:(DLMKTeamDescriptor*)team;
+-(id) initWithMatch:(DLMKMatchStats*)match;
 
 -(IBAction)onStartTimer:(id)sender;
 -(IBAction)onPauseTimer:(id)sender;
+-(IBAction)onRivalGoal:(id)sender;
 
 
 -(void) update:(id)sender;

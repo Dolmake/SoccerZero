@@ -20,7 +20,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="lbResult" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="PGv-B0-q94">
-                    <rect key="frame" x="139" y="539" width="63" height="21"/>
+                    <rect key="frame" x="129" y="539" width="63" height="21"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -58,12 +58,23 @@
                         <action selector="onPauseTimer:" destination="-1" eventType="touchUpInside" id="lzv-QU-Q8D"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Z3z-4N-45w">
+                    <rect key="frame" x="280" y="534" width="32" height="32"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                    <state key="normal" title="Button" image="goal_256x256.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="onRivalGoal:" destination="-1" eventType="touchUpInside" id="Stj-KO-GkH"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <point key="canvasLocation" x="553" y="308"/>
         </view>
     </objects>
     <resources>
+        <image name="goal_256x256.png" width="204" height="204"/>
         <image name="pause_256x256.png" width="256" height="256"/>
         <image name="play_128x128.png" width="128" height="128"/>
     </resources>

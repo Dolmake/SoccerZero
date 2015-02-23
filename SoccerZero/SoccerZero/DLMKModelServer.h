@@ -24,6 +24,7 @@
 -(NSArray*) fetchTeams;
 -(NSArray*) fetchPlayersForTeam:(DLMKTeamDescriptor*) team;
 -(DLMKMatchStats*) newMatchForTeam: (DLMKTeamDescriptor*) team;
+-(NSArray*) fetchMatches;
 
 
 @end

@@ -10,9 +10,7 @@ const struct DLMKPlayerStatsAttributes DLMKPlayerStatsAttributes = {
 	.faults_received = @"faults_received",
 	.goals = @"goals",
 	.is_playing = @"is_playing",
-	.name = @"name",
 	.notes = @"notes",
-	.number = @"number",
 	.seconds_played = @"seconds_played",
 	.shots = @"shots",
 };
@@ -75,11 +73,6 @@ const struct DLMKPlayerStatsRelationships DLMKPlayerStatsRelationships = {
 	}
 	if ([key isEqualToString:@"is_playingValue"]) {
 		NSSet *affectingKey = [NSSet setWithObject:@"is_playing"];
-		keyPaths = [keyPaths setByAddingObjectsFromSet:affectingKey];
-		return keyPaths;
-	}
-	if ([key isEqualToString:@"numberValue"]) {
-		NSSet *affectingKey = [NSSet setWithObject:@"number"];
 		keyPaths = [keyPaths setByAddingObjectsFromSet:affectingKey];
 		return keyPaths;
 	}
@@ -217,29 +210,7 @@ const struct DLMKPlayerStatsRelationships DLMKPlayerStatsRelationships = {
 	[self setPrimitiveIs_playing:@(value_)];
 }
 
-@dynamic name;
-
 @dynamic notes;
-
-@dynamic number;
-
-- (int16_t)numberValue {
-	NSNumber *result = [self number];
-	return [result shortValue];
-}
-
-- (void)setNumberValue:(int16_t)value_ {
-	[self setNumber:@(value_)];
-}
-
-- (int16_t)primitiveNumberValue {
-	NSNumber *result = [self primitiveNumber];
-	return [result shortValue];
-}
-
-- (void)setPrimitiveNumberValue:(int16_t)value_ {
-	[self setPrimitiveNumber:@(value_)];
-}
 
 @dynamic seconds_played;
 

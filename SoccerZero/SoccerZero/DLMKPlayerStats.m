@@ -16,16 +16,7 @@
     
     DLMKPlayerStats* playerStats = [self insertInManagedObjectContext:aContext];
     playerStats.teamStats = teamStats;
-    playerStats.playerDescriptor = aPlayerDescriptor;
-    if (playerStats.playerDescriptor)
-    {
-        playerStats.name = playerStats.playerDescriptor.name;
-        playerStats.number = playerStats.playerDescriptor.number;
-    }
-    else{
-        playerStats.name = @"Unamed";
-        playerStats.number = 0;
-    }
+    playerStats.playerDescriptor = aPlayerDescriptor;    
     [playerStats resetValues];
     return playerStats;
     
@@ -34,7 +25,23 @@
     return [self playerStatsWithTeamStats:teamStats playerDescriptor:nil context:aContext];
 }
 
+#pragma mark - Properties
 
+
+-(NSString*) name{
+    if (self.playerDescriptor)
+        return self.playerDescriptor.name;
+    else
+        return @"Unamed";
+}
+-(NSUInteger) number{
+    if (self.playerDescriptor)
+        return self.playerDescriptor.numberValue;
+    else
+        return 0;
+}
+
+#pragma mark - Instance methods
 -(void)resetValues{
     
     self.assistances = 0;
