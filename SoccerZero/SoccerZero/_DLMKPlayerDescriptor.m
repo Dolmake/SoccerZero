@@ -10,7 +10,7 @@ const struct DLMKPlayerDescriptorAttributes DLMKPlayerDescriptorAttributes = {
 
 const struct DLMKPlayerDescriptorRelationships DLMKPlayerDescriptorRelationships = {
 	.playerStats = @"playerStats",
-	.team = @"team",
+	.teamDescriptor = @"teamDescriptor",
 };
 
 @implementation DLMKPlayerDescriptorID
@@ -81,7 +81,7 @@ const struct DLMKPlayerDescriptorRelationships DLMKPlayerDescriptorRelationships
 	return result;
 }
 
-@dynamic team;
+@dynamic teamDescriptor;
 
 @end
 

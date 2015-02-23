@@ -11,7 +11,7 @@ extern const struct DLMKPlayerDescriptorAttributes {
 
 extern const struct DLMKPlayerDescriptorRelationships {
 	__unsafe_unretained NSString *playerStats;
-	__unsafe_unretained NSString *team;
+	__unsafe_unretained NSString *teamDescriptor;
 } DLMKPlayerDescriptorRelationships;
 
 @class DLMKPlayerStats;
@@ -42,9 +42,9 @@ extern const struct DLMKPlayerDescriptorRelationships {
 
 - (NSMutableSet*)playerStatsSet;
 
-@property (nonatomic, strong) DLMKTeamDescriptor *team;
+@property (nonatomic, strong) DLMKTeamDescriptor *teamDescriptor;
 
-//- (BOOL)validateTeam:(id*)value_ error:(NSError**)error_;
+//- (BOOL)validateTeamDescriptor:(id*)value_ error:(NSError**)error_;
 
 @end
 
@@ -70,7 +70,7 @@ extern const struct DLMKPlayerDescriptorRelationships {
 - (NSMutableSet*)primitivePlayerStats;
 - (void)setPrimitivePlayerStats:(NSMutableSet*)value;
 
-- (DLMKTeamDescriptor*)primitiveTeam;
-- (void)setPrimitiveTeam:(DLMKTeamDescriptor*)value;
+- (DLMKTeamDescriptor*)primitiveTeamDescriptor;
+- (void)setPrimitiveTeamDescriptor:(DLMKTeamDescriptor*)value;
 
 @end

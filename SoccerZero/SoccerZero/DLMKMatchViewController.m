@@ -24,6 +24,8 @@
 
 @implementation DLMKMatchViewController
 
+CGFloat _accumTime = 0;
+
 #pragma mark - Properties
 
 -(void) setTimeIsRunning:(BOOL)timeIsRunning{
@@ -33,7 +35,7 @@
 }
 -(void) setTimeInSeconds:(CGFloat)timeInSeconds{
     _timeInSeconds = timeInSeconds;
-    self.lbTime.text = [DLMKTimeServer formatTime:_timeInSeconds];
+//    self.lbTime.text = [DLMKTimeServer formatTime:_timeInSeconds];
 }
 
 
@@ -121,24 +123,44 @@
     
     if (self.timeIsRunning){
         self.timeInSeconds = self.timeInSeconds + [DLMKTimeServer SINGLETON].deltaTime;
+        self.model.seconds_playedValue = self.timeInSeconds;
+        _accumTime +=[DLMKTimeServer SINGLETON].deltaTime;
+        
+        if (_accumTime > 1.0f) //ONE second has passed
+        {
+            _accumTime -= 1.0f;
+            [self updatePlayersStats];
+        }
+       
     }
+    
+    self.lbTime.text = [DLMKTimeServer formatTime:self.model.seconds_playedValue];
 }
 
 #pragma mark - DLMKPlayerStatsProtocol
+
+-(BOOL) timeIsRunning:(DLMKPlayerStats*)sender{
+    return self.timeIsRunning;
+}
+
 -(void) onPlay:(DLMKPlayerStats*)sender{
     NSLog(@"Player %@ play" , sender.name);
+    sender.is_playingValue = YES;
     
 }
 -(void) onBench:(DLMKPlayerStats*)sender{
         NSLog(@"Player %@ bench" , sender.name);
+    sender.is_playingValue = NO;
     
 }
 -(void) onGoal:(DLMKPlayerStats*)sender{
         NSLog(@"Player %@ goal" , sender.name);
+    sender.goalsValue += 1;
     
 }
 -(void) onMistake:(DLMKPlayerStats*)sender{
         NSLog(@"Player %@ Mistake" , sender.name);
+    sender.errorsValue += 1;
     
 }
 
@@ -146,6 +168,14 @@
 -(void) setupControls{
      self.bPause.center = self.bPlay.center;
     [self.cellCollection registerNibsForTableView:self.tbPlayers];
+}
+
+-(void) updatePlayersStats{
+    NSArray* playersStats = self.model.localTeamStats.players;
+    for (DLMKPlayerStats *playerStats in playersStats) {
+        if (playerStats.is_playingValue)
+            playerStats.seconds_playedValue += 1;
+    }
 }
 
 

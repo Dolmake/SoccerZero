@@ -24,15 +24,23 @@
 #pragma mark - Properties
 -(void) setPlayerStatsModel:(DLMKPlayerStats *)playerStatsModel{
     _playerStatsModel = playerStatsModel;
+    [[DLMKTimeServer SINGLETON] addObserver:self ];
     [self syncModel];
 }
 
+/*
 -(void) setIsPlaying:(BOOL)isPlaying{
     _isPlaying = isPlaying;
     if (_isPlaying){
         [[DLMKTimeServer SINGLETON] addObserver:self ];
     }
     else [[DLMKTimeServer SINGLETON] removeObserver:self];
+}
+ */
+
+-(void) prepareForReuse{
+    [[DLMKTimeServer SINGLETON] removeObserver:self];
+    [self syncModel];
 }
 
 -(void) setTimeInSeconds:(CGFloat)timeInSeconds{
@@ -68,11 +76,15 @@
 }
 
 #pragma mark - Update
--(void) update{
-    if (self.isPlaying){
-        self.timeInSeconds = self.timeInSeconds + [DLMKTimeServer SINGLETON].deltaTime;
-        self.playerStatsModel.seconds_playedValue = (NSUInteger)self.timeInSeconds;
+-(void) update:(id)sender{
+    if ([self.delegate timeIsRunning:self.playerStatsModel ]){
+        
+        if (self.playerStatsModel.is_playingValue){
+            //self.timeInSeconds = self.timeInSeconds + [DLMKTimeServer SINGLETON].deltaTime;
+            //self.playerStatsModel.seconds_playedValue = (NSUInteger)self.timeInSeconds;
+        }
     }
+    self.tbPlayingTime.text = [DLMKTimeServer formatTime:self.playerStatsModel.seconds_playedValue];
 }
 
 
@@ -82,6 +94,8 @@
 -(void) syncModel{
     self.tbName.text = self.playerStatsModel.name;
     self.tbNumber.text = [self.playerStatsModel.number stringValue];
+    self.swInOut.on = self.playerStatsModel.is_playingValue;
+    self.timeInSeconds = self.playerStatsModel.seconds_playedValue;
 }
 
 

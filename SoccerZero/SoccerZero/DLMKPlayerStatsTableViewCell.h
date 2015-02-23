@@ -11,6 +11,7 @@
 
 @protocol DLMKPlayerStatsProtocol <NSObject>
 
+-(BOOL) timeIsRunning:(DLMKPlayerStats*)sender;
 -(void) onPlay:(DLMKPlayerStats*)sender;
 -(void) onBench:(DLMKPlayerStats*)sender;
 -(void) onGoal:(DLMKPlayerStats*)sender;
