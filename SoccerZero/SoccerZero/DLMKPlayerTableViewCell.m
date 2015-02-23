@@ -28,7 +28,7 @@
 }
 
 
-
+#pragma mark - UITableViewCell
 
 - (void)awakeFromNib {
     // Initialization code

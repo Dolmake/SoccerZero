@@ -14,7 +14,7 @@
 +(CGFloat)height;
 +(NSString*)cellId;
 
-@property (weak, nonatomic) DLMKPlayerDescriptor* playerDescriptorModel;
+@property (strong, nonatomic) DLMKPlayerDescriptor* playerDescriptorModel;
 @property (weak,nonatomic) IBOutlet UILabel* lbName;
 @property (weak,nonatomic) IBOutlet UILabel* lbGoal;
 

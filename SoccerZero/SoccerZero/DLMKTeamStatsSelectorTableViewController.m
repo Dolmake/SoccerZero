@@ -34,7 +34,7 @@ NSString* CELL_ID = @"CELL_ID_TEAMS_FOR_MATCH";
 }
 
 -(void) viewWillAppear:(BOOL)animated{
-    
+    [super viewWillAppear:animated];
     //Get all the available teams
     self.teamsModel = [[DLMKModelServer SINGLETON] fetchTeams ];
 }

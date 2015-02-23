@@ -20,7 +20,7 @@
     if (playerStats.playerDescriptor)
     {
         playerStats.name = playerStats.playerDescriptor.name;
-        playerStats.number = playerStats.number;
+        playerStats.number = playerStats.playerDescriptor.number;
     }
     else{
         playerStats.name = @"Unamed";

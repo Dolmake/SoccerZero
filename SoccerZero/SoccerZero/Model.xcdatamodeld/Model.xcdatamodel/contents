@@ -8,7 +8,7 @@
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="number" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <relationship name="playerStats" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PlayerStats" inverseName="playerDescriptor" inverseEntity="PlayerStats" syncable="YES"/>
-        <relationship name="team" maxCount="1" deletionRule="Cascade" destinationEntity="TeamDescriptor" inverseName="players" inverseEntity="TeamDescriptor" syncable="YES"/>
+        <relationship name="teamDescriptor" maxCount="1" deletionRule="Cascade" destinationEntity="TeamDescriptor" inverseName="players" inverseEntity="TeamDescriptor" syncable="YES"/>
     </entity>
     <entity name="PlayerStats" representedClassName="DLMKPlayerStats" syncable="YES">
         <attribute name="assistances" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
@@ -16,6 +16,7 @@
         <attribute name="faults_done" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="faults_received" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="goals" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="is_playing" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
         <attribute name="notes" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="number" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
@@ -26,7 +27,7 @@
     </entity>
     <entity name="TeamDescriptor" representedClassName="DLMKTeamDescriptor" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="players" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PlayerDescriptor" inverseName="team" inverseEntity="PlayerDescriptor" syncable="YES"/>
+        <relationship name="players" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PlayerDescriptor" inverseName="teamDescriptor" inverseEntity="PlayerDescriptor" syncable="YES"/>
         <relationship name="teamStats" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TeamStats" inverseName="teamDescriptor" inverseEntity="TeamStats" syncable="YES"/>
     </entity>
     <entity name="TeamStats" representedClassName="DLMKTeamStats" syncable="YES">
@@ -38,9 +39,9 @@
     </entity>
     <elements>
         <element name="MatchStats" positionX="306" positionY="-54" width="128" height="73"/>
-        <element name="PlayerStats" positionX="691" positionY="233" width="128" height="223"/>
-        <element name="TeamStats" positionX="493" positionY="125" width="128" height="118"/>
-        <element name="PlayerDescriptor" positionX="873" positionY="-16" width="128" height="28"/>
+        <element name="PlayerDescriptor" positionX="873" positionY="-16" width="128" height="103"/>
+        <element name="PlayerStats" positionX="691" positionY="233" width="128" height="240"/>
         <element name="TeamDescriptor" positionX="612" positionY="-55" width="128" height="28"/>
+        <element name="TeamStats" positionX="493" positionY="125" width="128" height="118"/>
     </elements>
 </model>

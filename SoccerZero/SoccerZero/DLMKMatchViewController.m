@@ -12,8 +12,9 @@
 #import "DLMKTimeServer.h"
 #import "DLMKModelServer.h"
 #import "DLMKCustomCellTypeCollection.h"
-#import "DLMKPlayerTableViewCell.h"
+
 #import "DLMKPlayerStats.h"
+#import "DLMKPlayerStatsTableViewCell.h"
 
 @interface DLMKMatchViewController ()
 
@@ -41,7 +42,7 @@
 -(id) initWithTeamDescriptor:(DLMKTeamDescriptor*)team{
     if (self = [super init]){
         _model = [[DLMKModelServer SINGLETON] newMatchForTeam:team ];
-        _cellCollection = [DLMKCustomCellTypeCollection customCellTypeCollectionWithArray:@[[DLMKPlayerTableViewCell class]]];
+        _cellCollection = [DLMKCustomCellTypeCollection customCellTypeCollectionWithArray:@[[DLMKPlayerStatsTableViewCell class]]];
         
     }
     return self;
@@ -54,6 +55,7 @@
     // Do any additional setup after loading the view from its nib.
     [self setupControls];
     
+    self.tbPlayers.delegate = self;
     self.tbPlayers.dataSource = self;
     
 }
@@ -74,7 +76,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - UITableView delegate
+#pragma mark - UITableViewDataSource delegate
 
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -82,8 +84,9 @@
     //Get the proper player
     DLMKPlayerStats* playerStats = [[self.model.localTeamStats players ] objectAtIndex:indexPath.row ];
     
-    DLMKPlayerTableViewCell* cell = (DLMKPlayerTableViewCell*)[self.cellCollection cellForTableView:self.tbPlayers atIndex:0];
-    cell.playerDescriptorModel = playerStats.playerDescriptor;
+    DLMKPlayerStatsTableViewCell* cell = (DLMKPlayerStatsTableViewCell*)[self.cellCollection cellForTableView:self.tbPlayers atIndex:0];
+    cell.playerStatsModel = playerStats;
+    cell.delegate = self;
     
     return cell;
 }
@@ -96,6 +99,12 @@
     
     return [self.model.localTeamStats countPlayers];
 }
+
+#pragma mark - UITableView delegate
+-(CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return [self.cellCollection heightForIndex:0];
+}
+
 
 
 #pragma mark - Actions
@@ -113,6 +122,24 @@
     if (self.timeIsRunning){
         self.timeInSeconds = self.timeInSeconds + [DLMKTimeServer SINGLETON].deltaTime;
     }
+}
+
+#pragma mark - DLMKPlayerStatsProtocol
+-(void) onPlay:(DLMKPlayerStats*)sender{
+    NSLog(@"Player %@ play" , sender.name);
+    
+}
+-(void) onBench:(DLMKPlayerStats*)sender{
+        NSLog(@"Player %@ bench" , sender.name);
+    
+}
+-(void) onGoal:(DLMKPlayerStats*)sender{
+        NSLog(@"Player %@ goal" , sender.name);
+    
+}
+-(void) onMistake:(DLMKPlayerStats*)sender{
+        NSLog(@"Player %@ Mistake" , sender.name);
+    
 }
 
 #pragma mark - MISC

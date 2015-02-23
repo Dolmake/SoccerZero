@@ -9,8 +9,10 @@
 @import UIKit;
 @class DLMKMatchStats;
 @class DLMKTeamDescriptor;
+@class DLMKPlayerStats;
+@protocol DLMKPlayerStatsProtocol;
 
-@interface DLMKMatchViewController : UIViewController<UITableViewDataSource>
+@interface DLMKMatchViewController : UIViewController<UITableViewDelegate, UITableViewDataSource,DLMKPlayerStatsProtocol >
 
 @property (strong, nonatomic) DLMKMatchStats* model;
 
@@ -30,5 +32,11 @@
 
 
 -(void) update:(id)sender;
+
+//DLMKPlayerStatsProtocol
+-(void) onPlay:(DLMKPlayerStats*)sender;
+-(void) onBench:(DLMKPlayerStats*)sender;
+-(void) onGoal:(DLMKPlayerStats*)sender;
+-(void) onMistake:(DLMKPlayerStats*)sender;
 
 @end
