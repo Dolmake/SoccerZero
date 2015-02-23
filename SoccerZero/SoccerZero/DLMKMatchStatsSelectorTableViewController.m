@@ -11,8 +11,12 @@
 #import "DLMKMatchStats.h"
 #import "DLMKTeamStats.h"
 #import "DLMKMatchViewController.h"
+#import "DLMKCustomCellTypeCollection.h"
+#import "DLMKMatchStatsTableViewCell.h"
 
 @interface DLMKMatchStatsSelectorTableViewController ()
+
+@property (nonatomic,strong, readonly) DLMKCustomCellTypeCollection* customCells;
 
 @end
 
@@ -24,13 +28,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"CELL_ID_MATCHES"];
+    _customCells = [DLMKCustomCellTypeCollection customCellTypeCollectionWithArray:@[[DLMKMatchStatsTableViewCell class  ]]];
+    
+    [self.customCells registerNibsForTableView:self.tableView];
+    /*
+    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"CELL_ID_MATCHES"];*/
     
 }
 
 -(void) viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     self.matchesModel = [[ DLMKModelServer SINGLETON ] fetchMatches ];
+    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -56,6 +65,7 @@
     //Get the proper team
     DLMKMatchStats* matchStats = [self.matchesModel objectAtIndex:indexPath.row];
     
+    /*
     //Build the Cell
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[self CELL_ID] forIndexPath:indexPath];
     
@@ -67,6 +77,11 @@
     cell.textLabel.text = [NSString stringWithFormat:@"%@:%@", matchStats.localTeamStats.name,matchStats.visitantTeamStats.name ];
     cell.detailTextLabel.text = @"Ready for the Match!!!!";
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+     */
+    
+    DLMKMatchStatsTableViewCell *cell = (DLMKMatchStatsTableViewCell*)[self.customCells cellForTableView:self.tableView atIndex:0];
+    
+    cell.matchStatsModel = matchStats;
     
     return cell;
 
@@ -82,6 +97,13 @@
     
     DLMKMatchViewController *matchVC = [[DLMKMatchViewController alloc] initWithMatch:self.matchesModel[indexPath.row] ];
     [self.navigationController pushViewController:matchVC animated:YES];
+}
+
+-(CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return [self.customCells heightForIndex:0];
+}
+-(CGFloat) tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return [self.customCells heightForIndex:0];
 }
 
 

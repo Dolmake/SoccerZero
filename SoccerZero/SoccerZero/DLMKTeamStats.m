@@ -32,7 +32,6 @@
             DLMKPlayerStats* playerStats = [DLMKPlayerStats playerStatsWithTeamStats:teamStats playerDescriptor:playerDescriptor context:aContext];
            [teamStats addPlayersStatsObject:playerStats ];
         }
-
     }
     else{
         teamStats.name = @"Unnamed team";
@@ -40,7 +39,6 @@
           [teamStats addPlayersStatsObject:playerStats ];
         
     }
-    //TODO: ini playersStats with the TeamDescriptor
     return teamStats;
 }
 
@@ -64,6 +62,18 @@
 -(NSString*) name{
     if (self.teamDescriptor) return self.teamDescriptor.name;
     else return @"Unnamed";
+}
+-(void) setName:(NSString *)name{
+    if (self.teamDescriptor) self.teamDescriptor.name = name;
+    
+}
+-(NSUInteger) goals{
+    NSUInteger result= 0;
+    NSArray* players = [self.playersStats allObjects];
+    for (DLMKPlayerStats *player in players) {
+        result += player.goalsValue;
+    }
+    return result;
 }
 
 

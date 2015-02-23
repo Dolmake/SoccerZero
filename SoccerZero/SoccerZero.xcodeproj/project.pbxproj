@@ -57,6 +57,8 @@
 		659B01971A9B36ED00437970 /* pass_512x512.png in Resources */ = {isa = PBXBuildFile; fileRef = 659B01961A9B36ED00437970 /* pass_512x512.png */; };
 		659B019C1A9B88D300437970 /* DLMKMatchStatsSelectorTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 659B019A1A9B88D300437970 /* DLMKMatchStatsSelectorTableViewController.m */; };
 		659B019D1A9B88D300437970 /* DLMKMatchStatsSelectorTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 659B019B1A9B88D300437970 /* DLMKMatchStatsSelectorTableViewController.xib */; };
+		659B01A11A9B9FE300437970 /* DLMKMatchStatsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 659B019F1A9B9FE300437970 /* DLMKMatchStatsTableViewCell.m */; };
+		659B01A21A9B9FE300437970 /* DLMKMatchStatsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 659B01A01A9B9FE300437970 /* DLMKMatchStatsTableViewCell.xib */; };
 		65B92B921A91F72400A95378 /* AGTCoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 65B92B911A91F72400A95378 /* AGTCoreDataStack.m */; };
 		65B92B951A91F83A00A95378 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 65B92B931A91F83A00A95378 /* Model.xcdatamodeld */; };
 		65FA2AB71A7BD7E300E87793 /* DLMKMatchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65FA2AB51A7BD7E300E87793 /* DLMKMatchViewController.m */; };
@@ -160,6 +162,9 @@
 		659B01991A9B88D300437970 /* DLMKMatchStatsSelectorTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLMKMatchStatsSelectorTableViewController.h; sourceTree = "<group>"; };
 		659B019A1A9B88D300437970 /* DLMKMatchStatsSelectorTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLMKMatchStatsSelectorTableViewController.m; sourceTree = "<group>"; };
 		659B019B1A9B88D300437970 /* DLMKMatchStatsSelectorTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DLMKMatchStatsSelectorTableViewController.xib; sourceTree = "<group>"; };
+		659B019E1A9B9FE300437970 /* DLMKMatchStatsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLMKMatchStatsTableViewCell.h; sourceTree = "<group>"; };
+		659B019F1A9B9FE300437970 /* DLMKMatchStatsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLMKMatchStatsTableViewCell.m; sourceTree = "<group>"; };
+		659B01A01A9B9FE300437970 /* DLMKMatchStatsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DLMKMatchStatsTableViewCell.xib; sourceTree = "<group>"; };
 		65B92B901A91F72400A95378 /* AGTCoreDataStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGTCoreDataStack.h; sourceTree = "<group>"; };
 		65B92B911A91F72400A95378 /* AGTCoreDataStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGTCoreDataStack.m; sourceTree = "<group>"; };
 		65B92B941A91F83A00A95378 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
@@ -307,6 +312,7 @@
 				657BB15E1A7A94FE00A528EB /* DLMKPlayerTableViewCell.h */,
 				657BB15F1A7A94FE00A528EB /* DLMKPlayerTableViewCell.m */,
 				657BB1601A7A94FE00A528EB /* DLMKPlayerTableViewCell.xib */,
+				659B01A31A9B9FE700437970 /* MatchStats */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -434,6 +440,16 @@
 			name = PlayerStats;
 			sourceTree = "<group>";
 		};
+		659B01A31A9B9FE700437970 /* MatchStats */ = {
+			isa = PBXGroup;
+			children = (
+				659B019E1A9B9FE300437970 /* DLMKMatchStatsTableViewCell.h */,
+				659B019F1A9B9FE300437970 /* DLMKMatchStatsTableViewCell.m */,
+				659B01A01A9B9FE300437970 /* DLMKMatchStatsTableViewCell.xib */,
+			);
+			name = MatchStats;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -523,6 +539,7 @@
 				651B96601A79123700154A3C /* LaunchScreen.xib in Resources */,
 				655F4ACE1A94A157006DB768 /* DLMKPlayerDescriptorTableViewController.xib in Resources */,
 				655F4AC91A949D36006DB768 /* DLMKTeamsTableViewController.xib in Resources */,
+				659B01A21A9B9FE300437970 /* DLMKMatchStatsTableViewCell.xib in Resources */,
 				65917CBE1A7914A300DC9940 /* play_128x128.png in Resources */,
 				65FA2AB81A7BD7E300E87793 /* DLMKMatchViewController.xib in Resources */,
 				655F4AE51A961EE0006DB768 /* DLMKPlayerNumberTableViewCell.xib in Resources */,
@@ -553,6 +570,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				653B86781A92238B00E9E90D /* _DLMKPlayerStats.m in Sources */,
+				659B01A11A9B9FE300437970 /* DLMKMatchStatsTableViewCell.m in Sources */,
 				65B92B921A91F72400A95378 /* AGTCoreDataStack.m in Sources */,
 				65FA2AB71A7BD7E300E87793 /* DLMKMatchViewController.m in Sources */,
 				65FA2ABE1A7C220000E87793 /* DLMKTimeServer.m in Sources */,
