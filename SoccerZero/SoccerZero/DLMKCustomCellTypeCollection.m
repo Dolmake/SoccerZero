@@ -13,9 +13,9 @@
 @implementation DLMKCustomCellTypeCollection
 
 #pragma mark -  Class Methods
-+(instancetype) customCellTypeCollectionWithArray:(NSArray*) arrayOfClasses{
++(instancetype) customCellTypeCollectionWithArray:(NSArray*) arrayOfCells{
     
-    return [[self alloc] initWithArrayOfClasses:arrayOfClasses ];
+    return [[self alloc] initWithArrayOfCells:arrayOfCells ];
 }
 
 #pragma mark - Init
@@ -25,6 +25,14 @@
         _arrayOfClasses = arrayOfClasses;
     }
     return self;
+}
+
+-(id) initWithArrayOfCells: (NSArray*)arrayOfCells{
+    NSMutableArray* arrayMutable = [NSMutableArray arrayWithCapacity:arrayOfCells.count];
+    for (id cell in arrayOfCells) {
+        [arrayMutable addObject:[DLMKCustomCellType customCellTypeWith:cell] ];
+    }
+    return [self initWithArrayOfClasses:arrayMutable];
 }
 
 #pragma mark - Instance Methods

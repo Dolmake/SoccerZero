@@ -8,10 +8,11 @@
 
 @import UIKit;
 @class DLMKMatchStats;
+@class DLMKTeamDescriptor;
 
-@interface DLMKMatchViewController : UIViewController<UITableViewDelegate>
+@interface DLMKMatchViewController : UIViewController<UITableViewDataSource>
 
-@property (weak, nonatomic) DLMKMatchStats* model;
+@property (strong, nonatomic) DLMKMatchStats* model;
 
 @property (weak, nonatomic) IBOutlet UILabel* lbTime;
 @property (weak, nonatomic) IBOutlet UILabel* lbResult;
@@ -21,6 +22,8 @@
 
 @property (nonatomic) BOOL timeIsRunning;
 @property (nonatomic) CGFloat timeInSeconds;
+
+-(id) initWithTeamDescriptor:(DLMKTeamDescriptor*)team;
 
 -(IBAction)onStartTimer:(id)sender;
 -(IBAction)onPauseTimer:(id)sender;

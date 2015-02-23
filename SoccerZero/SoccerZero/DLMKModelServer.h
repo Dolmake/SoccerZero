@@ -10,6 +10,7 @@
 @import CoreData;
 @class AGTCoreDataStack;
 @class DLMKTeamDescriptor;
+@class DLMKMatchStats;
 
 
 @interface DLMKModelServer : NSObject
@@ -22,6 +23,7 @@
 -(DLMKTeamDescriptor*) firstTeam;
 -(NSArray*) fetchTeams;
 -(NSArray*) fetchPlayersForTeam:(DLMKTeamDescriptor*) team;
+-(DLMKMatchStats*) newMatchForTeam: (DLMKTeamDescriptor*) team;
 
 
 @end

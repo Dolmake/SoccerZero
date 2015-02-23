@@ -34,3 +34,4 @@ static inline BOOL isEmpty(id thing) {
         && [(NSArray *)thing count] == 0);
 }
 #endif
+

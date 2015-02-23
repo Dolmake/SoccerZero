@@ -10,7 +10,6 @@
 #import "DLMKPlayerDescriptor.h"
 #import "DLMKPlayerTableViewCell.h"
 #import "DLMKPlayerNameTableViewCell.h"
-#import "DLMKCustomCellType.h"
 #import "DLMKCustomCellTypeCollection.h"
 
 @interface DLMKPlayerDescriptorTableViewController ()
@@ -39,8 +38,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.customCells = [DLMKCustomCellTypeCollection
-                        customCellTypeCollectionWithArray:@[                                                                                         [DLMKCustomCellType customCellTypeWith:[DLMKPlayerNameTableViewCell class]],                                                                                                        [DLMKCustomCellType customCellTypeWith:[DLMKPlayerTableViewCell class]]
+    self.customCells = [DLMKCustomCellTypeCollection customCellTypeCollectionWithArray:@[                                                                                         [DLMKPlayerNameTableViewCell class],                                                                                                        [DLMKPlayerTableViewCell class]
                                                                                          ]];
     
     [self.customCells registerNibsForTableView:self.tableView ];

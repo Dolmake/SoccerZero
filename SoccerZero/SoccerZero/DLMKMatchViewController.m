@@ -7,12 +7,17 @@
 //
 
 #import "DLMKMatchViewController.h"
+#import "DLMKMatchStats.h"
+#import "DLMKTeamStats.h"
 #import "DLMKTimeServer.h"
-
+#import "DLMKModelServer.h"
+#import "DLMKCustomCellTypeCollection.h"
+#import "DLMKPlayerTableViewCell.h"
+#import "DLMKPlayerStats.h"
 
 @interface DLMKMatchViewController ()
 
-
+@property (nonatomic, strong) DLMKCustomCellTypeCollection* cellCollection;
 
 @end
 
@@ -30,12 +35,26 @@
     self.lbTime.text = [DLMKTimeServer formatTime:_timeInSeconds];
 }
 
+
+#pragma mark - Init
+
+-(id) initWithTeamDescriptor:(DLMKTeamDescriptor*)team{
+    if (self = [super init]){
+        _model = [[DLMKModelServer SINGLETON] newMatchForTeam:team ];
+        _cellCollection = [DLMKCustomCellTypeCollection customCellTypeCollectionWithArray:@[[DLMKPlayerTableViewCell class]]];
+        
+    }
+    return self;
+}
+
+#pragma mark - UIView
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     [self setupControls];
     
-    self.tbPlayers.delegate = self;
+    self.tbPlayers.dataSource = self;
     
 }
 
@@ -55,15 +74,29 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
+#pragma mark - UITableView delegate
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    //Get the proper player
+    DLMKPlayerStats* playerStats = [[self.model.localTeamStats players ] objectAtIndex:indexPath.row ];
+    
+    DLMKPlayerTableViewCell* cell = (DLMKPlayerTableViewCell*)[self.cellCollection cellForTableView:self.tbPlayers atIndex:0];
+    cell.playerDescriptorModel = playerStats.playerDescriptor;
+    
+    return cell;
 }
-*/
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
+    return [self.model.localTeamStats countPlayers];
+}
+
 
 #pragma mark - Actions
 -(IBAction)onStartTimer:(id)sender{
@@ -85,6 +118,7 @@
 #pragma mark - MISC
 -(void) setupControls{
      self.bPause.center = self.bPlay.center;
+    [self.cellCollection registerNibsForTableView:self.tbPlayers];
 }
 
 

@@ -14,7 +14,8 @@
 @property (strong, nonatomic, readonly) NSArray* arrayOfClasses;
 +(instancetype) customCellTypeCollectionWithArray:(NSArray*) arrayOfClasses;
 
--(id) initWithArrayOfClasses: (NSArray*)arrayOfClasses;
+//-(id) initWithArrayOfClasses: (NSArray*)arrayOfClasses;
+//-(id) initWithArrayOfCells: (NSArray*)arrayOfCells;
 
 -(CGFloat) height;
 -(NSString*) cellId;

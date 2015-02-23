@@ -31,7 +31,14 @@
         teamStats.name = @"Unnamed team";
     }
     //TODO: ini playersStats with the TeamDescriptor
-    teamStats.playersStats = nil;
+    
+    
+    for (DLMKPlayerDescriptor* playerDescriptor in teamStats.teamDescriptor.players) {
+        //Create a playerStats
+        DLMKPlayerStats* playerStats = [DLMKPlayerStats playerStatsWithTeamStats:teamStats playerDescriptor:playerDescriptor context:aContext];
+        [teamStats addPlayersStatsObject:playerStats ];
+    }
+   
     
     return teamStats;
 }
@@ -55,6 +62,19 @@
 
 
 #pragma mark - Public interface
+
+
+-(NSArray*) players{
+    
+    NSArray* result = [[self.playersStats allObjects] sortedArrayUsingComparator:^NSComparisonResult(id a, id b) {
+        
+        NSInteger diff = ((DLMKPlayerStats*)a).numberValue - ((DLMKPlayerStats*)b).numberValue;
+        return (NSComparisonResult)diff;
+        
+    } ];
+    return result;
+
+}
 -(NSUInteger) countPlayers{
     return [self.playersStats count];
 }

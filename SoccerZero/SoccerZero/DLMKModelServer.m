@@ -10,6 +10,7 @@
 #import "AGTCoreDataStack.h"
 #import "SETTINGS.h"
 #import "DLMKTeamDescriptor.h"
+#import "DLMKMatchStats.h"
 
 #ifdef DUMMY_DATA
 
@@ -149,11 +150,14 @@ static DLMKModelServer* s_instance;
         } ];
         result = players;
     }
-    
     return result;
-
-    
 }
+
+-(DLMKMatchStats*) newMatchForTeam: (DLMKTeamDescriptor*) team{
+    
+    return [DLMKMatchStats matchStatsWithDate:[[NSDate alloc] init] forTeam:team versus:@"Unnamed" context:self.context];
+}
+
 
 #ifdef DUMMY_DATA
 -(void) createDummyData{

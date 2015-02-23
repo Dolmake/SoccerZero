@@ -6,6 +6,6 @@
 +(instancetype) teamStatsWithName: (NSString*) aName context:(NSManagedObjectContext*) aContext;
 +(instancetype) teamStatsWithTeamDescriptor: (DLMKTeamDescriptor*) aTeamDescriptor context:(NSManagedObjectContext*) aContext;
 
-
+-(NSArray*) players;
 -(NSUInteger) countPlayers;
 @end
