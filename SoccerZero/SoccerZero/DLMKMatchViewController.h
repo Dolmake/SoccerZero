@@ -21,6 +21,8 @@
 @property (weak, nonatomic) IBOutlet UIButton* bPlay;
 @property (weak, nonatomic) IBOutlet UIButton* bPause;
 @property (weak, nonatomic) IBOutlet UITableView* tbPlayers;
+@property (weak, nonatomic) IBOutlet UILabel* lbTeam;
+@property (weak, nonatomic) IBOutlet UILabel* lbRival;
 
 @property (nonatomic) BOOL timeIsRunning;
 @property (nonatomic) CGFloat timeInSeconds;

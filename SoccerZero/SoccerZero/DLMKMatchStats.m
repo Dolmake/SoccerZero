@@ -1,5 +1,6 @@
 #import "DLMKMatchStats.h"
 #import "DLMKTeamStats.h"
+#import "DLMKRivalStats.h"
 
 @interface DLMKMatchStats ()
 
@@ -17,52 +18,23 @@
 context:(NSManagedObjectContext*)aContext{
     
     DLMKTeamStats* localTeamStats = [DLMKTeamStats teamStatsWithTeamDescriptor:localTeam context:aContext];
-    DLMKTeamStats* visitantTeamStats = [DLMKTeamStats teamStatsWithName:rivalName context:aContext];
+   
 
-    return [DLMKMatchStats matchStatsWithDate:aDate localTeam:localTeamStats visitanTeam:visitantTeamStats context:aContext];
+    return [DLMKMatchStats matchStatsWithDate:aDate localTeam:localTeamStats versus:rivalName context:aContext];
 }
 
 
-+(instancetype) matchStatsWithDate: (NSDate*) aDate localTeam:(DLMKTeamStats*) aLocalTeam visitanTeam:(DLMKTeamStats*) aVisitantTeam context:(NSManagedObjectContext*)aContext{
++(instancetype) matchStatsWithDate: (NSDate*) aDate localTeam:(DLMKTeamStats*) aLocalTeam versus:(NSString*)rivalName context:(NSManagedObjectContext*)aContext{
     
     DLMKMatchStats* matchStats = [self insertInManagedObjectContext:aContext];
     matchStats.date = aDate;
-    
     aLocalTeam.isLocalValue = YES;
     aLocalTeam.matchStats = matchStats;
+    matchStats.teamStats = aLocalTeam;
     
-    aVisitantTeam.isLocalValue = NO;
-    aVisitantTeam.matchStats = matchStats;
-    
-    matchStats.teamsStats = [NSSet setWithArray:@[aLocalTeam, aVisitantTeam]];
+    matchStats.rivalStats =  [DLMKRivalStats rivalStatsWithName:rivalName matchStats:matchStats context:aContext];;
     
     return matchStats;
-}
-
-
-
-#pragma mark - Properties
-
--(DLMKTeamStats*) localTeamStats{
-    DLMKTeamStats* result = nil;
-    int i =0;
-    NSArray* array = [[self teamsStats] allObjects];
-    while (result == nil && i < array.count){
-        result = [array[i] isLocalValue ] ? array[i] : nil;
-        i++;
-    }
-    return result;
-}
-
--(DLMKTeamStats*) visitantTeamStats{
-    DLMKTeamStats* result = nil;
-    int i =0;
-    NSArray* array = [[self teamsStats] allObjects];
-    while (result == nil && i < array.count){
-        result = ![array[i] isLocalValue ] ? array[i] : nil;
-        i++;
-    }
-    return result;
 }
 
 @end

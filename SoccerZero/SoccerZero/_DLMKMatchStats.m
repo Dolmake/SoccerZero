@@ -9,7 +9,8 @@ const struct DLMKMatchStatsAttributes DLMKMatchStatsAttributes = {
 };
 
 const struct DLMKMatchStatsRelationships DLMKMatchStatsRelationships = {
-	.teamsStats = @"teamsStats",
+	.rivalStats = @"rivalStats",
+	.teamStats = @"teamStats",
 };
 
 @implementation DLMKMatchStatsID
@@ -69,16 +70,9 @@ const struct DLMKMatchStatsRelationships DLMKMatchStatsRelationships = {
 	[self setPrimitiveSeconds_played:@(value_)];
 }
 
-@dynamic teamsStats;
+@dynamic rivalStats;
 
-- (NSMutableSet*)teamsStatsSet {
-	[self willAccessValueForKey:@"teamsStats"];
-
-	NSMutableSet *result = (NSMutableSet*)[self mutableSetValueForKey:@"teamsStats"];
-
-	[self didAccessValueForKey:@"teamsStats"];
-	return result;
-}
+@dynamic teamStats;
 
 @end
 

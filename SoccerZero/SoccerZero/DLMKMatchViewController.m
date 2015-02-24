@@ -9,6 +9,7 @@
 #import "DLMKMatchViewController.h"
 #import "DLMKMatchStats.h"
 #import "DLMKTeamStats.h"
+#import "DLMKRivalStats.h"
 #import "DLMKTimeServer.h"
 #import "DLMKModelServer.h"
 #import "DLMKCustomCellTypeCollection.h"
@@ -70,10 +71,16 @@ CGFloat _accumTime = 0;
     [super viewWillAppear:animated];
     self.timeIsRunning = false;
     _accumTime = 0.0f;
-    _playersStatsCache = self.model.localTeamStats.players;
+    _playersStatsCache = self.model.teamStats.players;
     self.timeInSeconds = self.model.seconds_playedValue;
+    self.lbTeam.text = self.model.teamStats.name;
+    self.lbRival.text = self.model.rivalStats.name;
     [self updateResult];
     [[DLMKTimeServer SINGLETON] addObserver:self];
+}
+
+-(void) viewDidAppear:(BOOL)animated{
+    self.lbRival.text = self.model.rivalStats.name;
 }
 
 -(void) viewWillDisappear:(BOOL)animated{
@@ -92,7 +99,7 @@ CGFloat _accumTime = 0;
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     //Get the proper player
-    DLMKPlayerStats* playerStats = [[self.model.localTeamStats players ] objectAtIndex:indexPath.row ];
+    DLMKPlayerStats* playerStats = [[self.model.teamStats players ] objectAtIndex:indexPath.row ];
     
     DLMKPlayerStatsTableViewCell* cell = (DLMKPlayerStatsTableViewCell*)[self.cellCollection cellForTableView:self.tbPlayers atIndex:0];
     cell.playerStatsModel = playerStats;
@@ -107,7 +114,7 @@ CGFloat _accumTime = 0;
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return [self.model.localTeamStats countPlayers];
+    return [self.model.teamStats countPlayers];
 }
 
 #pragma mark - UITableView delegate
@@ -128,7 +135,7 @@ CGFloat _accumTime = 0;
 
 -(IBAction)onRivalGoal:(id)sender{
     if (self.timeIsRunning){
-        ((DLMKPlayerStats*)self.model.visitantTeamStats.players[0]).goalsValue += 1;
+        self.model.rivalStats.goalsValue += 1;
         [self updateResult];
     }
 }
@@ -202,10 +209,7 @@ CGFloat _accumTime = 0;
         localGoals += playerStats.goalsValue;
     }
     
-    NSUInteger rivalGoals = 0;
-    for (DLMKPlayerStats *playerStats in self.model.visitantTeamStats.players) {
-        rivalGoals += playerStats.goalsValue;
-    }
+    NSUInteger rivalGoals = self.model.rivalStats.goalsValue;
     
     self.lbResult.text = [NSString stringWithFormat:@" %lu : %lu" , localGoals, rivalGoals];
 

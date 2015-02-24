@@ -9,6 +9,8 @@
                 <outlet property="bPause" destination="YYW-Ca-iWr" id="YPH-Jd-f3B"/>
                 <outlet property="bPlay" destination="nUc-IA-QXh" id="Im3-Jp-p4d"/>
                 <outlet property="lbResult" destination="PGv-B0-q94" id="WY1-Wq-ZzM"/>
+                <outlet property="lbRival" destination="041-PO-kKR" id="pyh-Zy-9Bp"/>
+                <outlet property="lbTeam" destination="62s-Ia-qy4" id="Uiz-Rd-Liw"/>
                 <outlet property="lbTime" destination="Rhq-UR-1go" id="YkZ-XI-SFA"/>
                 <outlet property="tbPlayers" destination="HAi-7k-jAF" id="tHf-SD-Mxv"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -19,7 +21,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="lbResult" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="PGv-B0-q94">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="lbResult" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="PGv-B0-q94">
                     <rect key="frame" x="129" y="539" width="63" height="21"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -68,6 +70,20 @@
                         <action selector="onRivalGoal:" destination="-1" eventType="touchUpInside" id="Stj-KO-GkH"/>
                     </connections>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="lbTeam" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="62s-Ia-qy4">
+                    <rect key="frame" x="8" y="539" width="113" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="lbRival" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="041-PO-kKR">
+                    <rect key="frame" x="194" y="539" width="72" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <point key="canvasLocation" x="553" y="308"/>

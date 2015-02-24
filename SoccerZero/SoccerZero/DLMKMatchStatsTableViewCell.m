@@ -9,6 +9,7 @@
 #import "DLMKMatchStatsTableViewCell.h"
 #import "DLMKMatchStats.h"
 #import "DLMKTeamStats.h"
+#import "DLMKRivalStats.h"
 #import "MACROS.h"
 
 @implementation DLMKMatchStatsTableViewCell
@@ -28,18 +29,18 @@
     _matchStatsModel = matchStatsModel;
     
     //self.lbDate.text = [NSString stringWithFormat:@"%@",_matchStatsModel.date];
-    self.lbLocalTeam.text = _matchStatsModel.localTeamStats.name;
-    self.lbVisitanTeam.text = _matchStatsModel.visitantTeamStats.name;
+    self.lbLocalTeam.text = [_matchStatsModel teamStats].name;
+    self.lbVisitanTeam.text = [_matchStatsModel rivalStats ].name;
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateStyle:NSDateFormatterShortStyle];
     NSString *dateString = [dateFormatter stringFromDate:_matchStatsModel.date];
     
     self.lbDate.text = dateString;
-    self.lbResult.text = [ NSString stringWithFormat:@"%lu : %lu",[_matchStatsModel.localTeamStats goals ], [_matchStatsModel.visitantTeamStats goals]];
+    self.lbResult.text = [ NSString stringWithFormat:@"%lu : %hd",[_matchStatsModel.teamStats goals ], [_matchStatsModel.rivalStats goalsValue]];
     
     self.tfVisitantTeamName.delegate = nil;
-    self.tfVisitantTeamName.text = _matchStatsModel.visitantTeamStats.name;
+    self.tfVisitantTeamName.text = _matchStatsModel.rivalStats.name;
     self.tfVisitantTeamName.delegate = self;
 }
 
@@ -59,7 +60,7 @@
 #pragma mark - UITextFieldDelegate
 -(void)textFieldDidEndEditing:(UITextField *)textField{
     if (!isEmpty(textField.text)){
-        self.matchStatsModel.visitantTeamStats.name = textField.text;
+        self.matchStatsModel.rivalStats.name = textField.text;
     }
 }
 

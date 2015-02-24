@@ -57,6 +57,8 @@
 		659B019D1A9B88D300437970 /* DLMKMatchStatsSelectorTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 659B019B1A9B88D300437970 /* DLMKMatchStatsSelectorTableViewController.xib */; };
 		659B01A11A9B9FE300437970 /* DLMKMatchStatsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 659B019F1A9B9FE300437970 /* DLMKMatchStatsTableViewCell.m */; };
 		659B01A21A9B9FE300437970 /* DLMKMatchStatsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 659B01A01A9B9FE300437970 /* DLMKMatchStatsTableViewCell.xib */; };
+		659B01A61A9C7D9000437970 /* _DLMKRivalStats.m in Sources */ = {isa = PBXBuildFile; fileRef = 659B01A51A9C7D9000437970 /* _DLMKRivalStats.m */; };
+		659B01A91A9C7D9D00437970 /* DLMKRivalStats.m in Sources */ = {isa = PBXBuildFile; fileRef = 659B01A81A9C7D9D00437970 /* DLMKRivalStats.m */; };
 		65B92B921A91F72400A95378 /* AGTCoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 65B92B911A91F72400A95378 /* AGTCoreDataStack.m */; };
 		65B92B951A91F83A00A95378 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 65B92B931A91F83A00A95378 /* Model.xcdatamodeld */; };
 		65FA2AB71A7BD7E300E87793 /* DLMKMatchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65FA2AB51A7BD7E300E87793 /* DLMKMatchViewController.m */; };
@@ -158,6 +160,10 @@
 		659B019E1A9B9FE300437970 /* DLMKMatchStatsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLMKMatchStatsTableViewCell.h; sourceTree = "<group>"; };
 		659B019F1A9B9FE300437970 /* DLMKMatchStatsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLMKMatchStatsTableViewCell.m; sourceTree = "<group>"; };
 		659B01A01A9B9FE300437970 /* DLMKMatchStatsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DLMKMatchStatsTableViewCell.xib; sourceTree = "<group>"; };
+		659B01A41A9C7D9000437970 /* _DLMKRivalStats.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _DLMKRivalStats.h; sourceTree = "<group>"; };
+		659B01A51A9C7D9000437970 /* _DLMKRivalStats.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _DLMKRivalStats.m; sourceTree = "<group>"; };
+		659B01A71A9C7D9D00437970 /* DLMKRivalStats.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLMKRivalStats.h; sourceTree = "<group>"; };
+		659B01A81A9C7D9D00437970 /* DLMKRivalStats.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLMKRivalStats.m; sourceTree = "<group>"; };
 		65B92B901A91F72400A95378 /* AGTCoreDataStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGTCoreDataStack.h; sourceTree = "<group>"; };
 		65B92B911A91F72400A95378 /* AGTCoreDataStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGTCoreDataStack.m; sourceTree = "<group>"; };
 		65B92B941A91F83A00A95378 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
@@ -263,6 +269,8 @@
 		653B865B1A92174200E9E90D /* Machine */ = {
 			isa = PBXGroup;
 			children = (
+				659B01A41A9C7D9000437970 /* _DLMKRivalStats.h */,
+				659B01A51A9C7D9000437970 /* _DLMKRivalStats.m */,
 				653B866C1A92238B00E9E90D /* _DLMKMatchStats.h */,
 				653B866D1A92238B00E9E90D /* _DLMKMatchStats.m */,
 				653B866E1A92238B00E9E90D /* _DLMKPlayerDescriptor.h */,
@@ -280,6 +288,8 @@
 		653B866B1A92178100E9E90D /* Human */ = {
 			isa = PBXGroup;
 			children = (
+				659B01A71A9C7D9D00437970 /* DLMKRivalStats.h */,
+				659B01A81A9C7D9D00437970 /* DLMKRivalStats.m */,
 				653B867B1A9223AB00E9E90D /* DLMKMatchStats.h */,
 				653B867C1A9223AB00E9E90D /* DLMKMatchStats.m */,
 				653B867D1A9223AB00E9E90D /* DLMKPlayerDescriptor.h */,
@@ -574,7 +584,9 @@
 				653B86881A9223AB00E9E90D /* DLMKTeamDescriptor.m in Sources */,
 				653B868D1A92259900E9E90D /* DLMKModelServer.m in Sources */,
 				659B01921A9B345E00437970 /* DLMKPlayerStatsTableViewCell.m in Sources */,
+				659B01A61A9C7D9000437970 /* _DLMKRivalStats.m in Sources */,
 				653B864B1A92147500E9E90D /* DLMKBaseManagedObject.m in Sources */,
+				659B01A91A9C7D9D00437970 /* DLMKRivalStats.m in Sources */,
 				657BB1611A7A94FE00A528EB /* DLMKPlayerTableViewCell.m in Sources */,
 				655F4ACD1A94A157006DB768 /* DLMKPlayerDescriptorTableViewController.m in Sources */,
 				653B86791A92238B00E9E90D /* _DLMKTeamDescriptor.m in Sources */,
