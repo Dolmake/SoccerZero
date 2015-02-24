@@ -7,9 +7,13 @@
 //
 
 @import UIKit;
+@class DLMKTeamDescriptor;
 
 @interface DLMKMatchStatsSelectorTableViewController : UITableViewController
 
-@property (nonatomic, strong) NSArray* matchesModel;
+@property (nonatomic, strong) DLMKTeamDescriptor* teamDescriptorModel;
+
+
+-(void) addMatch:(id) sender;
 
 @end

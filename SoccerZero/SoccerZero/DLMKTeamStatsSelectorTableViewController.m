@@ -10,7 +10,8 @@
 #import "DLMKMatchStats.h"
 #import "DLMKTeamDescriptor.h"
 #import "DLMKTeamStats.h"
-#import "DLMKMatchViewController.h"
+//#import "DLMKMatchViewController.h"
+#import "DLMKMatchStatsSelectorTableViewController.h"
 
 #import "DLMKModelServer.h"
 
@@ -29,6 +30,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.title = @"Select a team";
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:[self CELL_ID]];
     
 }
@@ -85,11 +87,15 @@
     //Get the proper team
     DLMKTeamDescriptor* teamDescriptor = [self.teamsModel objectAtIndex:indexPath.row];
     
-     //Create the Table Controller
-    DLMKMatchViewController* matchVC = [[DLMKMatchViewController alloc]initWithTeamDescriptor:teamDescriptor];
-     
-     [self.navigationController pushViewController:matchVC
-     animated:YES];
+//     //Create the Table Controller
+//    DLMKMatchViewController* matchVC = [[DLMKMatchViewController alloc]initWithTeamDescriptor:teamDescriptor];
+//     
+//     [self.navigationController pushViewController:matchVC
+//     animated:YES];
+    
+    DLMKMatchStatsSelectorTableViewController *matchesVC = [[DLMKMatchStatsSelectorTableViewController alloc] init ];
+    matchesVC.teamDescriptorModel = teamDescriptor;
+    [self.navigationController pushViewController: matchesVC animated:YES];
 }
 
 

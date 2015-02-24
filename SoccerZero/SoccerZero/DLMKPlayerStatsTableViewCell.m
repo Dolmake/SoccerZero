@@ -62,7 +62,8 @@
 #pragma mark - Actions
 
 -(IBAction)goal:(id)sender{
-    [self.delegate onGoal:self.playerStatsModel];
+    if (self.playerStatsModel.is_playingValue)
+        [self.delegate onGoal:self.playerStatsModel];
 }
 -(IBAction)mistake:(id)sender{
     [self.delegate onMistake:self.playerStatsModel];
@@ -77,6 +78,7 @@
 
 #pragma mark - Update
 -(void) update:(id)sender{
+    /*
     if ([self.delegate timeIsRunning:self.playerStatsModel ]){
         
         if (self.playerStatsModel.is_playingValue){
@@ -84,6 +86,7 @@
             //self.playerStatsModel.seconds_playedValue = (NSUInteger)self.timeInSeconds;
         }
     }
+     */
     self.tbPlayingTime.text = [DLMKTimeServer formatTime:self.playerStatsModel.seconds_playedValue];
 }
 

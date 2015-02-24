@@ -33,7 +33,8 @@
     self.lbVisitanTeam.text = [_matchStatsModel rivalStats ].name;
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateStyle:NSDateFormatterShortStyle];
+    //[dateFormatter setDateStyle:NSDateFormatterFullStyle];
+    [dateFormatter setDateFormat:@"dd/MM/YY HH:mm"];
     NSString *dateString = [dateFormatter stringFromDate:_matchStatsModel.date];
     
     self.lbDate.text = dateString;

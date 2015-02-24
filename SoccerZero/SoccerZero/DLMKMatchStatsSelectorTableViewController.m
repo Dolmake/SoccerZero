@@ -13,49 +13,48 @@
 #import "DLMKMatchViewController.h"
 #import "DLMKCustomCellTypeCollection.h"
 #import "DLMKMatchStatsTableViewCell.h"
+#import "DLMKTeamDescriptor.h"
 
 @interface DLMKMatchStatsSelectorTableViewController ()
 
 @property (nonatomic,strong, readonly) DLMKCustomCellTypeCollection* customCells;
+@property (nonatomic, strong) NSArray* matchesModel;
 
 @end
 
 @implementation DLMKMatchStatsSelectorTableViewController
 
--(NSString*) CELL_ID{ return @"CELL_ID_MATCHES";}
-
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.title = @"Select/Add match";
+    
     _customCells = [DLMKCustomCellTypeCollection customCellTypeCollectionWithArray:@[[DLMKMatchStatsTableViewCell class  ]]];
     
     [self.customCells registerNibsForTableView:self.tableView];
-    /*
-    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"CELL_ID_MATCHES"];*/
     
+    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addMatch:) ];
+
+    self.navigationItem.rightBarButtonItem = addButton;
 }
 
 -(void) viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    self.matchesModel = [[ DLMKModelServer SINGLETON ] fetchMatches ];
-    [self.tableView reloadData];
+    [self refreshMatchesView];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-
     return [self.matchesModel count];
 }
 
@@ -65,30 +64,12 @@
     //Get the proper team
     DLMKMatchStats* matchStats = [self.matchesModel objectAtIndex:indexPath.row];
     
-    /*
-    //Build the Cell
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[self CELL_ID] forIndexPath:indexPath];
-    
-    if (!cell){
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:[self CELL_ID]];
-    }
-    
-    //Configure the Cell
-    cell.textLabel.text = [NSString stringWithFormat:@"%@:%@", matchStats.localTeamStats.name,matchStats.visitantTeamStats.name ];
-    cell.detailTextLabel.text = @"Ready for the Match!!!!";
-    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-     */
-    
     DLMKMatchStatsTableViewCell *cell = (DLMKMatchStatsTableViewCell*)[self.customCells cellForTableView:self.tableView atIndex:0];
     
     cell.matchStatsModel = matchStats;
     
     return cell;
-
 }
-
-
-
 
 #pragma mark - Table view delegate
 
@@ -104,6 +85,29 @@
 }
 -(CGFloat) tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return [self.customCells heightForIndex:0];
+}
+
+#pragma mark - Instance Methods
+-(void) addMatch:(id) sender{
+    [[DLMKModelServer SINGLETON] newMatchForTeam:self.teamDescriptorModel ];
+    [self refreshMatchesView];
+}
+
+
+#pragma mark - Misc
+-(void) refreshMatchesView{
+    if (self.teamDescriptorModel)
+    {
+        self.matchesModel = [[ DLMKModelServer SINGLETON ] fetchMatchesForTeamDescriptor:self.teamDescriptorModel ];
+    }
+    else
+    {
+        self.matchesModel = [[ DLMKModelServer SINGLETON ] fetchMatches ];
+        //Deactive the ADD_BUTTON
+        self.navigationItem.rightBarButtonItem.enabled = NO;
+    }
+    
+    [self.tableView reloadData];
 }
 
 

@@ -187,6 +187,36 @@ static DLMKModelServer* s_instance;
     return result;
 }
 
+-(NSArray*) fetchMatchesForTeamDescriptor:(DLMKTeamDescriptor*) team{
+    NSArray* result = nil;
+    
+    //Search for Teams
+    NSFetchRequest *req = [NSFetchRequest fetchRequestWithEntityName:[DLMKMatchStats entityName]];
+    
+    req.fetchBatchSize = 20;
+    req.sortDescriptors = @[
+                            [NSSortDescriptor sortDescriptorWithKey:DLMKMatchStatsAttributes.date ascending:YES]
+                            //[NSSortDescriptor sortDescriptorWithKey:DLMKNoteAttributes.name ascending:YES],
+                            //[NSSortDescriptor sortDescriptorWithKey:DLMKTeamDescriptorAttributes.name ascending:NO]
+                            ];
+    
+    req.predicate = [NSPredicate predicateWithFormat:@"teamStats.teamDescriptor == %@", team ];
+    
+    NSError *err = nil;
+    NSArray *res = [self.stack.context executeFetchRequest:req
+                                                     error:&err];
+    
+    
+    if (!res){
+        //Error
+        NSLog(@"Error on fetchRequest %@" , err);
+    }else{
+        result = res;
+    }
+    return result;
+
+}
+
 
 #ifdef DUMMY_DATA
 -(void) createDummyData{
