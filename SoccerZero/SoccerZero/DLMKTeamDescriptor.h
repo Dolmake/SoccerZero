@@ -9,6 +9,7 @@
 
 
 -(void) addPlayerWithName:(NSString*)name number:(NSUInteger)aNumber;
+-(void) removePlayer:(DLMKPlayerDescriptor*) player;
 -(NSUInteger) countPlayers;
 -(DLMKPlayerDescriptor*) playerAtRow:(NSInteger) row;
 

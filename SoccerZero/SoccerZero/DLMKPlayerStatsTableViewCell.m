@@ -63,10 +63,17 @@
 
 -(IBAction)goal:(id)sender{
     if (self.playerStatsModel.is_playingValue)
+    {
         [self.delegate onGoal:self.playerStatsModel];
+         self.lbGoals.text = [[self.playerStatsModel goals] stringValue ];
+    }
 }
 -(IBAction)mistake:(id)sender{
-    [self.delegate onMistake:self.playerStatsModel];
+    if (self.playerStatsModel.is_playingValue)
+    {
+        [self.delegate onMistake:self.playerStatsModel];
+        self.lbMistakes.text = [[self.playerStatsModel errors ] stringValue ];
+    }
 }
 
 -(IBAction)inOut:(id)sender{
@@ -88,6 +95,7 @@
     }
      */
     self.tbPlayingTime.text = [DLMKTimeServer formatTime:self.playerStatsModel.seconds_playedValue];
+   
 }
 
 
@@ -99,6 +107,8 @@
     self.tbNumber.text = [NSString stringWithFormat:@"%lu" , self.playerStatsModel.number];
     self.swInOut.on = self.playerStatsModel.is_playingValue;
     self.timeInSeconds = self.playerStatsModel.seconds_playedValue;
+    self.lbGoals.text = self.playerStatsModel.goalsValue > 0 ? [[self.playerStatsModel goals] stringValue ] : nil;
+    self.lbMistakes.text = self.playerStatsModel.errorsValue > 0 ? [[self.playerStatsModel errors] stringValue ] : nil;
 }
 
 

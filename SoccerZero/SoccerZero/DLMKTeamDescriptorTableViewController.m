@@ -13,8 +13,11 @@
 #import "DLMKTeamNameTableViewCell.h"
 #import "DLMKTimeServer.h"
 #import "DLMKPlayerDescriptorTableViewController.h"
+#import "DLMKModelServer.h"
 
 @interface DLMKTeamDescriptorTableViewController ()
+
+
 
 @end
 
@@ -116,6 +119,28 @@
         [self.navigationController pushViewController:playerVC animated:YES];
     }
 }
+
+
+-(NSString*) tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    return @"Remove Player?";
+}
+
+-(void) tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    //Look up if the chicken wants to remove
+    if (editingStyle == UITableViewCellEditingStyleDelete){
+        
+        DLMKPlayerDescriptor *playerDescriptor = [self.model playerAtRow:indexPath.row];
+
+        //[[[DLMKModelServer SINGLETON] context ] deleteObject:playerDescriptor ];
+        [self.model removePlayer:playerDescriptor];
+        
+        [self.tableView reloadData];
+    }
+    
+}
+
 
 #pragma mark -Misc
 -(void) registerNib: (id)type{

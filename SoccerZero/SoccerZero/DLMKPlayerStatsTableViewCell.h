@@ -34,6 +34,8 @@
 @property (weak , nonatomic) IBOutlet UILabel* tbNumber;
 @property (weak, nonatomic) IBOutlet UILabel* tbPlayingTime;
 @property (weak ,nonatomic) IBOutlet UISwitch* swInOut;
+@property (weak, nonatomic) IBOutlet UILabel* lbGoals;
+@property (weak, nonatomic) IBOutlet UILabel* lbMistakes;
 
 
 -(IBAction)goal:(id)sender;

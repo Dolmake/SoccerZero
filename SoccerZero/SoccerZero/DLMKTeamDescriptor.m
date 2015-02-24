@@ -31,6 +31,10 @@
     [self addPlayersObject:playerDescriptor];
 }
 
+-(void) removePlayer:(DLMKPlayerDescriptor*)player{
+    [self removePlayersObject:player];
+}
+
 -(NSUInteger) countPlayers{
     return [self.players count];
 }
