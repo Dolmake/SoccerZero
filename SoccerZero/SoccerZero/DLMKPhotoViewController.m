@@ -34,7 +34,7 @@
 }
 
 -(void) viewWillAppear:(BOOL)animated{
-    
+    [super viewWillAppear:animated];
     
     //Deactivate the default option of fullfill the whole screen(IOS7)
     self.edgesForExtendedLayout = UIRectEdgeNone;
@@ -42,7 +42,7 @@
 //    //Add a border
 //    self.photoView.layer.borderWidth = 10;
 //    self.photoView.layer.borderColor = [[UIColor redColor] CGColor ];
-    CGSize size =self.photoView.layer.bounds.size;
+//    CGSize size =self.photoView.layer.bounds.size;
 //    self.photoView.layer.cornerRadius = fmin(size.width, size.height) * 0.5;
     self.photoView.clipsToBounds = YES;
     
@@ -51,6 +51,7 @@
 }
 
 -(void) viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
     self.playerDescriptorModel.photoContainer.image = self.photoView.image;
 }
 

@@ -27,7 +27,7 @@
 		653B86891A9223AB00E9E90D /* DLMKTeamStats.m in Sources */ = {isa = PBXBuildFile; fileRef = 653B86841A9223AB00E9E90D /* DLMKTeamStats.m */; };
 		653B868D1A92259900E9E90D /* DLMKModelServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 653B868C1A92259900E9E90D /* DLMKModelServer.m */; };
 		653B868F1A9228C600E9E90D /* pause_256x256.png in Resources */ = {isa = PBXBuildFile; fileRef = 653B868E1A9228C600E9E90D /* pause_256x256.png */; };
-		6545E1B21A9DDED0009A8C8A /* DLMKPlayersDescriptorLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 6545E1B11A9DDED0009A8C8A /* DLMKPlayersDescriptorLayout.m */; };
+		6545E1B21A9DDED0009A8C8A /* DLMKDefaultCollectionLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 6545E1B11A9DDED0009A8C8A /* DLMKDefaultCollectionLayout.m */; };
 		6545E1BB1A9DEC9E009A8C8A /* DLMKPhotoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6545E1B91A9DEC9E009A8C8A /* DLMKPhotoTableViewCell.m */; };
 		6545E1BC1A9DEC9E009A8C8A /* DLMKPhotoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6545E1BA1A9DEC9E009A8C8A /* DLMKPhotoTableViewCell.xib */; };
 		6545E1C01A9DECAA009A8C8A /* DLMKPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6545E1BE1A9DECAA009A8C8A /* DLMKPhotoViewController.m */; };
@@ -38,6 +38,15 @@
 		6545E1D21A9DEEF3009A8C8A /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = 6545E1CC1A9DEEF3009A8C8A /* UIImage+Resize.m */; };
 		6545E1D31A9DEEF3009A8C8A /* UIImage+RoundedCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = 6545E1CE1A9DEEF3009A8C8A /* UIImage+RoundedCorner.m */; };
 		6545E1D41A9DEEF3009A8C8A /* UIViewController+Navigation.m in Sources */ = {isa = PBXBuildFile; fileRef = 6545E1D01A9DEEF3009A8C8A /* UIViewController+Navigation.m */; };
+		6545E1D81A9E2ACB009A8C8A /* DLMKTeamCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6545E1D61A9E2ACA009A8C8A /* DLMKTeamCollectionViewController.m */; };
+		6545E1D91A9E2ACB009A8C8A /* DLMKTeamCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6545E1D71A9E2ACA009A8C8A /* DLMKTeamCollectionViewController.xib */; };
+		6545E1DD1A9E2B3F009A8C8A /* DLMKTeamCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6545E1DB1A9E2B3F009A8C8A /* DLMKTeamCollectionViewCell.m */; };
+		6545E1DE1A9E2B3F009A8C8A /* DLMKTeamCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6545E1DC1A9E2B3F009A8C8A /* DLMKTeamCollectionViewCell.xib */; };
+		6545E1E01A9E2E16009A8C8A /* camera_256x256.png in Resources */ = {isa = PBXBuildFile; fileRef = 6545E1DF1A9E2E16009A8C8A /* camera_256x256.png */; };
+		6545E1E41A9E3EC9009A8C8A /* DLMKTeamNameCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6545E1E21A9E3EC9009A8C8A /* DLMKTeamNameCollectionViewCell.m */; };
+		6545E1E51A9E3EC9009A8C8A /* DLMKTeamNameCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6545E1E31A9E3EC9009A8C8A /* DLMKTeamNameCollectionViewCell.xib */; };
+		6545E1E91A9E4950009A8C8A /* DLMKTeamDescriptorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6545E1E71A9E4950009A8C8A /* DLMKTeamDescriptorViewController.m */; };
+		6545E1EA1A9E4950009A8C8A /* DLMKTeamDescriptorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6545E1E81A9E4950009A8C8A /* DLMKTeamDescriptorViewController.xib */; };
 		655F4AC81A949D36006DB768 /* DLMKTeamsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 655F4AC61A949D36006DB768 /* DLMKTeamsTableViewController.m */; };
 		655F4AC91A949D36006DB768 /* DLMKTeamsTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 655F4AC71A949D36006DB768 /* DLMKTeamsTableViewController.xib */; };
 		655F4ACD1A94A157006DB768 /* DLMKPlayerDescriptorTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 655F4ACB1A94A157006DB768 /* DLMKPlayerDescriptorTableViewController.m */; };
@@ -50,8 +59,6 @@
 		655F4ADF1A96147B006DB768 /* DLMKCustomCellTypeCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 655F4ADE1A96147B006DB768 /* DLMKCustomCellTypeCollection.m */; };
 		655F4AE41A961EE0006DB768 /* DLMKPlayerNumberTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 655F4AE21A961EE0006DB768 /* DLMKPlayerNumberTableViewCell.m */; };
 		655F4AE51A961EE0006DB768 /* DLMKPlayerNumberTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 655F4AE31A961EE0006DB768 /* DLMKPlayerNumberTableViewCell.xib */; };
-		657BB1611A7A94FE00A528EB /* DLMKPlayerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 657BB15F1A7A94FE00A528EB /* DLMKPlayerTableViewCell.m */; };
-		657BB1621A7A94FE00A528EB /* DLMKPlayerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 657BB1601A7A94FE00A528EB /* DLMKPlayerTableViewCell.xib */; };
 		657BB1641A7AA98500A528EB /* person_128x128.png in Resources */ = {isa = PBXBuildFile; fileRef = 657BB1631A7AA98500A528EB /* person_128x128.png */; };
 		65917CBE1A7914A300DC9940 /* play_128x128.png in Resources */ = {isa = PBXBuildFile; fileRef = 65917CBD1A7914A300DC9940 /* play_128x128.png */; };
 		65917CC11A7914F000DC9940 /* gear_256x256.png in Resources */ = {isa = PBXBuildFile; fileRef = 65917CC01A7914F000DC9940 /* gear_256x256.png */; };
@@ -132,8 +139,8 @@
 		653B868E1A9228C600E9E90D /* pause_256x256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pause_256x256.png; sourceTree = "<group>"; };
 		653B86901A92430200E9E90D /* MACROS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MACROS.h; sourceTree = "<group>"; };
 		653B86911A9373D700E9E90D /* SETTINGS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SETTINGS.h; sourceTree = "<group>"; };
-		6545E1B01A9DDED0009A8C8A /* DLMKPlayersDescriptorLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLMKPlayersDescriptorLayout.h; sourceTree = "<group>"; };
-		6545E1B11A9DDED0009A8C8A /* DLMKPlayersDescriptorLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLMKPlayersDescriptorLayout.m; sourceTree = "<group>"; };
+		6545E1B01A9DDED0009A8C8A /* DLMKDefaultCollectionLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLMKDefaultCollectionLayout.h; sourceTree = "<group>"; };
+		6545E1B11A9DDED0009A8C8A /* DLMKDefaultCollectionLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLMKDefaultCollectionLayout.m; sourceTree = "<group>"; };
 		6545E1B81A9DEC9E009A8C8A /* DLMKPhotoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLMKPhotoTableViewCell.h; sourceTree = "<group>"; };
 		6545E1B91A9DEC9E009A8C8A /* DLMKPhotoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLMKPhotoTableViewCell.m; sourceTree = "<group>"; };
 		6545E1BA1A9DEC9E009A8C8A /* DLMKPhotoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DLMKPhotoTableViewCell.xib; sourceTree = "<group>"; };
@@ -152,6 +159,19 @@
 		6545E1CE1A9DEEF3009A8C8A /* UIImage+RoundedCorner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+RoundedCorner.m"; sourceTree = "<group>"; };
 		6545E1CF1A9DEEF3009A8C8A /* UIViewController+Navigation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Navigation.h"; sourceTree = "<group>"; };
 		6545E1D01A9DEEF3009A8C8A /* UIViewController+Navigation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Navigation.m"; sourceTree = "<group>"; };
+		6545E1D51A9E2ACA009A8C8A /* DLMKTeamCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLMKTeamCollectionViewController.h; sourceTree = "<group>"; };
+		6545E1D61A9E2ACA009A8C8A /* DLMKTeamCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLMKTeamCollectionViewController.m; sourceTree = "<group>"; };
+		6545E1D71A9E2ACA009A8C8A /* DLMKTeamCollectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DLMKTeamCollectionViewController.xib; sourceTree = "<group>"; };
+		6545E1DA1A9E2B3F009A8C8A /* DLMKTeamCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLMKTeamCollectionViewCell.h; sourceTree = "<group>"; };
+		6545E1DB1A9E2B3F009A8C8A /* DLMKTeamCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLMKTeamCollectionViewCell.m; sourceTree = "<group>"; };
+		6545E1DC1A9E2B3F009A8C8A /* DLMKTeamCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DLMKTeamCollectionViewCell.xib; sourceTree = "<group>"; };
+		6545E1DF1A9E2E16009A8C8A /* camera_256x256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera_256x256.png; sourceTree = "<group>"; };
+		6545E1E11A9E3EC9009A8C8A /* DLMKTeamNameCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLMKTeamNameCollectionViewCell.h; sourceTree = "<group>"; };
+		6545E1E21A9E3EC9009A8C8A /* DLMKTeamNameCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLMKTeamNameCollectionViewCell.m; sourceTree = "<group>"; };
+		6545E1E31A9E3EC9009A8C8A /* DLMKTeamNameCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DLMKTeamNameCollectionViewCell.xib; sourceTree = "<group>"; };
+		6545E1E61A9E4950009A8C8A /* DLMKTeamDescriptorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLMKTeamDescriptorViewController.h; sourceTree = "<group>"; };
+		6545E1E71A9E4950009A8C8A /* DLMKTeamDescriptorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLMKTeamDescriptorViewController.m; sourceTree = "<group>"; };
+		6545E1E81A9E4950009A8C8A /* DLMKTeamDescriptorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DLMKTeamDescriptorViewController.xib; sourceTree = "<group>"; };
 		655F4AC51A949D36006DB768 /* DLMKTeamsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLMKTeamsTableViewController.h; sourceTree = "<group>"; };
 		655F4AC61A949D36006DB768 /* DLMKTeamsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLMKTeamsTableViewController.m; sourceTree = "<group>"; };
 		655F4AC71A949D36006DB768 /* DLMKTeamsTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DLMKTeamsTableViewController.xib; sourceTree = "<group>"; };
@@ -171,9 +191,6 @@
 		655F4AE11A961EE0006DB768 /* DLMKPlayerNumberTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLMKPlayerNumberTableViewCell.h; sourceTree = "<group>"; };
 		655F4AE21A961EE0006DB768 /* DLMKPlayerNumberTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLMKPlayerNumberTableViewCell.m; sourceTree = "<group>"; };
 		655F4AE31A961EE0006DB768 /* DLMKPlayerNumberTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DLMKPlayerNumberTableViewCell.xib; sourceTree = "<group>"; };
-		657BB15E1A7A94FE00A528EB /* DLMKPlayerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLMKPlayerTableViewCell.h; sourceTree = "<group>"; };
-		657BB15F1A7A94FE00A528EB /* DLMKPlayerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLMKPlayerTableViewCell.m; sourceTree = "<group>"; };
-		657BB1601A7A94FE00A528EB /* DLMKPlayerTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DLMKPlayerTableViewCell.xib; sourceTree = "<group>"; };
 		657BB1631A7AA98500A528EB /* person_128x128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = person_128x128.png; sourceTree = "<group>"; };
 		65917CBD1A7914A300DC9940 /* play_128x128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play_128x128.png; sourceTree = "<group>"; };
 		65917CC01A7914F000DC9940 /* gear_256x256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gear_256x256.png; sourceTree = "<group>"; };
@@ -356,9 +373,6 @@
 				659B01981A9B384600437970 /* PlayerStats */,
 				659B018E1A9B33DA00437970 /* TeamDescriptor */,
 				659B018D1A9B33C400437970 /* PlayerDescriptor */,
-				657BB15E1A7A94FE00A528EB /* DLMKPlayerTableViewCell.h */,
-				657BB15F1A7A94FE00A528EB /* DLMKPlayerTableViewCell.m */,
-				657BB1601A7A94FE00A528EB /* DLMKPlayerTableViewCell.xib */,
 				659B01A31A9B9FE700437970 /* MatchStats */,
 			);
 			name = Views;
@@ -382,6 +396,8 @@
 		655F4ADC1A961308006DB768 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				6545E1B01A9DDED0009A8C8A /* DLMKDefaultCollectionLayout.h */,
+				6545E1B11A9DDED0009A8C8A /* DLMKDefaultCollectionLayout.m */,
 				653B86901A92430200E9E90D /* MACROS.h */,
 				653B86911A9373D700E9E90D /* SETTINGS.h */,
 				655F4AD91A961301006DB768 /* DLMKCustomCellType.h */,
@@ -406,6 +422,7 @@
 		65917CBF1A7914AA00DC9940 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				6545E1DF1A9E2E16009A8C8A /* camera_256x256.png */,
 				659B01941A9B35B700437970 /* goal_256x256.png */,
 				659B01961A9B36ED00437970 /* pass_512x512.png */,
 				653B868E1A9228C600E9E90D /* pause_256x256.png */,
@@ -449,6 +466,12 @@
 				659B01AF1A9CB66200437970 /* DLMKTeamDescriptorCollectionViewController.h */,
 				659B01B01A9CB66200437970 /* DLMKTeamDescriptorCollectionViewController.m */,
 				659B01B11A9CB66200437970 /* DLMKTeamDescriptorCollectionViewController.xib */,
+				6545E1D51A9E2ACA009A8C8A /* DLMKTeamCollectionViewController.h */,
+				6545E1D61A9E2ACA009A8C8A /* DLMKTeamCollectionViewController.m */,
+				6545E1D71A9E2ACA009A8C8A /* DLMKTeamCollectionViewController.xib */,
+				6545E1E61A9E4950009A8C8A /* DLMKTeamDescriptorViewController.h */,
+				6545E1E71A9E4950009A8C8A /* DLMKTeamDescriptorViewController.m */,
+				6545E1E81A9E4950009A8C8A /* DLMKTeamDescriptorViewController.xib */,
 			);
 			name = Descriptors;
 			sourceTree = "<group>";
@@ -484,8 +507,6 @@
 				659B01AA1A9CB5A400437970 /* DLMKPlayerDescriptorCollectionViewCell.h */,
 				659B01AB1A9CB5A400437970 /* DLMKPlayerDescriptorCollectionViewCell.m */,
 				659B01AC1A9CB5A400437970 /* DLMKPlayerDescriptorCollectionViewCell.xib */,
-				6545E1B01A9DDED0009A8C8A /* DLMKPlayersDescriptorLayout.h */,
-				6545E1B11A9DDED0009A8C8A /* DLMKPlayersDescriptorLayout.m */,
 			);
 			name = PlayerDescriptor;
 			sourceTree = "<group>";
@@ -496,6 +517,12 @@
 				655F4AD41A960C47006DB768 /* DLMKTeamNameTableViewCell.h */,
 				655F4AD51A960C47006DB768 /* DLMKTeamNameTableViewCell.m */,
 				655F4AD61A960C47006DB768 /* DLMKTeamNameTableViewCell.xib */,
+				6545E1DA1A9E2B3F009A8C8A /* DLMKTeamCollectionViewCell.h */,
+				6545E1DB1A9E2B3F009A8C8A /* DLMKTeamCollectionViewCell.m */,
+				6545E1DC1A9E2B3F009A8C8A /* DLMKTeamCollectionViewCell.xib */,
+				6545E1E11A9E3EC9009A8C8A /* DLMKTeamNameCollectionViewCell.h */,
+				6545E1E21A9E3EC9009A8C8A /* DLMKTeamNameCollectionViewCell.m */,
+				6545E1E31A9E3EC9009A8C8A /* DLMKTeamNameCollectionViewCell.xib */,
 			);
 			name = TeamDescriptor;
 			sourceTree = "<group>";
@@ -601,6 +628,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				653B868F1A9228C600E9E90D /* pause_256x256.png in Resources */,
+				6545E1DE1A9E2B3F009A8C8A /* DLMKTeamCollectionViewCell.xib in Resources */,
 				659B01971A9B36ED00437970 /* pass_512x512.png in Resources */,
 				65917CC11A7914F000DC9940 /* gear_256x256.png in Resources */,
 				6545E1C11A9DECAA009A8C8A /* DLMKPhotoViewController.xib in Resources */,
@@ -616,16 +644,19 @@
 				65FA2AB81A7BD7E300E87793 /* DLMKMatchViewController.xib in Resources */,
 				655F4AE51A961EE0006DB768 /* DLMKPlayerNumberTableViewCell.xib in Resources */,
 				655F4AD81A960C47006DB768 /* DLMKTeamNameTableViewCell.xib in Resources */,
-				657BB1621A7A94FE00A528EB /* DLMKPlayerTableViewCell.xib in Resources */,
 				657BB1641A7AA98500A528EB /* person_128x128.png in Resources */,
 				659B01B31A9CB66200437970 /* DLMKTeamDescriptorCollectionViewController.xib in Resources */,
+				6545E1D91A9E2ACB009A8C8A /* DLMKTeamCollectionViewController.xib in Resources */,
 				659B019D1A9B88D300437970 /* DLMKMatchStatsSelectorTableViewController.xib in Resources */,
 				651B965D1A79123700154A3C /* Images.xcassets in Resources */,
 				659B01AE1A9CB5A400437970 /* DLMKPlayerDescriptorCollectionViewCell.xib in Resources */,
 				659B01951A9B35B700437970 /* goal_256x256.png in Resources */,
 				65917CC31A79152400DC9940 /* statistics_128x128.png in Resources */,
 				659B01931A9B345E00437970 /* DLMKPlayerStatsTableViewCell.xib in Resources */,
+				6545E1EA1A9E4950009A8C8A /* DLMKTeamDescriptorViewController.xib in Resources */,
 				65917CDB1A7A8E8D00DC9940 /* DLMKTeamDescriptorTableViewController.xib in Resources */,
+				6545E1E51A9E3EC9009A8C8A /* DLMKTeamNameCollectionViewCell.xib in Resources */,
+				6545E1E01A9E2E16009A8C8A /* camera_256x256.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -668,15 +699,16 @@
 				6545E1C41A9DEE92009A8C8A /* DLMKPhotoContainer.m in Sources */,
 				65917CCE1A7A86EB00DC9940 /* DLMKTeamDescriptorTableViewController.m in Sources */,
 				653B86881A9223AB00E9E90D /* DLMKTeamDescriptor.m in Sources */,
-				6545E1B21A9DDED0009A8C8A /* DLMKPlayersDescriptorLayout.m in Sources */,
+				6545E1B21A9DDED0009A8C8A /* DLMKDefaultCollectionLayout.m in Sources */,
 				653B868D1A92259900E9E90D /* DLMKModelServer.m in Sources */,
 				659B01921A9B345E00437970 /* DLMKPlayerStatsTableViewCell.m in Sources */,
 				659B01A61A9C7D9000437970 /* _DLMKRivalStats.m in Sources */,
 				653B864B1A92147500E9E90D /* DLMKBaseManagedObject.m in Sources */,
+				6545E1DD1A9E2B3F009A8C8A /* DLMKTeamCollectionViewCell.m in Sources */,
 				659B01A91A9C7D9D00437970 /* DLMKRivalStats.m in Sources */,
-				657BB1611A7A94FE00A528EB /* DLMKPlayerTableViewCell.m in Sources */,
 				655F4ACD1A94A157006DB768 /* DLMKPlayerDescriptorTableViewController.m in Sources */,
 				653B86791A92238B00E9E90D /* _DLMKTeamDescriptor.m in Sources */,
+				6545E1E91A9E4950009A8C8A /* DLMKTeamDescriptorViewController.m in Sources */,
 				6545E1D11A9DEEF3009A8C8A /* UIImage+Alpha.m in Sources */,
 				651B96581A79123700154A3C /* main.m in Sources */,
 				6545E1D41A9DEEF3009A8C8A /* UIViewController+Navigation.m in Sources */,
@@ -688,6 +720,8 @@
 				655F4ADB1A961301006DB768 /* DLMKCustomCellType.m in Sources */,
 				655F4ADF1A96147B006DB768 /* DLMKCustomCellTypeCollection.m in Sources */,
 				65B92B951A91F83A00A95378 /* Model.xcdatamodeld in Sources */,
+				6545E1E41A9E3EC9009A8C8A /* DLMKTeamNameCollectionViewCell.m in Sources */,
+				6545E1D81A9E2ACB009A8C8A /* DLMKTeamCollectionViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

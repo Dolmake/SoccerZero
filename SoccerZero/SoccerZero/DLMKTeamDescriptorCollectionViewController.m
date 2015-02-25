@@ -9,26 +9,30 @@
 #import "DLMKTeamDescriptorCollectionViewController.h"
 #import "DLMKCustomCellTypeCollection.h"
 #import "DLMKPlayerDescriptorCollectionViewCell.h"
+#import "DLMKTeamNameCollectionViewCell.h"
 #import "DLMKTeamDescriptor.h"
-#import "DLMKPlayersDescriptorLayout.h"
+#import "DLMKTeamCollectionViewCell.h"
 #import "DLMKPlayerDescriptorTableViewController.h"
+#import "DLMKDefaultCollectionLayout.h"
 
 @interface DLMKTeamDescriptorCollectionViewController ()
 
 @property (nonatomic,strong) DLMKCustomCellTypeCollection* customCells;
 
-@property (nonatomic,strong) DLMKPlayersDescriptorLayout *layout;
+@property (nonatomic,strong) DLMKDefaultCollectionLayout *layout;
 
 @end
 
 @implementation DLMKTeamDescriptorCollectionViewController
 
 static NSString * const reuseIdentifier = @"Cell";
+static int TEAM_NAME_SECTION = 0;
+static int PLAYERS_SECTION = 1;
 
 #pragma martk - Properties
--(DLMKPlayersDescriptorLayout*) layout{
+-(DLMKDefaultCollectionLayout*) layout{
     if (!_layout)
-        _layout = [DLMKPlayersDescriptorLayout new];
+        _layout = [DLMKDefaultCollectionLayout new];
     return _layout;
 }
 
@@ -37,7 +41,7 @@ static NSString * const reuseIdentifier = @"Cell";
     
     if (self = [super initWithCollectionViewLayout:self.layout]){
         
-        _customCells = [DLMKCustomCellTypeCollection customCellTypeCollectionWithArray:@[[DLMKPlayerDescriptorCollectionViewCell class]]];
+        _customCells = [DLMKCustomCellTypeCollection customCellTypeCollectionWithArray:@[[DLMKTeamNameCollectionViewCell class],[DLMKPlayerDescriptorCollectionViewCell class]]];
        
     }
     return self;
@@ -51,7 +55,10 @@ static NSString * const reuseIdentifier = @"Cell";
     self.clearsSelectionOnViewWillAppear = YES;
     self.collectionView.backgroundColor = self.layout.backGroundColor;
     [self.customCells registerNibsForCollectionView:self.collectionView];
-    self.layout.itemSize = [self.customCells sizeForIndex:0];
+    self.layout.itemSize = [self.customCells sizeForIndex:1];
+    
+    UIBarButtonItem *addPlayerButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addPlayer:)];
+    self.navigationItem.rightBarButtonItem = addPlayerButton;
 }
 
 -(void) viewWillAppear:(BOOL)animated   {
@@ -69,26 +76,38 @@ static NSString * const reuseIdentifier = @"Cell";
 #pragma mark <UICollectionViewDataSource>
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-//#warning Incomplete method implementation -- Return the number of sections
-    return 1;
+    return [[self.customCells arrayOfClasses]count];
 }
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-//#warning Incomplete method implementation -- Return the number of items in the section
-    return [self.teamDescriptorModel countPlayers];
+    
+    if (section == TEAM_NAME_SECTION)//TEAM's NAME Section
+        return 1;
+    else//PLAYERS_SECTION
+        return [self.teamDescriptorModel countPlayers];
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
-    
-    // Configure the cell
-    
-    DLMKPlayerDescriptorCollectionViewCell* cell = (DLMKPlayerDescriptorCollectionViewCell*)[self.customCells cellForCollectionView:self.collectionView atIndexPath:indexPath ];
-    cell.playerDescriptorModel = [self.teamDescriptorModel playerAtRow:indexPath.row];
+    UICollectionViewCell *cell = nil;
+    if (indexPath.section == TEAM_NAME_SECTION)
+    {
+        DLMKTeamNameCollectionViewCell *cellTeamName =(DLMKTeamNameCollectionViewCell*)[self.customCells cellForCollectionView:self.collectionView atIndexPath:indexPath];
+        cellTeamName.teamDescriptorModel = self.teamDescriptorModel;
+        cell = cellTeamName;
+    }
+    else//PLAYERS_SECTION
+    {
+        DLMKPlayerDescriptorCollectionViewCell *cellPlayerDescriptor = (DLMKPlayerDescriptorCollectionViewCell*)[self.customCells cellForCollectionView:self.collectionView atIndexPath:indexPath ];
+        cellPlayerDescriptor.playerDescriptorModel = [self.teamDescriptorModel playerAtRow:indexPath.row];
+        cell = cellPlayerDescriptor;
+    }
     
     return cell;
 }
+
+
 
 #pragma mark <UICollectionViewDelegate>
 
@@ -130,4 +149,18 @@ static NSString * const reuseIdentifier = @"Cell";
 }
 */
 
+#pragma - mark Actions
+-(void)addPlayer:(id)sender{
+    [self.teamDescriptorModel addPlayerWithName:@"Unnamed" number:0 ];
+    [self.collectionView reloadData];
+}
+
+
+
 @end
+
+
+
+
+
+

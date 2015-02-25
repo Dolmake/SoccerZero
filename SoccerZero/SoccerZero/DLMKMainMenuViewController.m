@@ -7,12 +7,12 @@
 //
 
 #import "DLMKMainMenuViewController.h"
-//#import "DLMKTeamDescriptorTableViewController.h"
 #import "DLMKTeamsTableViewController.h"
 #import "DLMKTeamStatsSelectorTableViewController.h"
 #import "DLMKMatchStats.h"
 #import "DLMKModelServer.h"
 #import "DLMKMatchStatsSelectorTableViewController.h"
+#import "DLMKTeamCollectionViewController.h"
 
 @interface DLMKMainMenuViewController ()
 
@@ -87,7 +87,11 @@
 -(IBAction)onPressConfiguration:(id)sender{
     NSLog(@"Configuration pressed");
     
-    DLMKTeamsTableViewController* teamsVC = [[DLMKTeamsTableViewController alloc] init];
+//    DLMKTeamsTableViewController* teamsVC = [[DLMKTeamsTableViewController alloc] init];
+//    [self.navigationController pushViewController:teamsVC
+//                                         animated:YES];
+    
+    DLMKTeamCollectionViewController* teamsVC = [[DLMKTeamCollectionViewController alloc] init];
     [self.navigationController pushViewController:teamsVC
                                          animated:YES];
     

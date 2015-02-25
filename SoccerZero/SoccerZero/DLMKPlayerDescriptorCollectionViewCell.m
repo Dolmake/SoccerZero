@@ -21,7 +21,9 @@
     return [self description];
 }
 +(CGSize)cellSize{
-    return CGSizeMake(175.0f, 175.0f);
+    //return CGSizeMake(175.0f, 175.0f);
+    CGRect screenRect = [[UIScreen mainScreen] bounds];
+    return CGSizeMake(screenRect.size.width * 0.45f,screenRect.size.width  * 0.45f);
 }
 
 - (void)awakeFromNib {

@@ -6,9 +6,9 @@
 //  Copyright (c) 2015 Dolmake. All rights reserved.
 //
 
-#import "DLMKPlayersDescriptorLayout.h"
+#import "DLMKDefaultCollectionLayout.h"
 
-@implementation DLMKPlayersDescriptorLayout
+@implementation DLMKDefaultCollectionLayout
 
 -(id) init
 {

@@ -20,6 +20,10 @@
 +(NSString*)cellId{
     return [self description];
 }
++(CGSize)cellSize{
+    return CGSizeMake(175.0f, 44.0f);
+}
+
 
 #pragma mark - Properties
 -(void) setTeamDescriptorModel:(DLMKTeamDescriptor *)teamDescriptorModel{

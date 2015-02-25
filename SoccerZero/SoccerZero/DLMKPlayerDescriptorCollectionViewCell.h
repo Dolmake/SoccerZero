@@ -11,8 +11,6 @@
 
 @interface DLMKPlayerDescriptorCollectionViewCell : UICollectionViewCell
 
-
-
 +(CGFloat)height;
 +(NSString*)cellId;
 +(CGSize)cellSize;

@@ -8,7 +8,7 @@
 
 @import UIKit;
 
-@interface DLMKPlayersDescriptorLayout : UICollectionViewFlowLayout
+@interface DLMKDefaultCollectionLayout : UICollectionViewFlowLayout
 
 @property (nonatomic, strong) UIColor* backGroundColor;
 

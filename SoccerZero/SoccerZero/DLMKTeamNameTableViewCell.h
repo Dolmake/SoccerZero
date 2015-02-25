@@ -14,6 +14,7 @@
 
 +(CGFloat)height;
 +(NSString*)cellId;
++(CGSize)cellSize;
 
 @property (strong, nonatomic) DLMKTeamDescriptor* teamDescriptorModel;
 
