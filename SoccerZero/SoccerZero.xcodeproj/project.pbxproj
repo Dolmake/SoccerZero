@@ -28,6 +28,16 @@
 		653B868D1A92259900E9E90D /* DLMKModelServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 653B868C1A92259900E9E90D /* DLMKModelServer.m */; };
 		653B868F1A9228C600E9E90D /* pause_256x256.png in Resources */ = {isa = PBXBuildFile; fileRef = 653B868E1A9228C600E9E90D /* pause_256x256.png */; };
 		6545E1B21A9DDED0009A8C8A /* DLMKPlayersDescriptorLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 6545E1B11A9DDED0009A8C8A /* DLMKPlayersDescriptorLayout.m */; };
+		6545E1BB1A9DEC9E009A8C8A /* DLMKPhotoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6545E1B91A9DEC9E009A8C8A /* DLMKPhotoTableViewCell.m */; };
+		6545E1BC1A9DEC9E009A8C8A /* DLMKPhotoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6545E1BA1A9DEC9E009A8C8A /* DLMKPhotoTableViewCell.xib */; };
+		6545E1C01A9DECAA009A8C8A /* DLMKPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6545E1BE1A9DECAA009A8C8A /* DLMKPhotoViewController.m */; };
+		6545E1C11A9DECAA009A8C8A /* DLMKPhotoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6545E1BF1A9DECAA009A8C8A /* DLMKPhotoViewController.xib */; };
+		6545E1C41A9DEE92009A8C8A /* DLMKPhotoContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6545E1C31A9DEE92009A8C8A /* DLMKPhotoContainer.m */; };
+		6545E1C71A9DEE9F009A8C8A /* _DLMKPhotoContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6545E1C61A9DEE9F009A8C8A /* _DLMKPhotoContainer.m */; };
+		6545E1D11A9DEEF3009A8C8A /* UIImage+Alpha.m in Sources */ = {isa = PBXBuildFile; fileRef = 6545E1CA1A9DEEF3009A8C8A /* UIImage+Alpha.m */; };
+		6545E1D21A9DEEF3009A8C8A /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = 6545E1CC1A9DEEF3009A8C8A /* UIImage+Resize.m */; };
+		6545E1D31A9DEEF3009A8C8A /* UIImage+RoundedCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = 6545E1CE1A9DEEF3009A8C8A /* UIImage+RoundedCorner.m */; };
+		6545E1D41A9DEEF3009A8C8A /* UIViewController+Navigation.m in Sources */ = {isa = PBXBuildFile; fileRef = 6545E1D01A9DEEF3009A8C8A /* UIViewController+Navigation.m */; };
 		655F4AC81A949D36006DB768 /* DLMKTeamsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 655F4AC61A949D36006DB768 /* DLMKTeamsTableViewController.m */; };
 		655F4AC91A949D36006DB768 /* DLMKTeamsTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 655F4AC71A949D36006DB768 /* DLMKTeamsTableViewController.xib */; };
 		655F4ACD1A94A157006DB768 /* DLMKPlayerDescriptorTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 655F4ACB1A94A157006DB768 /* DLMKPlayerDescriptorTableViewController.m */; };
@@ -124,6 +134,24 @@
 		653B86911A9373D700E9E90D /* SETTINGS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SETTINGS.h; sourceTree = "<group>"; };
 		6545E1B01A9DDED0009A8C8A /* DLMKPlayersDescriptorLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLMKPlayersDescriptorLayout.h; sourceTree = "<group>"; };
 		6545E1B11A9DDED0009A8C8A /* DLMKPlayersDescriptorLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLMKPlayersDescriptorLayout.m; sourceTree = "<group>"; };
+		6545E1B81A9DEC9E009A8C8A /* DLMKPhotoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLMKPhotoTableViewCell.h; sourceTree = "<group>"; };
+		6545E1B91A9DEC9E009A8C8A /* DLMKPhotoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLMKPhotoTableViewCell.m; sourceTree = "<group>"; };
+		6545E1BA1A9DEC9E009A8C8A /* DLMKPhotoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DLMKPhotoTableViewCell.xib; sourceTree = "<group>"; };
+		6545E1BD1A9DECAA009A8C8A /* DLMKPhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLMKPhotoViewController.h; sourceTree = "<group>"; };
+		6545E1BE1A9DECAA009A8C8A /* DLMKPhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLMKPhotoViewController.m; sourceTree = "<group>"; };
+		6545E1BF1A9DECAA009A8C8A /* DLMKPhotoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DLMKPhotoViewController.xib; sourceTree = "<group>"; };
+		6545E1C21A9DEE92009A8C8A /* DLMKPhotoContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLMKPhotoContainer.h; sourceTree = "<group>"; };
+		6545E1C31A9DEE92009A8C8A /* DLMKPhotoContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLMKPhotoContainer.m; sourceTree = "<group>"; };
+		6545E1C51A9DEE9F009A8C8A /* _DLMKPhotoContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _DLMKPhotoContainer.h; sourceTree = "<group>"; };
+		6545E1C61A9DEE9F009A8C8A /* _DLMKPhotoContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _DLMKPhotoContainer.m; sourceTree = "<group>"; };
+		6545E1C91A9DEEF3009A8C8A /* UIImage+Alpha.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Alpha.h"; sourceTree = "<group>"; };
+		6545E1CA1A9DEEF3009A8C8A /* UIImage+Alpha.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Alpha.m"; sourceTree = "<group>"; };
+		6545E1CB1A9DEEF3009A8C8A /* UIImage+Resize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Resize.h"; sourceTree = "<group>"; };
+		6545E1CC1A9DEEF3009A8C8A /* UIImage+Resize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Resize.m"; sourceTree = "<group>"; };
+		6545E1CD1A9DEEF3009A8C8A /* UIImage+RoundedCorner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+RoundedCorner.h"; sourceTree = "<group>"; };
+		6545E1CE1A9DEEF3009A8C8A /* UIImage+RoundedCorner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+RoundedCorner.m"; sourceTree = "<group>"; };
+		6545E1CF1A9DEEF3009A8C8A /* UIViewController+Navigation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Navigation.h"; sourceTree = "<group>"; };
+		6545E1D01A9DEEF3009A8C8A /* UIViewController+Navigation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Navigation.m"; sourceTree = "<group>"; };
 		655F4AC51A949D36006DB768 /* DLMKTeamsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLMKTeamsTableViewController.h; sourceTree = "<group>"; };
 		655F4AC61A949D36006DB768 /* DLMKTeamsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLMKTeamsTableViewController.m; sourceTree = "<group>"; };
 		655F4AC71A949D36006DB768 /* DLMKTeamsTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DLMKTeamsTableViewController.xib; sourceTree = "<group>"; };
@@ -226,6 +254,7 @@
 		651B96541A79123700154A3C /* SoccerZero */ = {
 			isa = PBXGroup;
 			children = (
+				6545E1C81A9DEEE6009A8C8A /* Categories */,
 				653B868A1A92249800E9E90D /* Views */,
 				65917CC41A7A7EE300DC9940 /* Models */,
 				65917CBF1A7914AA00DC9940 /* Resources */,
@@ -282,6 +311,8 @@
 		653B865B1A92174200E9E90D /* Machine */ = {
 			isa = PBXGroup;
 			children = (
+				6545E1C51A9DEE9F009A8C8A /* _DLMKPhotoContainer.h */,
+				6545E1C61A9DEE9F009A8C8A /* _DLMKPhotoContainer.m */,
 				659B01A41A9C7D9000437970 /* _DLMKRivalStats.h */,
 				659B01A51A9C7D9000437970 /* _DLMKRivalStats.m */,
 				653B866C1A92238B00E9E90D /* _DLMKMatchStats.h */,
@@ -301,6 +332,8 @@
 		653B866B1A92178100E9E90D /* Human */ = {
 			isa = PBXGroup;
 			children = (
+				6545E1C21A9DEE92009A8C8A /* DLMKPhotoContainer.h */,
+				6545E1C31A9DEE92009A8C8A /* DLMKPhotoContainer.m */,
 				659B01A71A9C7D9D00437970 /* DLMKRivalStats.h */,
 				659B01A81A9C7D9D00437970 /* DLMKRivalStats.m */,
 				653B867B1A9223AB00E9E90D /* DLMKMatchStats.h */,
@@ -329,6 +362,21 @@
 				659B01A31A9B9FE700437970 /* MatchStats */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		6545E1C81A9DEEE6009A8C8A /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				6545E1C91A9DEEF3009A8C8A /* UIImage+Alpha.h */,
+				6545E1CA1A9DEEF3009A8C8A /* UIImage+Alpha.m */,
+				6545E1CB1A9DEEF3009A8C8A /* UIImage+Resize.h */,
+				6545E1CC1A9DEEF3009A8C8A /* UIImage+Resize.m */,
+				6545E1CD1A9DEEF3009A8C8A /* UIImage+RoundedCorner.h */,
+				6545E1CE1A9DEEF3009A8C8A /* UIImage+RoundedCorner.m */,
+				6545E1CF1A9DEEF3009A8C8A /* UIViewController+Navigation.h */,
+				6545E1D01A9DEEF3009A8C8A /* UIViewController+Navigation.m */,
+			);
+			name = Categories;
 			sourceTree = "<group>";
 		};
 		655F4ADC1A961308006DB768 /* Utils */ = {
@@ -386,6 +434,9 @@
 		659B018B1A9B333E00437970 /* Descriptors */ = {
 			isa = PBXGroup;
 			children = (
+				6545E1BD1A9DECAA009A8C8A /* DLMKPhotoViewController.h */,
+				6545E1BE1A9DECAA009A8C8A /* DLMKPhotoViewController.m */,
+				6545E1BF1A9DECAA009A8C8A /* DLMKPhotoViewController.xib */,
 				655F4AC51A949D36006DB768 /* DLMKTeamsTableViewController.h */,
 				655F4AC61A949D36006DB768 /* DLMKTeamsTableViewController.m */,
 				655F4AC71A949D36006DB768 /* DLMKTeamsTableViewController.xib */,
@@ -421,6 +472,9 @@
 		659B018D1A9B33C400437970 /* PlayerDescriptor */ = {
 			isa = PBXGroup;
 			children = (
+				6545E1B81A9DEC9E009A8C8A /* DLMKPhotoTableViewCell.h */,
+				6545E1B91A9DEC9E009A8C8A /* DLMKPhotoTableViewCell.m */,
+				6545E1BA1A9DEC9E009A8C8A /* DLMKPhotoTableViewCell.xib */,
 				655F4AE11A961EE0006DB768 /* DLMKPlayerNumberTableViewCell.h */,
 				655F4AE21A961EE0006DB768 /* DLMKPlayerNumberTableViewCell.m */,
 				655F4AE31A961EE0006DB768 /* DLMKPlayerNumberTableViewCell.xib */,
@@ -549,11 +603,13 @@
 				653B868F1A9228C600E9E90D /* pause_256x256.png in Resources */,
 				659B01971A9B36ED00437970 /* pass_512x512.png in Resources */,
 				65917CC11A7914F000DC9940 /* gear_256x256.png in Resources */,
+				6545E1C11A9DECAA009A8C8A /* DLMKPhotoViewController.xib in Resources */,
 				659B018A1A98F9C000437970 /* DLMKTeamStatsSelectorTableViewController.xib in Resources */,
 				651B96791A7912A600154A3C /* DLMKMainMenuViewController.xib in Resources */,
 				655F4AD31A950DE0006DB768 /* DLMKPlayerNameTableViewCell.xib in Resources */,
 				651B96601A79123700154A3C /* LaunchScreen.xib in Resources */,
 				655F4ACE1A94A157006DB768 /* DLMKPlayerDescriptorTableViewController.xib in Resources */,
+				6545E1BC1A9DEC9E009A8C8A /* DLMKPhotoTableViewCell.xib in Resources */,
 				655F4AC91A949D36006DB768 /* DLMKTeamsTableViewController.xib in Resources */,
 				659B01A21A9B9FE300437970 /* DLMKMatchStatsTableViewCell.xib in Resources */,
 				65917CBE1A7914A300DC9940 /* play_128x128.png in Resources */,
@@ -588,23 +644,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				653B86781A92238B00E9E90D /* _DLMKPlayerStats.m in Sources */,
+				6545E1C01A9DECAA009A8C8A /* DLMKPhotoViewController.m in Sources */,
 				659B01A11A9B9FE300437970 /* DLMKMatchStatsTableViewCell.m in Sources */,
 				65B92B921A91F72400A95378 /* AGTCoreDataStack.m in Sources */,
 				65FA2AB71A7BD7E300E87793 /* DLMKMatchViewController.m in Sources */,
+				6545E1BB1A9DEC9E009A8C8A /* DLMKPhotoTableViewCell.m in Sources */,
 				65FA2ABE1A7C220000E87793 /* DLMKTimeServer.m in Sources */,
 				653B86761A92238B00E9E90D /* _DLMKMatchStats.m in Sources */,
 				655F4AD71A960C47006DB768 /* DLMKTeamNameTableViewCell.m in Sources */,
 				659B01AD1A9CB5A400437970 /* DLMKPlayerDescriptorCollectionViewCell.m in Sources */,
+				6545E1D21A9DEEF3009A8C8A /* UIImage+Resize.m in Sources */,
 				653B86871A9223AB00E9E90D /* DLMKPlayerStats.m in Sources */,
 				653B86891A9223AB00E9E90D /* DLMKTeamStats.m in Sources */,
 				655F4AE41A961EE0006DB768 /* DLMKPlayerNumberTableViewCell.m in Sources */,
 				651B965B1A79123700154A3C /* AppDelegate.m in Sources */,
 				659B01891A98F9C000437970 /* DLMKTeamStatsSelectorTableViewController.m in Sources */,
+				6545E1D31A9DEEF3009A8C8A /* UIImage+RoundedCorner.m in Sources */,
 				651B96781A7912A600154A3C /* DLMKMainMenuViewController.m in Sources */,
 				653B86771A92238B00E9E90D /* _DLMKPlayerDescriptor.m in Sources */,
 				655F4AD21A950DE0006DB768 /* DLMKPlayerNameTableViewCell.m in Sources */,
 				659B01B21A9CB66200437970 /* DLMKTeamDescriptorCollectionViewController.m in Sources */,
 				653B86851A9223AB00E9E90D /* DLMKMatchStats.m in Sources */,
+				6545E1C41A9DEE92009A8C8A /* DLMKPhotoContainer.m in Sources */,
 				65917CCE1A7A86EB00DC9940 /* DLMKTeamDescriptorTableViewController.m in Sources */,
 				653B86881A9223AB00E9E90D /* DLMKTeamDescriptor.m in Sources */,
 				6545E1B21A9DDED0009A8C8A /* DLMKPlayersDescriptorLayout.m in Sources */,
@@ -616,10 +677,13 @@
 				657BB1611A7A94FE00A528EB /* DLMKPlayerTableViewCell.m in Sources */,
 				655F4ACD1A94A157006DB768 /* DLMKPlayerDescriptorTableViewController.m in Sources */,
 				653B86791A92238B00E9E90D /* _DLMKTeamDescriptor.m in Sources */,
+				6545E1D11A9DEEF3009A8C8A /* UIImage+Alpha.m in Sources */,
 				651B96581A79123700154A3C /* main.m in Sources */,
+				6545E1D41A9DEEF3009A8C8A /* UIViewController+Navigation.m in Sources */,
 				653B86861A9223AB00E9E90D /* DLMKPlayerDescriptor.m in Sources */,
 				659B019C1A9B88D300437970 /* DLMKMatchStatsSelectorTableViewController.m in Sources */,
 				655F4AC81A949D36006DB768 /* DLMKTeamsTableViewController.m in Sources */,
+				6545E1C71A9DEE9F009A8C8A /* _DLMKPhotoContainer.m in Sources */,
 				653B867A1A92238B00E9E90D /* _DLMKTeamStats.m in Sources */,
 				655F4ADB1A961301006DB768 /* DLMKCustomCellType.m in Sources */,
 				655F4ADF1A96147B006DB768 /* DLMKCustomCellTypeCollection.m in Sources */,

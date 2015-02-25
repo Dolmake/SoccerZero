@@ -6,9 +6,14 @@
         <relationship name="rivalStats" maxCount="1" deletionRule="Cascade" destinationEntity="RivalStats" inverseName="matchStats" inverseEntity="RivalStats" syncable="YES"/>
         <relationship name="teamStats" maxCount="1" deletionRule="Cascade" destinationEntity="TeamStats" inverseName="matchStats" inverseEntity="TeamStats" syncable="YES"/>
     </entity>
+    <entity name="PhotoContainer" representedClassName="DLMKPhotoContainer" syncable="YES">
+        <attribute name="photoData" optional="YES" attributeType="Binary" syncable="YES"/>
+        <relationship name="playerDescriptor" maxCount="1" deletionRule="Nullify" destinationEntity="PlayerDescriptor" inverseName="photoContainer" inverseEntity="PlayerDescriptor" syncable="YES"/>
+    </entity>
     <entity name="PlayerDescriptor" representedClassName="DLMKPlayerDescriptor" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="number" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="photoContainer" maxCount="1" deletionRule="Cascade" destinationEntity="PhotoContainer" inverseName="playerDescriptor" inverseEntity="PhotoContainer" syncable="YES"/>
         <relationship name="playerStats" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PlayerStats" inverseName="playerDescriptor" inverseEntity="PlayerStats" syncable="YES"/>
         <relationship name="teamDescriptor" maxCount="1" deletionRule="Nullify" destinationEntity="TeamDescriptor" inverseName="players" inverseEntity="TeamDescriptor" syncable="YES"/>
     </entity>
@@ -19,6 +24,7 @@
         <attribute name="faults_received" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="goals" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="is_playing" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="last_seconds_played" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="notes" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="seconds_played" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="shots" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
@@ -44,10 +50,11 @@
     </entity>
     <elements>
         <element name="MatchStats" positionX="306" positionY="-54" width="128" height="105"/>
-        <element name="PlayerDescriptor" positionX="873" positionY="-16" width="128" height="103"/>
-        <element name="PlayerStats" positionX="691" positionY="233" width="128" height="210"/>
+        <element name="PlayerDescriptor" positionX="873" positionY="-16" width="128" height="118"/>
+        <element name="PlayerStats" positionX="691" positionY="233" width="128" height="223"/>
         <element name="RivalStats" positionX="504" positionY="90" width="128" height="88"/>
         <element name="TeamDescriptor" positionX="612" positionY="-55" width="128" height="90"/>
         <element name="TeamStats" positionX="493" positionY="125" width="128" height="118"/>
+        <element name="PhotoContainer" positionX="504" positionY="90" width="128" height="73"/>
     </elements>
 </model>

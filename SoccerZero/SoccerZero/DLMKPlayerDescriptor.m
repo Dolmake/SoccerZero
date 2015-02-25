@@ -1,4 +1,5 @@
 #import "DLMKPlayerDescriptor.h"
+#import "DLMKPhotoContainer.h"
 
 @interface DLMKPlayerDescriptor ()
 
@@ -16,6 +17,7 @@
     playerDescriptor.name = name;
     playerDescriptor.numberValue = number;
     playerDescriptor.playerStats = nil;
+    playerDescriptor.photoContainer = [DLMKPhotoContainer insertInManagedObjectContext:aContext ];
     
     return playerDescriptor;
 }

@@ -8,9 +8,10 @@
 
 #import "DLMKPlayerDescriptorTableViewController.h"
 #import "DLMKPlayerDescriptor.h"
-#import "DLMKPlayerTableViewCell.h"
+#import "DLMKPhotoTableViewCell.h"
 #import "DLMKPlayerNameTableViewCell.h"
 #import "DLMKCustomCellTypeCollection.h"
+#import "DLMKPhotoViewController.h"
 
 @interface DLMKPlayerDescriptorTableViewController ()
 
@@ -38,10 +39,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.customCells = [DLMKCustomCellTypeCollection customCellTypeCollectionWithArray:@[                                                                                         [DLMKPlayerNameTableViewCell class],                                                                                                        [DLMKPlayerTableViewCell class]
+    self.customCells = [DLMKCustomCellTypeCollection customCellTypeCollectionWithArray:@[                                                                                         [DLMKPlayerNameTableViewCell class],                                                                                                        [DLMKPhotoTableViewCell class]
                                                                                          ]];
     
     [self.customCells registerNibsForTableView:self.tableView ];
+}
+
+-(void) viewWillAppear:(BOOL)animated{
+    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -52,7 +57,6 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    //return [_customCellCollection count];
     return [self.customCells.arrayOfClasses count];
 }
 
@@ -71,6 +75,14 @@
     [cell setValue:self.playerDescriptorModel forKey:@"playerDescriptorModel"];
     return cell;
     
+}
+
+-(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.section == 1){
+        DLMKPhotoViewController *photoVC = [[DLMKPhotoViewController alloc] initWithModel:self.playerDescriptorModel];
+        
+        [self.navigationController pushViewController:photoVC animated:YES];
+    }
 }
 
 @end

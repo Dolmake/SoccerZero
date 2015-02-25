@@ -169,6 +169,7 @@ CGFloat _accumTime = 0;
 -(void) onPlay:(DLMKPlayerStats*)sender{
     NSLog(@"Player %@ play" , sender.name);
     sender.is_playingValue = YES;
+    sender.last_seconds_playedValue  = 0;
     
 }
 -(void) onBench:(DLMKPlayerStats*)sender{
@@ -200,7 +201,10 @@ CGFloat _accumTime = 0;
 -(void) updatePlayersStats{
         for (DLMKPlayerStats *playerStats in self.playersStatsCache) {
         if (playerStats.is_playingValue)
+        {
             playerStats.seconds_playedValue += 1;
+            playerStats.last_seconds_playedValue += 1;
+        }
     }
 }
 

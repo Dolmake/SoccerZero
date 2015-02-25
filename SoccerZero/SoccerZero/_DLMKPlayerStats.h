@@ -11,6 +11,7 @@ extern const struct DLMKPlayerStatsAttributes {
 	__unsafe_unretained NSString *faults_received;
 	__unsafe_unretained NSString *goals;
 	__unsafe_unretained NSString *is_playing;
+	__unsafe_unretained NSString *last_seconds_played;
 	__unsafe_unretained NSString *notes;
 	__unsafe_unretained NSString *seconds_played;
 	__unsafe_unretained NSString *shots;
@@ -81,6 +82,14 @@ extern const struct DLMKPlayerStatsRelationships {
 
 //- (BOOL)validateIs_playing:(id*)value_ error:(NSError**)error_;
 
+@property (nonatomic, strong) NSNumber* last_seconds_played;
+
+@property (atomic) int32_t last_seconds_playedValue;
+- (int32_t)last_seconds_playedValue;
+- (void)setLast_seconds_playedValue:(int32_t)value_;
+
+//- (BOOL)validateLast_seconds_played:(id*)value_ error:(NSError**)error_;
+
 @property (nonatomic, strong) NSString* notes;
 
 //- (BOOL)validateNotes:(id*)value_ error:(NSError**)error_;
@@ -148,6 +157,12 @@ extern const struct DLMKPlayerStatsRelationships {
 
 - (BOOL)primitiveIs_playingValue;
 - (void)setPrimitiveIs_playingValue:(BOOL)value_;
+
+- (NSNumber*)primitiveLast_seconds_played;
+- (void)setPrimitiveLast_seconds_played:(NSNumber*)value;
+
+- (int32_t)primitiveLast_seconds_playedValue;
+- (void)setPrimitiveLast_seconds_playedValue:(int32_t)value_;
 
 - (NSString*)primitiveNotes;
 - (void)setPrimitiveNotes:(NSString*)value;

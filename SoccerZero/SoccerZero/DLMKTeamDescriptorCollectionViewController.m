@@ -11,6 +11,7 @@
 #import "DLMKPlayerDescriptorCollectionViewCell.h"
 #import "DLMKTeamDescriptor.h"
 #import "DLMKPlayersDescriptorLayout.h"
+#import "DLMKPlayerDescriptorTableViewController.h"
 
 @interface DLMKTeamDescriptorCollectionViewController ()
 
@@ -53,6 +54,11 @@ static NSString * const reuseIdentifier = @"Cell";
     self.layout.itemSize = [self.customCells sizeForIndex:0];
 }
 
+-(void) viewWillAppear:(BOOL)animated   {
+    [super viewWillAppear:animated];
+    [self.collectionView reloadData];
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -88,7 +94,11 @@ static NSString * const reuseIdentifier = @"Cell";
 
 -(void) collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"Player pressed");
+            //Show the PhotoViewController
+        DLMKPlayerDescriptorTableViewController *playerVC = [[DLMKPlayerDescriptorTableViewController alloc] initWithPlayerDescriptor:[self.teamDescriptorModel playerAtRow:indexPath.row]];
+        
+        [self.navigationController pushViewController:playerVC animated:YES];
+    
 }
 
 /*

@@ -43,10 +43,10 @@
     [self syncModel];
 }
 
--(void) setTimeInSeconds:(CGFloat)timeInSeconds{
-    _timeInSeconds = timeInSeconds;
-     self.tbPlayingTime.text = [DLMKTimeServer formatTime:_timeInSeconds];
-}
+//-(void) setTimeInSeconds:(CGFloat)timeInSeconds{
+//    _timeInSeconds = timeInSeconds;
+//     self.tbPlayingTime.text = [DLMKTimeServer formatTimeShort:_timeInSeconds];
+//}
 
 #pragma mark - UITableViewCell
 - (void)awakeFromNib {
@@ -78,24 +78,19 @@
 
 -(IBAction)inOut:(id)sender{
     if (self.swInOut.on)
+    {
         [self.delegate onPlay:self.playerStatsModel];
+    }
     else
+    {
         [self.delegate onBench:self.playerStatsModel];
+    }
 }
 
 #pragma mark - Update
 -(void) update:(id)sender{
-    /*
-    if ([self.delegate timeIsRunning:self.playerStatsModel ]){
-        
-        if (self.playerStatsModel.is_playingValue){
-            //self.timeInSeconds = self.timeInSeconds + [DLMKTimeServer SINGLETON].deltaTime;
-            //self.playerStatsModel.seconds_playedValue = (NSUInteger)self.timeInSeconds;
-        }
-    }
-     */
-    self.tbPlayingTime.text = [DLMKTimeServer formatTime:self.playerStatsModel.seconds_playedValue];
-   
+    self.tbPlayingTime.text = [DLMKTimeServer formatTimeShort:self.playerStatsModel.seconds_playedValue];
+    self.tbLastPlayingTime.text = [DLMKTimeServer formatTimeShort:self.playerStatsModel.last_seconds_playedValue];
 }
 
 
@@ -106,7 +101,7 @@
     self.tbName.text = self.playerStatsModel.name;
     self.tbNumber.text = [NSString stringWithFormat:@"%lu" , self.playerStatsModel.number];
     self.swInOut.on = self.playerStatsModel.is_playingValue;
-    self.timeInSeconds = self.playerStatsModel.seconds_playedValue;
+    //self.timeInSeconds = self.playerStatsModel.seconds_playedValue;
     self.lbGoals.text = self.playerStatsModel.goalsValue > 0 ? [[self.playerStatsModel goals] stringValue ] : nil;
     self.lbMistakes.text = self.playerStatsModel.errorsValue > 0 ? [[self.playerStatsModel errors] stringValue ] : nil;
 }

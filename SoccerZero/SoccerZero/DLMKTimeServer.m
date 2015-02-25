@@ -30,6 +30,14 @@ static DLMKTimeServer* s_instance;
     return [NSString stringWithFormat:@"%02d:%02d:%02d",hours, minutes, seconds];
 }
 
++(NSString*) formatTimeShort:(NSUInteger)totalSeconds
+{
+    int seconds = totalSeconds % 60;
+    int minutes = (totalSeconds / 60) % 60;
+    
+    return [NSString stringWithFormat:@"%02d:%02d",minutes, seconds];
+}
+
 CADisplayLink* displayLink;
 double frameTimestamp;
 

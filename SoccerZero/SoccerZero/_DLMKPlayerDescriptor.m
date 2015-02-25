@@ -9,6 +9,7 @@ const struct DLMKPlayerDescriptorAttributes DLMKPlayerDescriptorAttributes = {
 };
 
 const struct DLMKPlayerDescriptorRelationships DLMKPlayerDescriptorRelationships = {
+	.photoContainer = @"photoContainer",
 	.playerStats = @"playerStats",
 	.teamDescriptor = @"teamDescriptor",
 };
@@ -69,6 +70,8 @@ const struct DLMKPlayerDescriptorRelationships DLMKPlayerDescriptorRelationships
 - (void)setPrimitiveNumberValue:(int16_t)value_ {
 	[self setPrimitiveNumber:@(value_)];
 }
+
+@dynamic photoContainer;
 
 @dynamic playerStats;
 

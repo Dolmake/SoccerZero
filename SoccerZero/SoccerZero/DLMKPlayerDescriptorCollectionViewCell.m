@@ -9,6 +9,7 @@
 #import "DLMKPlayerDescriptorCollectionViewCell.h"
 #import "DLMKPlayerDescriptor.h"
 #import "DLMKModelServer.h"
+#import "DLMKPhotoContainer.h"
 
 @implementation DLMKPlayerDescriptorCollectionViewCell
 
@@ -33,7 +34,8 @@
     self.lbName.text = _playerDescriptorModel.name;
     self.lbNumber.text = [_playerDescriptorModel.number stringValue ];
     self.lbMistakes.text =[[[DLMKModelServer SINGLETON] fetchErrorsForPlayerDescriptor:_playerDescriptorModel ] stringValue];
-    self.lbGoals.text = [[[DLMKModelServer SINGLETON] fetchErrorsForPlayerDescriptor:_playerDescriptorModel ] stringValue];
+    self.lbGoals.text = [[[DLMKModelServer SINGLETON] fetchGoalsForPlayerDescriptor:_playerDescriptorModel ] stringValue];
+    self.imgPhoto.image = playerDescriptorModel.photoContainer.image;
 }
 
 @end

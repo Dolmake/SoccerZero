@@ -37,13 +37,6 @@
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="lbTime" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" enabled="NO" highlighted="YES" adjustsFontSizeToFit="NO" id="QvJ-Vv-bpS">
-                        <rect key="frame" x="70" y="38" width="75" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="italicSystem" pointSize="13"/>
-                        <color key="textColor" white="0.10000000000000001" alpha="1" colorSpace="calibratedWhite"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="fDz-Wz-05q">
                         <rect key="frame" x="13" y="33" width="51" height="31"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -75,12 +68,27 @@
                         <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="lbLastTime" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="AB7-B5-ooZ">
+                        <rect key="frame" x="70" y="46" width="66" height="21"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" type="italicSystem" pointSize="13"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="lbTotalTime" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" enabled="NO" highlighted="YES" adjustsFontSizeToFit="NO" id="QvJ-Vv-bpS">
+                        <rect key="frame" x="70" y="27" width="75" height="21"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" type="italicSystem" pointSize="13"/>
+                        <color key="textColor" white="0.10000000000000001" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
             </tableViewCellContentView>
             <connections>
                 <outlet property="lbGoals" destination="6bj-yc-Q4K" id="1tj-Mc-hLS"/>
                 <outlet property="lbMistakes" destination="fWw-yW-tx6" id="4Ig-Un-HXh"/>
                 <outlet property="swInOut" destination="fDz-Wz-05q" id="AkW-ri-qC1"/>
+                <outlet property="tbLastPlayingTime" destination="AB7-B5-ooZ" id="xad-Y6-pYV"/>
                 <outlet property="tbName" destination="myg-QF-RXV" id="m2T-k0-ndf"/>
                 <outlet property="tbNumber" destination="zOm-MX-SUV" id="tXK-Na-HZv"/>
                 <outlet property="tbPlayingTime" destination="QvJ-Vv-bpS" id="W4r-4u-dvq"/>
@@ -89,7 +97,7 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="goal_256x256.png" width="204" height="204"/>
+        <image name="goal_256x256.png" width="256" height="256"/>
         <image name="pass_512x512.png" width="512" height="512"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

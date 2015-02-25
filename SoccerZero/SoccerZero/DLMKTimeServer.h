@@ -16,6 +16,7 @@
 +(instancetype) SINGLETON;
 
 +(NSString*) formatTime: (NSUInteger) totalSeconds;
++(NSString*)formatTimeShort:(NSUInteger) totalSeconds;
 
 @property (nonatomic) double deltaTime;
 

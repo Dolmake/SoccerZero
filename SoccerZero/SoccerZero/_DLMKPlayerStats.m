@@ -10,6 +10,7 @@ const struct DLMKPlayerStatsAttributes DLMKPlayerStatsAttributes = {
 	.faults_received = @"faults_received",
 	.goals = @"goals",
 	.is_playing = @"is_playing",
+	.last_seconds_played = @"last_seconds_played",
 	.notes = @"notes",
 	.seconds_played = @"seconds_played",
 	.shots = @"shots",
@@ -73,6 +74,11 @@ const struct DLMKPlayerStatsRelationships DLMKPlayerStatsRelationships = {
 	}
 	if ([key isEqualToString:@"is_playingValue"]) {
 		NSSet *affectingKey = [NSSet setWithObject:@"is_playing"];
+		keyPaths = [keyPaths setByAddingObjectsFromSet:affectingKey];
+		return keyPaths;
+	}
+	if ([key isEqualToString:@"last_seconds_playedValue"]) {
+		NSSet *affectingKey = [NSSet setWithObject:@"last_seconds_played"];
 		keyPaths = [keyPaths setByAddingObjectsFromSet:affectingKey];
 		return keyPaths;
 	}
@@ -208,6 +214,26 @@ const struct DLMKPlayerStatsRelationships DLMKPlayerStatsRelationships = {
 
 - (void)setPrimitiveIs_playingValue:(BOOL)value_ {
 	[self setPrimitiveIs_playing:@(value_)];
+}
+
+@dynamic last_seconds_played;
+
+- (int32_t)last_seconds_playedValue {
+	NSNumber *result = [self last_seconds_played];
+	return [result intValue];
+}
+
+- (void)setLast_seconds_playedValue:(int32_t)value_ {
+	[self setLast_seconds_played:@(value_)];
+}
+
+- (int32_t)primitiveLast_seconds_playedValue {
+	NSNumber *result = [self primitiveLast_seconds_played];
+	return [result intValue];
+}
+
+- (void)setPrimitiveLast_seconds_playedValue:(int32_t)value_ {
+	[self setPrimitiveLast_seconds_played:@(value_)];
 }
 
 @dynamic notes;
