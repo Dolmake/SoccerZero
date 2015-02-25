@@ -80,6 +80,7 @@ CGFloat _accumTime = 0;
 }
 
 -(void) viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
     self.lbRival.text = self.model.rivalStats.name;
 }
 

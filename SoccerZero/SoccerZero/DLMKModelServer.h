@@ -11,6 +11,7 @@
 @class AGTCoreDataStack;
 @class DLMKTeamDescriptor;
 @class DLMKMatchStats;
+@class DLMKPlayerDescriptor;
 
 
 @interface DLMKModelServer : NSObject
@@ -26,6 +27,8 @@
 -(DLMKMatchStats*) newMatchForTeam: (DLMKTeamDescriptor*) team;
 -(NSArray*) fetchMatches;
 -(NSArray*) fetchMatchesForTeamDescriptor:(DLMKTeamDescriptor*) team;
+-(NSNumber*) fetchErrorsForPlayerDescriptor:(DLMKPlayerDescriptor*) player;
+-(NSNumber*) fetchGoalsForPlayerDescriptor:(DLMKPlayerDescriptor*) player;
 
 
 @end

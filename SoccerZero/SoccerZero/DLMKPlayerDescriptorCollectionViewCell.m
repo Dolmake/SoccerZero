@@ -7,6 +7,8 @@
 //
 
 #import "DLMKPlayerDescriptorCollectionViewCell.h"
+#import "DLMKPlayerDescriptor.h"
+#import "DLMKModelServer.h"
 
 @implementation DLMKPlayerDescriptorCollectionViewCell
 
@@ -23,6 +25,15 @@
 
 - (void)awakeFromNib {
     // Initialization code
+}
+
+#pragma mark -Properties
+-(void) setPlayerDescriptorModel:(DLMKPlayerDescriptor *)playerDescriptorModel{
+    _playerDescriptorModel = playerDescriptorModel;
+    self.lbName.text = _playerDescriptorModel.name;
+    self.lbNumber.text = [_playerDescriptorModel.number stringValue ];
+    self.lbMistakes.text =[[[DLMKModelServer SINGLETON] fetchErrorsForPlayerDescriptor:_playerDescriptorModel ] stringValue];
+    self.lbGoals.text = [[[DLMKModelServer SINGLETON] fetchErrorsForPlayerDescriptor:_playerDescriptorModel ] stringValue];
 }
 
 @end

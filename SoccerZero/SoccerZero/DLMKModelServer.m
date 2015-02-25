@@ -11,6 +11,7 @@
 #import "SETTINGS.h"
 #import "DLMKTeamDescriptor.h"
 #import "DLMKMatchStats.h"
+#import "DLMKPlayerStats.h"
 
 #ifdef DUMMY_DATA
 
@@ -216,6 +217,54 @@ static DLMKModelServer* s_instance;
     return result;
 
 }
+
+-(NSNumber*) fetchErrorsForPlayerDescriptor:(DLMKPlayerDescriptor*) player{
+    
+    NSUInteger playerErrors = 0;
+       //Search for Teams
+    NSFetchRequest *req = [NSFetchRequest fetchRequestWithEntityName:[DLMKPlayerStats entityName]];
+    req.fetchBatchSize = 20;
+    req.predicate = [NSPredicate predicateWithFormat:@"playerDescriptor == %@", player ];
+    
+    NSError *err = nil;
+    NSArray *res = [self.stack.context executeFetchRequest:req
+                                                     error:&err];
+    
+    
+    if (!res){
+        //Error
+        NSLog(@"Error on fetchRequest %@" , err);
+    }else{
+        for (DLMKPlayerStats *playerStats in res) {
+            playerErrors += [playerStats errorsValue ];
+        }
+    }
+    return [NSNumber numberWithUnsignedInt:playerErrors];
+
+}
+-(NSNumber*) fetchGoalsForPlayerDescriptor:(DLMKPlayerDescriptor*) player{
+    NSUInteger playerGoals = 0;
+    //Search for Teams
+    NSFetchRequest *req = [NSFetchRequest fetchRequestWithEntityName:[DLMKPlayerStats entityName]];
+    req.fetchBatchSize = 20;
+    req.predicate = [NSPredicate predicateWithFormat:@"playerDescriptor == %@", player ];
+    
+    NSError *err = nil;
+    NSArray *res = [self.stack.context executeFetchRequest:req
+                                                     error:&err];
+    
+    
+    if (!res){
+        //Error
+        NSLog(@"Error on fetchRequest %@" , err);
+    }else{
+        for (DLMKPlayerStats *playerStats in res) {
+            playerGoals += [playerStats goalsValue ];
+        }
+    }
+    return [NSNumber numberWithUnsignedInt:playerGoals];
+}
+
 
 
 #ifdef DUMMY_DATA

@@ -10,10 +10,13 @@
 #import "DLMKCustomCellTypeCollection.h"
 #import "DLMKPlayerDescriptorCollectionViewCell.h"
 #import "DLMKTeamDescriptor.h"
+#import "DLMKPlayersDescriptorLayout.h"
 
 @interface DLMKTeamDescriptorCollectionViewController ()
 
 @property (nonatomic,strong) DLMKCustomCellTypeCollection* customCells;
+
+@property (nonatomic,strong) DLMKPlayersDescriptorLayout *layout;
 
 @end
 
@@ -21,55 +24,41 @@
 
 static NSString * const reuseIdentifier = @"Cell";
 
--(id) init{
+#pragma martk - Properties
+-(DLMKPlayersDescriptorLayout*) layout{
+    if (!_layout)
+        _layout = [DLMKPlayersDescriptorLayout new];
+    return _layout;
+}
 
-    // Layout
-    UICollectionViewFlowLayout *layout = [UICollectionViewFlowLayout new];
+#pragma mark - Init
+-(id) init{
     
-    if (self = [super initWithCollectionViewLayout:layout]){
+    if (self = [super initWithCollectionViewLayout:self.layout]){
         
         _customCells = [DLMKCustomCellTypeCollection customCellTypeCollectionWithArray:@[[DLMKPlayerDescriptorCollectionViewCell class]]];
-        
-        layout.scrollDirection = UICollectionViewScrollDirectionVertical;
-        layout.minimumLineSpacing = 10;
-        layout.minimumInteritemSpacing = 10;
-        layout.itemSize =  [_customCells sizeForIndex:0];
-        layout.sectionInset = UIEdgeInsetsMake(5, 5, 5, 5);
-        layout.headerReferenceSize = CGSizeMake(200, 30);
        
     }
     return self;
 
 }
 
+
+#pragma  mark - Instance methods
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    // Uncomment the following line to preserve selection between presentations
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
+    self.clearsSelectionOnViewWillAppear = YES;
+    self.collectionView.backgroundColor = self.layout.backGroundColor;
     [self.customCells registerNibsForCollectionView:self.collectionView];
-    
-//    // Register cell classes
-//    [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
-    
-    // Do any additional setup after loading the view.
+    self.layout.itemSize = [self.customCells sizeForIndex:0];
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 #pragma mark <UICollectionViewDataSource>
 
@@ -90,12 +79,17 @@ static NSString * const reuseIdentifier = @"Cell";
     // Configure the cell
     
     DLMKPlayerDescriptorCollectionViewCell* cell = (DLMKPlayerDescriptorCollectionViewCell*)[self.customCells cellForCollectionView:self.collectionView atIndexPath:indexPath ];
-    cell.tintColor = [UIColor colorWithRed:1.0f green:0.0f blue:0.0f alpha:1.0f];
+    cell.playerDescriptorModel = [self.teamDescriptorModel playerAtRow:indexPath.row];
     
     return cell;
 }
 
 #pragma mark <UICollectionViewDelegate>
+
+-(void) collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSLog(@"Player pressed");
+}
 
 /*
 // Uncomment this method to specify if the specified item should be highlighted during tracking

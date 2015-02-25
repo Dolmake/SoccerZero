@@ -81,8 +81,10 @@
     
     DLMKTeamDescriptor* teamDescriptor = [self.teamsModels objectAtIndex:indexPath.row ];
     
+    /*
     //Table view
     DLMKTeamDescriptorTableViewController* teamVC = [[DLMKTeamDescriptorTableViewController alloc] initWithTeamModel:teamDescriptor ];
+    */
     
     //Collection view
     DLMKTeamDescriptorCollectionViewController* teamCollectionVC = [[DLMKTeamDescriptorCollectionViewController alloc] init];

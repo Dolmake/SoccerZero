@@ -7,6 +7,7 @@
 //
 
 @import UIKit;
+@class DLMKPlayerDescriptor;
 
 @interface DLMKPlayerDescriptorCollectionViewCell : UICollectionViewCell
 
@@ -15,5 +16,13 @@
 +(CGFloat)height;
 +(NSString*)cellId;
 +(CGSize)cellSize;
+
+@property (weak, nonatomic) IBOutlet UILabel* lbName;
+@property (weak, nonatomic) IBOutlet UILabel* lbNumber;
+@property (weak, nonatomic) IBOutlet UILabel* lbGoals;
+@property (weak, nonatomic) IBOutlet UILabel* lbMistakes;
+@property (weak, nonatomic) IBOutlet UIImageView* imgPhoto;
+
+@property (strong,nonatomic) DLMKPlayerDescriptor* playerDescriptorModel;
 
 @end
