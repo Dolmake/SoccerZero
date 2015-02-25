@@ -39,9 +39,14 @@
 
 -(CGFloat) height{return 44;}
 -(NSString*) cellId {return @"CELL_ID_DEFAULT";}
+-(CGSize) cellSize {return CGSizeMake(self.height,self.height);}
 
 -(CGFloat) heightForIndex:(NSUInteger) index{
     return [self.arrayOfClasses[index] height];
+}
+
+-(CGSize) sizeForIndex: (NSUInteger) index{
+    return [self.arrayOfClasses[index] cellSize];
 }
 
 -(NSString*) cellIdForIndex: (NSUInteger) index{
@@ -54,12 +59,27 @@
         [self registerNib:[cell cellClass] forTableView:tableView];
     }
 }
+
+
+-(void) registerNibsForCollectionView:(UICollectionView*) collectionView{
+    for (DLMKCustomCellType *cell in self.arrayOfClasses) {
+        [self registerNib:[cell cellClass] forCollectionView:collectionView];
+    }
+}
+
 -(UITableViewCell*) cellForTableView:(UITableView*) tableView atIndex:(NSUInteger) index{
     
     id cellClass = self.arrayOfClasses[index];
     NSString* reusableId = [cellClass performSelector:@selector(cellId)];
     //[result setValue:self.playerDescriptorModel forKey:@"playerDescriptorModel"];
     return [tableView dequeueReusableCellWithIdentifier:reusableId];
+}
+
+-(UICollectionViewCell*) cellForCollectionView:(UICollectionView*) collectionView atIndexPath:(NSIndexPath*) indexPath{
+    id cellClass = self.arrayOfClasses[indexPath.section];
+    NSString* reusableId = [cellClass performSelector:@selector(cellId)];
+    //[result setValue:self.playerDescriptorModel forKey:@"playerDescriptorModel"];
+    return [collectionView dequeueReusableCellWithReuseIdentifier:reusableId forIndexPath:indexPath];
 }
 
 
@@ -74,6 +94,17 @@
     
     NSString* reusableId = [type performSelector:@selector(cellId)];
     [tableView registerNib:nameNib forCellReuseIdentifier:reusableId];
+}
+
+
+-(void) registerNib: (id)type forCollectionView: (UICollectionView*) collectionView{
+    
+    NSString* typeName = NSStringFromClass(type);
+    //NSString* typeName =NSStringize(type);
+    UINib *nameNib = [ UINib nibWithNibName:typeName bundle:[NSBundle mainBundle] ];
+    
+    NSString* reusableId = [type performSelector:@selector(cellId)];
+    [collectionView registerNib:nameNib forCellWithReuseIdentifier:reusableId];
 }
 
 

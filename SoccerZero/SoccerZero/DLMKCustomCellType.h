@@ -16,6 +16,7 @@
 +(instancetype) customCellTypeWith: (id) cellClass;
 -(CGFloat) height;
 -(NSString*) cellId;
+-(CGSize) cellSize;
 @end
 
 

@@ -9,6 +9,7 @@
 #import "DLMKTeamsTableViewController.h"
 #import "DLMKTeamDescriptor.h"
 #import "DLMKTeamDescriptorTableViewController.h"
+#import "DLMKTeamDescriptorCollectionViewController.h"
 #import "DLMKModelServer.h"
 
 @interface DLMKTeamsTableViewController ()
@@ -79,10 +80,17 @@
     // Create the next view controller.
     
     DLMKTeamDescriptor* teamDescriptor = [self.teamsModels objectAtIndex:indexPath.row ];
+    
+    //Table view
     DLMKTeamDescriptorTableViewController* teamVC = [[DLMKTeamDescriptorTableViewController alloc] initWithTeamModel:teamDescriptor ];
     
+    //Collection view
+    DLMKTeamDescriptorCollectionViewController* teamCollectionVC = [[DLMKTeamDescriptorCollectionViewController alloc] init];
+    
+    teamCollectionVC.teamDescriptorModel = teamDescriptor;
+    
     // Push the view controller.
-    [self.navigationController pushViewController:teamVC animated:YES];
+    [self.navigationController pushViewController:teamCollectionVC animated:YES];
 }
 
 #pragma mark - Actions
@@ -94,8 +102,7 @@
 }
 
 #pragma mark - Misc
--(void) syncModel{
-    
+-(void) syncModel{    
     self.teamsModels = [[DLMKModelServer SINGLETON] fetchTeams ];
 }
 

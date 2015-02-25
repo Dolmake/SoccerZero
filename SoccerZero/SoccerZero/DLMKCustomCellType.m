@@ -23,6 +23,9 @@
 -(NSString*) cellId{
     return [self.cellClass cellId];
 }
+-(CGSize) cellSize{
+    return [self.cellClass cellSize];
+}
 
 -(NSString*) description{
     return [NSString stringWithFormat:@"cellClass Type: %@", _cellClass];
