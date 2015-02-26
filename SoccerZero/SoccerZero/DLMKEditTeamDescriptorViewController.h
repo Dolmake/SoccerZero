@@ -9,13 +9,13 @@
 @import UIKit;
 @class DLMKTeamDescriptor;
 
-@interface DLMKEditTeamDescriptorViewController : UIViewController<UICollectionViewDataSource, UICollectionViewDelegate>
+@interface DLMKEditTeamDescriptorViewController : UIViewController<UICollectionViewDataSource, UICollectionViewDelegate, UITextFieldDelegate>
 
 @property (weak,nonatomic) IBOutlet UICollectionView* collectionView;
 @property (weak,nonatomic) IBOutlet UITextField* txtName;
 @property (strong,nonatomic) DLMKTeamDescriptor* teamDescriptorModel;
 
-
+-(IBAction)onTouchUp:(id)sender;
 -(IBAction)didTxtNameChanged:(id)sender;
 
 

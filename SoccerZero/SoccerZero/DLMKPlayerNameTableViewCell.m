@@ -38,12 +38,15 @@
 -(void) setPlayerDescriptorModel:(DLMKPlayerDescriptor *)playerDescriptorModel{
     _playerDescriptorModel = playerDescriptorModel;
     self.txNameField.text = _playerDescriptorModel.name;
+   
 }
 
 #pragma mark - UITextFieldDelegate
 
--(void) textFieldDidBeginEditing:(UITextField *)textField{
-    
+-(BOOL) textFieldShouldReturn:(UITextField *)textField{
+    // Valimos el texto y si está bien, entonces...
+    [self.txNameField resignFirstResponder];
+    return YES;
 }
 -(void) textFieldDidEndEditing:(UITextField *)textField{
     if (!isEmpty(self.txNameField.text)){

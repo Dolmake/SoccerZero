@@ -38,11 +38,9 @@
 		6545E1D21A9DEEF3009A8C8A /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = 6545E1CC1A9DEEF3009A8C8A /* UIImage+Resize.m */; };
 		6545E1D31A9DEEF3009A8C8A /* UIImage+RoundedCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = 6545E1CE1A9DEEF3009A8C8A /* UIImage+RoundedCorner.m */; };
 		6545E1D41A9DEEF3009A8C8A /* UIViewController+Navigation.m in Sources */ = {isa = PBXBuildFile; fileRef = 6545E1D01A9DEEF3009A8C8A /* UIViewController+Navigation.m */; };
-		6545E1DD1A9E2B3F009A8C8A /* DLMKTeamCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6545E1DB1A9E2B3F009A8C8A /* DLMKTeamCollectionViewCell.m */; };
-		6545E1DE1A9E2B3F009A8C8A /* DLMKTeamCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6545E1DC1A9E2B3F009A8C8A /* DLMKTeamCollectionViewCell.xib */; };
+		6545E1DD1A9E2B3F009A8C8A /* DLMKEditTeamCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6545E1DB1A9E2B3F009A8C8A /* DLMKEditTeamCollectionViewCell.m */; };
+		6545E1DE1A9E2B3F009A8C8A /* DLMKEditTeamCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6545E1DC1A9E2B3F009A8C8A /* DLMKEditTeamCollectionViewCell.xib */; };
 		6545E1E01A9E2E16009A8C8A /* camera_256x256.png in Resources */ = {isa = PBXBuildFile; fileRef = 6545E1DF1A9E2E16009A8C8A /* camera_256x256.png */; };
-		6545E1E41A9E3EC9009A8C8A /* DLMKTeamNameCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6545E1E21A9E3EC9009A8C8A /* DLMKTeamNameCollectionViewCell.m */; };
-		6545E1E51A9E3EC9009A8C8A /* DLMKTeamNameCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6545E1E31A9E3EC9009A8C8A /* DLMKTeamNameCollectionViewCell.xib */; };
 		6545E1E91A9E4950009A8C8A /* DLMKEditTeamDescriptorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6545E1E71A9E4950009A8C8A /* DLMKEditTeamDescriptorViewController.m */; };
 		6545E1EA1A9E4950009A8C8A /* DLMKEditTeamDescriptorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6545E1E81A9E4950009A8C8A /* DLMKEditTeamDescriptorViewController.xib */; };
 		6545E1F01A9F1F60009A8C8A /* DLMKTeamCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6545E1EE1A9F1F60009A8C8A /* DLMKTeamCollectionViewController.m */; };
@@ -51,8 +49,6 @@
 		655F4ACE1A94A157006DB768 /* DLMKEditPlayerDescriptorTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 655F4ACC1A94A157006DB768 /* DLMKEditPlayerDescriptorTableViewController.xib */; };
 		655F4AD21A950DE0006DB768 /* DLMKPlayerNameTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 655F4AD01A950DE0006DB768 /* DLMKPlayerNameTableViewCell.m */; };
 		655F4AD31A950DE0006DB768 /* DLMKPlayerNameTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 655F4AD11A950DE0006DB768 /* DLMKPlayerNameTableViewCell.xib */; };
-		655F4AD71A960C47006DB768 /* DLMKTeamNameTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 655F4AD51A960C47006DB768 /* DLMKTeamNameTableViewCell.m */; };
-		655F4AD81A960C47006DB768 /* DLMKTeamNameTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 655F4AD61A960C47006DB768 /* DLMKTeamNameTableViewCell.xib */; };
 		655F4ADB1A961301006DB768 /* DLMKCustomCellType.m in Sources */ = {isa = PBXBuildFile; fileRef = 655F4ADA1A961301006DB768 /* DLMKCustomCellType.m */; };
 		655F4ADF1A96147B006DB768 /* DLMKCustomCellTypeCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 655F4ADE1A96147B006DB768 /* DLMKCustomCellTypeCollection.m */; };
 		655F4AE41A961EE0006DB768 /* DLMKPlayerNumberTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 655F4AE21A961EE0006DB768 /* DLMKPlayerNumberTableViewCell.m */; };
@@ -153,13 +149,10 @@
 		6545E1CE1A9DEEF3009A8C8A /* UIImage+RoundedCorner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+RoundedCorner.m"; sourceTree = "<group>"; };
 		6545E1CF1A9DEEF3009A8C8A /* UIViewController+Navigation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Navigation.h"; sourceTree = "<group>"; };
 		6545E1D01A9DEEF3009A8C8A /* UIViewController+Navigation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Navigation.m"; sourceTree = "<group>"; };
-		6545E1DA1A9E2B3F009A8C8A /* DLMKTeamCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLMKTeamCollectionViewCell.h; sourceTree = "<group>"; };
-		6545E1DB1A9E2B3F009A8C8A /* DLMKTeamCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLMKTeamCollectionViewCell.m; sourceTree = "<group>"; };
-		6545E1DC1A9E2B3F009A8C8A /* DLMKTeamCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DLMKTeamCollectionViewCell.xib; sourceTree = "<group>"; };
+		6545E1DA1A9E2B3F009A8C8A /* DLMKEditTeamCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLMKEditTeamCollectionViewCell.h; sourceTree = "<group>"; };
+		6545E1DB1A9E2B3F009A8C8A /* DLMKEditTeamCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLMKEditTeamCollectionViewCell.m; sourceTree = "<group>"; };
+		6545E1DC1A9E2B3F009A8C8A /* DLMKEditTeamCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DLMKEditTeamCollectionViewCell.xib; sourceTree = "<group>"; };
 		6545E1DF1A9E2E16009A8C8A /* camera_256x256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera_256x256.png; sourceTree = "<group>"; };
-		6545E1E11A9E3EC9009A8C8A /* DLMKTeamNameCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLMKTeamNameCollectionViewCell.h; sourceTree = "<group>"; };
-		6545E1E21A9E3EC9009A8C8A /* DLMKTeamNameCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLMKTeamNameCollectionViewCell.m; sourceTree = "<group>"; };
-		6545E1E31A9E3EC9009A8C8A /* DLMKTeamNameCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DLMKTeamNameCollectionViewCell.xib; sourceTree = "<group>"; };
 		6545E1E61A9E4950009A8C8A /* DLMKEditTeamDescriptorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLMKEditTeamDescriptorViewController.h; sourceTree = "<group>"; };
 		6545E1E71A9E4950009A8C8A /* DLMKEditTeamDescriptorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLMKEditTeamDescriptorViewController.m; sourceTree = "<group>"; };
 		6545E1E81A9E4950009A8C8A /* DLMKEditTeamDescriptorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DLMKEditTeamDescriptorViewController.xib; sourceTree = "<group>"; };
@@ -172,9 +165,6 @@
 		655F4ACF1A950DE0006DB768 /* DLMKPlayerNameTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLMKPlayerNameTableViewCell.h; sourceTree = "<group>"; };
 		655F4AD01A950DE0006DB768 /* DLMKPlayerNameTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLMKPlayerNameTableViewCell.m; sourceTree = "<group>"; };
 		655F4AD11A950DE0006DB768 /* DLMKPlayerNameTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DLMKPlayerNameTableViewCell.xib; sourceTree = "<group>"; };
-		655F4AD41A960C47006DB768 /* DLMKTeamNameTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLMKTeamNameTableViewCell.h; sourceTree = "<group>"; };
-		655F4AD51A960C47006DB768 /* DLMKTeamNameTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLMKTeamNameTableViewCell.m; sourceTree = "<group>"; };
-		655F4AD61A960C47006DB768 /* DLMKTeamNameTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DLMKTeamNameTableViewCell.xib; sourceTree = "<group>"; };
 		655F4AD91A961301006DB768 /* DLMKCustomCellType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLMKCustomCellType.h; sourceTree = "<group>"; };
 		655F4ADA1A961301006DB768 /* DLMKCustomCellType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLMKCustomCellType.m; sourceTree = "<group>"; };
 		655F4ADD1A96147B006DB768 /* DLMKCustomCellTypeCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLMKCustomCellTypeCollection.h; sourceTree = "<group>"; };
@@ -506,15 +496,9 @@
 		659B018E1A9B33DA00437970 /* TeamDescriptor */ = {
 			isa = PBXGroup;
 			children = (
-				655F4AD41A960C47006DB768 /* DLMKTeamNameTableViewCell.h */,
-				655F4AD51A960C47006DB768 /* DLMKTeamNameTableViewCell.m */,
-				655F4AD61A960C47006DB768 /* DLMKTeamNameTableViewCell.xib */,
-				6545E1DA1A9E2B3F009A8C8A /* DLMKTeamCollectionViewCell.h */,
-				6545E1DB1A9E2B3F009A8C8A /* DLMKTeamCollectionViewCell.m */,
-				6545E1DC1A9E2B3F009A8C8A /* DLMKTeamCollectionViewCell.xib */,
-				6545E1E11A9E3EC9009A8C8A /* DLMKTeamNameCollectionViewCell.h */,
-				6545E1E21A9E3EC9009A8C8A /* DLMKTeamNameCollectionViewCell.m */,
-				6545E1E31A9E3EC9009A8C8A /* DLMKTeamNameCollectionViewCell.xib */,
+				6545E1DA1A9E2B3F009A8C8A /* DLMKEditTeamCollectionViewCell.h */,
+				6545E1DB1A9E2B3F009A8C8A /* DLMKEditTeamCollectionViewCell.m */,
+				6545E1DC1A9E2B3F009A8C8A /* DLMKEditTeamCollectionViewCell.xib */,
 			);
 			name = TeamDescriptor;
 			sourceTree = "<group>";
@@ -621,7 +605,7 @@
 			files = (
 				653B868F1A9228C600E9E90D /* pause_256x256.png in Resources */,
 				6545E1F11A9F1F60009A8C8A /* DLMKTeamCollectionViewController.xib in Resources */,
-				6545E1DE1A9E2B3F009A8C8A /* DLMKTeamCollectionViewCell.xib in Resources */,
+				6545E1DE1A9E2B3F009A8C8A /* DLMKEditTeamCollectionViewCell.xib in Resources */,
 				659B01971A9B36ED00437970 /* pass_512x512.png in Resources */,
 				65917CC11A7914F000DC9940 /* gear_256x256.png in Resources */,
 				6545E1C11A9DECAA009A8C8A /* DLMKPhotoViewController.xib in Resources */,
@@ -635,7 +619,6 @@
 				65917CBE1A7914A300DC9940 /* play_128x128.png in Resources */,
 				65FA2AB81A7BD7E300E87793 /* DLMKMatchViewController.xib in Resources */,
 				655F4AE51A961EE0006DB768 /* DLMKPlayerNumberTableViewCell.xib in Resources */,
-				655F4AD81A960C47006DB768 /* DLMKTeamNameTableViewCell.xib in Resources */,
 				657BB1641A7AA98500A528EB /* person_128x128.png in Resources */,
 				659B019D1A9B88D300437970 /* DLMKMatchStatsSelectorTableViewController.xib in Resources */,
 				651B965D1A79123700154A3C /* Images.xcassets in Resources */,
@@ -644,7 +627,6 @@
 				65917CC31A79152400DC9940 /* statistics_128x128.png in Resources */,
 				659B01931A9B345E00437970 /* DLMKPlayerStatsTableViewCell.xib in Resources */,
 				6545E1EA1A9E4950009A8C8A /* DLMKEditTeamDescriptorViewController.xib in Resources */,
-				6545E1E51A9E3EC9009A8C8A /* DLMKTeamNameCollectionViewCell.xib in Resources */,
 				6545E1E01A9E2E16009A8C8A /* camera_256x256.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -671,7 +653,6 @@
 				6545E1BB1A9DEC9E009A8C8A /* DLMKPhotoTableViewCell.m in Sources */,
 				65FA2ABE1A7C220000E87793 /* DLMKTimeServer.m in Sources */,
 				653B86761A92238B00E9E90D /* _DLMKMatchStats.m in Sources */,
-				655F4AD71A960C47006DB768 /* DLMKTeamNameTableViewCell.m in Sources */,
 				659B01AD1A9CB5A400437970 /* DLMKPlayerDescriptorCollectionViewCell.m in Sources */,
 				6545E1D21A9DEEF3009A8C8A /* UIImage+Resize.m in Sources */,
 				653B86871A9223AB00E9E90D /* DLMKPlayerStats.m in Sources */,
@@ -692,7 +673,7 @@
 				659B01921A9B345E00437970 /* DLMKPlayerStatsTableViewCell.m in Sources */,
 				659B01A61A9C7D9000437970 /* _DLMKRivalStats.m in Sources */,
 				653B864B1A92147500E9E90D /* DLMKBaseManagedObject.m in Sources */,
-				6545E1DD1A9E2B3F009A8C8A /* DLMKTeamCollectionViewCell.m in Sources */,
+				6545E1DD1A9E2B3F009A8C8A /* DLMKEditTeamCollectionViewCell.m in Sources */,
 				659B01A91A9C7D9D00437970 /* DLMKRivalStats.m in Sources */,
 				655F4ACD1A94A157006DB768 /* DLMKEditPlayerDescriptorTableViewController.m in Sources */,
 				653B86791A92238B00E9E90D /* _DLMKTeamDescriptor.m in Sources */,
@@ -707,7 +688,6 @@
 				655F4ADB1A961301006DB768 /* DLMKCustomCellType.m in Sources */,
 				655F4ADF1A96147B006DB768 /* DLMKCustomCellTypeCollection.m in Sources */,
 				65B92B951A91F83A00A95378 /* Model.xcdatamodeld in Sources */,
-				6545E1E41A9E3EC9009A8C8A /* DLMKTeamNameCollectionViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

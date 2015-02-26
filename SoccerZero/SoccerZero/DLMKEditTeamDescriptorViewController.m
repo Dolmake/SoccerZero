@@ -10,9 +10,9 @@
 #import "DLMKEditTeamDescriptorViewController.h"
 #import "DLMKCustomCellTypeCollection.h"
 #import "DLMKPlayerDescriptorCollectionViewCell.h"
-#import "DLMKTeamNameCollectionViewCell.h"
+
 #import "DLMKTeamDescriptor.h"
-#import "DLMKTeamCollectionViewCell.h"
+#import "DLMKEditTeamCollectionViewCell.h"
 #import "DLMKEditPlayerDescriptorTableViewController.h"
 #import "DLMKDefaultCollectionLayout.h"
 #import "MACROS.h"
@@ -58,6 +58,7 @@
     self.collectionView.collectionViewLayout = self.layout;
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
+    self.txtName.delegate = self;
     
     self.collectionView.backgroundColor = self.layout.backGroundColor;
     [self.customCells registerNibsForCollectionView:self.collectionView];
@@ -143,14 +144,27 @@
  }
  */
 
-#pragma - mark Actions
+#pragma mark - UITextFieldDelegate
+-(BOOL) textFieldShouldReturn:(UITextField *)textField{
+    // Valimos el texto y si está bien, entonces...
+    [self.txtName resignFirstResponder];
+    return YES;
+}
+
+#pragma mark - Actions
 -(void)addPlayer:(id)sender{
     [self.teamDescriptorModel addPlayerWithName:@"Unnamed" number:0 ];
     [self.collectionView reloadData];
 }
 
 -(void) didTxtNameChanged:(id)sender{
-    self.teamDescriptorModel.name = self.txtName.text;
+    self.teamDescriptorModel.name = ((UITextField*)sender).text;
+    // Hidding the Keyboard.
+    [self.view endEditing:YES];
+}
+
+-(IBAction)onTouchUp:(id)sender{
+    [self didTxtNameChanged:self.txtName];
 }
 
 

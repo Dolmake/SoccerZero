@@ -6,10 +6,10 @@
 //  Copyright (c) 2015 Dolmake. All rights reserved.
 //
 
-#import "DLMKTeamCollectionViewCell.h"
+#import "DLMKEditTeamCollectionViewCell.h"
 #import "DLMKTeamDescriptor.h"
 
-@implementation DLMKTeamCollectionViewCell
+@implementation DLMKEditTeamCollectionViewCell
 
 #pragma mark - Class Methods
 +(CGFloat)height{

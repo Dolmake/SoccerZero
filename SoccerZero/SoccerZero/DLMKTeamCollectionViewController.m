@@ -9,7 +9,7 @@
 #import "DLMKTeamCollectionViewController.h"
 #import "DLMKModelServer.h"
 #import "DLMKCustomCellTypeCollection.h"
-#import "DLMKTeamCollectionViewCell.h"
+#import "DLMKEditTeamCollectionViewCell.h"
 #import "DLMKDefaultCollectionLayout.h"
 #import "DLMKTeamDescriptor.h"
 #import "DLMKEditTeamDescriptorViewController.h"
@@ -37,7 +37,7 @@
     
     if (self = [super initWithCollectionViewLayout:self.layout]){
         
-        _customCells = [DLMKCustomCellTypeCollection customCellTypeCollectionWithArray:@[[DLMKTeamCollectionViewCell class]]];
+        _customCells = [DLMKCustomCellTypeCollection customCellTypeCollectionWithArray:@[[DLMKEditTeamCollectionViewCell class]]];
         
     }
     return self;
@@ -89,7 +89,7 @@
     //Get the proper team
     DLMKTeamDescriptor* teamDescriptor = [self.teamsModel objectAtIndex:indexPath.row];
     
-    DLMKTeamCollectionViewCell* teamCell = (DLMKTeamCollectionViewCell*) [self.customCells cellForCollectionView:self.collectionView atIndexPath:indexPath];
+    DLMKEditTeamCollectionViewCell* teamCell = (DLMKEditTeamCollectionViewCell*) [self.customCells cellForCollectionView:self.collectionView atIndexPath:indexPath];
     teamCell.teamDescriptorModel = teamDescriptor;
     
     return teamCell;

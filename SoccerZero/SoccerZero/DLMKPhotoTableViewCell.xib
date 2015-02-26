@@ -13,9 +13,14 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camera_256x256.png" id="LVk-DN-qOs">
+                        <rect key="frame" x="256" y="255" width="64" height="64"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    </imageView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person_128x128.png" id="0Y9-Pa-Us4">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="319"/>
+                        <rect key="frame" x="8" y="7" width="303" height="304"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </imageView>
                 </subviews>
                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -23,10 +28,11 @@
             <connections>
                 <outlet property="photoView" destination="0Y9-Pa-Us4" id="TV7-VY-GsV"/>
             </connections>
-            <point key="canvasLocation" x="98" y="264.5"/>
+            <point key="canvasLocation" x="98" y="264"/>
         </tableViewCell>
     </objects>
     <resources>
+        <image name="camera_256x256.png" width="256" height="256"/>
         <image name="person_128x128.png" width="128" height="128"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

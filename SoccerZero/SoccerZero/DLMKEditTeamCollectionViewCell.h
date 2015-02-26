@@ -1,5 +1,5 @@
 //
-//  DLMKTeamNameCollectionViewCell.h
+//  DLMKTeamCollectionViewCell.h
 //  SoccerZero
 //
 //  Created by Daniel on 25/02/15.
@@ -9,14 +9,18 @@
 @import UIKit;
 @class DLMKTeamDescriptor;
 
-@interface DLMKTeamNameCollectionViewCell : UICollectionViewCell
+@interface DLMKEditTeamCollectionViewCell : UICollectionViewCell
+
 +(CGFloat)height;
 +(NSString*)cellId;
 +(CGSize)cellSize;
 
-@property(weak,nonatomic) IBOutlet UITextField* txNameField;
+@property(weak,nonatomic) IBOutlet UILabel* lbTeamName;
+@property(weak,nonatomic) IBOutlet UIImageView* imgShield;
 @property (strong,nonatomic) DLMKTeamDescriptor* teamDescriptorModel;
 
--(IBAction)didFinishTexting:(id)sender;
+-(IBAction)takePhoto:(id)sender;
+
+
 
 @end
