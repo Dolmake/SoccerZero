@@ -61,7 +61,7 @@
     
     self.collectionView.backgroundColor = self.layout.backGroundColor;
     [self.customCells registerNibsForCollectionView:self.collectionView];
-    self.layout.itemSize = [self.customCells sizeForIndex:0];
+    self.layout.itemSize = [self.customCells cellSizeForIndex:0];
     
     UIBarButtonItem *addPlayerButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addPlayer:)];
     self.navigationItem.rightBarButtonItem = addPlayerButton;
