@@ -9,8 +9,9 @@
 
 #import "DLMKEditTeamDescriptorViewController.h"
 #import "DLMKCustomCellTypeCollection.h"
+#import "DLMKPlayerDescriptor.h"
 #import "DLMKPlayerDescriptorCollectionViewCell.h"
-
+#import "DLMKPhotoViewController.h"
 #import "DLMKTeamDescriptor.h"
 #import "DLMKEditTeamCollectionViewCell.h"
 #import "DLMKEditPlayerDescriptorTableViewController.h"
@@ -115,34 +116,13 @@
     
 }
 
-/*
- // Uncomment this method to specify if the specified item should be highlighted during tracking
- - (BOOL)collectionView:(UICollectionView *)collectionView shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
-	return YES;
- }
- */
-
-/*
- // Uncomment this method to specify if the specified item should be selected
- - (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath {
- return YES;
- }
- */
-
-/*
- // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
- - (BOOL)collectionView:(UICollectionView *)collectionView shouldShowMenuForItemAtIndexPath:(NSIndexPath *)indexPath {
-	return NO;
- }
- 
- - (BOOL)collectionView:(UICollectionView *)collectionView canPerformAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
-	return NO;
- }
- 
- - (void)collectionView:(UICollectionView *)collectionView performAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
-	
- }
- */
+#pragma mark - <DLMKEditTeamPhotoDelegate>
+-(void) onTakePhoto:(id)sender{
+    //TODO:Change Model, add teamDescriptorModel.photoContainer
+    DLMKPhotoViewController *photoVC = [[DLMKPhotoViewController alloc] initWithModel:nil];
+    [self.navigationController pushViewController:photoVC animated:YES];
+    
+}
 
 #pragma mark - UITextFieldDelegate
 -(BOOL) textFieldShouldReturn:(UITextField *)textField{

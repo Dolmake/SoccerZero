@@ -8,6 +8,7 @@
 
 @import UIKit;
 @class DLMKPlayerDescriptor;
+@class DLMKPhotoContainer;
 
 @interface DLMKPhotoViewController : UIViewController<UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 
@@ -16,5 +17,5 @@
 -(IBAction)takePhoto:(id)sender;
 -(IBAction)ventigify:(id)sender;
 
--(id) initWithModel: (DLMKPlayerDescriptor*) model;
+-(id) initWithModel: (DLMKPhotoContainer*) model;
 @end

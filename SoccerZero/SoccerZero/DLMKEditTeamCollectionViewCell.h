@@ -9,6 +9,12 @@
 @import UIKit;
 @class DLMKTeamDescriptor;
 
+@protocol DLMKEditTeamPhotoDelegate <NSObject>
+
+-(void) onTakePhoto:(id)sender;
+
+@end
+
 @interface DLMKEditTeamCollectionViewCell : UICollectionViewCell
 
 +(CGFloat)height;
@@ -17,6 +23,8 @@
 
 @property(weak,nonatomic) IBOutlet UILabel* lbTeamName;
 @property(weak,nonatomic) IBOutlet UIImageView* imgShield;
+@property(weak, nonatomic) id<DLMKEditTeamPhotoDelegate> delegate;
+
 @property (strong,nonatomic) DLMKTeamDescriptor* teamDescriptorModel;
 
 -(IBAction)takePhoto:(id)sender;

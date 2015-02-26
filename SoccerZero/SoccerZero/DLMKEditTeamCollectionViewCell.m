@@ -39,7 +39,7 @@
 
 #pragma mark - Actions
 -(void) takePhoto:(id)sender{
-    
+    [self.delegate onTakePhoto:self];
 }
 
 @end

@@ -7,6 +7,8 @@
 //
 
 @import Foundation;
+@import CoreGraphics;
+
 #import "SETTINGS.h"
 
 #define NSStringize_helper(x) #x
@@ -34,6 +36,17 @@ static inline BOOL isEmpty(id thing) {
     || ([thing respondsToSelector:@selector(count)]
         && [(NSArray *)thing count] == 0);
 }
+
+static inline CGSize maxPhotoSize(CGFloat width, CGFloat height){
+    //CGFloat aspect = width / height;
+    CGFloat newheight = height > 1024 ? 1024 : height;
+    CGFloat newwidth = width > 1024 ? 1024 : width;
+    CGFloat scaleByHeight = newheight / height;
+    CGFloat scaleByWidth = newwidth / width;
+    CGFloat minScale = MIN(scaleByHeight, scaleByWidth);
+    return CGSizeMake(width * minScale, height * minScale);
+}
+
 #endif
 
 #ifdef DLMK_LOG

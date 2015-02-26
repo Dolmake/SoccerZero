@@ -24,8 +24,7 @@
 
 @implementation DLMKEditPlayerDescriptorTableViewController
 
-
-
+#define DLMK_PHOTO_SECTION 1
 
 #pragma mark - Init
 
@@ -81,9 +80,8 @@
 }
 
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (indexPath.section == 1){
-        DLMKPhotoViewController *photoVC = [[DLMKPhotoViewController alloc] initWithModel:self.playerDescriptorModel];
-        
+    if (indexPath.section == DLMK_PHOTO_SECTION){
+        DLMKPhotoViewController *photoVC = [[DLMKPhotoViewController alloc] initWithModel:self.playerDescriptorModel.photoContainer];
         [self.navigationController pushViewController:photoVC animated:YES];
     }
 }

@@ -12,18 +12,19 @@
 #import "DLMKPlayerDescriptor.h"
 #import "DLMKPhotoContainer.h"
 #import "UIImage+Resize.h"
+#import "MACROS.h"
 
 @interface DLMKPhotoViewController ()
 
-@property (strong, nonatomic) DLMKPlayerDescriptor* playerDescriptorModel;
+@property (strong, nonatomic) DLMKPhotoContainer* photoContainerModel;
 
 @end
 
 @implementation DLMKPhotoViewController
 
--(id) initWithModel:(DLMKPlayerDescriptor*) model{
+-(id) initWithModel:(DLMKPhotoContainer*) model{
     if (self = [super initWithNibName:nil bundle:nil]){
-        _playerDescriptorModel = model;
+        _photoContainerModel = model;
     }
     return self;
 }
@@ -35,7 +36,7 @@
 
 -(void) viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    NSLog(self.description);
+    __DLMK_NSLOG_DESCRIPTION__
     
     //Deactivate the default option of fullfill the whole screen(IOS7)
     self.edgesForExtendedLayout = UIRectEdgeNone;
@@ -48,12 +49,12 @@
     self.photoView.clipsToBounds = YES;
     
     //Set the photo
-    self.photoView.image = self.playerDescriptorModel.photoContainer.image;
+    self.photoView.image = self.photoContainerModel.image;
 }
 
 -(void) viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
-    self.playerDescriptorModel.photoContainer.image = self.photoView.image;
+    self.photoContainerModel.image = self.photoView.image;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -76,7 +77,7 @@
                          self.photoView.alpha = 0;
                      }
                      completion:^(BOOL finished){
-                         self.playerDescriptorModel.photoContainer.image = nil;
+                         self.photoContainerModel.image = nil;
                          self.photoView.image = nil;
                          self.photoView.bounds =oldRect;
                          self.photoView.alpha = 1;
@@ -130,7 +131,7 @@
     CIContext *context = [CIContext contextWithOptions:nil];
     
     //Create the original CGImage
-    CIImage *original = [CIImage imageWithCGImage:self.playerDescriptorModel.photoContainer.image.CGImage];
+    CIImage *original = [CIImage imageWithCGImage:self.photoContainerModel.image.CGImage];
     
     //Create and config a filter
     CIFilter *falseColor= [CIFilter filterWithName:@"CIFalseColor"];
@@ -161,7 +162,7 @@
     
     //Infucked page into UIImageView
     self.photoView.image = finalImg;
-    self.playerDescriptorModel.photoContainer.image = finalImg;
+    self.photoContainerModel.image = finalImg;
 }
 
 
@@ -172,12 +173,13 @@
     UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
     
     //Resize
-    CGSize newSize = CGSizeMake(image.size.width * 0.2, image.size.height * 0.2);
     
+    CGSize newSize =  maxPhotoSize(image.size.width, image.size.height);    
     image = [image resizedImage:newSize interpolationQuality:kCGInterpolationHigh];
 
     
-       self.playerDescriptorModel.photoContainer.image = image;//[info objectForKey:UIImagePickerControllerOriginalImage];
+    self.photoContainerModel.image = image;
+    //[info objectForKey:UIImagePickerControllerOriginalImage];
     
     //Hide the picker
     //[self dismissViewControllerAnimated:NO completion:^(void){ }];
