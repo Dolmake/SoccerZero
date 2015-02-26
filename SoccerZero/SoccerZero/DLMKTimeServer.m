@@ -25,7 +25,7 @@ static DLMKTimeServer* s_instance;
 {
     int seconds = totalSeconds % 60;
     int minutes = (totalSeconds / 60) % 60;
-    int hours = totalSeconds / 3600;
+    int hours = (int)totalSeconds / 3600;
     
     return [NSString stringWithFormat:@"%02d:%02d:%02d",hours, minutes, seconds];
 }

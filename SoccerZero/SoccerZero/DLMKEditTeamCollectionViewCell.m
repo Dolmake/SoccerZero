@@ -8,6 +8,7 @@
 
 #import "DLMKEditTeamCollectionViewCell.h"
 #import "DLMKTeamDescriptor.h"
+#import "DLMKPhotoContainer.h"
 
 @implementation DLMKEditTeamCollectionViewCell
 
@@ -29,7 +30,7 @@
 -(void) setTeamDescriptorModel:(DLMKTeamDescriptor *)teamDescriptorModel{
     _teamDescriptorModel = teamDescriptorModel;
     self.lbTeamName.text = _teamDescriptorModel.name;
-    self.imgShield.image = nil;
+    self.imgShield.image = _teamDescriptorModel.photoContainer.image;
 }
 
 #pragma mark - Instance methods

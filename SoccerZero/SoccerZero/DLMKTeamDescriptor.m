@@ -1,6 +1,7 @@
 #import "DLMKTeamDescriptor.h"
 #import "DLMKPlayerDescriptor.h"
 #import "DLMKModelServer.h"
+#import "DLMKPhotoContainer.h"
 
 @interface DLMKTeamDescriptor ()
 
@@ -18,6 +19,8 @@
     DLMKTeamDescriptor *teamDescriptor = [self insertInManagedObjectContext:aContext];
     teamDescriptor.name = aName;
     teamDescriptor.players = [NSSet setWithArray:@[]];
+    teamDescriptor.photoContainer = [DLMKPhotoContainer insertInManagedObjectContext:aContext ];
+
     return teamDescriptor;
 }
 
@@ -41,7 +44,6 @@
 
 -(DLMKPlayerDescriptor*) playerAtRow:(NSInteger) row{
 
-    //  WTF!!!: Why is not working
     NSArray* players = [[self.players allObjects] sortedArrayUsingComparator:^NSComparisonResult(id a, id b) {
 
         NSInteger diff = ((DLMKPlayerDescriptor*)a).numberValue - ((DLMKPlayerDescriptor*)b).numberValue;

@@ -9,6 +9,7 @@
     <entity name="PhotoContainer" representedClassName="DLMKPhotoContainer" syncable="YES">
         <attribute name="photoData" optional="YES" attributeType="Binary" syncable="YES"/>
         <relationship name="playerDescriptor" maxCount="1" deletionRule="Nullify" destinationEntity="PlayerDescriptor" inverseName="photoContainer" inverseEntity="PlayerDescriptor" syncable="YES"/>
+        <relationship name="teamDescriptor" maxCount="1" deletionRule="Nullify" destinationEntity="TeamDescriptor" inverseName="photoContainer" inverseEntity="TeamDescriptor" syncable="YES"/>
     </entity>
     <entity name="PlayerDescriptor" representedClassName="DLMKPlayerDescriptor" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
@@ -38,6 +39,7 @@
     </entity>
     <entity name="TeamDescriptor" representedClassName="DLMKTeamDescriptor" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="photoContainer" maxCount="1" deletionRule="Cascade" destinationEntity="PhotoContainer" inverseName="teamDescriptor" inverseEntity="PhotoContainer" syncable="YES"/>
         <relationship name="players" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="PlayerDescriptor" inverseName="teamDescriptor" inverseEntity="PlayerDescriptor" syncable="YES"/>
         <relationship name="teamStats" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TeamStats" inverseName="teamDescriptor" inverseEntity="TeamStats" syncable="YES"/>
     </entity>
@@ -50,11 +52,11 @@
     </entity>
     <elements>
         <element name="MatchStats" positionX="306" positionY="-54" width="128" height="105"/>
+        <element name="PhotoContainer" positionX="504" positionY="90" width="128" height="88"/>
         <element name="PlayerDescriptor" positionX="873" positionY="-16" width="128" height="118"/>
         <element name="PlayerStats" positionX="691" positionY="233" width="128" height="223"/>
         <element name="RivalStats" positionX="504" positionY="90" width="128" height="88"/>
-        <element name="TeamDescriptor" positionX="612" positionY="-55" width="128" height="90"/>
+        <element name="TeamDescriptor" positionX="612" positionY="-55" width="128" height="103"/>
         <element name="TeamStats" positionX="493" positionY="125" width="128" height="118"/>
-        <element name="PhotoContainer" positionX="504" positionY="90" width="128" height="73"/>
     </elements>
 </model>

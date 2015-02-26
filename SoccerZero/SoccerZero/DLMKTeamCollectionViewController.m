@@ -13,6 +13,7 @@
 #import "DLMKDefaultCollectionLayout.h"
 #import "DLMKTeamDescriptor.h"
 #import "DLMKEditTeamDescriptorViewController.h"
+#import "DLMKPhotoViewController.h"
 #import "MACROS.h"
 
 @interface DLMKTeamCollectionViewController ()
@@ -90,8 +91,8 @@
     DLMKTeamDescriptor* teamDescriptor = [self.teamsModel objectAtIndex:indexPath.row];
     
     DLMKEditTeamCollectionViewCell* teamCell = (DLMKEditTeamCollectionViewCell*) [self.customCells cellForCollectionView:self.collectionView atIndexPath:indexPath];
+    teamCell.delegate = self;
     teamCell.teamDescriptorModel = teamDescriptor;
-    
     return teamCell;
 }
 
@@ -131,6 +132,16 @@
     DLMKEditTeamDescriptorViewController *teamDescriptorVC = [[DLMKEditTeamDescriptorViewController alloc]init ];
     teamDescriptorVC.teamDescriptorModel = [self.teamsModel objectAtIndex:indexPath.row ];
     [self.navigationController pushViewController:teamDescriptorVC animated:YES];
+}
+
+
+#pragma mark - <DLMKEditTeamPhotoDelegate>
+-(void) onTakePhoto:(id)sender{
+    DLMKPhotoContainer* photoContainer = ((DLMKEditTeamCollectionViewCell*) sender).teamDescriptorModel.photoContainer;
+    //TODO:Change Model, add teamDescriptorModel.photoContainer
+    DLMKPhotoViewController *photoVC = [[DLMKPhotoViewController alloc] initWithModel:photoContainer];
+    [self.navigationController pushViewController:photoVC animated:YES];
+    
 }
 
 #pragma mark - Actions

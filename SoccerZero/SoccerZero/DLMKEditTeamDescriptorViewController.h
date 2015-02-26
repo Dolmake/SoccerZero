@@ -8,9 +8,9 @@
 
 @import UIKit;
 @class DLMKTeamDescriptor;
-@protocol DLMKEditTeamPhotoDelegate;
 
-@interface DLMKEditTeamDescriptorViewController : UIViewController<UICollectionViewDataSource, UICollectionViewDelegate, UITextFieldDelegate, DLMKEditTeamPhotoDelegate>
+
+@interface DLMKEditTeamDescriptorViewController : UIViewController<UICollectionViewDataSource, UICollectionViewDelegate, UITextFieldDelegate>
 
 @property (weak,nonatomic) IBOutlet UICollectionView* collectionView;
 @property (weak,nonatomic) IBOutlet UITextField* txtName;

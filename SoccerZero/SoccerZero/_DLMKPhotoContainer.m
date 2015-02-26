@@ -9,6 +9,7 @@ const struct DLMKPhotoContainerAttributes DLMKPhotoContainerAttributes = {
 
 const struct DLMKPhotoContainerRelationships DLMKPhotoContainerRelationships = {
 	.playerDescriptor = @"playerDescriptor",
+	.teamDescriptor = @"teamDescriptor",
 };
 
 @implementation DLMKPhotoContainerID
@@ -43,6 +44,8 @@ const struct DLMKPhotoContainerRelationships DLMKPhotoContainerRelationships = {
 @dynamic photoData;
 
 @dynamic playerDescriptor;
+
+@dynamic teamDescriptor;
 
 @end
 

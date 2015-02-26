@@ -8,6 +8,7 @@ const struct DLMKTeamDescriptorAttributes DLMKTeamDescriptorAttributes = {
 };
 
 const struct DLMKTeamDescriptorRelationships DLMKTeamDescriptorRelationships = {
+	.photoContainer = @"photoContainer",
 	.players = @"players",
 	.teamStats = @"teamStats",
 };
@@ -42,6 +43,8 @@ const struct DLMKTeamDescriptorRelationships DLMKTeamDescriptorRelationships = {
 }
 
 @dynamic name;
+
+@dynamic photoContainer;
 
 @dynamic players;
 

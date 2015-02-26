@@ -116,13 +116,6 @@
     
 }
 
-#pragma mark - <DLMKEditTeamPhotoDelegate>
--(void) onTakePhoto:(id)sender{
-    //TODO:Change Model, add teamDescriptorModel.photoContainer
-    DLMKPhotoViewController *photoVC = [[DLMKPhotoViewController alloc] initWithModel:nil];
-    [self.navigationController pushViewController:photoVC animated:YES];
-    
-}
 
 #pragma mark - UITextFieldDelegate
 -(BOOL) textFieldShouldReturn:(UITextField *)textField{

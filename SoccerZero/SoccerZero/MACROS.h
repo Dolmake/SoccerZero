@@ -50,7 +50,7 @@ static inline CGSize maxPhotoSize(CGFloat width, CGFloat height){
 #endif
 
 #ifdef DLMK_LOG
-#define __DLMK_NSLOG_DESCRIPTION__ NSLog(self.description);
+#define __DLMK_NSLOG_DESCRIPTION__ NSLog([NSString stringWithString:[self description]]);
 #else
 #define __DLMK_NSLOG_DESCRIPTION__
 #endif

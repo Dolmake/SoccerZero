@@ -10,9 +10,11 @@ extern const struct DLMKPhotoContainerAttributes {
 
 extern const struct DLMKPhotoContainerRelationships {
 	__unsafe_unretained NSString *playerDescriptor;
+	__unsafe_unretained NSString *teamDescriptor;
 } DLMKPhotoContainerRelationships;
 
 @class DLMKPlayerDescriptor;
+@class DLMKTeamDescriptor;
 
 @interface DLMKPhotoContainerID : NSManagedObjectID {}
 @end
@@ -31,6 +33,10 @@ extern const struct DLMKPhotoContainerRelationships {
 
 //- (BOOL)validatePlayerDescriptor:(id*)value_ error:(NSError**)error_;
 
+@property (nonatomic, strong) DLMKTeamDescriptor *teamDescriptor;
+
+//- (BOOL)validateTeamDescriptor:(id*)value_ error:(NSError**)error_;
+
 @end
 
 @interface _DLMKPhotoContainer (CoreDataGeneratedPrimitiveAccessors)
@@ -40,5 +46,8 @@ extern const struct DLMKPhotoContainerRelationships {
 
 - (DLMKPlayerDescriptor*)primitivePlayerDescriptor;
 - (void)setPrimitivePlayerDescriptor:(DLMKPlayerDescriptor*)value;
+
+- (DLMKTeamDescriptor*)primitiveTeamDescriptor;
+- (void)setPrimitiveTeamDescriptor:(DLMKTeamDescriptor*)value;
 
 @end
