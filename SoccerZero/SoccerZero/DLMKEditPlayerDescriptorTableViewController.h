@@ -9,7 +9,7 @@
 @import UIKit;
 @class DLMKPlayerDescriptor;
 
-@interface DLMKPlayerDescriptorTableViewController : UITableViewController
+@interface DLMKEditPlayerDescriptorTableViewController : UITableViewController
 
 @property (nonatomic, strong) DLMKPlayerDescriptor* playerDescriptorModel;
 

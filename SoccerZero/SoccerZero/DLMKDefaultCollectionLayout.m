@@ -18,10 +18,12 @@
         self.minimumInteritemSpacing = 10;
         self.itemSize =  CGSizeMake(44,44);
         self.sectionInset = UIEdgeInsetsMake(5, 5, 5, 5);
-        self.headerReferenceSize = CGSizeMake(200, 30);
-        _backGroundColor = [UIColor whiteColor];
+        //self.headerReferenceSize = CGSizeMake(200, 30);
+        _backGroundColor = [UIColor greenColor];
 
     }
     return self;
 }
+
+
  @end

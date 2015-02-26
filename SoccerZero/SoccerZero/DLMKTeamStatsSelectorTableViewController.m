@@ -39,6 +39,7 @@
     [super viewWillAppear:animated];
     //Get all the available teams
     self.teamsModel = [[DLMKModelServer SINGLETON] fetchTeams ];
+    NSLog(self.description);
 }
 
 - (void)didReceiveMemoryWarning {

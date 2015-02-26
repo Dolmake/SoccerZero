@@ -7,16 +7,16 @@
 //
 
 
-#import "DLMKTeamDescriptorViewController.h"
+#import "DLMKEditTeamDescriptorViewController.h"
 #import "DLMKCustomCellTypeCollection.h"
 #import "DLMKPlayerDescriptorCollectionViewCell.h"
 #import "DLMKTeamNameCollectionViewCell.h"
 #import "DLMKTeamDescriptor.h"
 #import "DLMKTeamCollectionViewCell.h"
-#import "DLMKPlayerDescriptorTableViewController.h"
+#import "DLMKEditPlayerDescriptorTableViewController.h"
 #import "DLMKDefaultCollectionLayout.h"
 
-@interface DLMKTeamDescriptorViewController ()
+@interface DLMKEditTeamDescriptorViewController ()
 
 @property (nonatomic,strong) DLMKCustomCellTypeCollection* customCells;
 
@@ -24,7 +24,7 @@
 
 @end
 
-@implementation DLMKTeamDescriptorViewController
+@implementation DLMKEditTeamDescriptorViewController
 
 #pragma martk - Properties
 -(DLMKDefaultCollectionLayout*) layout{
@@ -70,6 +70,7 @@
     [super viewWillAppear:animated];
     self.txtName.text = _teamDescriptorModel.name;
     [self.collectionView reloadData];
+    NSLog(self.description);
 }
 
 
@@ -106,7 +107,7 @@
 -(void) collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     //Show the PhotoViewController
-    DLMKPlayerDescriptorTableViewController *playerVC = [[DLMKPlayerDescriptorTableViewController alloc] initWithPlayerDescriptor:[self.teamDescriptorModel playerAtRow:indexPath.row]];
+    DLMKEditPlayerDescriptorTableViewController *playerVC = [[DLMKEditPlayerDescriptorTableViewController alloc] initWithPlayerDescriptor:[self.teamDescriptorModel playerAtRow:indexPath.row]];
     
     [self.navigationController pushViewController:playerVC animated:YES];
     

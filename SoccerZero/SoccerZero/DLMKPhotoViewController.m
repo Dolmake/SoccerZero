@@ -35,6 +35,7 @@
 
 -(void) viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    NSLog(self.description);
     
     //Deactivate the default option of fullfill the whole screen(IOS7)
     self.edgesForExtendedLayout = UIRectEdgeNone;

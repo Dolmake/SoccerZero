@@ -11,9 +11,8 @@
 #import "DLMKCustomCellTypeCollection.h"
 #import "DLMKTeamCollectionViewCell.h"
 #import "DLMKDefaultCollectionLayout.h"
-#import "DLMKTeamDescriptorCollectionViewController.h"
 #import "DLMKTeamDescriptor.h"
-#import "DLMKTeamDescriptorViewController.h"
+#import "DLMKEditTeamDescriptorViewController.h"
 
 @interface DLMKTeamCollectionViewController ()
 
@@ -63,6 +62,7 @@
     [super viewWillAppear:animated];
     [self syncModel];
     [self.collectionView reloadData];
+    NSLog([self description]);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -127,14 +127,7 @@
 
 -(void) collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    /*
-    DLMKTeamDescriptorCollectionViewController *teamDescriptorCollectionVC = [[DLMKTeamDescriptorCollectionViewController alloc] init ];
-    teamDescriptorCollectionVC.teamDescriptorModel = [self.teamsModel objectAtIndex:indexPath.row ];
-    
-    [self.navigationController pushViewController:teamDescriptorCollectionVC animated:YES];
-     */
-    
-    DLMKTeamDescriptorViewController *teamDescriptorVC = [[DLMKTeamDescriptorViewController alloc]init ];
+    DLMKEditTeamDescriptorViewController *teamDescriptorVC = [[DLMKEditTeamDescriptorViewController alloc]init ];
     teamDescriptorVC.teamDescriptorModel = [self.teamsModel objectAtIndex:indexPath.row ];
     [self.navigationController pushViewController:teamDescriptorVC animated:YES];
 }

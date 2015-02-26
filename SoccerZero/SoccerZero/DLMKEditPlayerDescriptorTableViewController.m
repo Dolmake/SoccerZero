@@ -6,14 +6,14 @@
 //  Copyright (c) 2015 Dolmake. All rights reserved.
 //
 
-#import "DLMKPlayerDescriptorTableViewController.h"
+#import "DLMKEditPlayerDescriptorTableViewController.h"
 #import "DLMKPlayerDescriptor.h"
 #import "DLMKPhotoTableViewCell.h"
 #import "DLMKPlayerNameTableViewCell.h"
 #import "DLMKCustomCellTypeCollection.h"
 #import "DLMKPhotoViewController.h"
 
-@interface DLMKPlayerDescriptorTableViewController ()
+@interface DLMKEditPlayerDescriptorTableViewController ()
 
 @property (nonatomic,strong) DLMKCustomCellTypeCollection* customCells;
 
@@ -21,7 +21,7 @@
 
 
 
-@implementation DLMKPlayerDescriptorTableViewController
+@implementation DLMKEditPlayerDescriptorTableViewController
 
 
 
@@ -48,6 +48,7 @@
 -(void) viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [self.tableView reloadData];
+    NSLog(self.description);
 }
 
 - (void)didReceiveMemoryWarning {
