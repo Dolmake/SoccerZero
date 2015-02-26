@@ -13,6 +13,7 @@
 #import "DLMKDefaultCollectionLayout.h"
 #import "DLMKTeamDescriptor.h"
 #import "DLMKEditTeamDescriptorViewController.h"
+#import "MACROS.h"
 
 @interface DLMKTeamCollectionViewController ()
 
@@ -62,7 +63,7 @@
     [super viewWillAppear:animated];
     [self syncModel];
     [self.collectionView reloadData];
-    NSLog([self description]);
+    __DLMK_NSLOG_DESCRIPTION__
 }
 
 - (void)didReceiveMemoryWarning {

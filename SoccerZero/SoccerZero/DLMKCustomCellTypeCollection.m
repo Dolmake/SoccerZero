@@ -45,7 +45,7 @@
     return [self.arrayOfClasses[index] height];
 }
 
--(CGSize) sizeForIndex: (NSUInteger) index{
+-(CGSize) cellSizeForIndex: (NSUInteger) index{
     return [self.arrayOfClasses[index] cellSize];
 }
 

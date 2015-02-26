@@ -19,7 +19,6 @@
     return [self description];
 }
 +(CGSize)cellSize{
-    //return CGSizeMake(175.0f, 175.0f);
     CGRect screenRect = [[UIScreen mainScreen] bounds];
     return CGSizeMake(screenRect.size.width,30.f);
 }

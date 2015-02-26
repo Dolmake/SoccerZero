@@ -8,18 +8,11 @@
 
 #import "DLMKModelServer.h"
 #import "AGTCoreDataStack.h"
-#import "SETTINGS.h"
 #import "DLMKTeamDescriptor.h"
 #import "DLMKMatchStats.h"
 #import "DLMKPlayerStats.h"
-
-#ifdef DUMMY_DATA
-
-    #import "DLMKPlayerDescriptor.h"
-
-#endif
-
-
+#import "DLMKPlayerDescriptor.h"
+#import "MACROS.h"
 
 @implementation DLMKModelServer
 
@@ -239,7 +232,7 @@ static DLMKModelServer* s_instance;
             playerErrors += [playerStats errorsValue ];
         }
     }
-    return [NSNumber numberWithUnsignedInt:playerErrors];
+    return [NSNumber numberWithUnsignedLong:playerErrors];
 
 }
 -(NSNumber*) fetchGoalsForPlayerDescriptor:(DLMKPlayerDescriptor*) player{
@@ -262,7 +255,7 @@ static DLMKModelServer* s_instance;
             playerGoals += [playerStats goalsValue ];
         }
     }
-    return [NSNumber numberWithUnsignedInt:playerGoals];
+    return [NSNumber numberWithUnsignedLong:playerGoals];
 }
 
 

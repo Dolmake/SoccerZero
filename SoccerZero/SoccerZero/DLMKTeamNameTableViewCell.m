@@ -51,7 +51,6 @@
 }
 -(void) textFieldDidEndEditing:(UITextField *)textField{
     if (!isEmpty(self.txNameField.text)){
-        //Synchonize the note with the view
         self.teamDescriptorModel.name = self.txNameField.text;
     }
     

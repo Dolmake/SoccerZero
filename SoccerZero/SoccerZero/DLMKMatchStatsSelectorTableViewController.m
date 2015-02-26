@@ -14,6 +14,7 @@
 #import "DLMKCustomCellTypeCollection.h"
 #import "DLMKMatchStatsTableViewCell.h"
 #import "DLMKTeamDescriptor.h"
+#import "MACROS.h"
 
 @interface DLMKMatchStatsSelectorTableViewController ()
 
@@ -42,7 +43,7 @@
 -(void) viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [self refreshMatchesView];
-    NSLog(self.description);
+    __DLMK_NSLOG_DESCRIPTION__
 }
 
 - (void)didReceiveMemoryWarning {

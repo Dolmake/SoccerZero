@@ -12,6 +12,7 @@
 #import "DLMKPlayerNameTableViewCell.h"
 #import "DLMKCustomCellTypeCollection.h"
 #import "DLMKPhotoViewController.h"
+#import "MACROS.h"
 
 @interface DLMKEditPlayerDescriptorTableViewController ()
 
@@ -48,7 +49,7 @@
 -(void) viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [self.tableView reloadData];
-    NSLog(self.description);
+    __DLMK_NSLOG_DESCRIPTION__
 }
 
 - (void)didReceiveMemoryWarning {

@@ -16,13 +16,19 @@
         self.scrollDirection = UICollectionViewScrollDirectionVertical;
         self.minimumLineSpacing = 10;
         self.minimumInteritemSpacing = 10;
-        self.itemSize =  CGSizeMake(44,44);
+        self.itemSize =  [self optimunSize];
         self.sectionInset = UIEdgeInsetsMake(5, 5, 5, 5);
         //self.headerReferenceSize = CGSizeMake(200, 30);
-        _backGroundColor = [UIColor greenColor];
+        _backGroundColor = [UIColor whiteColor];
 
     }
     return self;
+}
+
+-(CGSize) optimunSize{
+    //return CGSizeMake(175.0f, 175.0f);
+    CGRect screenRect = [[UIScreen mainScreen] bounds];
+    return CGSizeMake(screenRect.size.width * 0.45f,screenRect.size.width  * 0.45f);
 }
 
 

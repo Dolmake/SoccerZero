@@ -15,6 +15,7 @@
 #import "DLMKTeamCollectionViewCell.h"
 #import "DLMKEditPlayerDescriptorTableViewController.h"
 #import "DLMKDefaultCollectionLayout.h"
+#import "MACROS.h"
 
 @interface DLMKEditTeamDescriptorViewController ()
 
@@ -70,7 +71,7 @@
     [super viewWillAppear:animated];
     self.txtName.text = _teamDescriptorModel.name;
     [self.collectionView reloadData];
-    NSLog(self.description);
+    __DLMK_NSLOG_DESCRIPTION__
 }
 
 

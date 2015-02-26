@@ -10,10 +10,9 @@
 #import "DLMKMatchStats.h"
 #import "DLMKTeamDescriptor.h"
 #import "DLMKTeamStats.h"
-//#import "DLMKMatchViewController.h"
 #import "DLMKMatchStatsSelectorTableViewController.h"
-
 #import "DLMKModelServer.h"
+#import "MACROS.h"
 
 @interface DLMKTeamStatsSelectorTableViewController ()
 
@@ -39,7 +38,7 @@
     [super viewWillAppear:animated];
     //Get all the available teams
     self.teamsModel = [[DLMKModelServer SINGLETON] fetchTeams ];
-    NSLog(self.description);
+   __DLMK_NSLOG_DESCRIPTION__
 }
 
 - (void)didReceiveMemoryWarning {
@@ -87,27 +86,12 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     //Get the proper team
     DLMKTeamDescriptor* teamDescriptor = [self.teamsModel objectAtIndex:indexPath.row];
-    
-//     //Create the Table Controller
-//    DLMKMatchViewController* matchVC = [[DLMKMatchViewController alloc]initWithTeamDescriptor:teamDescriptor];
-//     
-//     [self.navigationController pushViewController:matchVC
-//     animated:YES];
-    
+
     DLMKMatchStatsSelectorTableViewController *matchesVC = [[DLMKMatchStatsSelectorTableViewController alloc] init ];
     matchesVC.teamDescriptorModel = teamDescriptor;
     [self.navigationController pushViewController: matchesVC animated:YES];
 }
 
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

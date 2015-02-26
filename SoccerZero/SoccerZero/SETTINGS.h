@@ -9,3 +9,4 @@
 #define AUTO_SAVE YES
 #define AUTO_SAVE_DELAY 60
 #define DUMMY_DATA YES
+#define DLMK_LOG

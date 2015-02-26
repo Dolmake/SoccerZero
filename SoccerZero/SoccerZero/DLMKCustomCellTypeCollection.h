@@ -14,18 +14,20 @@
 @property (strong, nonatomic, readonly) NSArray* arrayOfClasses;
 +(instancetype) customCellTypeCollectionWithArray:(NSArray*) arrayOfClasses;
 
-//-(id) initWithArrayOfClasses: (NSArray*)arrayOfClasses;
-//-(id) initWithArrayOfCells: (NSArray*)arrayOfCells;
-
 -(CGFloat) height;
 -(NSString*) cellId;
 -(CGSize) cellSize;
--(CGFloat) heightForIndex:(NSUInteger) index;
--(CGSize) sizeForIndex:(NSUInteger) index;
--(NSString*) cellIdForIndex: (NSUInteger) cellId;
--(void) registerNibsForTableView:(UITableView*) tableView;
--(void) registerNibsForCollectionView:(UICollectionView*) collectionView;
 
+-(NSString*) cellIdForIndex: (NSUInteger) cellId;
+
+//TableView Cells
+-(CGFloat) heightForIndex:(NSUInteger) index;
+-(void) registerNibsForTableView:(UITableView*) tableView;
 -(UITableViewCell*) cellForTableView:(UITableView*) tableView atIndex:(NSUInteger) index;
+
+//CollectionView Cells
+-(CGSize) cellSizeForIndex:(NSUInteger) index;
+-(void) registerNibsForCollectionView:(UICollectionView*) collectionView;
 -(UICollectionViewCell*) cellForCollectionView:(UICollectionView*) collectionView atIndexPath:(NSIndexPath*) indexPath;
+
 @end

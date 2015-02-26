@@ -7,6 +7,7 @@
 //
 
 @import Foundation;
+#import "SETTINGS.h"
 
 #define NSStringize_helper(x) #x
 #define NSStringize(x) @NSStringize_helper(x)
@@ -33,5 +34,11 @@ static inline BOOL isEmpty(id thing) {
     || ([thing respondsToSelector:@selector(count)]
         && [(NSArray *)thing count] == 0);
 }
+#endif
+
+#ifdef DLMK_LOG
+#define __DLMK_NSLOG_DESCRIPTION__ NSLog(self.description);
+#else
+#define __DLMK_NSLOG_DESCRIPTION__
 #endif
 
