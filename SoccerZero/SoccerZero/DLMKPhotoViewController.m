@@ -174,7 +174,7 @@
     
     //Resize
     
-    CGSize newSize =  maxPhotoSize(image.size.width, image.size.height);    
+    CGSize newSize =  maxPhotoSize(1024,image.size.width, image.size.height);
     image = [image resizedImage:newSize interpolationQuality:kCGInterpolationHigh];
 
     
