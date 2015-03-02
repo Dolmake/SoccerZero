@@ -26,7 +26,7 @@
 #pragma mark - Properties
 -(void) setPlayerDescriptorModel:(DLMKPlayerDescriptor *)playerDescriptorModel{
     _playerDescriptorModel = playerDescriptorModel;
-    self.txtNumber.text = [_playerDescriptorModel.number stringValue ];
+    self.lbNumber.text = [_playerDescriptorModel.number stringValue ];
 }
 
 #pragma mark - UIView
@@ -39,5 +39,6 @@
 
     // Configure the view for the selected state
 }
+
 
 @end

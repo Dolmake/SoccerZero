@@ -16,6 +16,7 @@
 +(NSString*)cellSectionTitle;
 
 @property (strong,nonatomic) DLMKPlayerDescriptor* playerDescriptorModel;
-@property (weak, nonatomic) IBOutlet UITextField* txtNumber;
+@property (weak, nonatomic) IBOutlet UILabel* lbNumber;
+
 
 @end

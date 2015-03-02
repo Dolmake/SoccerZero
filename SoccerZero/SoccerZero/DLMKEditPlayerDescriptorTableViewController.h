@@ -8,8 +8,9 @@
 
 @import UIKit;
 @class DLMKPlayerDescriptor;
+@protocol  LCNumberInputDelegate;
 
-@interface DLMKEditPlayerDescriptorTableViewController : UITableViewController
+@interface DLMKEditPlayerDescriptorTableViewController : UITableViewController<LCNumberInputDelegate>
 
 @property (nonatomic, strong) DLMKPlayerDescriptor* playerDescriptorModel;
 

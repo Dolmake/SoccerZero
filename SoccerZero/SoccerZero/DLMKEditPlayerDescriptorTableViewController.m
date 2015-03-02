@@ -13,7 +13,11 @@
 #import "DLMKPlayerNumberTableViewCell.h"
 #import "DLMKCustomCellTypeCollection.h"
 
+#import "LCNumberInputControl.h"
+
 #import "MACROS.h"
+
+#define PLAYERS_NUMBER_SECTION 1
 
 @interface DLMKEditPlayerDescriptorTableViewController ()
 
@@ -89,8 +93,60 @@
 }
 
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    
+   
+    if (indexPath.section == PLAYERS_NUMBER_SECTION){
+        [self show:self.playerDescriptorModel];
+    }
 }
+
+#pragma mark - NumberPicker
+- (void)show:(id)sender
+{
+    LCNumberInputControl *inputView = [[[NSBundle mainBundle] loadNibNamed:@"LCNumberInputControl" owner:self options:nil] objectAtIndex:0];
+    [inputView setFrame:CGRectMake(0, self.view.frame.size.height, kNumberControlWidth, kNumberControlHeight)];
+    [inputView setDelegate:self];
+    [inputView setTag:11];
+    [inputView setInputType:numberInputTypeInteger];
+    //current pick value
+    [inputView setInputResult: ((DLMKPlayerDescriptor*)sender).number];//[NSNumber numberWithInteger:[self.title integerValue]]];
+    [inputView.titleBar.topItem setTitle:[NSString stringWithFormat:@"Please input a number"]];
+    [inputView.numberField setPlaceholder:[NSString stringWithFormat:@"Input you number"]];
+    
+    //Set playerDescriptor as UserInfo
+    inputView.userInfo = sender;
+    
+    [self.view addSubview:inputView];
+    
+    /*
+     if your parent controller has a tableview , then your need tableview contentoffset
+     
+     eg. self.tableView.contentoffset
+     */
+    [inputView showWithOffset:CGPointMake(0, 0) inView:self.view];
+}
+
+- (void)numberControl:(LCNumberInputControl*)view didInputWithNumber:(NSNumber*)number{
+    
+    DLMKPlayerDescriptor *playerDescriptor = (DLMKPlayerDescriptor*)view.userInfo;
+    playerDescriptor.number = number;
+    view.inputResult = number;
+    [self dismissPickerControl:view];
+    [self.tableView reloadData];
+}
+- (void)numberControl:(LCNumberInputControl *)view didCancelWithNumber:(NSNumber *)number{
+    [self dismissPickerControl:view];
+}
+
+- (void)dismissPickerControl:(LCNumberInputControl*)view
+{
+    /*
+     if your parent controller has a tableview , then your need tableview contentoffset
+     
+     eg. self.tableView.contentoffset
+     */
+    [view dismissWithOffset:CGPointMake(0, 0)];
+}
+
 
 @end
 
