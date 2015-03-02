@@ -57,6 +57,17 @@
 }
 
 
+-(NSArray*) winningMatches{
+    //TODO:
+    return nil;
+}
+-(NSArray*) lossingMatches{
+    //TODO:
+    return nil;
+}
+
+
+
 
 
 

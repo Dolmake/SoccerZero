@@ -216,7 +216,7 @@ CGFloat _accumTime = 0;
     
     NSUInteger rivalGoals = self.model.rivalStats.goalsValue;
     
-    self.lbResult.text = [NSString stringWithFormat:@" %lu : %lu" , localGoals, rivalGoals];
+    self.lbResult.text = [NSString stringWithFormat:@" %lu : %lu" , (unsigned long)localGoals, rivalGoals];
 
 
 }

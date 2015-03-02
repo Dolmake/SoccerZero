@@ -61,6 +61,18 @@
 		6588AE6C1AA45F9B00591159 /* NSNumber+extend.m in Sources */ = {isa = PBXBuildFile; fileRef = 6588AE651AA45F9B00591159 /* NSNumber+extend.m */; };
 		6588AE6D1AA45F9B00591159 /* NSString+extend.m in Sources */ = {isa = PBXBuildFile; fileRef = 6588AE671AA45F9B00591159 /* NSString+extend.m */; };
 		6588AE701AA4605900591159 /* NumberViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6588AE6F1AA4605900591159 /* NumberViewController.m */; };
+		6588AE771AA488A600591159 /* ball_512x512.png in Resources */ = {isa = PBXBuildFile; fileRef = 6588AE731AA488A600591159 /* ball_512x512.png */; };
+		6588AE781AA488A600591159 /* bar_256x128.png in Resources */ = {isa = PBXBuildFile; fileRef = 6588AE741AA488A600591159 /* bar_256x128.png */; };
+		6588AE7A1AA488A600591159 /* play_369x512.png in Resources */ = {isa = PBXBuildFile; fileRef = 6588AE761AA488A600591159 /* play_369x512.png */; };
+		6588AE7E1AA48C4300591159 /* camera_512x378.png in Resources */ = {isa = PBXBuildFile; fileRef = 6588AE7D1AA48C4300591159 /* camera_512x378.png */; };
+		6588AE821AA48E7B00591159 /* error_512x512.png in Resources */ = {isa = PBXBuildFile; fileRef = 6588AE811AA48E7B00591159 /* error_512x512.png */; };
+		6588AE841AA48E8800591159 /* play_512x512.png in Resources */ = {isa = PBXBuildFile; fileRef = 6588AE831AA48E8800591159 /* play_512x512.png */; };
+		6588AE861AA48E9700591159 /* gear_512x512.png in Resources */ = {isa = PBXBuildFile; fileRef = 6588AE851AA48E9700591159 /* gear_512x512.png */; };
+		6588AE881AA48EB000591159 /* camera_512x512.png in Resources */ = {isa = PBXBuildFile; fileRef = 6588AE871AA48EB000591159 /* camera_512x512.png */; };
+		6588AE8D1AA4BFD100591159 /* DLMKTeamStatsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6588AE8B1AA4BFD100591159 /* DLMKTeamStatsTableViewCell.m */; };
+		6588AE8E1AA4BFD100591159 /* DLMKTeamStatsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6588AE8C1AA4BFD100591159 /* DLMKTeamStatsTableViewCell.xib */; };
+		6588AE901AA4CA4100591159 /* pause_512x512.png in Resources */ = {isa = PBXBuildFile; fileRef = 6588AE8F1AA4CA4100591159 /* pause_512x512.png */; };
+		6588AE931AA4D57F00591159 /* DLMKAppearenceServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6588AE921AA4D57F00591159 /* DLMKAppearenceServer.m */; };
 		65917CBE1A7914A300DC9940 /* play_128x128.png in Resources */ = {isa = PBXBuildFile; fileRef = 65917CBD1A7914A300DC9940 /* play_128x128.png */; };
 		65917CC11A7914F000DC9940 /* gear_256x256.png in Resources */ = {isa = PBXBuildFile; fileRef = 65917CC01A7914F000DC9940 /* gear_256x256.png */; };
 		65917CC31A79152400DC9940 /* statistics_128x128.png in Resources */ = {isa = PBXBuildFile; fileRef = 65917CC21A79152400DC9940 /* statistics_128x128.png */; };
@@ -192,6 +204,20 @@
 		6588AE671AA45F9B00591159 /* NSString+extend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+extend.m"; path = "NumberKeyBoard/NSString+extend.m"; sourceTree = "<group>"; };
 		6588AE6E1AA4605900591159 /* NumberViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NumberViewController.h; path = NumberKeyBoard/NumberViewController.h; sourceTree = "<group>"; };
 		6588AE6F1AA4605900591159 /* NumberViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NumberViewController.m; path = NumberKeyBoard/NumberViewController.m; sourceTree = "<group>"; };
+		6588AE731AA488A600591159 /* ball_512x512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ball_512x512.png; sourceTree = "<group>"; };
+		6588AE741AA488A600591159 /* bar_256x128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bar_256x128.png; sourceTree = "<group>"; };
+		6588AE761AA488A600591159 /* play_369x512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play_369x512.png; sourceTree = "<group>"; };
+		6588AE7D1AA48C4300591159 /* camera_512x378.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera_512x378.png; sourceTree = "<group>"; };
+		6588AE811AA48E7B00591159 /* error_512x512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = error_512x512.png; sourceTree = "<group>"; };
+		6588AE831AA48E8800591159 /* play_512x512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play_512x512.png; sourceTree = "<group>"; };
+		6588AE851AA48E9700591159 /* gear_512x512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gear_512x512.png; sourceTree = "<group>"; };
+		6588AE871AA48EB000591159 /* camera_512x512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera_512x512.png; sourceTree = "<group>"; };
+		6588AE8A1AA4BFD100591159 /* DLMKTeamStatsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLMKTeamStatsTableViewCell.h; sourceTree = "<group>"; };
+		6588AE8B1AA4BFD100591159 /* DLMKTeamStatsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLMKTeamStatsTableViewCell.m; sourceTree = "<group>"; };
+		6588AE8C1AA4BFD100591159 /* DLMKTeamStatsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DLMKTeamStatsTableViewCell.xib; sourceTree = "<group>"; };
+		6588AE8F1AA4CA4100591159 /* pause_512x512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pause_512x512.png; sourceTree = "<group>"; };
+		6588AE911AA4D57F00591159 /* DLMKAppearenceServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLMKAppearenceServer.h; sourceTree = "<group>"; };
+		6588AE921AA4D57F00591159 /* DLMKAppearenceServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLMKAppearenceServer.m; sourceTree = "<group>"; };
 		65917CBD1A7914A300DC9940 /* play_128x128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play_128x128.png; sourceTree = "<group>"; };
 		65917CC01A7914F000DC9940 /* gear_256x256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gear_256x256.png; sourceTree = "<group>"; };
 		65917CC21A79152400DC9940 /* statistics_128x128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = statistics_128x128.png; sourceTree = "<group>"; };
@@ -365,6 +391,7 @@
 		653B868A1A92249800E9E90D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				6588AE891AA4BFA000591159 /* TeamStats */,
 				659B01981A9B384600437970 /* PlayerStats */,
 				659B018E1A9B33DA00437970 /* TeamDescriptor */,
 				659B018D1A9B33C400437970 /* PlayerDescriptor */,
@@ -434,6 +461,8 @@
 				65FA2ABD1A7C220000E87793 /* DLMKTimeServer.m */,
 				653B868B1A92259900E9E90D /* DLMKModelServer.h */,
 				653B868C1A92259900E9E90D /* DLMKModelServer.m */,
+				6588AE911AA4D57F00591159 /* DLMKAppearenceServer.h */,
+				6588AE921AA4D57F00591159 /* DLMKAppearenceServer.m */,
 			);
 			name = SINGLETONS;
 			sourceTree = "<group>";
@@ -456,9 +485,27 @@
 			name = NumberKeyBoard;
 			sourceTree = "<group>";
 		};
+		6588AE891AA4BFA000591159 /* TeamStats */ = {
+			isa = PBXGroup;
+			children = (
+				6588AE8A1AA4BFD100591159 /* DLMKTeamStatsTableViewCell.h */,
+				6588AE8B1AA4BFD100591159 /* DLMKTeamStatsTableViewCell.m */,
+				6588AE8C1AA4BFD100591159 /* DLMKTeamStatsTableViewCell.xib */,
+			);
+			name = TeamStats;
+			sourceTree = "<group>";
+		};
 		65917CBF1A7914AA00DC9940 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				6588AE8F1AA4CA4100591159 /* pause_512x512.png */,
+				6588AE871AA48EB000591159 /* camera_512x512.png */,
+				6588AE851AA48E9700591159 /* gear_512x512.png */,
+				6588AE831AA48E8800591159 /* play_512x512.png */,
+				6588AE811AA48E7B00591159 /* error_512x512.png */,
+				6588AE731AA488A600591159 /* ball_512x512.png */,
+				6588AE741AA488A600591159 /* bar_256x128.png */,
+				6588AE761AA488A600591159 /* play_369x512.png */,
 				6545E1DF1A9E2E16009A8C8A /* camera_256x256.png */,
 				659B01941A9B35B700437970 /* goal_256x256.png */,
 				659B01961A9B36ED00437970 /* pass_512x512.png */,
@@ -467,6 +514,7 @@
 				65917CC21A79152400DC9940 /* statistics_128x128.png */,
 				65917CC01A7914F000DC9940 /* gear_256x256.png */,
 				65917CBD1A7914A300DC9940 /* play_128x128.png */,
+				6588AE7D1AA48C4300591159 /* camera_512x378.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -642,30 +690,40 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6588AE861AA48E9700591159 /* gear_512x512.png in Resources */,
 				653B868F1A9228C600E9E90D /* pause_256x256.png in Resources */,
 				6545E1F11A9F1F60009A8C8A /* DLMKTeamCollectionViewController.xib in Resources */,
 				6545E1DE1A9E2B3F009A8C8A /* DLMKEditTeamCollectionViewCell.xib in Resources */,
 				659B01971A9B36ED00437970 /* pass_512x512.png in Resources */,
+				6588AE821AA48E7B00591159 /* error_512x512.png in Resources */,
 				65917CC11A7914F000DC9940 /* gear_256x256.png in Resources */,
 				6545E1C11A9DECAA009A8C8A /* DLMKPhotoViewController.xib in Resources */,
 				659B018A1A98F9C000437970 /* DLMKTeamStatsSelectorTableViewController.xib in Resources */,
 				651B96791A7912A600154A3C /* DLMKMainMenuViewController.xib in Resources */,
 				655F4AD31A950DE0006DB768 /* DLMKPlayerNameTableViewCell.xib in Resources */,
 				651B96601A79123700154A3C /* LaunchScreen.xib in Resources */,
+				6588AE7A1AA488A600591159 /* play_369x512.png in Resources */,
 				655F4ACE1A94A157006DB768 /* DLMKEditPlayerDescriptorTableViewController.xib in Resources */,
 				6545E1BC1A9DEC9E009A8C8A /* DLMKPhotoTableViewCell.xib in Resources */,
+				6588AE771AA488A600591159 /* ball_512x512.png in Resources */,
 				659B01A21A9B9FE300437970 /* DLMKMatchStatsTableViewCell.xib in Resources */,
+				6588AE881AA48EB000591159 /* camera_512x512.png in Resources */,
 				6588AE691AA45F9B00591159 /* arrow_down@2x.png in Resources */,
 				65917CBE1A7914A300DC9940 /* play_128x128.png in Resources */,
 				65FA2AB81A7BD7E300E87793 /* DLMKMatchViewController.xib in Resources */,
+				6588AE841AA48E8800591159 /* play_512x512.png in Resources */,
 				655F4AE51A961EE0006DB768 /* DLMKPlayerNumberTableViewCell.xib in Resources */,
 				657BB1641A7AA98500A528EB /* person_128x128.png in Resources */,
 				659B019D1A9B88D300437970 /* DLMKMatchStatsSelectorTableViewController.xib in Resources */,
 				651B965D1A79123700154A3C /* Images.xcassets in Resources */,
 				659B01AE1A9CB5A400437970 /* DLMKPlayerDescriptorCollectionViewCell.xib in Resources */,
+				6588AE781AA488A600591159 /* bar_256x128.png in Resources */,
 				659B01951A9B35B700437970 /* goal_256x256.png in Resources */,
+				6588AE901AA4CA4100591159 /* pause_512x512.png in Resources */,
 				6588AE681AA45F9B00591159 /* arrow_down.png in Resources */,
 				65917CC31A79152400DC9940 /* statistics_128x128.png in Resources */,
+				6588AE8E1AA4BFD100591159 /* DLMKTeamStatsTableViewCell.xib in Resources */,
+				6588AE7E1AA48C4300591159 /* camera_512x378.png in Resources */,
 				659B01931A9B345E00437970 /* DLMKPlayerStatsTableViewCell.xib in Resources */,
 				6545E1EA1A9E4950009A8C8A /* DLMKEditTeamDescriptorViewController.xib in Resources */,
 				6588AE6B1AA45F9B00591159 /* LCNumberInputControl.xib in Resources */,
@@ -695,6 +753,7 @@
 				6545E1BB1A9DEC9E009A8C8A /* DLMKPhotoTableViewCell.m in Sources */,
 				6588AE6A1AA45F9B00591159 /* LCNumberInputControl.m in Sources */,
 				65FA2ABE1A7C220000E87793 /* DLMKTimeServer.m in Sources */,
+				6588AE8D1AA4BFD100591159 /* DLMKTeamStatsTableViewCell.m in Sources */,
 				653B86761A92238B00E9E90D /* _DLMKMatchStats.m in Sources */,
 				659B01AD1A9CB5A400437970 /* DLMKPlayerDescriptorCollectionViewCell.m in Sources */,
 				6545E1D21A9DEEF3009A8C8A /* UIImage+Resize.m in Sources */,
@@ -712,6 +771,7 @@
 				653B86851A9223AB00E9E90D /* DLMKMatchStats.m in Sources */,
 				6545E1C41A9DEE92009A8C8A /* DLMKPhotoContainer.m in Sources */,
 				653B86881A9223AB00E9E90D /* DLMKTeamDescriptor.m in Sources */,
+				6588AE931AA4D57F00591159 /* DLMKAppearenceServer.m in Sources */,
 				6545E1B21A9DDED0009A8C8A /* DLMKDefaultCollectionLayout.m in Sources */,
 				653B868D1A92259900E9E90D /* DLMKModelServer.m in Sources */,
 				659B01921A9B345E00437970 /* DLMKPlayerStatsTableViewCell.m in Sources */,

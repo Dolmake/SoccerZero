@@ -12,6 +12,8 @@
 -(void) removePlayer:(DLMKPlayerDescriptor*) player;
 -(NSUInteger) countPlayers;
 -(DLMKPlayerDescriptor*) playerAtRow:(NSInteger) row;
+-(NSArray*) winningMatches;
+-(NSArray*) lossingMatches;
 
 
 @end

@@ -19,7 +19,7 @@
         self.itemSize =  [self optimunSize];
         self.sectionInset = UIEdgeInsetsMake(5, 5, 5, 5);
         //self.headerReferenceSize = CGSizeMake(200, 30);
-        _backGroundColor = [UIColor whiteColor];
+        _backGroundColor = [UIColor darkGrayColor];
 
     }
     return self;

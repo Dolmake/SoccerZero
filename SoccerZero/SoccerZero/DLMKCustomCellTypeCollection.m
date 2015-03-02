@@ -39,6 +39,7 @@
 
 -(CGFloat) height{return 44;}
 -(NSString*) cellId {return @"CELL_ID_DEFAULT";}
+-(NSString*) cellSectionTitle{ return @"CELL_SECTION_TITLE";}
 -(CGSize) cellSize {return CGSizeMake(self.height,self.height);}
 
 -(CGFloat) heightForIndex:(NSUInteger) index{

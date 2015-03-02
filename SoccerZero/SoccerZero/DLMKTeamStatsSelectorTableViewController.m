@@ -11,27 +11,29 @@
 #import "DLMKTeamDescriptor.h"
 #import "DLMKTeamStats.h"
 #import "DLMKMatchStatsSelectorTableViewController.h"
+#import "DLMKTeamStatsTableViewCell.h"
+#import "DLMKCustomCellTypeCollection.h"
 #import "DLMKModelServer.h"
 #import "MACROS.h"
 
 @interface DLMKTeamStatsSelectorTableViewController ()
 
 @property (nonatomic, strong) NSArray* teamsModel;
+@property (nonatomic, strong) DLMKCustomCellTypeCollection* customCells;
 
 @end
 
 @implementation DLMKTeamStatsSelectorTableViewController
 
 
--(NSString*) CELL_ID{ return @"CELL_ID_TEAMS_FOR_MATCH";}
-
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     self.title = @"Select a team";
-    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:[self CELL_ID]];
+    NSArray* cells = @[[DLMKTeamStatsTableViewCell class]];
+    self.customCells = [DLMKCustomCellTypeCollection customCellTypeCollectionWithArray:cells];
     
+    [self.customCells registerNibsForTableView:self.tableView ];
 }
 
 -(void) viewWillAppear:(BOOL)animated{
@@ -49,12 +51,16 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+    return [[self.customCells arrayOfClasses] count ];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
     return [self.teamsModel count];
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return [self.customCells heightForIndex:indexPath.section];
 }
 
 
@@ -64,16 +70,10 @@
     DLMKTeamDescriptor* teamDescriptor = [self.teamsModel objectAtIndex:indexPath.row];
     
     //Build the Cell
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[self CELL_ID] forIndexPath:indexPath];
+    UITableViewCell *cell = nil;
+    cell = [self.customCells cellForTableView:tableView atIndex:0];
     
-    if (!cell){
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:[self CELL_ID] ];
-    }
-    
-    //Configure the Cell
-    cell.textLabel.text = teamDescriptor.name;
-    cell.detailTextLabel.text = @"Ready for the Match!!!!";
-    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    [cell setValue:teamDescriptor forKey:@"teamDescriptorModel"];
     
     return cell;
 }

@@ -10,6 +10,7 @@
 #import "DLMKMainMenuViewController.h"
 #import "DLMKTimeServer.h"
 #import "DLMKModelServer.h"
+#import "DLMKAppearenceServer.h"
 
 @interface AppDelegate ()
 
@@ -25,6 +26,7 @@
     //Initializing Servers
     [DLMKTimeServer SINGLETON];
     [DLMKModelServer SINGLETON];
+    [DLMKAppearenceServer SINGLETON];
 
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
