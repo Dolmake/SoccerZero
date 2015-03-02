@@ -39,8 +39,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.customCells = [DLMKCustomCellTypeCollection customCellTypeCollectionWithArray:@[                                                                                         [DLMKPlayerNameTableViewCell class],                                                                                                        [DLMKPhotoTableViewCell class]
-                                                                                         ]];
+    NSArray* cells = @[[DLMKPlayerNameTableViewCell class],[DLMKPhotoTableViewCell class],[DLMKPlayerNameTableViewCell class]];
+    self.customCells = [DLMKCustomCellTypeCollection customCellTypeCollectionWithArray:cells];
     
     [self.customCells registerNibsForTableView:self.tableView ];
 }
@@ -69,6 +69,14 @@
 -(CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     return [ self.customCells heightForIndex:indexPath.section];
+}
+
+-(NSString*) tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+    return [self.customCells cellIdForIndex:section];
+}
+
+-(CGFloat) tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    return 16.0f;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

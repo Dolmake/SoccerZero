@@ -7,8 +7,8 @@
 //
 
 @import UIKit;
-@protocol DLMKEditTeamPhotoDelegate;
+@protocol DLMKOnTakePhotoDelegate;
 
-@interface DLMKTeamCollectionViewController : UICollectionViewController<DLMKEditTeamPhotoDelegate>
+@interface DLMKTeamCollectionViewController : UICollectionViewController<DLMKOnTakePhotoDelegate>
 
 @end

@@ -9,6 +9,7 @@
 #import "DLMKEditTeamCollectionViewCell.h"
 #import "DLMKTeamDescriptor.h"
 #import "DLMKPhotoContainer.h"
+#import "DLMKOnTakePhotoDelegate.h"
 
 @implementation DLMKEditTeamCollectionViewCell
 

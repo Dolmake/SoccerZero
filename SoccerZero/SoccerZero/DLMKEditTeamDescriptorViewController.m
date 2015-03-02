@@ -16,6 +16,8 @@
 #import "DLMKEditTeamCollectionViewCell.h"
 #import "DLMKEditPlayerDescriptorTableViewController.h"
 #import "DLMKDefaultCollectionLayout.h"
+#import "DLMKEditPlayerDescriptorViewController.h"
+#import "DLMKOnTakePhotoDelegate.h"
 #import "MACROS.h"
 
 @interface DLMKEditTeamDescriptorViewController ()
@@ -67,6 +69,12 @@
     
     UIBarButtonItem *addPlayerButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addPlayer:)];
     self.navigationItem.rightBarButtonItem = addPlayerButton;
+    
+    //Observe device orientation
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(didRotateDeviceChangeNotification:)
+                                                 name:UIDeviceOrientationDidChangeNotification
+                                               object:nil];
 }
 
 -(void) viewWillAppear:(BOOL)animated   {
@@ -83,7 +91,7 @@
 }
 
 
-#pragma mark <UICollectionViewDataSource>
+#pragma mark - UICollectionViewDataSource
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
     return [[self.customCells arrayOfClasses]count];
@@ -100,19 +108,27 @@
     DLMKPlayerDescriptorCollectionViewCell *cellPlayerDescriptor = (DLMKPlayerDescriptorCollectionViewCell*)[self.customCells cellForCollectionView:self.collectionView atIndexPath:indexPath ];
         cellPlayerDescriptor.playerDescriptorModel = [self.teamDescriptorModel playerAtRow:indexPath.row];
         cell = cellPlayerDescriptor;
+    cellPlayerDescriptor.delegate = self;
     return cell;
 }
 
 
 
-#pragma mark <UICollectionViewDelegate>
+#pragma mark - UICollectionViewDelegate
 
 -(void) collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
+    
     //Show the PhotoViewController
     DLMKEditPlayerDescriptorTableViewController *playerVC = [[DLMKEditPlayerDescriptorTableViewController alloc] initWithPlayerDescriptor:[self.teamDescriptorModel playerAtRow:indexPath.row]];
     
     [self.navigationController pushViewController:playerVC animated:YES];
+    
+    /*
+    DLMKEditPlayerDescriptorViewController *playerVC = [[DLMKEditPlayerDescriptorViewController alloc]initWithPlayerDescriptor:[self.teamDescriptorModel playerAtRow:indexPath.row] ];
+    
+    [self.navigationController pushViewController:playerVC animated:YES];
+     */
     
 }
 
@@ -127,7 +143,7 @@
 #pragma mark - Actions
 -(void)addPlayer:(id)sender{
     [self.teamDescriptorModel addPlayerWithName:@"Unnamed" number:0 ];
-    [self.collectionView reloadData];
+    [self resetData];
 }
 
 -(void) didTxtNameChanged:(id)sender{
@@ -138,6 +154,31 @@
 
 -(IBAction)onTouchUp:(id)sender{
     [self didTxtNameChanged:self.txtName];
+}
+
+#pragma mark - DLMKOnTakePhotoDelegate
+-(void)onTakePhoto:(id)sender{
+    DLMKPhotoContainer* photoContainer = ((DLMKPlayerDescriptorCollectionViewCell*) sender).playerDescriptorModel.photoContainer;
+    
+    DLMKPhotoViewController *photoVC = [[DLMKPhotoViewController alloc] initWithModel:photoContainer];
+    [self.navigationController pushViewController:photoVC animated:YES];
+}
+
+#pragma mark - Device Orientation
+-(void)didRotateDeviceChangeNotification:(NSNotification *)notification
+{
+//    UIInterfaceOrientation newOrientation =  [UIApplication sharedApplication].statusBarOrientation;
+//    if ((newOrientation == UIInterfaceOrientationLandscapeLeft || newOrientation == UIInterfaceOrientationLandscapeRight))
+//    {
+//        
+//    }
+    [self resetData];
+}
+
+#pragma mark - Misc
+-(void) resetData{
+    self.layout.itemSize = [self.customCells cellSizeForIndex:0];
+    [self.collectionView reloadData];
 }
 
 

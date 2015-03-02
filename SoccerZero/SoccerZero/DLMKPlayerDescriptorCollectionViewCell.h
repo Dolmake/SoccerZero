@@ -8,6 +8,7 @@
 
 @import UIKit;
 @class DLMKPlayerDescriptor;
+@protocol DLMKOnTakePhotoDelegate;
 
 @interface DLMKPlayerDescriptorCollectionViewCell : UICollectionViewCell
 
@@ -20,6 +21,9 @@
 @property (weak, nonatomic) IBOutlet UILabel* lbGoals;
 @property (weak, nonatomic) IBOutlet UILabel* lbMistakes;
 @property (weak, nonatomic) IBOutlet UIImageView* imgPhoto;
+@property (strong, nonatomic) id<DLMKOnTakePhotoDelegate> delegate;
+
+-(IBAction)takePhoto:(id)sender;
 
 @property (strong,nonatomic) DLMKPlayerDescriptor* playerDescriptorModel;
 

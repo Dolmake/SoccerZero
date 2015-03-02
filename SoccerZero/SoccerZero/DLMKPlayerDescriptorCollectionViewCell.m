@@ -10,6 +10,7 @@
 #import "DLMKPlayerDescriptor.h"
 #import "DLMKModelServer.h"
 #import "DLMKPhotoContainer.h"
+#import "DLMKOnTakePhotoDelegate.h"
 
 @implementation DLMKPlayerDescriptorCollectionViewCell
 
@@ -38,6 +39,11 @@
     self.lbMistakes.text =[[[DLMKModelServer SINGLETON] fetchErrorsForPlayerDescriptor:_playerDescriptorModel ] stringValue];
     self.lbGoals.text = [[[DLMKModelServer SINGLETON] fetchGoalsForPlayerDescriptor:_playerDescriptorModel ] stringValue];
     self.imgPhoto.image = playerDescriptorModel.photoContainer.image;
+}
+
+#pragma mark - Actions
+-(IBAction)takePhoto:(id)sender{
+    [self.delegate onTakePhoto:self];
 }
 
 @end

@@ -14,6 +14,7 @@
 #import "DLMKTeamDescriptor.h"
 #import "DLMKEditTeamDescriptorViewController.h"
 #import "DLMKPhotoViewController.h"
+#import "DLMKOnTakePhotoDelegate.h"
 #import "MACROS.h"
 
 @interface DLMKTeamCollectionViewController ()
@@ -135,7 +136,7 @@
 }
 
 
-#pragma mark - <DLMKEditTeamPhotoDelegate>
+#pragma mark - DLMKOnTakePhotoDelegate
 -(void) onTakePhoto:(id)sender{
     DLMKPhotoContainer* photoContainer = ((DLMKEditTeamCollectionViewCell*) sender).teamDescriptorModel.photoContainer;
     //TODO:Change Model, add teamDescriptorModel.photoContainer

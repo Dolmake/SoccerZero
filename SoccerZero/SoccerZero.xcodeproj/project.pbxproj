@@ -173,6 +173,7 @@
 		655F4AE21A961EE0006DB768 /* DLMKPlayerNumberTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLMKPlayerNumberTableViewCell.m; sourceTree = "<group>"; };
 		655F4AE31A961EE0006DB768 /* DLMKPlayerNumberTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DLMKPlayerNumberTableViewCell.xib; sourceTree = "<group>"; };
 		657BB1631A7AA98500A528EB /* person_128x128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = person_128x128.png; sourceTree = "<group>"; };
+		6588AE5D1AA4527C00591159 /* DLMKOnTakePhotoDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DLMKOnTakePhotoDelegate.h; sourceTree = "<group>"; };
 		65917CBD1A7914A300DC9940 /* play_128x128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play_128x128.png; sourceTree = "<group>"; };
 		65917CC01A7914F000DC9940 /* gear_256x256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gear_256x256.png; sourceTree = "<group>"; };
 		65917CC21A79152400DC9940 /* statistics_128x128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = statistics_128x128.png; sourceTree = "<group>"; };
@@ -402,6 +403,7 @@
 				655F4ADA1A961301006DB768 /* DLMKCustomCellType.m */,
 				655F4ADD1A96147B006DB768 /* DLMKCustomCellTypeCollection.h */,
 				655F4ADE1A96147B006DB768 /* DLMKCustomCellTypeCollection.m */,
+				6588AE5D1AA4527C00591159 /* DLMKOnTakePhotoDelegate.h */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
