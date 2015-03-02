@@ -95,11 +95,12 @@
 
 - (void)showWithOffset:(CGPoint)offset inView:(UIView *)view
 {
+    /*
     //add mask
     self.maskView = [[UIView alloc] initWithFrame:view.bounds];
     [_maskView setBackgroundColor:[UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0]];
     [view insertSubview:_maskView atIndex:[view.subviews count] - 1];
-    
+    */
     [UIView animateWithDuration:kAnimationDuration delay:0 options:UIViewAnimationOptionLayoutSubviews animations:^{
         [self setFrame:CGRectMake(0, view.frame.size.height - kNumberControlHeight + offset.y, kNumberControlWidth, kNumberControlHeight)];
         [_maskView setBackgroundColor:[UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.6]];
