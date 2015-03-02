@@ -15,10 +15,12 @@
 +(instancetype) customCellTypeCollectionWithArray:(NSArray*) arrayOfClasses;
 
 -(CGFloat) height;
+-(NSString*) cellSectionTitle;
 -(NSString*) cellId;
 -(CGSize) cellSize;
 
--(NSString*) cellIdForIndex: (NSUInteger) cellId;
+-(NSString*) cellSectionTitleForIndex: (NSUInteger)index;
+-(NSString*) cellIdForIndex: (NSUInteger) index;
 
 //TableView Cells
 -(CGFloat) heightForIndex:(NSUInteger) index;

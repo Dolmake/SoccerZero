@@ -8,10 +8,11 @@
 
 #import "DLMKEditPlayerDescriptorTableViewController.h"
 #import "DLMKPlayerDescriptor.h"
-#import "DLMKPhotoTableViewCell.h"
+
 #import "DLMKPlayerNameTableViewCell.h"
+#import "DLMKPlayerNumberTableViewCell.h"
 #import "DLMKCustomCellTypeCollection.h"
-#import "DLMKPhotoViewController.h"
+
 #import "MACROS.h"
 
 @interface DLMKEditPlayerDescriptorTableViewController ()
@@ -24,7 +25,7 @@
 
 @implementation DLMKEditPlayerDescriptorTableViewController
 
-#define DLMK_PHOTO_SECTION 1
+
 
 #pragma mark - Init
 
@@ -39,7 +40,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    NSArray* cells = @[[DLMKPlayerNameTableViewCell class],[DLMKPhotoTableViewCell class],[DLMKPlayerNameTableViewCell class]];
+    NSArray* cells = @[[DLMKPlayerNameTableViewCell class],[DLMKPlayerNumberTableViewCell class]];
     self.customCells = [DLMKCustomCellTypeCollection customCellTypeCollectionWithArray:cells];
     
     [self.customCells registerNibsForTableView:self.tableView ];
@@ -72,7 +73,7 @@
 }
 
 -(NSString*) tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
-    return [self.customCells cellIdForIndex:section];
+    return [self.customCells cellSectionTitleForIndex:section];
 }
 
 -(CGFloat) tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
@@ -88,10 +89,7 @@
 }
 
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (indexPath.section == DLMK_PHOTO_SECTION){
-        DLMKPhotoViewController *photoVC = [[DLMKPhotoViewController alloc] initWithModel:self.playerDescriptorModel.photoContainer];
-        [self.navigationController pushViewController:photoVC animated:YES];
-    }
+    
 }
 
 @end

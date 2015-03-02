@@ -14,6 +14,7 @@
 @property (nonatomic, strong) id cellClass;
 
 +(instancetype) customCellTypeWith: (id) cellClass;
+-(NSString*) cellSectionTitle;
 -(CGFloat) height;
 -(NSString*) cellId;
 -(CGSize) cellSize;

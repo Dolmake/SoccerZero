@@ -48,6 +48,9 @@
 -(CGSize) cellSizeForIndex: (NSUInteger) index{
     return [self.arrayOfClasses[index] cellSize];
 }
+-(NSString*) cellSectionTitleForIndex: (NSUInteger)index{
+    return [self.arrayOfClasses[index] cellSectionTitle];
+}
 
 -(NSString*) cellIdForIndex: (NSUInteger) index{
     return [self.arrayOfClasses[index] cellId];

@@ -19,8 +19,11 @@
 +(NSString*)cellId{
     return [self description];
 }
++(NSString*)cellSectionTitle{
+    return @"Player's Name";
+}
 
-
+#pragma mark - UIView
 - (void)awakeFromNib {
     // Initialization code
     self.txNameField.delegate = self;

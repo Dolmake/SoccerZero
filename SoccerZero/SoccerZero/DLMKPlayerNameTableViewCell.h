@@ -14,6 +14,7 @@
 
 +(CGFloat)height;
 +(NSString*)cellId;
++(NSString*)cellSectionTitle;
 
 @property (strong, nonatomic) DLMKPlayerDescriptor* playerDescriptorModel;
 @property (weak, nonatomic) IBOutlet UITextField* txNameField;

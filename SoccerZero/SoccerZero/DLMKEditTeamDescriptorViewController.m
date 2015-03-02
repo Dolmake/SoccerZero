@@ -16,7 +16,7 @@
 #import "DLMKEditTeamCollectionViewCell.h"
 #import "DLMKEditPlayerDescriptorTableViewController.h"
 #import "DLMKDefaultCollectionLayout.h"
-#import "DLMKEditPlayerDescriptorViewController.h"
+
 #import "DLMKOnTakePhotoDelegate.h"
 #import "MACROS.h"
 

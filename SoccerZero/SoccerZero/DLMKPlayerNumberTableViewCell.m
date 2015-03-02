@@ -7,9 +7,29 @@
 //
 
 #import "DLMKPlayerNumberTableViewCell.h"
+#import "DLMKPlayerDescriptor.h"
 
 @implementation DLMKPlayerNumberTableViewCell
 
+
+#pragma mark - Class Methods
++(CGFloat)height{
+    return 44.0f;
+}
++(NSString*)cellId{
+    return [self description];
+}
++(NSString*)cellSectionTitle{
+    return @"Player's Number";
+}
+
+#pragma mark - Properties
+-(void) setPlayerDescriptorModel:(DLMKPlayerDescriptor *)playerDescriptorModel{
+    _playerDescriptorModel = playerDescriptorModel;
+    self.txtNumber.text = [_playerDescriptorModel.number stringValue ];
+}
+
+#pragma mark - UIView
 - (void)awakeFromNib {
     // Initialization code
 }

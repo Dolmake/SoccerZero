@@ -7,7 +7,15 @@
 //
 
 @import UIKit;
+@class DLMKPlayerDescriptor;
 
 @interface DLMKPlayerNumberTableViewCell : UITableViewCell
+
++(CGFloat)height;
++(NSString*)cellId;
++(NSString*)cellSectionTitle;
+
+@property (strong,nonatomic) DLMKPlayerDescriptor* playerDescriptorModel;
+@property (weak, nonatomic) IBOutlet UITextField* txtNumber;
 
 @end

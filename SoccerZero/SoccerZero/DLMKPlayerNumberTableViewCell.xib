@@ -20,6 +20,9 @@
                     </textField>
                 </subviews>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="txtNumber" destination="vcv-Xu-ZW1" id="O2z-pU-XAd"/>
+            </connections>
             <point key="canvasLocation" x="384" y="356"/>
         </tableViewCell>
     </objects>

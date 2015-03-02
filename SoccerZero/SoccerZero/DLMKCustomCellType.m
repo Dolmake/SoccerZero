@@ -20,6 +20,9 @@
 -(CGFloat) height{
     return [self.cellClass height];
 }
+-(NSString*) cellSectionTitle{
+    return  [self.cellClass cellSectionTitle];
+}
 -(NSString*) cellId{
     return [self.cellClass cellId];
 }
