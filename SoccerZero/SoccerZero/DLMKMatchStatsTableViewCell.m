@@ -59,6 +59,13 @@
     // Configure the view for the selected state
 }
 #pragma mark - UITextFieldDelegate
+
+-(BOOL) textFieldShouldReturn:(UITextField *)textField{
+    // Valimos el texto y si está bien, entonces...
+    [self.tfVisitantTeamName resignFirstResponder];
+    return YES;
+}
+
 -(void)textFieldDidEndEditing:(UITextField *)textField{
     if (!isEmpty(textField.text)){
         self.matchStatsModel.rivalStats.name = textField.text;

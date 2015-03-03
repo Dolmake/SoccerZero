@@ -73,6 +73,9 @@
 		6588AE901AA4CA4100591159 /* pause_512x512.png in Resources */ = {isa = PBXBuildFile; fileRef = 6588AE8F1AA4CA4100591159 /* pause_512x512.png */; };
 		6588AE931AA4D57F00591159 /* DLMKAppearenceServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6588AE921AA4D57F00591159 /* DLMKAppearenceServer.m */; };
 		6588AE951AA5A13600591159 /* shirt_512x512.png in Resources */ = {isa = PBXBuildFile; fileRef = 6588AE941AA5A13600591159 /* shirt_512x512.png */; };
+		6588AE9F1AA613BC00591159 /* GBFlatButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6588AE9A1AA613BC00591159 /* GBFlatButton.m */; };
+		6588AEA01AA613BC00591159 /* GBFlatSelectableButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6588AE9C1AA613BC00591159 /* GBFlatSelectableButton.m */; };
+		6588AEA11AA613BC00591159 /* UIColor+GBFlatButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6588AE9E1AA613BC00591159 /* UIColor+GBFlatButton.m */; };
 		65917CBE1A7914A300DC9940 /* play_128x128.png in Resources */ = {isa = PBXBuildFile; fileRef = 65917CBD1A7914A300DC9940 /* play_128x128.png */; };
 		65917CC11A7914F000DC9940 /* gear_256x256.png in Resources */ = {isa = PBXBuildFile; fileRef = 65917CC01A7914F000DC9940 /* gear_256x256.png */; };
 		65917CC31A79152400DC9940 /* statistics_128x128.png in Resources */ = {isa = PBXBuildFile; fileRef = 65917CC21A79152400DC9940 /* statistics_128x128.png */; };
@@ -217,6 +220,12 @@
 		6588AE911AA4D57F00591159 /* DLMKAppearenceServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLMKAppearenceServer.h; sourceTree = "<group>"; };
 		6588AE921AA4D57F00591159 /* DLMKAppearenceServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLMKAppearenceServer.m; sourceTree = "<group>"; };
 		6588AE941AA5A13600591159 /* shirt_512x512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shirt_512x512.png; sourceTree = "<group>"; };
+		6588AE991AA613BC00591159 /* GBFlatButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GBFlatButton.h; path = GBButton/GBFlatButton.h; sourceTree = "<group>"; };
+		6588AE9A1AA613BC00591159 /* GBFlatButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GBFlatButton.m; path = GBButton/GBFlatButton.m; sourceTree = "<group>"; };
+		6588AE9B1AA613BC00591159 /* GBFlatSelectableButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GBFlatSelectableButton.h; path = GBButton/GBFlatSelectableButton.h; sourceTree = "<group>"; };
+		6588AE9C1AA613BC00591159 /* GBFlatSelectableButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GBFlatSelectableButton.m; path = GBButton/GBFlatSelectableButton.m; sourceTree = "<group>"; };
+		6588AE9D1AA613BC00591159 /* UIColor+GBFlatButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+GBFlatButton.h"; path = "GBButton/UIColor+GBFlatButton.h"; sourceTree = "<group>"; };
+		6588AE9E1AA613BC00591159 /* UIColor+GBFlatButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+GBFlatButton.m"; path = "GBButton/UIColor+GBFlatButton.m"; sourceTree = "<group>"; };
 		65917CBD1A7914A300DC9940 /* play_128x128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play_128x128.png; sourceTree = "<group>"; };
 		65917CC01A7914F000DC9940 /* gear_256x256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gear_256x256.png; sourceTree = "<group>"; };
 		65917CC21A79152400DC9940 /* statistics_128x128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = statistics_128x128.png; sourceTree = "<group>"; };
@@ -290,6 +299,7 @@
 		651B96541A79123700154A3C /* SoccerZero */ = {
 			isa = PBXGroup;
 			children = (
+				6588AEA21AA613C200591159 /* GBButton */,
 				6588AE5E1AA45F7D00591159 /* NumberKeyBoard */,
 				6545E1C81A9DEEE6009A8C8A /* Categories */,
 				653B868A1A92249800E9E90D /* Views */,
@@ -490,6 +500,19 @@
 				6588AE8C1AA4BFD100591159 /* DLMKTeamStatsTableViewCell.xib */,
 			);
 			name = TeamStats;
+			sourceTree = "<group>";
+		};
+		6588AEA21AA613C200591159 /* GBButton */ = {
+			isa = PBXGroup;
+			children = (
+				6588AE991AA613BC00591159 /* GBFlatButton.h */,
+				6588AE9A1AA613BC00591159 /* GBFlatButton.m */,
+				6588AE9B1AA613BC00591159 /* GBFlatSelectableButton.h */,
+				6588AE9C1AA613BC00591159 /* GBFlatSelectableButton.m */,
+				6588AE9D1AA613BC00591159 /* UIColor+GBFlatButton.h */,
+				6588AE9E1AA613BC00591159 /* UIColor+GBFlatButton.m */,
+			);
+			name = GBButton;
 			sourceTree = "<group>";
 		};
 		65917CBF1A7914AA00DC9940 /* Resources */ = {
@@ -767,6 +790,7 @@
 				653B86771A92238B00E9E90D /* _DLMKPlayerDescriptor.m in Sources */,
 				6545E1F01A9F1F60009A8C8A /* DLMKTeamCollectionViewController.m in Sources */,
 				655F4AD21A950DE0006DB768 /* DLMKPlayerNameTableViewCell.m in Sources */,
+				6588AEA01AA613BC00591159 /* GBFlatSelectableButton.m in Sources */,
 				653B86851A9223AB00E9E90D /* DLMKMatchStats.m in Sources */,
 				6545E1C41A9DEE92009A8C8A /* DLMKPhotoContainer.m in Sources */,
 				653B86881A9223AB00E9E90D /* DLMKTeamDescriptor.m in Sources */,
@@ -788,10 +812,12 @@
 				653B86861A9223AB00E9E90D /* DLMKPlayerDescriptor.m in Sources */,
 				659B019C1A9B88D300437970 /* DLMKMatchStatsSelectorTableViewController.m in Sources */,
 				6545E1C71A9DEE9F009A8C8A /* _DLMKPhotoContainer.m in Sources */,
+				6588AEA11AA613BC00591159 /* UIColor+GBFlatButton.m in Sources */,
 				653B867A1A92238B00E9E90D /* _DLMKTeamStats.m in Sources */,
 				655F4ADB1A961301006DB768 /* DLMKCustomCellType.m in Sources */,
 				655F4ADF1A96147B006DB768 /* DLMKCustomCellTypeCollection.m in Sources */,
 				65B92B951A91F83A00A95378 /* Model.xcdatamodeld in Sources */,
+				6588AE9F1AA613BC00591159 /* GBFlatButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

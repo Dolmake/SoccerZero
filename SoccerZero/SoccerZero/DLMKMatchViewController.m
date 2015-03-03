@@ -63,14 +63,17 @@ CGFloat _accumTime = 0;
     if (Half != _Half)
         [self onPauseTimer:nil];
     _Half = Half;
-    if (_Half == FirstHalf){
-        self.lbFirstHalf.tintColor = [UIColor yellowColor];
-        self.lbSecondHalf.tintColor = [UIColor blackColor];
-    }
-    else{
-        self.lbFirstHalf.tintColor = [UIColor blackColor];
-        self.lbSecondHalf.tintColor = [UIColor yellowColor];
-    }
+//    if (_Half == FirstHalf){
+//        self.lbFirstHalf.tintColor = [UIColor yellowColor];
+//        self.lbSecondHalf.tintColor = [UIColor blackColor];
+//    }
+//    else{
+//        self.lbFirstHalf.tintColor = [UIColor blackColor];
+//        self.lbSecondHalf.tintColor = [UIColor yellowColor];
+//    }
+    self.bFirstHalf.selected = _Half == FirstHalf;
+    self.bSecondHalf.selected = !self.bFirstHalf.selected;
+
 }
 
 
