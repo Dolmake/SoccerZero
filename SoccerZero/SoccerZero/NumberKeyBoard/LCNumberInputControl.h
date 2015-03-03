@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-#define kNumberControlWidth 320
-#define kNumberControlHeight 400
+//#define kNumberControlWidth 320
+#define kNumberControlHeight 500
 #define kAnimationDuration 0.4
 #define kNumberInputTitleBarColor [UIColor colorWithRed:0.251 green:0.502 blue:0.000 alpha:1.000]
 

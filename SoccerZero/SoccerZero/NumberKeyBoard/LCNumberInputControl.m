@@ -103,7 +103,7 @@
     */
     
     [UIView animateWithDuration:kAnimationDuration delay:0 options:UIViewAnimationOptionLayoutSubviews animations:^{
-        [self setFrame:CGRectMake(0, view.frame.size.height - kNumberControlHeight + offset.y, kNumberControlWidth, kNumberControlHeight)];
+        [self setFrame:CGRectMake(0, view.frame.size.height - kNumberControlHeight + offset.y, [self controlWidth], kNumberControlHeight)];
         [_maskView setBackgroundColor:[UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.6]];
     } completion:^(BOOL finished){
         //scroll to currentValue
@@ -125,7 +125,7 @@
 {
     //animation to dismiss
     [UIView animateWithDuration:kAnimationDuration delay:0 options:UIViewAnimationOptionLayoutSubviews animations:^{
-        [self setFrame:CGRectMake(0, SCREEN_HEIGHT + offset.y, kNumberControlHeight, kNumberControlWidth)];
+        [self setFrame:CGRectMake(0, SCREEN_HEIGHT + offset.y, kNumberControlHeight, [self controlWidth])];
         [_maskView setBackgroundColor:[UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0]];
     } completion:^(BOOL finished){
         [self removeFromSuperview];
@@ -217,4 +217,32 @@
     if (self.cancelCallback)
         self.cancelCallback(self);
 }
+
+
+-(CGFloat) controlWidth{
+    CGRect screenRect = [[UIScreen mainScreen] bounds];
+    return screenRect.size.width;
+}
 @end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

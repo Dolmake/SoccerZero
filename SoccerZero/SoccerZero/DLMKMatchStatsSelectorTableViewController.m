@@ -35,8 +35,12 @@
     
     [self.customCells registerNibsForTableView:self.tableView];
     
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addMatch:) ];
-
+    UIBarButtonItem *addButton = nil;
+    
+    addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addMatch:) ];
+    
+    //addButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"pause_256x256.png"] style:UIBarButtonItemStylePlain target:self action:@selector(addMatch:) ];
+    
     self.navigationItem.rightBarButtonItem = addButton;
 }
 

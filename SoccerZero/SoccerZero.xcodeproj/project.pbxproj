@@ -60,7 +60,6 @@
 		6588AE6B1AA45F9B00591159 /* LCNumberInputControl.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6588AE631AA45F9B00591159 /* LCNumberInputControl.xib */; };
 		6588AE6C1AA45F9B00591159 /* NSNumber+extend.m in Sources */ = {isa = PBXBuildFile; fileRef = 6588AE651AA45F9B00591159 /* NSNumber+extend.m */; };
 		6588AE6D1AA45F9B00591159 /* NSString+extend.m in Sources */ = {isa = PBXBuildFile; fileRef = 6588AE671AA45F9B00591159 /* NSString+extend.m */; };
-		6588AE701AA4605900591159 /* NumberViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6588AE6F1AA4605900591159 /* NumberViewController.m */; };
 		6588AE771AA488A600591159 /* ball_512x512.png in Resources */ = {isa = PBXBuildFile; fileRef = 6588AE731AA488A600591159 /* ball_512x512.png */; };
 		6588AE781AA488A600591159 /* bar_256x128.png in Resources */ = {isa = PBXBuildFile; fileRef = 6588AE741AA488A600591159 /* bar_256x128.png */; };
 		6588AE7A1AA488A600591159 /* play_369x512.png in Resources */ = {isa = PBXBuildFile; fileRef = 6588AE761AA488A600591159 /* play_369x512.png */; };
@@ -73,6 +72,7 @@
 		6588AE8E1AA4BFD100591159 /* DLMKTeamStatsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6588AE8C1AA4BFD100591159 /* DLMKTeamStatsTableViewCell.xib */; };
 		6588AE901AA4CA4100591159 /* pause_512x512.png in Resources */ = {isa = PBXBuildFile; fileRef = 6588AE8F1AA4CA4100591159 /* pause_512x512.png */; };
 		6588AE931AA4D57F00591159 /* DLMKAppearenceServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6588AE921AA4D57F00591159 /* DLMKAppearenceServer.m */; };
+		6588AE951AA5A13600591159 /* shirt_512x512.png in Resources */ = {isa = PBXBuildFile; fileRef = 6588AE941AA5A13600591159 /* shirt_512x512.png */; };
 		65917CBE1A7914A300DC9940 /* play_128x128.png in Resources */ = {isa = PBXBuildFile; fileRef = 65917CBD1A7914A300DC9940 /* play_128x128.png */; };
 		65917CC11A7914F000DC9940 /* gear_256x256.png in Resources */ = {isa = PBXBuildFile; fileRef = 65917CC01A7914F000DC9940 /* gear_256x256.png */; };
 		65917CC31A79152400DC9940 /* statistics_128x128.png in Resources */ = {isa = PBXBuildFile; fileRef = 65917CC21A79152400DC9940 /* statistics_128x128.png */; };
@@ -202,8 +202,6 @@
 		6588AE651AA45F9B00591159 /* NSNumber+extend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSNumber+extend.m"; path = "NumberKeyBoard/NSNumber+extend.m"; sourceTree = "<group>"; };
 		6588AE661AA45F9B00591159 /* NSString+extend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+extend.h"; path = "NumberKeyBoard/NSString+extend.h"; sourceTree = "<group>"; };
 		6588AE671AA45F9B00591159 /* NSString+extend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+extend.m"; path = "NumberKeyBoard/NSString+extend.m"; sourceTree = "<group>"; };
-		6588AE6E1AA4605900591159 /* NumberViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NumberViewController.h; path = NumberKeyBoard/NumberViewController.h; sourceTree = "<group>"; };
-		6588AE6F1AA4605900591159 /* NumberViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NumberViewController.m; path = NumberKeyBoard/NumberViewController.m; sourceTree = "<group>"; };
 		6588AE731AA488A600591159 /* ball_512x512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ball_512x512.png; sourceTree = "<group>"; };
 		6588AE741AA488A600591159 /* bar_256x128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bar_256x128.png; sourceTree = "<group>"; };
 		6588AE761AA488A600591159 /* play_369x512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play_369x512.png; sourceTree = "<group>"; };
@@ -218,6 +216,7 @@
 		6588AE8F1AA4CA4100591159 /* pause_512x512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pause_512x512.png; sourceTree = "<group>"; };
 		6588AE911AA4D57F00591159 /* DLMKAppearenceServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLMKAppearenceServer.h; sourceTree = "<group>"; };
 		6588AE921AA4D57F00591159 /* DLMKAppearenceServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLMKAppearenceServer.m; sourceTree = "<group>"; };
+		6588AE941AA5A13600591159 /* shirt_512x512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shirt_512x512.png; sourceTree = "<group>"; };
 		65917CBD1A7914A300DC9940 /* play_128x128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play_128x128.png; sourceTree = "<group>"; };
 		65917CC01A7914F000DC9940 /* gear_256x256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gear_256x256.png; sourceTree = "<group>"; };
 		65917CC21A79152400DC9940 /* statistics_128x128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = statistics_128x128.png; sourceTree = "<group>"; };
@@ -470,8 +469,6 @@
 		6588AE5E1AA45F7D00591159 /* NumberKeyBoard */ = {
 			isa = PBXGroup;
 			children = (
-				6588AE6E1AA4605900591159 /* NumberViewController.h */,
-				6588AE6F1AA4605900591159 /* NumberViewController.m */,
 				6588AE5F1AA45F9B00591159 /* arrow_down.png */,
 				6588AE601AA45F9B00591159 /* arrow_down@2x.png */,
 				6588AE611AA45F9B00591159 /* LCNumberInputControl.h */,
@@ -498,6 +495,7 @@
 		65917CBF1A7914AA00DC9940 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				6588AE941AA5A13600591159 /* shirt_512x512.png */,
 				6588AE8F1AA4CA4100591159 /* pause_512x512.png */,
 				6588AE871AA48EB000591159 /* camera_512x512.png */,
 				6588AE851AA48E9700591159 /* gear_512x512.png */,
@@ -713,6 +711,7 @@
 				65FA2AB81A7BD7E300E87793 /* DLMKMatchViewController.xib in Resources */,
 				6588AE841AA48E8800591159 /* play_512x512.png in Resources */,
 				655F4AE51A961EE0006DB768 /* DLMKPlayerNumberTableViewCell.xib in Resources */,
+				6588AE951AA5A13600591159 /* shirt_512x512.png in Resources */,
 				657BB1641A7AA98500A528EB /* person_128x128.png in Resources */,
 				659B019D1A9B88D300437970 /* DLMKMatchStatsSelectorTableViewController.xib in Resources */,
 				651B965D1A79123700154A3C /* Images.xcassets in Resources */,
@@ -782,7 +781,6 @@
 				655F4ACD1A94A157006DB768 /* DLMKEditPlayerDescriptorTableViewController.m in Sources */,
 				653B86791A92238B00E9E90D /* _DLMKTeamDescriptor.m in Sources */,
 				6545E1E91A9E4950009A8C8A /* DLMKEditTeamDescriptorViewController.m in Sources */,
-				6588AE701AA4605900591159 /* NumberViewController.m in Sources */,
 				6588AE6D1AA45F9B00591159 /* NSString+extend.m in Sources */,
 				6545E1D11A9DEEF3009A8C8A /* UIImage+Alpha.m in Sources */,
 				651B96581A79123700154A3C /* main.m in Sources */,

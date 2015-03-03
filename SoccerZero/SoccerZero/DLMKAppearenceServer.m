@@ -33,13 +33,14 @@ static DLMKAppearenceServer* s_instance;
 -(void) initAppearence{
     
     
-    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor] ];
-    [[UINavigationBar appearance] setBackgroundColor:[UIColor blackColor] ];
+    [[UINavigationBar appearance] setTintColor:[UIColor lightGrayColor] ];
+    //[[UINavigationBar appearance] setBackgroundColor:[UIColor blackColor] ];
     
     //[[UINavigationBar appearance] setBarStyle:UIBarStyleBlack];
-    //[[UINavigationBar appearance]setBarTintColor:[UIColor whiteColor ] ];
-    //[[UINavigationBar appearance] setTranslucent:YES ];
-    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor orangeColor]} ];
+    [[UINavigationBar appearance]setBarTintColor:[UIColor blackColor ] ];
+    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"bar_256x128.png"] forBarMetrics:UIBarMetricsDefault ];
+    //[[UINavigationBar appearance] setTranslucent:NO ];
+    //[[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor orangeColor]} ];
     //[NSForegroundColorAttributeName: UIColor.orangeColor()]
     
     

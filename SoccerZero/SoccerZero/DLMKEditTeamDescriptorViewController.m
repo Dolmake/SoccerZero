@@ -69,16 +69,22 @@
     
     UIBarButtonItem *addPlayerButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addPlayer:)];
     self.navigationItem.rightBarButtonItem = addPlayerButton;
+}
+
+-(void) viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    [[NSNotificationCenter defaultCenter] removeObserver:self ];
+}
+
+-(void) viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
     
     //Observe device orientation
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(didRotateDeviceChangeNotification:)
                                                  name:UIDeviceOrientationDidChangeNotification
-                                               object:nil];
-}
-
--(void) viewWillAppear:(BOOL)animated   {
-    [super viewWillAppear:animated];
+                                               object:nil];    
+    
     self.txtName.text = _teamDescriptorModel.name;
     [self.collectionView reloadData];
     __DLMK_NSLOG_DESCRIPTION__
@@ -143,7 +149,7 @@
 #pragma mark - Actions
 -(void)addPlayer:(id)sender{
     [self.teamDescriptorModel addPlayerWithName:@"Unnamed" number:0 ];
-    [self resetData];
+    [self updateControls];
 }
 
 -(void) didTxtNameChanged:(id)sender{
@@ -167,16 +173,11 @@
 #pragma mark - Device Orientation
 -(void)didRotateDeviceChangeNotification:(NSNotification *)notification
 {
-//    UIInterfaceOrientation newOrientation =  [UIApplication sharedApplication].statusBarOrientation;
-//    if ((newOrientation == UIInterfaceOrientationLandscapeLeft || newOrientation == UIInterfaceOrientationLandscapeRight))
-//    {
-//        
-//    }
-    [self resetData];
+    [self updateControls];
 }
 
 #pragma mark - Misc
--(void) resetData{
+-(void) updateControls{
     self.layout.itemSize = [self.customCells cellSizeForIndex:0];
     [self.collectionView reloadData];
 }

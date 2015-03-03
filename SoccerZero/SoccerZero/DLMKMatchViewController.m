@@ -17,6 +17,8 @@
 #import "DLMKPlayerStats.h"
 #import "DLMKPlayerStatsTableViewCell.h"
 
+#import "MACROS.h"
+
 @interface DLMKMatchViewController ()
 
 @property (nonatomic, strong) DLMKCustomCellTypeCollection* cellCollection;
@@ -77,6 +79,7 @@ CGFloat _accumTime = 0;
     self.lbRival.text = self.model.rivalStats.name;
     [self updateResult];
     [[DLMKTimeServer SINGLETON] addObserver:self];
+    __DLMK_NSLOG_DESCRIPTION__
 }
 
 -(void) viewDidAppear:(BOOL)animated{

@@ -59,12 +59,25 @@
     
     self.navigationItem.rightBarButtonItem = addTeamButton;
     
+    
+}
+
+-(void) viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    [[NSNotificationCenter defaultCenter] removeObserver:self ];
 }
 
 -(void) viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    [self syncModel];
-    [self.collectionView reloadData];
+    
+    //Observe device orientation
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(didRotateDeviceChangeNotification:)
+                                                 name:UIDeviceOrientationDidChangeNotification
+                                               object:nil];
+
+    
+     [self updateControls];
     __DLMK_NSLOG_DESCRIPTION__
 }
 
@@ -99,34 +112,7 @@
 
 #pragma mark <UICollectionViewDelegate>
 
-/*
-// Uncomment this method to specify if the specified item should be highlighted during tracking
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
-	return YES;
-}
-*/
 
-/*
-// Uncomment this method to specify if the specified item should be selected
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    return YES;
-}
-*/
-
-/*
-// Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldShowMenuForItemAtIndexPath:(NSIndexPath *)indexPath {
-	return NO;
-}
-
-- (BOOL)collectionView:(UICollectionView *)collectionView canPerformAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
-	return NO;
-}
-
-- (void)collectionView:(UICollectionView *)collectionView performAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
-	
-}
-*/
 
 -(void) collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -149,12 +135,25 @@
 -(void) addTeam:(id)sender{
     
     [DLMKTeamDescriptor teamDescriptorWithName:@"Unnamed" context: [[DLMKModelServer SINGLETON]context]];
-    [self syncModel];
-    [self.collectionView reloadData];
+    [self updateControls];
 }
+
+#pragma mark - Device Orientation
+-(void)didRotateDeviceChangeNotification:(NSNotification *)notification
+{
+    [self updateControls];
+}
+
 #pragma mark - Misc
 -(void) syncModel{
     self.teamsModel = [[DLMKModelServer SINGLETON] fetchTeams ];
+}
+
+-(void) updateControls{
+    self.layout.itemSize = [self.customCells cellSizeForIndex:0];
+    [self syncModel];
+    [self.collectionView reloadData];
+    self.layout.itemSize = [self.customCells cellSizeForIndex:0];
 }
 
 @end

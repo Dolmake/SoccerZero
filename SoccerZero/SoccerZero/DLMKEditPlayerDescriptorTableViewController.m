@@ -22,6 +22,7 @@
 @interface DLMKEditPlayerDescriptorTableViewController ()
 
 @property (nonatomic,strong) DLMKCustomCellTypeCollection* customCells;
+@property (nonatomic) BOOL keyBoardShown;
 
 @end
 
@@ -52,6 +53,7 @@
 
 -(void) viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    self.keyBoardShown = NO;
     [self.tableView reloadData];
     __DLMK_NSLOG_DESCRIPTION__
 }
@@ -76,9 +78,11 @@
     return [ self.customCells heightForIndex:indexPath.section];
 }
 
+/*
 -(NSString*) tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
     return [self.customCells cellSectionTitleForIndex:section];
 }
+ */
 
 -(CGFloat) tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     return 16.0f;
@@ -102,8 +106,10 @@
 #pragma mark - NumberPicker
 - (void)show:(id)sender
 {
+    if (self.keyBoardShown) return;
+    
     LCNumberInputControl *inputView = [[[NSBundle mainBundle] loadNibNamed:@"LCNumberInputControl" owner:self options:nil] objectAtIndex:0];
-    [inputView setFrame:CGRectMake(0, self.view.frame.size.height, kNumberControlWidth, kNumberControlHeight)];
+    [inputView setFrame:CGRectMake(0, self.view.frame.size.height, self.view.frame.size.width, kNumberControlHeight)];
     [inputView setDelegate:self];
     [inputView setTag:11];
     [inputView setInputType:numberInputTypeInteger];
@@ -123,6 +129,7 @@
      eg. self.tableView.contentoffset
      */
     [inputView showWithOffset:CGPointMake(0, 0) inView:self.view];
+    self.keyBoardShown = YES;
 }
 
 - (void)numberControl:(LCNumberInputControl*)view didInputWithNumber:(NSNumber*)number{
@@ -145,6 +152,7 @@
      eg. self.tableView.contentoffset
      */
     [view dismissWithOffset:CGPointMake(0, 0)];
+    self.keyBoardShown = NO;
 }
 
 

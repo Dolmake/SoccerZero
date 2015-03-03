@@ -43,7 +43,7 @@
 
 #pragma mark - Misc
 -(void) updateControls{
-    self.imgShield.image = self.teamDescriptorModel.photoContainer.image;
+    self.imgShield.image = self.teamDescriptorModel.photoContainer.image? self.teamDescriptorModel.photoContainer.image: self.imgShield.image;
     self.lbName.text = self.teamDescriptorModel.name;
     self.lbWin.text = [@([[self.teamDescriptorModel winningMatches] count]) stringValue];
     self.lbLost.text = [@([[self.teamDescriptorModel lossingMatches] count]) stringValue];
