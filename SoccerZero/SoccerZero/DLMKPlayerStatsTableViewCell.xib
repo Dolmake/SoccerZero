@@ -13,10 +13,6 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bar_256x128.png" id="TgK-cO-qC6">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="73"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                    </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="lbN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="zOm-MX-SUV">
                         <rect key="frame" x="18" y="8" width="27" height="21"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -87,6 +83,7 @@
                         </connections>
                     </button>
                 </subviews>
+                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
             </tableViewCellContentView>
             <connections>
                 <outlet property="lbGoals" destination="6bj-yc-Q4K" id="1tj-Mc-hLS"/>
@@ -102,7 +99,6 @@
     </objects>
     <resources>
         <image name="ball_512x512.png" width="506" height="512"/>
-        <image name="bar_256x128.png" width="256" height="128"/>
         <image name="error_512x512.png" width="512" height="512"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

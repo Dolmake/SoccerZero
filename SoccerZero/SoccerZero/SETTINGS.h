@@ -7,8 +7,25 @@
 //
 
 
-#define COREDATA_MODEL_NAME @"Model"
-#define AUTO_SAVE YES
-#define AUTO_SAVE_DELAY 60
-//#define DUMMY_DATA YES
-#define DLMK_LOG
+//#define DEBUG
+#define RELEASE
+
+#ifdef DEBUG
+
+    #define COREDATA_MODEL_NAME @"Model"
+    #define AUTO_SAVE YES
+    #define AUTO_SAVE_DELAY 60
+    //#define DUMMY_DATA YES
+    #define DLMK_LOG
+
+#endif
+
+#ifdef RELEASE
+
+    #define COREDATA_MODEL_NAME @"Model"
+    #define AUTO_SAVE YES
+    #define AUTO_SAVE_DELAY 60
+    //#define DUMMY_DATA YES
+    //#define DLMK_LOG
+
+#endif

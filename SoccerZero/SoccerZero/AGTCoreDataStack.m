@@ -39,6 +39,8 @@
     return _context;
 }
 
+-(BOOL) hasContext{ return _context != nil;}
+
 -(NSPersistentStoreCoordinator *) storeCoordinator{
     if (_storeCoordinator == nil) {
         _storeCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:self.model];

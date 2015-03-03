@@ -340,9 +340,11 @@ static DLMKModelServer* s_instance;
     if (AUTO_SAVE){
         NSLog(@"Autosaving...");
         
-        [self.stack saveWithErrorBlock:^(NSError *error){
-            NSLog(@"Error at autosave! %@" , error);
-        }];
+        if (self.stack.hasContext){
+            [self.stack saveWithErrorBlock:^(NSError *error){
+                NSLog(@"Error at autosave! %@" , error);
+            }];
+        }
         
         [self performSelector:@selector(autoSave) withObject:self afterDelay:AUTO_SAVE_DELAY];
     }

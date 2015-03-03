@@ -12,6 +12,7 @@
 @interface AGTCoreDataStack : NSObject
 
 @property (strong, nonatomic, readonly) NSManagedObjectContext *context;
+@property (nonatomic) BOOL hasContext;
 
 +(NSString *) persistentStoreCoordinatorErrorNotificationName;
 
