@@ -51,19 +51,18 @@
         
     } ];
     return players[row];
-    
-//    NSArray* allPlayers = [[DLMKModelServer SINGLETON] fetchPlayersForTeam:self ];
-//    return allPlayers[row];
 }
 
 
 -(NSArray*) winningMatches{
-    //TODO:
-    return nil;
+    return [[DLMKModelServer SINGLETON] fetchWonMatchesForTeamDescriptor:self];
 }
 -(NSArray*) lossingMatches{
-    //TODO:
-    return nil;
+       return [[DLMKModelServer SINGLETON] fetchLostMatchesForTeamDescriptor:self];
+}
+-(NSArray*) tieMatches{
+    return [[DLMKModelServer SINGLETON] fetchTieMatchesForTeamDescriptor:self];
+
 }
 
 

@@ -258,8 +258,11 @@ CGFloat _accumTime = 0;
 }
 
 -(void) setupControls{
-//    self.bPlay.center = CGPointMake(self.view.center.x, self.bPlay.center.y);
-//     self.bPause.center = self.bPlay.center;
+   //self.bPlay.center = CGPointMake(self.view.center.x, self.bPlay.center.y);
+    self.bPause.center = self.bPlay.center;
+    
+    //self.bPlay.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
+    //self.bPause.center = self.bPlay.center;
     [self.cellCollection registerNibsForTableView:self.tbPlayers];
 }
 

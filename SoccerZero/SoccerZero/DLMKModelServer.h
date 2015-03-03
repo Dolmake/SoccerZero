@@ -29,6 +29,9 @@
 -(NSArray*) fetchMatchesForTeamDescriptor:(DLMKTeamDescriptor*) team;
 -(NSNumber*) fetchErrorsForPlayerDescriptor:(DLMKPlayerDescriptor*) player;
 -(NSNumber*) fetchGoalsForPlayerDescriptor:(DLMKPlayerDescriptor*) player;
+-(NSArray*) fetchWonMatchesForTeamDescriptor:(DLMKTeamDescriptor*) team;
+-(NSArray*) fetchLostMatchesForTeamDescriptor:(DLMKTeamDescriptor*) team;
+-(NSArray*) fetchTieMatchesForTeamDescriptor:(DLMKTeamDescriptor*) team;
 
 
 @end

@@ -40,6 +40,7 @@
     [super viewWillAppear:animated];
     //Get all the available teams
     self.teamsModel = [[DLMKModelServer SINGLETON] fetchTeams ];
+    [self.tableView reloadData];
    __DLMK_NSLOG_DESCRIPTION__
 }
 

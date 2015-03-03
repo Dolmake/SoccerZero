@@ -14,6 +14,7 @@
 -(DLMKPlayerDescriptor*) playerAtRow:(NSInteger) row;
 -(NSArray*) winningMatches;
 -(NSArray*) lossingMatches;
+-(NSArray*) tieMatches;
 
 
 @end

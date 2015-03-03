@@ -47,6 +47,7 @@
     self.lbName.text = self.teamDescriptorModel.name;
     self.lbWin.text = [@([[self.teamDescriptorModel winningMatches] count]) stringValue];
     self.lbLost.text = [@([[self.teamDescriptorModel lossingMatches] count]) stringValue];
+    self.lbTie.text =[@([[self.teamDescriptorModel tieMatches] count]) stringValue];
 }
 
 @end

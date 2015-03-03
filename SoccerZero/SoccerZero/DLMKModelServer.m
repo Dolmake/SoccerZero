@@ -10,6 +10,8 @@
 #import "AGTCoreDataStack.h"
 #import "DLMKTeamDescriptor.h"
 #import "DLMKMatchStats.h"
+#import "DLMKTeamStats.h"
+#import "DLMKRivalStats.h"
 #import "DLMKPlayerStats.h"
 #import "DLMKPlayerDescriptor.h"
 #import "MACROS.h"
@@ -211,6 +213,43 @@ static DLMKModelServer* s_instance;
     return result;
 
 }
+
+-(NSArray*) fetchWonMatchesForTeamDescriptor:(DLMKTeamDescriptor*) team{
+    NSArray* matches = [self fetchMatchesForTeamDescriptor:team];
+    NSMutableArray *wonMatches = [NSMutableArray arrayWithCapacity:5];
+    for (DLMKMatchStats *match in matches) {
+        if (match.teamStats.goals > match.rivalStats.goalsValue){
+            [wonMatches addObject:match ];
+        }
+    }
+    return wonMatches;
+}
+
+
+-(NSArray*) fetchLostMatchesForTeamDescriptor:(DLMKTeamDescriptor*) team{
+    NSArray* matches = [self fetchMatchesForTeamDescriptor:team];
+    NSMutableArray *lostMatches = [NSMutableArray arrayWithCapacity:5];
+    for (DLMKMatchStats *match in matches) {
+        if (match.teamStats.goals < match.rivalStats.goalsValue){
+            [lostMatches addObject:match ];
+        }
+    }
+    return lostMatches;
+}
+
+-(NSArray*) fetchTieMatchesForTeamDescriptor:(DLMKTeamDescriptor*) team{
+    NSArray* matches = [self fetchMatchesForTeamDescriptor:team];
+    NSMutableArray *tieMatches = [NSMutableArray arrayWithCapacity:5];
+    for (DLMKMatchStats *match in matches) {
+        if (match.teamStats.goals == match.rivalStats.goalsValue){
+            [tieMatches addObject:match ];
+        }
+    }
+    return tieMatches;
+}
+
+
+
 
 -(NSNumber*) fetchErrorsForPlayerDescriptor:(DLMKPlayerDescriptor*) player{
     

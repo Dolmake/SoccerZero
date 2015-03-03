@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UILabel* lbWin;
 @property (weak, nonatomic) IBOutlet UILabel* lbLost;
 @property (weak, nonatomic) IBOutlet UIImageView* imgShield;
+@property (weak, nonatomic) IBOutlet UILabel *lbTie;
 
 @property (strong, nonatomic) DLMKTeamDescriptor* teamDescriptorModel;
 
