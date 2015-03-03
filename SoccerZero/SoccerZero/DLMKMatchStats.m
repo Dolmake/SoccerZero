@@ -37,4 +37,10 @@ context:(NSManagedObjectContext*)aContext{
     return matchStats;
 }
 
+#pragma mark - Properties
+
+-(NSUInteger) seconds_played{
+    return self.seconds_first_halfValue + self.seconds_second_halfValue;
+}
+
 @end

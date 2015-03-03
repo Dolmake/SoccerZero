@@ -6,10 +6,14 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DLMKMatchViewController">
             <connections>
+                <outlet property="bFirstHalf" destination="Ryb-HP-N7x" id="LXq-wj-qgO"/>
                 <outlet property="bPause" destination="YYW-Ca-iWr" id="YPH-Jd-f3B"/>
                 <outlet property="bPlay" destination="nUc-IA-QXh" id="Im3-Jp-p4d"/>
+                <outlet property="bSecondHalf" destination="m3O-RG-ncb" id="eDx-wb-Vtc"/>
+                <outlet property="lbFirstHalf" destination="0t1-WX-OhA" id="t6g-mB-Gnd"/>
                 <outlet property="lbResult" destination="PGv-B0-q94" id="WY1-Wq-ZzM"/>
                 <outlet property="lbRival" destination="041-PO-kKR" id="pyh-Zy-9Bp"/>
+                <outlet property="lbSecondHalf" destination="GLS-lk-ZwJ" id="IqW-tq-INB"/>
                 <outlet property="lbTeam" destination="62s-Ia-qy4" id="Uiz-Rd-Liw"/>
                 <outlet property="lbTime" destination="Rhq-UR-1go" id="YkZ-XI-SFA"/>
                 <outlet property="tbPlayers" destination="HAi-7k-jAF" id="tHf-SD-Mxv"/>
@@ -36,22 +40,15 @@
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="lbTime" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Rhq-UR-1go">
-                            <rect key="frame" x="8" y="19" width="124" height="21"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                            <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="HAi-7k-jAF">
-                            <rect key="frame" x="0.0" y="59" width="320" height="460"/>
+                            <rect key="frame" x="0.0" y="59" width="320" height="438"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             <color key="sectionIndexBackgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         </tableView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="nUc-IA-QXh">
-                            <rect key="frame" x="280" y="19" width="32" height="32"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                            <rect key="frame" x="144" y="19" width="32" height="32"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                             <state key="normal" title="Button" image="play_512x512.png">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
@@ -60,8 +57,8 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="YYW-Ca-iWr">
-                            <rect key="frame" x="256" y="19" width="32" height="32"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                            <rect key="frame" x="144" y="19" width="32" height="32"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                             <state key="normal" image="pause_512x512.png">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
@@ -91,6 +88,46 @@
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Ryb-HP-N7x">
+                            <rect key="frame" x="8" y="19" width="91" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" backgroundImage="bar_256x128.png">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="onFirstHalf:" destination="-1" eventType="touchUpInside" id="buc-f2-GHO"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="m3O-RG-ncb">
+                            <rect key="frame" x="221" y="21" width="91" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" backgroundImage="bar_256x128.png"/>
+                            <connections>
+                                <action selector="onSecondHalf:" destination="-1" eventType="touchUpInside" id="NRO-gg-vat"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="lbSecondHalf" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="GLS-lk-ZwJ">
+                            <rect key="frame" x="208" y="25" width="104" height="21"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                            <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="lbFirstHalf" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0t1-WX-OhA">
+                            <rect key="frame" x="13" y="25" width="78" height="21"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                            <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="lbTime" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Rhq-UR-1go">
+                            <rect key="frame" x="98" y="505" width="124" height="21"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                            <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>

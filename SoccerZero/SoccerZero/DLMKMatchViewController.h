@@ -23,9 +23,15 @@
 @property (weak, nonatomic) IBOutlet UITableView* tbPlayers;
 @property (weak, nonatomic) IBOutlet UILabel* lbTeam;
 @property (weak, nonatomic) IBOutlet UILabel* lbRival;
+@property (weak, nonatomic) IBOutlet UIButton* bFirstHalf;
+@property (weak, nonatomic) IBOutlet UIButton* bSecondHalf;
+@property (weak, nonatomic) IBOutlet UILabel* lbFirstHalf;
+@property (weak, nonatomic) IBOutlet UILabel* lbSecondHalf;
 
 @property (nonatomic) BOOL timeIsRunning;
-@property (nonatomic) CGFloat timeInSeconds;
+@property (nonatomic, readonly) CGFloat timeInSeconds;
+@property (nonatomic) CGFloat timeInSecondsFirstHalf;
+@property (nonatomic) CGFloat timeInSecondsSecondHalf;
 
 -(id) initWithTeamDescriptor:(DLMKTeamDescriptor*)team;
 -(id) initWithMatch:(DLMKMatchStats*)match;
@@ -33,6 +39,8 @@
 -(IBAction)onStartTimer:(id)sender;
 -(IBAction)onPauseTimer:(id)sender;
 -(IBAction)onRivalGoal:(id)sender;
+-(IBAction)onFirstHalf:(id)sender;
+-(IBAction)onSecondHalf:(id)sender;
 
 
 -(void) update:(id)sender;

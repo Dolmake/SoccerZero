@@ -6,9 +6,11 @@
 //  Copyright (c) 2015 Dolmake. All rights reserved.
 //
 
+//MOGENERATOR syntax:
+// mogenerator -v2 --model Model.xcdatamodeld/model.xcdatamodel/ --base-class DLMKBaseManagedObject
 
-//#define DEBUG
-#define RELEASE
+#define DEBUG
+///#define RELEASE
 
 #ifdef DEBUG
 

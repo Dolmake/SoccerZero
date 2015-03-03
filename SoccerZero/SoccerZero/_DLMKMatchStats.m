@@ -5,7 +5,8 @@
 
 const struct DLMKMatchStatsAttributes DLMKMatchStatsAttributes = {
 	.date = @"date",
-	.seconds_played = @"seconds_played",
+	.seconds_first_half = @"seconds_first_half",
+	.seconds_second_half = @"seconds_second_half",
 };
 
 const struct DLMKMatchStatsRelationships DLMKMatchStatsRelationships = {
@@ -39,8 +40,13 @@ const struct DLMKMatchStatsRelationships DLMKMatchStatsRelationships = {
 + (NSSet*)keyPathsForValuesAffectingValueForKey:(NSString*)key {
 	NSSet *keyPaths = [super keyPathsForValuesAffectingValueForKey:key];
 
-	if ([key isEqualToString:@"seconds_playedValue"]) {
-		NSSet *affectingKey = [NSSet setWithObject:@"seconds_played"];
+	if ([key isEqualToString:@"seconds_first_halfValue"]) {
+		NSSet *affectingKey = [NSSet setWithObject:@"seconds_first_half"];
+		keyPaths = [keyPaths setByAddingObjectsFromSet:affectingKey];
+		return keyPaths;
+	}
+	if ([key isEqualToString:@"seconds_second_halfValue"]) {
+		NSSet *affectingKey = [NSSet setWithObject:@"seconds_second_half"];
 		keyPaths = [keyPaths setByAddingObjectsFromSet:affectingKey];
 		return keyPaths;
 	}
@@ -50,24 +56,44 @@ const struct DLMKMatchStatsRelationships DLMKMatchStatsRelationships = {
 
 @dynamic date;
 
-@dynamic seconds_played;
+@dynamic seconds_first_half;
 
-- (int32_t)seconds_playedValue {
-	NSNumber *result = [self seconds_played];
+- (int32_t)seconds_first_halfValue {
+	NSNumber *result = [self seconds_first_half];
 	return [result intValue];
 }
 
-- (void)setSeconds_playedValue:(int32_t)value_ {
-	[self setSeconds_played:@(value_)];
+- (void)setSeconds_first_halfValue:(int32_t)value_ {
+	[self setSeconds_first_half:@(value_)];
 }
 
-- (int32_t)primitiveSeconds_playedValue {
-	NSNumber *result = [self primitiveSeconds_played];
+- (int32_t)primitiveSeconds_first_halfValue {
+	NSNumber *result = [self primitiveSeconds_first_half];
 	return [result intValue];
 }
 
-- (void)setPrimitiveSeconds_playedValue:(int32_t)value_ {
-	[self setPrimitiveSeconds_played:@(value_)];
+- (void)setPrimitiveSeconds_first_halfValue:(int32_t)value_ {
+	[self setPrimitiveSeconds_first_half:@(value_)];
+}
+
+@dynamic seconds_second_half;
+
+- (int32_t)seconds_second_halfValue {
+	NSNumber *result = [self seconds_second_half];
+	return [result intValue];
+}
+
+- (void)setSeconds_second_halfValue:(int32_t)value_ {
+	[self setSeconds_second_half:@(value_)];
+}
+
+- (int32_t)primitiveSeconds_second_halfValue {
+	NSNumber *result = [self primitiveSeconds_second_half];
+	return [result intValue];
+}
+
+- (void)setPrimitiveSeconds_second_halfValue:(int32_t)value_ {
+	[self setPrimitiveSeconds_second_half:@(value_)];
 }
 
 @dynamic rivalStats;

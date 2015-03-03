@@ -11,4 +11,6 @@
 +(instancetype) matchStatsWithDate:(NSDate*) aDate forTeam:(DLMKTeamDescriptor*)localTeam versus:(NSString*)rivalName context:(NSManagedObjectContext*)aContext;
 +(instancetype) matchStatsWithDate: (NSDate*) aDate localTeam:(DLMKTeamStats*) aLocalTeam versus:(NSString*)rivalName context:(NSManagedObjectContext*)aContext;
 
+@property (nonatomic, readonly) NSUInteger seconds_played;
+
 @end

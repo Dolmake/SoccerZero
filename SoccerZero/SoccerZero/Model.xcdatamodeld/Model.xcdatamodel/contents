@@ -2,7 +2,8 @@
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6254" systemVersion="14B25" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="MatchStats" representedClassName="DLMKMatchStats" syncable="YES">
         <attribute name="date" attributeType="Date" syncable="YES"/>
-        <attribute name="seconds_played" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="seconds_first_half" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="seconds_second_half" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <relationship name="rivalStats" maxCount="1" deletionRule="Cascade" destinationEntity="RivalStats" inverseName="matchStats" inverseEntity="RivalStats" syncable="YES"/>
         <relationship name="teamStats" maxCount="1" deletionRule="Cascade" destinationEntity="TeamStats" inverseName="matchStats" inverseEntity="TeamStats" syncable="YES"/>
     </entity>
@@ -51,7 +52,7 @@
         <relationship name="teamDescriptor" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TeamDescriptor" inverseName="teamStats" inverseEntity="TeamDescriptor" syncable="YES"/>
     </entity>
     <elements>
-        <element name="MatchStats" positionX="306" positionY="-54" width="128" height="105"/>
+        <element name="MatchStats" positionX="306" positionY="-54" width="128" height="120"/>
         <element name="PhotoContainer" positionX="504" positionY="90" width="128" height="90"/>
         <element name="PlayerDescriptor" positionX="873" positionY="-16" width="128" height="118"/>
         <element name="PlayerStats" positionX="691" positionY="233" width="128" height="223"/>

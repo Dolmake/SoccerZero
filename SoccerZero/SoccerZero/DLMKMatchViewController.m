@@ -6,6 +6,8 @@
 //  Copyright (c) 2015 Dolmake. All rights reserved.
 //
 
+@import CoreGraphics;
+
 #import "DLMKMatchViewController.h"
 #import "DLMKMatchStats.h"
 #import "DLMKTeamStats.h"
@@ -19,17 +21,27 @@
 
 #import "MACROS.h"
 
+typedef NS_ENUM(NSInteger, DLMK_HALF) {
+    FirstHalf,
+    SecondHalf
+};
+
 @interface DLMKMatchViewController ()
 
 @property (nonatomic, strong) DLMKCustomCellTypeCollection* cellCollection;
 @property (nonatomic, strong, readonly) NSArray *playersStatsCache;
+@property (nonatomic) DLMK_HALF Half;
 
 @end
 
 @implementation DLMKMatchViewController
 
+
+
+
 //Private variables just for internal purposes
 CGFloat _accumTime = 0;
+
 
 #pragma mark - Properties
 
@@ -38,8 +50,27 @@ CGFloat _accumTime = 0;
     self.bPlay.hidden = _timeIsRunning;
     self.bPause.hidden = !_timeIsRunning;
 }
--(void) setTimeInSeconds:(CGFloat)timeInSeconds{
-    _timeInSeconds = timeInSeconds;
+-(CGFloat) timeInSeconds{
+    return self.timeInSecondsFirstHalf + self.timeInSecondsSecondHalf;
+}
+-(void) setTimeInSecondsFirstHalf:(CGFloat)timeInSecondsFirstHalf{
+    _timeInSecondsFirstHalf = timeInSecondsFirstHalf;
+   }
+-(void) setTimeInSecondsSecondHalf:(CGFloat)timeInSecondsSecondHalf{
+    _timeInSecondsSecondHalf = timeInSecondsSecondHalf;
+}
+-(void) setHalf:(DLMK_HALF)Half{
+    if (Half != _Half)
+        [self onPauseTimer:nil];
+    _Half = Half;
+    if (_Half == FirstHalf){
+        self.lbFirstHalf.tintColor = [UIColor yellowColor];
+        self.lbSecondHalf.tintColor = [UIColor blackColor];
+    }
+    else{
+        self.lbFirstHalf.tintColor = [UIColor blackColor];
+        self.lbSecondHalf.tintColor = [UIColor yellowColor];
+    }
 }
 
 
@@ -74,9 +105,15 @@ CGFloat _accumTime = 0;
     self.timeIsRunning = false;
     _accumTime = 0.0f;
     _playersStatsCache = self.model.teamStats.players;
-    self.timeInSeconds = self.model.seconds_playedValue;
+    self.timeInSecondsFirstHalf = self.model.seconds_first_halfValue;
+    self.timeInSecondsSecondHalf = self.model.seconds_second_halfValue;
     self.lbTeam.text = self.model.teamStats.name;
     self.lbRival.text = self.model.rivalStats.name;
+    //self.bFirstHalf.titleLabel.text = [DLMKTimeServer formatTimeShort:self.timeInSecondsFirstHalf];
+    //self.bSecondHalf.titleLabel.text = [DLMKTimeServer formatTimeShort:self.timeInSecondsSecondHalf];
+    
+    self.Half = FirstHalf;
+    [self updateTimers];
     [self updateResult];
     [[DLMKTimeServer SINGLETON] addObserver:self];
     __DLMK_NSLOG_DESCRIPTION__
@@ -135,7 +172,7 @@ CGFloat _accumTime = 0;
 
 -(IBAction)onPauseTimer:(id)sender{
     self.timeIsRunning = NO;
-    }
+}
 
 -(IBAction)onRivalGoal:(id)sender{
     if (self.timeIsRunning){
@@ -148,8 +185,10 @@ CGFloat _accumTime = 0;
 -(void) update:(id)sender{
     
     if (self.timeIsRunning){
-        self.timeInSeconds = self.timeInSeconds + [DLMKTimeServer SINGLETON].deltaTime;
-        self.model.seconds_playedValue = self.timeInSeconds;
+        //self.timeInSeconds = self.timeInSeconds + [DLMKTimeServer SINGLETON].deltaTime;
+        [self increaseTime:[DLMKTimeServer SINGLETON].deltaTime];
+        self.model.seconds_first_halfValue = self.timeInSecondsFirstHalf;
+        self.model.seconds_second_halfValue = self.timeInSecondsSecondHalf;
         _accumTime +=[DLMKTimeServer SINGLETON].deltaTime;
         
         if (_accumTime > 1.0f) //ONE second has passed
@@ -160,7 +199,7 @@ CGFloat _accumTime = 0;
        
     }
     
-    self.lbTime.text = [DLMKTimeServer formatTime:self.model.seconds_playedValue];
+    self.lbTime.text = [DLMKTimeServer formatTime:self.model.seconds_played];
 }
 
 #pragma mark - DLMKPlayerStatsProtocol
@@ -194,15 +233,39 @@ CGFloat _accumTime = 0;
         sender.errorsValue += 1;
     }
 }
+-(void) onFirstHalf:(id)sender{
+    self.Half = FirstHalf;
+}
+-(void) onSecondHalf:(id)sender{
+    self.Half = SecondHalf;
+}
 
 #pragma mark - MISC
+
+-(void) increaseTime:(CGFloat)deltaTime{
+    if (self.Half == FirstHalf)
+        self.timeInSecondsFirstHalf += deltaTime;
+    else self.timeInSecondsSecondHalf += deltaTime;
+}
+
+-(void) updateTimers{
+    
+    //[self.bFirstHalf setTitle:[DLMKTimeServer formatTimeShort:self.timeInSecondsFirstHalf] forState:UIControlStateNormal];
+    //[self.bSecondHalf setTitle: [DLMKTimeServer formatTimeShort:self.timeInSecondsSecondHalf] forState:UIControlStateNormal];
+    self.lbFirstHalf.text = [DLMKTimeServer formatTimeShort:self.timeInSecondsFirstHalf];
+    self.lbSecondHalf.text = [DLMKTimeServer formatTimeShort:self.timeInSecondsSecondHalf];
+    self.lbTime.text = [DLMKTimeServer formatTimeShort:self.timeInSeconds];
+}
+
 -(void) setupControls{
-     self.bPause.center = self.bPlay.center;
+//    self.bPlay.center = CGPointMake(self.view.center.x, self.bPlay.center.y);
+//     self.bPause.center = self.bPlay.center;
     [self.cellCollection registerNibsForTableView:self.tbPlayers];
 }
 
 -(void) updatePlayersStats{
-        for (DLMKPlayerStats *playerStats in self.playersStatsCache) {
+    [self updateTimers];
+    for (DLMKPlayerStats *playerStats in self.playersStatsCache) {
         if (playerStats.is_playingValue)
         {
             playerStats.seconds_playedValue += 1;
