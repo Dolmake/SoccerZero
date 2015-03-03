@@ -8,8 +8,8 @@
     </entity>
     <entity name="PhotoContainer" representedClassName="DLMKPhotoContainer" syncable="YES">
         <attribute name="photoData" optional="YES" attributeType="Binary" syncable="YES"/>
-        <relationship name="playerDescriptor" maxCount="1" deletionRule="Nullify" destinationEntity="PlayerDescriptor" inverseName="photoContainer" inverseEntity="PlayerDescriptor" syncable="YES"/>
-        <relationship name="teamDescriptor" maxCount="1" deletionRule="Nullify" destinationEntity="TeamDescriptor" inverseName="photoContainer" inverseEntity="TeamDescriptor" syncable="YES"/>
+        <relationship name="playerDescriptor" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PlayerDescriptor" inverseName="photoContainer" inverseEntity="PlayerDescriptor" syncable="YES"/>
+        <relationship name="teamDescriptor" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TeamDescriptor" inverseName="photoContainer" inverseEntity="TeamDescriptor" syncable="YES"/>
     </entity>
     <entity name="PlayerDescriptor" representedClassName="DLMKPlayerDescriptor" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
@@ -52,7 +52,7 @@
     </entity>
     <elements>
         <element name="MatchStats" positionX="306" positionY="-54" width="128" height="105"/>
-        <element name="PhotoContainer" positionX="504" positionY="90" width="128" height="88"/>
+        <element name="PhotoContainer" positionX="504" positionY="90" width="128" height="90"/>
         <element name="PlayerDescriptor" positionX="873" positionY="-16" width="128" height="118"/>
         <element name="PlayerStats" positionX="691" positionY="233" width="128" height="223"/>
         <element name="RivalStats" positionX="504" positionY="90" width="128" height="88"/>

@@ -6,7 +6,9 @@
 //  Copyright (c) 2015 Dolmake. All rights reserved.
 //
 
+
+#define COREDATA_MODEL_NAME @"Model"
 #define AUTO_SAVE YES
 #define AUTO_SAVE_DELAY 60
-#define DUMMY_DATA YES
+//#define DUMMY_DATA YES
 #define DLMK_LOG

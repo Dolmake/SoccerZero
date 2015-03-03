@@ -35,11 +35,12 @@ static DLMKModelServer* s_instance;
     
     if (self = [super init]){
         
-        _stack = [AGTCoreDataStack coreDataStackWithModelName:@"Model"];
+        _stack = [AGTCoreDataStack coreDataStackWithModelName:COREDATA_MODEL_NAME];
 #ifdef DUMMY_DATA
         [self createDummyData];
         [self workWithData];
 #endif
+        [self autoSave];
         
     }
     return self;
@@ -298,7 +299,7 @@ static DLMKModelServer* s_instance;
         NSLog(@"Error on fetchRequest %@" , err);
     }else{
         NSLog(@"Teams count %lu", (unsigned long) [res count]);
-        NSLog(@"Teams: %@", res);
+        //NSLog(@"Teams: %@", res);
         
         NSLog(@"Class Type: %@", [res class]);
         
@@ -332,6 +333,20 @@ static DLMKModelServer* s_instance;
 
 
 #endif
+
+#pragma mark - Autosave
+-(void) autoSave{
+    
+    if (AUTO_SAVE){
+        NSLog(@"Autosaving...");
+        
+        [self.stack saveWithErrorBlock:^(NSError *error){
+            NSLog(@"Error at autosave! %@" , error);
+        }];
+        
+        [self performSelector:@selector(autoSave) withObject:self afterDelay:AUTO_SAVE_DELAY];
+    }
+}
 
 
 @end
