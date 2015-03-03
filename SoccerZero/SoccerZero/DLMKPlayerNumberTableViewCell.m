@@ -27,9 +27,14 @@
 -(void) setPlayerDescriptorModel:(DLMKPlayerDescriptor *)playerDescriptorModel{
     _playerDescriptorModel = playerDescriptorModel;
     self.lbNumber.text = [_playerDescriptorModel.number stringValue ];
+    
 }
 
 #pragma mark - UIView
+
+-(void) prepareForReuse{
+    
+}
 - (void)awakeFromNib {
     // Initialization code
 }
@@ -39,6 +44,11 @@
 
     // Configure the view for the selected state
 }
+
+
+
+
+
 
 
 @end

@@ -9,10 +9,11 @@
 #import <UIKit/UIKit.h>
 
 //#define kNumberControlWidth 320
-#define kNumberControlHeight 500
+#define kNumberControlHeight 237
 #define kAnimationDuration 0.4
 #define kNumberInputTitleBarColor [UIColor colorWithRed:0.251 green:0.502 blue:0.000 alpha:1.000]
 
+typedef void (^didValueChangedCallback) (id sender, NSNumber *number);
 typedef void (^didPickCallback) (id sender, NSNumber *number);
 typedef void (^didCancelCallback) (id sender);
 
@@ -25,6 +26,7 @@ enum
 @class LCNumberInputControl;
 @protocol LCNumberInputDelegate <NSObject>
 
+- (void)numberControl:(LCNumberInputControl*)view didValueChangedWithNumber:(NSNumber*)number;
 - (void)numberControl:(LCNumberInputControl*)view didInputWithNumber:(NSNumber*)number;
 - (void)numberControl:(LCNumberInputControl *)view didCancelWithNumber:(NSNumber *)number;
 
@@ -42,9 +44,12 @@ enum
 @property (nonatomic, assign) NSInteger inputType;  //number or float
 @property (nonatomic, assign) NSInteger tag;
 
+@property (nonatomic) NSUInteger maxInputLenght;
+
 @property (nonatomic, strong) NSString *title;
 @property (nonatomic, strong) NSString *placeHolder;
 
+@property (copy, readwrite) didValueChangedCallback valueChangedCallback;
 @property (copy, readwrite) didPickCallback pickCallback;
 @property (copy, readwrite) didCancelCallback cancelCallback;
 

@@ -55,8 +55,13 @@
 -(void) viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     self.keyBoardShown = NO;
+    [self.playerDescriptorModel addObserver:self forKeyPath:@"number" options:0 context:nil];
     [self.tableView reloadData];
     __DLMK_NSLOG_DESCRIPTION__
+}
+-(void) viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    [self.playerDescriptorModel removeObserver:self forKeyPath:@"number"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -104,6 +109,21 @@
     }
 }
 
+#pragma mark - KVO
+- (void)observeValueForKeyPath:(NSString *)keyPath
+                      ofObject:(id)object
+                        change:(NSDictionary *)change
+                       context:(void *)context {
+    
+    if ([keyPath isEqual:@"number"]) {
+        //Hey
+        //self.lbNumber.text = [self.playerDescriptorModel.number stringValue ];
+        NSLog([self.playerDescriptorModel.number stringValue ]);
+        [self.tableView reloadData];
+        
+    }
+}
+
 #pragma mark - NumberPicker
 - (void)show:(id)sender
 {
@@ -143,6 +163,10 @@
 }
 - (void)numberControl:(LCNumberInputControl *)view didCancelWithNumber:(NSNumber *)number{
     [self dismissPickerControl:view];
+}
+
+-(void)numberControl:(LCNumberInputControl *)view didValueChangedWithNumber:(NSNumber *)number{
+    self.playerDescriptorModel.number = number;
 }
 
 - (void)dismissPickerControl:(LCNumberInputControl*)view

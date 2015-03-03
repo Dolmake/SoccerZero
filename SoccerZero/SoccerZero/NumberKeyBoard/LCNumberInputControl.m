@@ -50,6 +50,11 @@
     // Drawing code
 }
 */
+//
+//-(void) dealloc
+//{    
+//    self.valueChangedCallback = nil;
+//}
 
 - (void)initializeControl
 {
@@ -67,6 +72,7 @@
     [panRecognizer setMaximumNumberOfTouches:1];
     [panRecognizer setDelegate:self];
     [self addGestureRecognizer:panRecognizer];
+    self.maxInputLenght = 50;
 }
 
 #pragma mark - handle PanGesture
@@ -104,7 +110,7 @@
     
     [UIView animateWithDuration:kAnimationDuration delay:0 options:UIViewAnimationOptionLayoutSubviews animations:^{
         [self setFrame:CGRectMake(0, view.frame.size.height - kNumberControlHeight + offset.y, [self controlWidth], kNumberControlHeight)];
-        [_maskView setBackgroundColor:[UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.6]];
+        //[_maskView setBackgroundColor:[UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.6]];
     } completion:^(BOOL finished){
         //scroll to currentValue
         if (_inputResult)
@@ -148,9 +154,16 @@
     
     if ([self checkIsIntegerOrFloat:str])
     {
-        [_currentInput appendString:str];
+        if (_currentInput.length < self.maxInputLenght){
+            [_currentInput appendString:str];
+            [_numberField setText:_currentInput];
+            if (self.valueChangedCallback){
+                self.valueChangedCallback(self, [NSNumber numberWithInteger:[_currentInput integerValue]]);
+            }
+            if (self.delegate)
+                [self.delegate numberControl:self didValueChangedWithNumber:[NSNumber numberWithInteger:[_currentInput integerValue]]];
+        }
     }
-    [_numberField setText:_currentInput];
 }
 - (IBAction)dotButtonPress:(UIButton*)sender
 {
@@ -174,6 +187,8 @@
     //pick a number callback
     if (self.pickCallback)
         self.pickCallback(self, @0);
+
+    self.valueChangedCallback = nil;
 }
 - (IBAction)confirmButonPress:(UIButton*)sender
 {
@@ -182,7 +197,9 @@
     
     //pick a number callback
     if (self.pickCallback)
-        self.pickCallback(self, [NSNumber numberWithDouble:[_currentInput doubleValue]]);
+        self.pickCallback(self, [NSNumber numberWithInteger:[_currentInput integerValue]]);
+    
+    self.valueChangedCallback = nil;
 }
 
 - (BOOL)checkIsIntegerOrFloat:(NSString*)str
