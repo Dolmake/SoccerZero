@@ -38,6 +38,16 @@ static DLMKModelServer* s_instance;
     if (self = [super init]){
         
         _stack = [AGTCoreDataStack coreDataStackWithModelName:COREDATA_MODEL_NAME];
+        BOOL hasSampleData = NO;
+        
+
+        hasSampleData = [[NSUserDefaults standardUserDefaults] boolForKey:@"SAMPLE_DATA_LOADED"];
+        
+        if (!hasSampleData)
+        {
+            [self loadSampleData];
+            [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"SAMPLE_DATA_LOADED" ];
+        }
 #ifdef DUMMY_DATA
         [self createDummyData];
         [self workWithData];
@@ -300,78 +310,41 @@ static DLMKModelServer* s_instance;
 
 
 
-#ifdef DUMMY_DATA
--(void) createDummyData{
+-(void)loadSampleData{
+    DLMKTeamDescriptor *teamDescriptor = [DLMKTeamDescriptor teamDescriptorWithName:@"Nankatsu" photo:[UIImage imageNamed:@"Nankatsu.jpg"] context:[self.stack context]];
     
-    DLMKTeamDescriptor* teamDescriptor = [DLMKTeamDescriptor teamDescriptorWithName:@"NewTeam" context:[self.stack context]];
+    DLMKPlayerDescriptor *player= nil;
+    player = [teamDescriptor addPlayerWithName:@"Yuzo Morisaki" number:12 photo:[UIImage imageNamed:@"Yuzo_Morisaki.jpg"]];
+    player = [teamDescriptor addPlayerWithName:@"Tsubasa Ozora" number:10 photo:[UIImage imageNamed:@"Tsubasa_Ozora.jpg"]];
+    player = [teamDescriptor addPlayerWithName:@"Teppei Kisugi" number:9 photo:[UIImage imageNamed:@"Teppei_Kisugi.jpg"]];
+    player = [teamDescriptor addPlayerWithName:@"Hajime Taki" number:7 photo:[UIImage imageNamed:@"Hajime_Taki.jpg"]];
+    player = [teamDescriptor addPlayerWithName:@"Taro Misaki" number:11 photo:[UIImage imageNamed:@"Taro_Misaki.jpg"]];
+    player = [teamDescriptor addPlayerWithName:@"Mamoru Izawa" number:8 photo:[UIImage imageNamed:@"Mamoru_Izawa.jpg"]];
+    player = [teamDescriptor addPlayerWithName:@"Hanji Urabe" number:5 photo:[UIImage imageNamed:@"Hanji_Urabe.jpg"]];
+    player = [teamDescriptor addPlayerWithName:@"Ryo Ishizaki" number:4 photo:[UIImage imageNamed:@"Ryo_Ishizaki.jpg"]];
+    player = [teamDescriptor addPlayerWithName:@"Shingo Takasugi" number:6 photo:[UIImage imageNamed:@"Shingo_Takasugi.jpg"]];
+    player = [teamDescriptor addPlayerWithName:@"Genzo Wakabayashi" number:1 photo:[UIImage imageNamed:@"Genzo_Wakabayashi.jpg"]];
+    player = [teamDescriptor addPlayerWithName:@"Koji Nishio" number:3 photo:[UIImage imageNamed:@"Koji_Nishio.png"]];
+    player = [teamDescriptor addPlayerWithName:@"Masao Nakayama" number:2 photo:[UIImage imageNamed:@"Masao_Nakayama.png"]];
     
-    for(int i =0 ; i < 10;++i){
-        NSString *name = [NSString stringWithFormat:@"Player:%lu", (unsigned long)i];
-        [teamDescriptor addPlayerWithName:name number:i];
-    }
+    DLMKMatchStats* match = [DLMKMatchStats matchStatsWithDate:[[NSDate alloc] init] forTeam:teamDescriptor versus:@"Mambo" context:self.context];
     
-    [self newMatchForTeam:teamDescriptor];
+    match.seconds_first_halfValue = 60 * 25;
+    match.seconds_second_halfValue = 60 * 27.2f;
+    match.rivalStats.goalsValue = 2;
     
+    [match.teamStats playerStatForPlayerNumber:10].goalsValue = 3;
+    [match.teamStats playerStatForPlayerNumber:10].errorsValue = 10;
+    
+    [match.teamStats playerStatForPlayerNumber:8].errorsValue = 2;
+    [match.teamStats playerStatForPlayerNumber:11].goalsValue = 1;
+    
+    [match.teamStats playerStatForPlayerNumber:1].errorsValue = 1;
+
+    [match.teamStats playerStatForPlayerNumber:4].goalsValue = 3;
+    [match.teamStats playerStatForPlayerNumber:4].errorsValue = 3;
 }
 
--(void) workWithData{
-    
-    
-    //Search for Teams
-    NSFetchRequest *req = [NSFetchRequest fetchRequestWithEntityName:[DLMKTeamDescriptor entityName]];
-    
-    req.fetchBatchSize = 20;
-    req.sortDescriptors = @[
-                            [NSSortDescriptor sortDescriptorWithKey:DLMKTeamDescriptorAttributes.name ascending:YES selector:@selector(caseInsensitiveCompare:)],
-                            //[NSSortDescriptor sortDescriptorWithKey:DLMKNoteAttributes.name ascending:YES],
-                            [NSSortDescriptor sortDescriptorWithKey:DLMKTeamDescriptorAttributes.name ascending:NO]
-                            ];
-    
-    //req.predicate = [NSPredicate predicateWithFormat:@"notebook == %@", allies ];
-    
-    NSError *err = nil;
-    NSArray *res = [self.stack.context executeFetchRequest:req
-                                                     error:&err];
-    
-    if (!res){
-        //Error
-        NSLog(@"Error on fetchRequest %@" , err);
-    }else{
-        NSLog(@"Teams count %lu", (unsigned long) [res count]);
-        //NSLog(@"Teams: %@", res);
-        
-        NSLog(@"Class Type: %@", [res class]);
-        
-        DLMKTeamDescriptor* team = res[0];
-        NSLog(@"Players %lu",(unsigned long)team.countPlayers );
-        
-    }
-    
-    /*
-    //Delete a note
-    [self.stack.context deleteObject:allies];//Delete a notebook
-    req.predicate = nil;
-    res = [self.stack.context executeFetchRequest:req error:&err];
-    if (!res){
-        //Error
-        NSLog(@"Error on fetchRequest %@" , err);
-    }else{
-        NSLog(@"Notebooks: %@", res);
-    }
-    
-    
-    //Save data
-    [self.stack saveWithErrorBlock:^(NSError* error){
-        NSLog(@"Error on save: %@", error);
-    }];
-     */
-}
-
-
-
-
-
-#endif
 
 #pragma mark - Autosave
 -(void) autoSave{

@@ -25,7 +25,15 @@
 
 -(void) setImage:(UIImage *)image{
     
-    self.photoData = UIImagePNGRepresentation(image);
+    if (image)
+        self.photoData = UIImagePNGRepresentation(image);
+}
+
+#pragma mark - Class Methods
++(instancetype) photoContainerWithPhoto:(UIImage *)photo context:(NSManagedObjectContext*)aContext{
+    DLMKPhotoContainer *photoContainer = [DLMKPhotoContainer insertInManagedObjectContext:aContext];
+    photoContainer.image = photo;
+    return photoContainer;
 }
 
 @end

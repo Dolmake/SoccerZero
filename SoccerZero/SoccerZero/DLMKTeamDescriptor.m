@@ -15,11 +15,11 @@
 
 #pragma mark - Class methods
 
-+(instancetype) teamDescriptorWithName:(NSString*) aName context:(NSManagedObjectContext*) aContext{
++(instancetype) teamDescriptorWithName:(NSString*) aName photo:(UIImage*)aPhoto context:(NSManagedObjectContext*) aContext{
     DLMKTeamDescriptor *teamDescriptor = [self insertInManagedObjectContext:aContext];
     teamDescriptor.name = aName;
     teamDescriptor.players = [NSSet setWithArray:@[]];
-    teamDescriptor.photoContainer = [DLMKPhotoContainer insertInManagedObjectContext:aContext ];
+    teamDescriptor.photoContainer = [DLMKPhotoContainer photoContainerWithPhoto:aPhoto context:aContext ];
 
     return teamDescriptor;
 }
@@ -27,11 +27,17 @@
 
 #pragma mark - Instance methods
 
--(void) addPlayerWithName:(NSString*)name number:(NSUInteger)aNumber{
+
+-(DLMKPlayerDescriptor*) addPlayerWithName:(NSString*)name number:(NSUInteger)aNumber{
+    return [self addPlayerWithName:name number:aNumber photo:nil];
     
-    DLMKPlayerDescriptor *playerDescriptor = [DLMKPlayerDescriptor playerDescriptorWithName:name number:aNumber teamDescriptor:self context:[self managedObjectContext] ];
+}
+-(DLMKPlayerDescriptor*) addPlayerWithName:(NSString*)name number:(NSUInteger)aNumber photo:(UIImage*)aPhoto{
+    
+    DLMKPlayerDescriptor *playerDescriptor = [DLMKPlayerDescriptor playerDescriptorWithName:name number:aNumber photo:aPhoto teamDescriptor:self context:[self managedObjectContext] ];
     
     [self addPlayersObject:playerDescriptor];
+    return playerDescriptor;
 }
 
 -(void) removePlayer:(DLMKPlayerDescriptor*)player{

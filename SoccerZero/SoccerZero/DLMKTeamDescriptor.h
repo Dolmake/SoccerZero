@@ -1,14 +1,17 @@
+
+@import UIKit;
 #import "_DLMKTeamDescriptor.h"
 
 @interface DLMKTeamDescriptor : _DLMKTeamDescriptor {}
 // Custom logic goes here.
 
 
-+(instancetype) teamDescriptorWithName:(NSString*) aName context:(NSManagedObjectContext*) aContext;
++(instancetype) teamDescriptorWithName:(NSString*) aName photo:(UIImage*)aPhoto context:(NSManagedObjectContext*) aContext;
 
 
 
--(void) addPlayerWithName:(NSString*)name number:(NSUInteger)aNumber;
+-(DLMKPlayerDescriptor*) addPlayerWithName:(NSString*)name number:(NSUInteger)aNumber;
+-(DLMKPlayerDescriptor*) addPlayerWithName:(NSString*)name number:(NSUInteger)aNumber photo:(UIImage*)aPhoto;
 -(void) removePlayer:(DLMKPlayerDescriptor*) player;
 -(NSUInteger) countPlayers;
 -(DLMKPlayerDescriptor*) playerAtRow:(NSInteger) row;

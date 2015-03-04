@@ -96,6 +96,23 @@
     return [self.playersStats count];
 }
 
+-(DLMKPlayerStats*) playerStatForPlayerDescriptor:(DLMKPlayerDescriptor*) player{
+    DLMKPlayerStats* result = nil;
+    for (DLMKPlayerStats *playerStat in self.playersStats) {
+        if (playerStat.playerDescriptor == player)
+            result = playerStat;
+    }
+    return result;
+}
+-(DLMKPlayerStats*) playerStatForPlayerNumber:(NSUInteger)number{
+    DLMKPlayerStats* result = nil;
+    for (DLMKPlayerStats *playerStat in self.playersStats) {
+        if (playerStat.number == number)
+            result = playerStat;
+    }
+    return result;
+}
+
 
 @end
 

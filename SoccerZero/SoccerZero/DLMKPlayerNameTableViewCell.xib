@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="332" height="44"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                     </imageView>
-                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="&lt;Players Name&gt;" minimumFontSize="17" background="bar_256x128.png" id="dFG-XA-tfY">
+                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="&lt;Players Name&gt;" minimumFontSize="17" background="bar_256x128.png" clearButtonMode="whileEditing" id="dFG-XA-tfY">
                         <rect key="frame" x="8" y="6" width="304" height="30"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>

@@ -45,6 +45,19 @@
 		6545E1EA1A9E4950009A8C8A /* DLMKEditTeamDescriptorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6545E1E81A9E4950009A8C8A /* DLMKEditTeamDescriptorViewController.xib */; };
 		6545E1F01A9F1F60009A8C8A /* DLMKTeamCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6545E1EE1A9F1F60009A8C8A /* DLMKTeamCollectionViewController.m */; };
 		6545E1F11A9F1F60009A8C8A /* DLMKTeamCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6545E1EF1A9F1F60009A8C8A /* DLMKTeamCollectionViewController.xib */; };
+		654B73521AA7538600250D1C /* Genzo_Wakabayashi.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 654B73461AA7538600250D1C /* Genzo_Wakabayashi.jpg */; };
+		654B73531AA7538600250D1C /* Hajime_Taki.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 654B73471AA7538600250D1C /* Hajime_Taki.jpg */; };
+		654B73541AA7538600250D1C /* Hanji_Urabe.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 654B73481AA7538600250D1C /* Hanji_Urabe.jpg */; };
+		654B73551AA7538600250D1C /* Koji_Nishio.png in Resources */ = {isa = PBXBuildFile; fileRef = 654B73491AA7538600250D1C /* Koji_Nishio.png */; };
+		654B73561AA7538600250D1C /* Mamoru_Izawa.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 654B734A1AA7538600250D1C /* Mamoru_Izawa.jpg */; };
+		654B73571AA7538600250D1C /* Masao_Nakayama.png in Resources */ = {isa = PBXBuildFile; fileRef = 654B734B1AA7538600250D1C /* Masao_Nakayama.png */; };
+		654B73581AA7538600250D1C /* Ryo_Ishizaki.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 654B734C1AA7538600250D1C /* Ryo_Ishizaki.jpg */; };
+		654B73591AA7538600250D1C /* Shingo_Takasugi.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 654B734D1AA7538600250D1C /* Shingo_Takasugi.jpg */; };
+		654B735A1AA7538600250D1C /* Taro_Misaki.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 654B734E1AA7538600250D1C /* Taro_Misaki.jpg */; };
+		654B735B1AA7538600250D1C /* Teppei_Kisugi.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 654B734F1AA7538600250D1C /* Teppei_Kisugi.jpg */; };
+		654B735C1AA7538600250D1C /* Tsubasa_Ozora.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 654B73501AA7538600250D1C /* Tsubasa_Ozora.jpg */; };
+		654B735D1AA7538600250D1C /* Yuzo_Morisaki.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 654B73511AA7538600250D1C /* Yuzo_Morisaki.jpg */; };
+		654B735F1AA757D100250D1C /* Nankatsu.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 654B735E1AA757D100250D1C /* Nankatsu.jpg */; };
 		655F4ACD1A94A157006DB768 /* DLMKEditPlayerDescriptorTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 655F4ACB1A94A157006DB768 /* DLMKEditPlayerDescriptorTableViewController.m */; };
 		655F4ACE1A94A157006DB768 /* DLMKEditPlayerDescriptorTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 655F4ACC1A94A157006DB768 /* DLMKEditPlayerDescriptorTableViewController.xib */; };
 		655F4AD21A950DE0006DB768 /* DLMKPlayerNameTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 655F4AD01A950DE0006DB768 /* DLMKPlayerNameTableViewCell.m */; };
@@ -181,6 +194,19 @@
 		6545E1ED1A9F1F60009A8C8A /* DLMKTeamCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLMKTeamCollectionViewController.h; sourceTree = "<group>"; };
 		6545E1EE1A9F1F60009A8C8A /* DLMKTeamCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLMKTeamCollectionViewController.m; sourceTree = "<group>"; };
 		6545E1EF1A9F1F60009A8C8A /* DLMKTeamCollectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DLMKTeamCollectionViewController.xib; sourceTree = "<group>"; };
+		654B73461AA7538600250D1C /* Genzo_Wakabayashi.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Genzo_Wakabayashi.jpg; sourceTree = "<group>"; };
+		654B73471AA7538600250D1C /* Hajime_Taki.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Hajime_Taki.jpg; sourceTree = "<group>"; };
+		654B73481AA7538600250D1C /* Hanji_Urabe.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Hanji_Urabe.jpg; sourceTree = "<group>"; };
+		654B73491AA7538600250D1C /* Koji_Nishio.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Koji_Nishio.png; sourceTree = "<group>"; };
+		654B734A1AA7538600250D1C /* Mamoru_Izawa.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Mamoru_Izawa.jpg; sourceTree = "<group>"; };
+		654B734B1AA7538600250D1C /* Masao_Nakayama.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Masao_Nakayama.png; sourceTree = "<group>"; };
+		654B734C1AA7538600250D1C /* Ryo_Ishizaki.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Ryo_Ishizaki.jpg; sourceTree = "<group>"; };
+		654B734D1AA7538600250D1C /* Shingo_Takasugi.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Shingo_Takasugi.jpg; sourceTree = "<group>"; };
+		654B734E1AA7538600250D1C /* Taro_Misaki.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Taro_Misaki.jpg; sourceTree = "<group>"; };
+		654B734F1AA7538600250D1C /* Teppei_Kisugi.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Teppei_Kisugi.jpg; sourceTree = "<group>"; };
+		654B73501AA7538600250D1C /* Tsubasa_Ozora.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Tsubasa_Ozora.jpg; sourceTree = "<group>"; };
+		654B73511AA7538600250D1C /* Yuzo_Morisaki.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Yuzo_Morisaki.jpg; sourceTree = "<group>"; };
+		654B735E1AA757D100250D1C /* Nankatsu.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Nankatsu.jpg; sourceTree = "<group>"; };
 		655F4ACA1A94A157006DB768 /* DLMKEditPlayerDescriptorTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLMKEditPlayerDescriptorTableViewController.h; sourceTree = "<group>"; };
 		655F4ACB1A94A157006DB768 /* DLMKEditPlayerDescriptorTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLMKEditPlayerDescriptorTableViewController.m; sourceTree = "<group>"; };
 		655F4ACC1A94A157006DB768 /* DLMKEditPlayerDescriptorTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DLMKEditPlayerDescriptorTableViewController.xib; sourceTree = "<group>"; };
@@ -447,6 +473,26 @@
 			name = Player;
 			sourceTree = "<group>";
 		};
+		654B73451AA7524300250D1C /* SamplePhotoPlayers */ = {
+			isa = PBXGroup;
+			children = (
+				654B735E1AA757D100250D1C /* Nankatsu.jpg */,
+				654B73461AA7538600250D1C /* Genzo_Wakabayashi.jpg */,
+				654B73471AA7538600250D1C /* Hajime_Taki.jpg */,
+				654B73481AA7538600250D1C /* Hanji_Urabe.jpg */,
+				654B73491AA7538600250D1C /* Koji_Nishio.png */,
+				654B734A1AA7538600250D1C /* Mamoru_Izawa.jpg */,
+				654B734B1AA7538600250D1C /* Masao_Nakayama.png */,
+				654B734C1AA7538600250D1C /* Ryo_Ishizaki.jpg */,
+				654B734D1AA7538600250D1C /* Shingo_Takasugi.jpg */,
+				654B734E1AA7538600250D1C /* Taro_Misaki.jpg */,
+				654B734F1AA7538600250D1C /* Teppei_Kisugi.jpg */,
+				654B73501AA7538600250D1C /* Tsubasa_Ozora.jpg */,
+				654B73511AA7538600250D1C /* Yuzo_Morisaki.jpg */,
+			);
+			name = SamplePhotoPlayers;
+			sourceTree = "<group>";
+		};
 		655F4ADC1A961308006DB768 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -518,6 +564,7 @@
 		65917CBF1A7914AA00DC9940 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				654B73451AA7524300250D1C /* SamplePhotoPlayers */,
 				6588AE941AA5A13600591159 /* shirt_512x512.png */,
 				6588AE8F1AA4CA4100591159 /* pause_512x512.png */,
 				6588AE871AA48EB000591159 /* camera_512x512.png */,
@@ -680,9 +727,11 @@
 				TargetAttributes = {
 					651B96511A79123700154A3C = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = 6SX7A5NJK6;
 					};
 					651B96641A79123800154A3C = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = 6SX7A5NJK6;
 						TestTargetID = 651B96511A79123700154A3C;
 					};
 				};
@@ -712,8 +761,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				6588AE861AA48E9700591159 /* gear_512x512.png in Resources */,
+				654B735A1AA7538600250D1C /* Taro_Misaki.jpg in Resources */,
 				653B868F1A9228C600E9E90D /* pause_256x256.png in Resources */,
+				654B735C1AA7538600250D1C /* Tsubasa_Ozora.jpg in Resources */,
 				6545E1F11A9F1F60009A8C8A /* DLMKTeamCollectionViewController.xib in Resources */,
+				654B73521AA7538600250D1C /* Genzo_Wakabayashi.jpg in Resources */,
 				6545E1DE1A9E2B3F009A8C8A /* DLMKEditTeamCollectionViewCell.xib in Resources */,
 				659B01971A9B36ED00437970 /* pass_512x512.png in Resources */,
 				6588AE821AA48E7B00591159 /* error_512x512.png in Resources */,
@@ -722,22 +774,31 @@
 				659B018A1A98F9C000437970 /* DLMKTeamStatsSelectorTableViewController.xib in Resources */,
 				651B96791A7912A600154A3C /* DLMKMainMenuViewController.xib in Resources */,
 				655F4AD31A950DE0006DB768 /* DLMKPlayerNameTableViewCell.xib in Resources */,
+				654B73571AA7538600250D1C /* Masao_Nakayama.png in Resources */,
 				651B96601A79123700154A3C /* LaunchScreen.xib in Resources */,
 				6588AE7A1AA488A600591159 /* play_369x512.png in Resources */,
+				654B73541AA7538600250D1C /* Hanji_Urabe.jpg in Resources */,
 				655F4ACE1A94A157006DB768 /* DLMKEditPlayerDescriptorTableViewController.xib in Resources */,
 				6545E1BC1A9DEC9E009A8C8A /* DLMKPhotoTableViewCell.xib in Resources */,
+				654B73551AA7538600250D1C /* Koji_Nishio.png in Resources */,
+				654B73591AA7538600250D1C /* Shingo_Takasugi.jpg in Resources */,
 				6588AE771AA488A600591159 /* ball_512x512.png in Resources */,
 				659B01A21A9B9FE300437970 /* DLMKMatchStatsTableViewCell.xib in Resources */,
 				6588AE881AA48EB000591159 /* camera_512x512.png in Resources */,
+				654B735D1AA7538600250D1C /* Yuzo_Morisaki.jpg in Resources */,
+				654B735B1AA7538600250D1C /* Teppei_Kisugi.jpg in Resources */,
 				6588AE691AA45F9B00591159 /* arrow_down@2x.png in Resources */,
 				65917CBE1A7914A300DC9940 /* play_128x128.png in Resources */,
 				65FA2AB81A7BD7E300E87793 /* DLMKMatchViewController.xib in Resources */,
 				6588AE841AA48E8800591159 /* play_512x512.png in Resources */,
 				655F4AE51A961EE0006DB768 /* DLMKPlayerNumberTableViewCell.xib in Resources */,
 				6588AE951AA5A13600591159 /* shirt_512x512.png in Resources */,
+				654B73531AA7538600250D1C /* Hajime_Taki.jpg in Resources */,
 				657BB1641A7AA98500A528EB /* person_128x128.png in Resources */,
 				659B019D1A9B88D300437970 /* DLMKMatchStatsSelectorTableViewController.xib in Resources */,
+				654B735F1AA757D100250D1C /* Nankatsu.jpg in Resources */,
 				651B965D1A79123700154A3C /* Images.xcassets in Resources */,
+				654B73561AA7538600250D1C /* Mamoru_Izawa.jpg in Resources */,
 				659B01AE1A9CB5A400437970 /* DLMKPlayerDescriptorCollectionViewCell.xib in Resources */,
 				6588AE781AA488A600591159 /* bar_256x128.png in Resources */,
 				659B01951A9B35B700437970 /* goal_256x256.png in Resources */,
@@ -747,6 +808,7 @@
 				6588AE8E1AA4BFD100591159 /* DLMKTeamStatsTableViewCell.xib in Resources */,
 				6588AE7E1AA48C4300591159 /* camera_512x378.png in Resources */,
 				659B01931A9B345E00437970 /* DLMKPlayerStatsTableViewCell.xib in Resources */,
+				654B73581AA7538600250D1C /* Ryo_Ishizaki.jpg in Resources */,
 				6545E1EA1A9E4950009A8C8A /* DLMKEditTeamDescriptorViewController.xib in Resources */,
 				6588AE6B1AA45F9B00591159 /* LCNumberInputControl.xib in Resources */,
 				6545E1E01A9E2E16009A8C8A /* camera_256x256.png in Resources */,
@@ -953,6 +1015,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -964,6 +1028,7 @@
 				INFOPLIST_FILE = SoccerZeroTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SoccerZero.app/SoccerZero";
 			};
 			name = Debug;
@@ -972,6 +1037,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -979,6 +1046,7 @@
 				INFOPLIST_FILE = SoccerZeroTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SoccerZero.app/SoccerZero";
 			};
 			name = Release;

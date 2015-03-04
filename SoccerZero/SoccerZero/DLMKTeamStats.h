@@ -1,4 +1,5 @@
 #import "_DLMKTeamStats.h"
+@class DLMKPlayerDescriptor;
 
 @interface DLMKTeamStats : _DLMKTeamStats {}
 // Custom logic goes here.
@@ -12,5 +13,7 @@
 -(NSArray*) players;
 -(NSUInteger) countPlayers;
 
+-(DLMKPlayerStats*) playerStatForPlayerDescriptor:(DLMKPlayerDescriptor*) player;
+-(DLMKPlayerStats*) playerStatForPlayerNumber:(NSUInteger)number;
 
 @end

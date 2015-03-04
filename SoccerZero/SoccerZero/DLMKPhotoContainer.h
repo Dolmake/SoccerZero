@@ -11,4 +11,6 @@
 +(CGFloat)height;
 +(NSString*)cellId;
 
++(instancetype) photoContainerWithPhoto:(UIImage*)photo context:(NSManagedObjectContext*)aContext;
+
 @end

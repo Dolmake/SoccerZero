@@ -134,7 +134,7 @@
 #pragma mark - Actions
 -(void) addTeam:(id)sender{
     
-    [DLMKTeamDescriptor teamDescriptorWithName:@"Unnamed" context: [[DLMKModelServer SINGLETON]context]];
+    [DLMKTeamDescriptor teamDescriptorWithName:@"Unnamed" photo:nil context: [[DLMKModelServer SINGLETON]context]];
     [self updateControls];
 }
 
