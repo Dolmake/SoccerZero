@@ -55,12 +55,17 @@
 -(void) viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     self.keyBoardShown = NO;
+
+    //Subscribe KVO just to play with it
     [self.playerDescriptorModel addObserver:self forKeyPath:@"number" options:0 context:nil];
+    
     [self.tableView reloadData];
     __DLMK_NSLOG_DESCRIPTION__
 }
 -(void) viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
+    
+    //Remove KVO subscription
     [self.playerDescriptorModel removeObserver:self forKeyPath:@"number"];
 }
 
@@ -116,9 +121,6 @@
                        context:(void *)context {
     
     if ([keyPath isEqual:@"number"]) {
-        //Hey
-        //self.lbNumber.text = [self.playerDescriptorModel.number stringValue ];
-        NSLog([self.playerDescriptorModel.number stringValue ]);
         [self.tableView reloadData];
         
     }
@@ -153,6 +155,7 @@
     self.keyBoardShown = YES;
 }
 
+#pragma mark - LCNumberInputDelegate
 - (void)numberControl:(LCNumberInputControl*)view didInputWithNumber:(NSNumber*)number{
     
     DLMKPlayerDescriptor *playerDescriptor = (DLMKPlayerDescriptor*)view.userInfo;
