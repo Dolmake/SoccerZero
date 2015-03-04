@@ -26,7 +26,7 @@
 
     #define COREDATA_MODEL_NAME @"Model"
     #define AUTO_SAVE YES
-    #define AUTO_SAVE_DELAY 60
+    #define AUTO_SAVE_DELAY 300
     //#define DUMMY_DATA YES
     //#define DLMK_LOG
 

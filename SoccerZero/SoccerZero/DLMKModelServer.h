@@ -21,6 +21,8 @@
 @property (nonatomic, strong) AGTCoreDataStack* stack;
 @property (nonatomic, strong, readonly) NSManagedObjectContext* context;
 
+-(void) saveData;
+
 -(DLMKTeamDescriptor*) firstTeam;
 -(NSArray*) fetchTeams;
 -(NSArray*) fetchPlayersForTeam:(DLMKTeamDescriptor*) team;
