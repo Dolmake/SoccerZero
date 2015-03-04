@@ -13,6 +13,7 @@
 -(NSArray*) players;
 -(NSUInteger) countPlayers;
 
+-(BOOL) playerWasPlaying:(DLMKPlayerDescriptor*)player;
 -(DLMKPlayerStats*) playerStatForPlayerDescriptor:(DLMKPlayerDescriptor*) player;
 -(DLMKPlayerStats*) playerStatForPlayerNumber:(NSUInteger)number;
 

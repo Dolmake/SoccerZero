@@ -226,6 +226,21 @@ static DLMKModelServer* s_instance;
 
 -(NSArray*) fetchWonMatchesForTeamDescriptor:(DLMKTeamDescriptor*) team{
     NSArray* matches = [self fetchMatchesForTeamDescriptor:team];
+    return [self wonMatchesForTeamDescriptor:matches];
+}
+
+
+-(NSArray*) fetchLostMatchesForTeamDescriptor:(DLMKTeamDescriptor*) team{
+    NSArray* matches = [self fetchMatchesForTeamDescriptor:team];
+    return [self lostMatchesForTeamDescriptor:matches];
+}
+
+-(NSArray*) fetchTieMatchesForTeamDescriptor:(DLMKTeamDescriptor*) team{
+    NSArray* matches = [self fetchMatchesForTeamDescriptor:team];
+    return [self tieMatchesForTeamDescriptor:matches];
+}
+
+-(NSArray*) wonMatchesForTeamDescriptor:(NSArray*)matches{
     NSMutableArray *wonMatches = [NSMutableArray arrayWithCapacity:5];
     for (DLMKMatchStats *match in matches) {
         if (match.teamStats.goals > match.rivalStats.goalsValue){
@@ -234,10 +249,7 @@ static DLMKModelServer* s_instance;
     }
     return wonMatches;
 }
-
-
--(NSArray*) fetchLostMatchesForTeamDescriptor:(DLMKTeamDescriptor*) team{
-    NSArray* matches = [self fetchMatchesForTeamDescriptor:team];
+-(NSArray*) lostMatchesForTeamDescriptor:(NSArray*)matches{
     NSMutableArray *lostMatches = [NSMutableArray arrayWithCapacity:5];
     for (DLMKMatchStats *match in matches) {
         if (match.teamStats.goals < match.rivalStats.goalsValue){
@@ -246,9 +258,7 @@ static DLMKModelServer* s_instance;
     }
     return lostMatches;
 }
-
--(NSArray*) fetchTieMatchesForTeamDescriptor:(DLMKTeamDescriptor*) team{
-    NSArray* matches = [self fetchMatchesForTeamDescriptor:team];
+-(NSArray*) tieMatchesForTeamDescriptor:(NSArray*)matches{
     NSMutableArray *tieMatches = [NSMutableArray arrayWithCapacity:5];
     for (DLMKMatchStats *match in matches) {
         if (match.teamStats.goals == match.rivalStats.goalsValue){

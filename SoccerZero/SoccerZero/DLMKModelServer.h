@@ -35,5 +35,9 @@
 -(NSArray*) fetchLostMatchesForTeamDescriptor:(DLMKTeamDescriptor*) team;
 -(NSArray*) fetchTieMatchesForTeamDescriptor:(DLMKTeamDescriptor*) team;
 
+-(NSArray*) wonMatchesForTeamDescriptor:(NSArray*)matches;
+-(NSArray*) lostMatchesForTeamDescriptor:(NSArray*)matches;
+-(NSArray*) tieMatchesForTeamDescriptor:(NSArray*)matches;
+
 
 @end

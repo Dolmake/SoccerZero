@@ -96,6 +96,10 @@
     return [self.playersStats count];
 }
 
+-(BOOL) playerWasPlaying:(DLMKPlayerDescriptor*)player{
+    return [self playerStatForPlayerDescriptor:player] != nil;
+}
+
 -(DLMKPlayerStats*) playerStatForPlayerDescriptor:(DLMKPlayerDescriptor*) player{
     DLMKPlayerStats* result = nil;
     for (DLMKPlayerStats *playerStat in self.playersStats) {
