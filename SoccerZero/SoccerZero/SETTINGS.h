@@ -9,10 +9,10 @@
 //MOGENERATOR syntax:
 // mogenerator -v2 --model Model.xcdatamodeld/model.xcdatamodel/ --base-class DLMKBaseManagedObject
 
-#define DEBUG
-///#define RELEASE
+#define DLMK_DEBUG
+///#define DLMK_RELEASE
 
-#ifdef DEBUG
+#ifdef DLMK_DEBUG
 
     #define COREDATA_MODEL_NAME @"Model"
     #define AUTO_SAVE YES
@@ -22,7 +22,7 @@
 
 #endif
 
-#ifdef RELEASE
+#ifdef DLMK_RELEASE
 
     #define COREDATA_MODEL_NAME @"Model"
     #define AUTO_SAVE YES

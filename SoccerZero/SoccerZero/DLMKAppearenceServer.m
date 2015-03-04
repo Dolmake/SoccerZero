@@ -42,8 +42,7 @@ static DLMKAppearenceServer* s_instance;
     //[[UINavigationBar appearance] setTranslucent:NO ];
     //[[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor orangeColor]} ];
     //[NSForegroundColorAttributeName: UIColor.orangeColor()]
-    
-    
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
 }
 
 @end

@@ -11,7 +11,6 @@
 @interface DLMKMainMenuViewController : UIViewController
 
 -(IBAction)onPressPlay:(id)sender;
--(IBAction)onPressStatistics:(id)sender;
 -(IBAction)onPressConfiguration:(id)sender;
 
 
