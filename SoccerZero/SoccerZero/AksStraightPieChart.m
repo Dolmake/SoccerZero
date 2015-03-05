@@ -19,6 +19,7 @@
     return self;
 }
 
+
 - (void)awakeFromNib {
     [self startUpSettings];
 }
@@ -111,6 +112,7 @@
     CGPathRelease(visiblePath);
 }
 
+
 - (void)drawRect:(CGRect)rect {
     CGContextRef currentGraphicsContext = UIGraphicsGetCurrentContext();
 
@@ -129,6 +131,7 @@
         float percentage          = currentSegmentValue / sumOfAllSegmentValues;
 
         progressRect = rect;
+        //progressRect.size.width  *= percentage;
         progressRect.size.width  *= percentage;
         progressRect.origin.x    += lastSegmentRect.origin.x + lastSegmentRect.size.width;
 

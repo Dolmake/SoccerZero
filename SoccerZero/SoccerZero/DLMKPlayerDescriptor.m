@@ -53,17 +53,17 @@
     
     NSArray* matchesPlayed = [self matchesForPlayer];
     NSArray* matchesWon = [[DLMKModelServer SINGLETON] wonMatchesForTeamDescriptor:matchesPlayed ];
-    return (CGFloat)matchesWon.count / (CGFloat)matchesPlayed.count;
+    return (CGFloat)matchesWon.count / ((CGFloat)matchesPlayed.count + 0.001f);
 }
 -(CGFloat) lostPercent{
     NSArray* matchesPlayed = [self matchesForPlayer];
     NSArray* matchesLost = [[DLMKModelServer SINGLETON] lostMatchesForTeamDescriptor:matchesPlayed ];
-    return (CGFloat)matchesLost.count / (CGFloat)matchesPlayed.count;
+    return (CGFloat)matchesLost.count / ((CGFloat)matchesPlayed.count + 0.001f);
 }
 -(CGFloat) tiePercent{
     NSArray* matchesPlayed = [self matchesForPlayer];
     NSArray* matchesTied = [[DLMKModelServer SINGLETON] tieMatchesForTeamDescriptor:matchesPlayed ];
-    return (CGFloat)matchesTied.count / (CGFloat)matchesPlayed.count;
+    return (CGFloat)matchesTied.count / ((CGFloat)matchesPlayed.count  + 0.001f);
 }
 -(CGFloat) errorsPercent{
     NSArray* matchesPlayed = [self matchesForPlayer];
@@ -75,7 +75,7 @@
         if (playerStats)
             errorsForPlayer += playerStats.errorsValue;
     }
-    return (CGFloat)errorsForPlayer / (CGFloat)totalErrors;
+    return (CGFloat)errorsForPlayer / ((CGFloat)totalErrors + 0.001f);
 }
 -(CGFloat) goalsPercent{
     NSArray* matchesPlayed = [self matchesForPlayer];
@@ -87,7 +87,7 @@
         if (playerStats)
             goalsForPlayer += playerStats.goalsValue;
     }
-    return (CGFloat)goalsForPlayer / (CGFloat)totalGoals;
+    return (CGFloat)goalsForPlayer / ((CGFloat)totalGoals  + 0.001f);
 }
 -(NSUInteger) totalPlayedTimeInSeconds{
     NSArray* matchesPlayed = [self matchesForPlayer];
@@ -113,7 +113,7 @@
             timePlayed += playerStats.seconds_playedValue;
         }
     }
-    return (CGFloat)timePlayed / (CGFloat)totalTime;
+    return (CGFloat)timePlayed / ((CGFloat)totalTime + 0.001f);
 }
 //-(CGFloat) timePlayedPerMatchPercent{
 //    NSArray* matchesPlayed = [self matchesForPlayer];
