@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView* photoView;
 -(IBAction)deletePhoto:(id)sender;
 -(IBAction)takePhoto:(id)sender;
+-(IBAction)galleryPhoto:(id)sender;
 -(IBAction)ventigify:(id)sender;
 
 -(id) initWithModel: (DLMKPhotoContainer*) model;

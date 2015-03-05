@@ -44,7 +44,7 @@
     }
     return self;
 }
-
+#pragma mark - UIView
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -96,6 +96,20 @@
     return [self.customCells cellSectionTitleForIndex:section];
 }
  */
+
+- (void)tableView:(UITableView *)tableView willDisplayHeaderView:(UIView *)view forSection:(NSInteger)section
+{
+    // Background color
+    view.tintColor = [UIColor blackColor];
+    
+    // Text Color
+    UITableViewHeaderFooterView *header = (UITableViewHeaderFooterView *)view;
+    [header.textLabel setTextColor:[UIColor whiteColor]];
+    
+    // Another way to set the background color
+    // Note: does not preserve gradient effect of original header
+    // header.contentView.backgroundColor = [UIColor blackColor];
+}
 
 -(CGFloat) tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     return 16.0f;

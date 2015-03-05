@@ -124,6 +124,21 @@
     
     }];
 }
+-(IBAction)galleryPhoto:(id)sender{
+    
+    UIImagePickerController* picker = [UIImagePickerController new];
+    
+    //Config
+    picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    picker.delegate = self;
+    picker.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+    
+    [self presentViewController:picker animated:YES completion: ^(void){
+        
+        NSLog(@"Picture done!!!!");
+        
+    }];
+}
 
 -(IBAction)ventigify:(id)sender{
     

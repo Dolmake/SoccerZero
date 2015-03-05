@@ -33,7 +33,7 @@
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="4LV-6B-99l"/>
                         <barButtonItem systemItem="play" id="WFl-rZ-GSn">
                             <connections>
-                                <action selector="ventigify:" destination="-1" id="jSJ-FX-gle"/>
+                                <action selector="galleryPhoto:" destination="-1" id="0UL-fb-PvT"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="i1X-Mn-bTs"/>
