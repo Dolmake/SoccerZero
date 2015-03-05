@@ -3,6 +3,7 @@
 #import "DLMKModelServer.h"
 #import "DLMKMatchStats.h"
 #import "DLMKTeamStats.h"
+#import "DLMKPlayerStats.h"
 
 @interface DLMKPlayerDescriptor ()
 
@@ -64,22 +65,70 @@
     NSArray* matchesTied = [[DLMKModelServer SINGLETON] tieMatchesForTeamDescriptor:matchesPlayed ];
     return (CGFloat)matchesTied.count / (CGFloat)matchesPlayed.count;
 }
--(CGFloat) errorPerMatch{
-    //TODO:
-    return 0;
+-(CGFloat) errorsPercent{
+    NSArray* matchesPlayed = [self matchesForPlayer];
+    NSUInteger errorsForPlayer = 0;
+    NSUInteger totalErrors = 0;
+    for (DLMKMatchStats *match in matchesPlayed) {
+        totalErrors += match.teamStats.errors;
+        DLMKPlayerStats *playerStats = [match.teamStats playerStatForPlayerDescriptor:self ];
+        if (playerStats)
+            errorsForPlayer += playerStats.errorsValue;
+    }
+    return (CGFloat)errorsForPlayer / (CGFloat)totalErrors;
 }
--(CGFloat) goalPerMatch{
-    //TODO:
-    return 0;
+-(CGFloat) goalsPercent{
+    NSArray* matchesPlayed = [self matchesForPlayer];
+    NSUInteger goalsForPlayer = 0;
+    NSUInteger totalGoals = 0;
+    for (DLMKMatchStats *match in matchesPlayed) {
+        totalGoals += match.teamStats.goals;
+        DLMKPlayerStats *playerStats = [match.teamStats playerStatForPlayerDescriptor:self ];
+        if (playerStats)
+            goalsForPlayer += playerStats.goalsValue;
+    }
+    return (CGFloat)goalsForPlayer / (CGFloat)totalGoals;
 }
 -(NSUInteger) totalPlayedTimeInSeconds{
-    //TODO:
-    return 0;
+    NSArray* matchesPlayed = [self matchesForPlayer];
+    NSUInteger totalTime = 0;
+    for (DLMKMatchStats *match in matchesPlayed) {
+        DLMKPlayerStats *playerStats = [match.teamStats playerStatForPlayerDescriptor:self ];
+        if (playerStats)
+        {
+            totalTime += playerStats.seconds_playedValue;
+        }
+    }
+    return totalTime;
 }
 -(CGFloat) timePlayedPercent{
-    //TODO:
-    return 0;
+    NSArray* matchesPlayed = [self matchesForPlayer];
+    NSUInteger totalTime = 0;
+    NSUInteger timePlayed = 0;
+    for (DLMKMatchStats *match in matchesPlayed) {        
+        DLMKPlayerStats *playerStats = [match.teamStats playerStatForPlayerDescriptor:self ];
+        if (playerStats)
+        {
+            totalTime += match.seconds_played;
+            timePlayed += playerStats.seconds_playedValue;
+        }
+    }
+    return (CGFloat)timePlayed / (CGFloat)totalTime;
 }
+//-(CGFloat) timePlayedPerMatchPercent{
+//    NSArray* matchesPlayed = [self matchesForPlayer];
+//    
+//    CGFloat accumPercent = 0;
+//    for (DLMKMatchStats *match in matchesPlayed) {
+//        DLMKPlayerStats *playerStats = [match.teamStats playerStatForPlayerDescriptor:self ];
+//        if (playerStats)
+//        {
+//            accumPercent += (CGFloat)playerStats.seconds_playedValue / (CGFloat)match.seconds_played;
+//            
+//        }
+//    }
+//    return accumPercent/ (CGFloat)[matchesPlayed count];
+//}
 
 
 @end

@@ -75,6 +75,15 @@
     }
     return result;
 }
+-(NSUInteger) errors{
+    NSUInteger result= 0;
+    NSArray* players = [self.playersStats allObjects];
+    for (DLMKPlayerStats *player in players) {
+        result += player.errorsValue;
+    }
+    return result;
+}
+
 
 
 

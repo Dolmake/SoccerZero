@@ -12,6 +12,8 @@
 #import "DLMKPlayerNameTableViewCell.h"
 #import "DLMKPlayerNumberTableViewCell.h"
 #import "DLMKPhotoTableViewCell.h"
+#import "DLMKPlayerDescriptorStatsTableViewCell.h"
+
 #import "DLMKCustomCellTypeCollection.h"
 
 #import "LCNumberInputControl.h"
@@ -46,7 +48,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    NSArray* cells = @[[DLMKPlayerNameTableViewCell class],[DLMKPlayerNumberTableViewCell class],[DLMKPhotoTableViewCell class]];
+    NSArray* cells = @[[DLMKPlayerNameTableViewCell class],[DLMKPlayerNumberTableViewCell class],[DLMKPhotoTableViewCell class], [DLMKPlayerDescriptorStatsTableViewCell class]];
     self.customCells = [DLMKCustomCellTypeCollection customCellTypeCollectionWithArray:cells];
     
     [self.customCells registerNibsForTableView:self.tableView ];

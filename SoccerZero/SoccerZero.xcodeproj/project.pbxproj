@@ -58,6 +58,9 @@
 		654B735C1AA7538600250D1C /* Tsubasa_Ozora.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 654B73501AA7538600250D1C /* Tsubasa_Ozora.jpg */; };
 		654B735D1AA7538600250D1C /* Yuzo_Morisaki.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 654B73511AA7538600250D1C /* Yuzo_Morisaki.jpg */; };
 		654B735F1AA757D100250D1C /* Nankatsu.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 654B735E1AA757D100250D1C /* Nankatsu.jpg */; };
+		654B73641AA84D4500250D1C /* AksStraightPieChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 654B73631AA84D4500250D1C /* AksStraightPieChart.m */; };
+		654B73681AA84D9600250D1C /* DLMKPlayerDescriptorStatsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 654B73661AA84D9600250D1C /* DLMKPlayerDescriptorStatsTableViewCell.m */; };
+		654B73691AA84D9600250D1C /* DLMKPlayerDescriptorStatsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 654B73671AA84D9600250D1C /* DLMKPlayerDescriptorStatsTableViewCell.xib */; };
 		655F4ACD1A94A157006DB768 /* DLMKEditPlayerDescriptorTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 655F4ACB1A94A157006DB768 /* DLMKEditPlayerDescriptorTableViewController.m */; };
 		655F4ACE1A94A157006DB768 /* DLMKEditPlayerDescriptorTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 655F4ACC1A94A157006DB768 /* DLMKEditPlayerDescriptorTableViewController.xib */; };
 		655F4AD21A950DE0006DB768 /* DLMKPlayerNameTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 655F4AD01A950DE0006DB768 /* DLMKPlayerNameTableViewCell.m */; };
@@ -207,6 +210,11 @@
 		654B73501AA7538600250D1C /* Tsubasa_Ozora.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Tsubasa_Ozora.jpg; sourceTree = "<group>"; };
 		654B73511AA7538600250D1C /* Yuzo_Morisaki.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Yuzo_Morisaki.jpg; sourceTree = "<group>"; };
 		654B735E1AA757D100250D1C /* Nankatsu.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Nankatsu.jpg; sourceTree = "<group>"; };
+		654B73621AA84D4500250D1C /* AksStraightPieChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AksStraightPieChart.h; sourceTree = "<group>"; };
+		654B73631AA84D4500250D1C /* AksStraightPieChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AksStraightPieChart.m; sourceTree = "<group>"; };
+		654B73651AA84D9600250D1C /* DLMKPlayerDescriptorStatsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLMKPlayerDescriptorStatsTableViewCell.h; sourceTree = "<group>"; };
+		654B73661AA84D9600250D1C /* DLMKPlayerDescriptorStatsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLMKPlayerDescriptorStatsTableViewCell.m; sourceTree = "<group>"; };
+		654B73671AA84D9600250D1C /* DLMKPlayerDescriptorStatsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DLMKPlayerDescriptorStatsTableViewCell.xib; sourceTree = "<group>"; };
 		655F4ACA1A94A157006DB768 /* DLMKEditPlayerDescriptorTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLMKEditPlayerDescriptorTableViewController.h; sourceTree = "<group>"; };
 		655F4ACB1A94A157006DB768 /* DLMKEditPlayerDescriptorTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLMKEditPlayerDescriptorTableViewController.m; sourceTree = "<group>"; };
 		655F4ACC1A94A157006DB768 /* DLMKEditPlayerDescriptorTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DLMKEditPlayerDescriptorTableViewController.xib; sourceTree = "<group>"; };
@@ -325,6 +333,7 @@
 		651B96541A79123700154A3C /* SoccerZero */ = {
 			isa = PBXGroup;
 			children = (
+				654B73611AA84D3300250D1C /* PercentBar */,
 				6588AEA21AA613C200591159 /* GBButton */,
 				6588AE5E1AA45F7D00591159 /* NumberKeyBoard */,
 				6545E1C81A9DEEE6009A8C8A /* Categories */,
@@ -493,6 +502,15 @@
 			name = SamplePhotoPlayers;
 			sourceTree = "<group>";
 		};
+		654B73611AA84D3300250D1C /* PercentBar */ = {
+			isa = PBXGroup;
+			children = (
+				654B73621AA84D4500250D1C /* AksStraightPieChart.h */,
+				654B73631AA84D4500250D1C /* AksStraightPieChart.m */,
+			);
+			name = PercentBar;
+			sourceTree = "<group>";
+		};
 		655F4ADC1A961308006DB768 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -644,6 +662,9 @@
 				659B01AA1A9CB5A400437970 /* DLMKPlayerDescriptorCollectionViewCell.h */,
 				659B01AB1A9CB5A400437970 /* DLMKPlayerDescriptorCollectionViewCell.m */,
 				659B01AC1A9CB5A400437970 /* DLMKPlayerDescriptorCollectionViewCell.xib */,
+				654B73651AA84D9600250D1C /* DLMKPlayerDescriptorStatsTableViewCell.h */,
+				654B73661AA84D9600250D1C /* DLMKPlayerDescriptorStatsTableViewCell.m */,
+				654B73671AA84D9600250D1C /* DLMKPlayerDescriptorStatsTableViewCell.xib */,
 			);
 			name = PlayerDescriptor;
 			sourceTree = "<group>";
@@ -784,6 +805,7 @@
 				654B73591AA7538600250D1C /* Shingo_Takasugi.jpg in Resources */,
 				6588AE771AA488A600591159 /* ball_512x512.png in Resources */,
 				659B01A21A9B9FE300437970 /* DLMKMatchStatsTableViewCell.xib in Resources */,
+				654B73691AA84D9600250D1C /* DLMKPlayerDescriptorStatsTableViewCell.xib in Resources */,
 				6588AE881AA48EB000591159 /* camera_512x512.png in Resources */,
 				654B735D1AA7538600250D1C /* Yuzo_Morisaki.jpg in Resources */,
 				654B735B1AA7538600250D1C /* Teppei_Kisugi.jpg in Resources */,
@@ -841,6 +863,7 @@
 				653B86761A92238B00E9E90D /* _DLMKMatchStats.m in Sources */,
 				659B01AD1A9CB5A400437970 /* DLMKPlayerDescriptorCollectionViewCell.m in Sources */,
 				6545E1D21A9DEEF3009A8C8A /* UIImage+Resize.m in Sources */,
+				654B73681AA84D9600250D1C /* DLMKPlayerDescriptorStatsTableViewCell.m in Sources */,
 				653B86871A9223AB00E9E90D /* DLMKPlayerStats.m in Sources */,
 				653B86891A9223AB00E9E90D /* DLMKTeamStats.m in Sources */,
 				655F4AE41A961EE0006DB768 /* DLMKPlayerNumberTableViewCell.m in Sources */,
@@ -862,6 +885,7 @@
 				659B01921A9B345E00437970 /* DLMKPlayerStatsTableViewCell.m in Sources */,
 				659B01A61A9C7D9000437970 /* _DLMKRivalStats.m in Sources */,
 				653B864B1A92147500E9E90D /* DLMKBaseManagedObject.m in Sources */,
+				654B73641AA84D4500250D1C /* AksStraightPieChart.m in Sources */,
 				6545E1DD1A9E2B3F009A8C8A /* DLMKEditTeamCollectionViewCell.m in Sources */,
 				659B01A91A9C7D9D00437970 /* DLMKRivalStats.m in Sources */,
 				655F4ACD1A94A157006DB768 /* DLMKEditPlayerDescriptorTableViewController.m in Sources */,

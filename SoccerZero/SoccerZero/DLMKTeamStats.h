@@ -6,6 +6,7 @@
 
 @property (strong, nonatomic) NSString* name;
 @property (nonatomic, readonly) NSUInteger goals;
+@property (nonatomic, readonly) NSUInteger errors;
 
 +(instancetype) teamStatsWithName: (NSString*) aName context:(NSManagedObjectContext*) aContext;
 +(instancetype) teamStatsWithTeamDescriptor: (DLMKTeamDescriptor*) aTeamDescriptor context:(NSManagedObjectContext*) aContext;

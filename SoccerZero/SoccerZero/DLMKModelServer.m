@@ -14,6 +14,9 @@
 #import "DLMKRivalStats.h"
 #import "DLMKPlayerStats.h"
 #import "DLMKPlayerDescriptor.h"
+
+#include <stdlib.h>
+
 #import "MACROS.h"
 
 @implementation DLMKModelServer
@@ -319,7 +322,7 @@ static DLMKModelServer* s_instance;
 }
 
 
-
+#pragma mark - Sample Data
 -(void)loadSampleData{
     DLMKTeamDescriptor *teamDescriptor = [DLMKTeamDescriptor teamDescriptorWithName:@"Nankatsu" photo:[UIImage imageNamed:@"Nankatsu.jpg"] context:[self.stack context]];
     
@@ -337,22 +340,50 @@ static DLMKModelServer* s_instance;
     player = [teamDescriptor addPlayerWithName:@"Koji Nishio" number:3 photo:[UIImage imageNamed:@"Koji_Nishio.png"]];
     player = [teamDescriptor addPlayerWithName:@"Masao Nakayama" number:2 photo:[UIImage imageNamed:@"Masao_Nakayama.png"]];
     
+    [self randomMatchForTeamDescriptor:teamDescriptor versus:@"Mambo"];
+    [self randomMatchForTeamDescriptor:teamDescriptor versus:@"Mapped"];
+    [self randomMatchForTeamDescriptor:teamDescriptor versus:@"NewTeam"];
+    [self randomMatchForTeamDescriptor:teamDescriptor versus:@"Onibusa"];
+    [self randomMatchForTeamDescriptor:teamDescriptor versus:@"SFF"];
+    [self randomMatchForTeamDescriptor:teamDescriptor versus:@"Edulcorados"];
+    [self randomMatchForTeamDescriptor:teamDescriptor versus:@"Le Pont"];
+    [self randomMatchForTeamDescriptor:teamDescriptor versus:@"Dolmake FC"];
+    /*
     DLMKMatchStats* match = [DLMKMatchStats matchStatsWithDate:[[NSDate alloc] init] forTeam:teamDescriptor versus:@"Mambo" context:self.context];
     
     match.seconds_first_halfValue = 60 * 25;
     match.seconds_second_halfValue = 60 * 27.2f;
     match.rivalStats.goalsValue = 2;
     
-    [match.teamStats playerStatForPlayerNumber:10].goalsValue = 3;
-    [match.teamStats playerStatForPlayerNumber:10].errorsValue = 10;
+    [self statsAtMatch:match ForPlayerNumber:10 Errors:5 Goals:3 SecondsPlayedPercent:0.9f];
+    [self statsAtMatch:match ForPlayerNumber:10 Errors:5 Goals:3 SecondsPlayedPercent:0.9f];
+    [self statsAtMatch:match ForPlayerNumber:10 Errors:5 Goals:3 SecondsPlayedPercent:0.9f];
+    [self statsAtMatch:match ForPlayerNumber:10 Errors:5 Goals:3 SecondsPlayedPercent:0.9f];
+    [self statsAtMatch:match ForPlayerNumber:10 Errors:5 Goals:3 SecondsPlayedPercent:0.9f];
+    [self statsAtMatch:match ForPlayerNumber:10 Errors:5 Goals:3 SecondsPlayedPercent:0.9f];
+    [self statsAtMatch:match ForPlayerNumber:10 Errors:5 Goals:3 SecondsPlayedPercent:0.9f];
+    [self statsAtMatch:match ForPlayerNumber:10 Errors:5 Goals:3 SecondsPlayedPercent:0.9f];
+     */
     
-    [match.teamStats playerStatForPlayerNumber:8].errorsValue = 2;
-    [match.teamStats playerStatForPlayerNumber:11].goalsValue = 1;
-    
-    [match.teamStats playerStatForPlayerNumber:1].errorsValue = 1;
+}
 
-    [match.teamStats playerStatForPlayerNumber:4].goalsValue = 3;
-    [match.teamStats playerStatForPlayerNumber:4].errorsValue = 3;
+-(void) statsAtMatch:(DLMKMatchStats*)match ForPlayerNumber:(NSUInteger)number Errors:(NSUInteger)errors Goals:(NSUInteger)goals SecondsPlayedPercent:(CGFloat)percent{
+    [match.teamStats playerStatForPlayerNumber:number].goalsValue = (unsigned int)goals;
+    [match.teamStats playerStatForPlayerNumber:number].errorsValue = (unsigned int)errors;
+    [match.teamStats playerStatForPlayerNumber:number].seconds_playedValue = (CGFloat)match.seconds_played * percent;
+}
+
+-(void) randomMatchForTeamDescriptor:(DLMKTeamDescriptor*) team versus:(NSString*)rival{
+    DLMKMatchStats* match = [DLMKMatchStats matchStatsWithDate:[[NSDate alloc] init] forTeam:team versus:rival context:self.context];
+    
+    match.seconds_first_halfValue = 60 * 25;
+    match.seconds_second_halfValue = 60 * 27.2f;
+    match.rivalStats.goalsValue = arc4random_uniform(3);
+    for (DLMKPlayerStats *playerStats in match.teamStats.playersStats) {
+        playerStats.goalsValue = arc4random_uniform(2);
+        playerStats.errorsValue = arc4random_uniform(30);
+        playerStats.seconds_playedValue = arc4random_uniform((unsigned int)match.seconds_played);
+    }
 }
 
 

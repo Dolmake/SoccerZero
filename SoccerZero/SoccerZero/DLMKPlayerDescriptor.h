@@ -16,8 +16,9 @@
 -(CGFloat) wonPercent;
 -(CGFloat) lostPercent;
 -(CGFloat) tiePercent;
--(CGFloat) errorPerMatch;
--(CGFloat) goalPerMatch;
+-(CGFloat) errorsPercent;
+-(CGFloat) goalsPercent;
 -(NSUInteger) totalPlayedTimeInSeconds;
 -(CGFloat) timePlayedPercent;
+//-(CGFloat) timePlayedPerMatchPercent;
 @end
