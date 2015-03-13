@@ -74,7 +74,10 @@
         [self.delegate onMistake:self.playerStatsModel];
         self.lbMistakes.text = [[self.playerStatsModel errors ] stringValue ];
     }
+    
+    
 }
+
 
 -(IBAction)inOut:(id)sender{
     if (self.swInOut.on)
